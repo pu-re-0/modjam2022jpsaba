@@ -8,6 +8,7 @@
 # This allows your contribution to run as a standalone outside of the Mod Jam mod
 # do not add other events to this file, this file will be overwritten when all the crises
 # are run together
+# 編集禁止！！
 
 namespace = midgame_crisis_trigger
 
