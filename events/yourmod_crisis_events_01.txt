@@ -2,6 +2,9 @@ namespace = yourmod_crisis_01
 #1 decide first victim country
 #2 notification for first victim
 
+#100 investigate virus trigger
+#101 investigate virus
+
 country_event = { # decide first victim country
 	id = yourmod_crisis_01.1
 	fire_only_once = yes
@@ -116,7 +119,50 @@ country_event = { # notification for first victim
 	}
 }
 
+##############Investigate Virus
 
+country_event = { # investigate trigger
+	id = yourmod_crisis_01.100
+	fire_only_once = yes
+	#is_triggered_only = yes
+	hide_window = yes
 
+	trigger = {
+		has_global_flag = yourmod_in_progress # see mid_game_crisis_trigger_events.txt
+		#各国の状況が深刻化していることを判定するトリガーを後で入れておく
+	}
+
+	mean_time_to_happen = {
+		years = 3
+	}
+
+	immediate = {
+		every_playable_country = {
+			trigger = { is_country_type = default }
+			country_event = {
+				id = yourmod_crisis_01.101
+				days = 14
+			}
+		}
+	}
+}
+
+country_event = { # Start Investigation
+	id = yourmod_crisis_01.101
+	title = yourmod_crisis_01.101.name
+ 	desc = yourmod_crisis_01.101.desc
+
+	#$yourmod_crisis$の調査
+	#$yourmod_crisis$が猛威を振るい始めてからある程度時間が経過した。対策や調査に資源を投げ打ってはいるが、それでもまだ病原体の検出にさえ成功していない。有効な治療法も見つかっておらず、このままでは埒が明かない。ここで一回、帝国の総力を挙げて病原体の正体を突き止めるためのプロジェクトを実行するべきだ。例えプロジェクトを遂行する過程でいかなる犠牲や代償を払おうとも、このまま$yourmod_crisis$を放置するよりは遥かに安上がりだ。
+	
+	picture = GFX_evt_mining_station
+	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+	is_triggered_only = yes
+
+	option = { # Start First Situation
+		name = yourmod_crisis_01.101.a
+		#begin_yourmod_virus_investigation_situation = yes
+	}
+}
 
 
