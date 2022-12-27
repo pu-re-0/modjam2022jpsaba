@@ -1,0 +1,37 @@
+﻿### Prethoryn Scourge
+yourmod_crisis = {
+	selectable = { always = no }
+	randomized = no
+
+	### SHIPS
+
+	ship_names = {
+
+		generic = {
+
+		}
+
+		mining_station = { }
+		research_station = { }
+		observation_station = { }
+
+		military_station_small = {}
+		military_station_medium = {}
+		military_station_large = {}
+	}
+
+	fleet_names = {
+		sequential_name = Prethoryn_STARBROOD
+	}
+
+	### CHARACTERS
+
+	character_names = {
+		default = {
+			full_names = {
+				
+			}
+
+		}
+	}
+}

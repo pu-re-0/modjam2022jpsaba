@@ -1,0 +1,32 @@
+yourmod_create_crisis = {
+	create_country = {
+		name = NAME_yourmod_crisis
+		type = yourmod_virus
+		auto_delete = <bool>
+		name_list = yourmod_crisis
+
+		ship_prefix = <string>
+		authority = <key>
+		civics = random / { civic = <key> civic = random }
+		species = <target>
+		flag = {
+			icon= {
+				category = "yourmod"
+				file = "flag_yourmod_crisis.dds"
+			}
+			background= {
+				category = "backgrounds"
+				file = "flag_BG_20.dds"
+			}
+			colors={
+				"dark_grey"
+				"grey"
+				"null"
+				"null"
+			}
+		}
+		effect = {
+			
+		}
+	}
+}
