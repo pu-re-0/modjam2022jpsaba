@@ -1,14 +1,10 @@
+
 yourmod_create_crisis = {
 	create_country = {
 		name = NAME_yourmod_crisis
 		type = yourmod_virus
-		auto_delete = <bool>
 		name_list = yourmod_crisis
-
-		ship_prefix = <string>
-		authority = <key>
-		civics = random / { civic = <key> civic = random }
-		species = <target>
+		species = random
 		flag = {
 			icon= {
 				category = "yourmod"
@@ -26,7 +22,7 @@ yourmod_create_crisis = {
 			}
 		}
 		effect = {
-			
+
 		}
 	}
 }

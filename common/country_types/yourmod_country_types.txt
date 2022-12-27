@@ -105,9 +105,11 @@
 yourmod_virus = {
 	attack_unarmed_orbital_stations = yes
 	scaled_difficulty_bonuses = 3.0	# scales to setting
-	end_game_crisis = yes
+	mid_game_crisis = yes
+	minimalist_contacts_list_profile = yes
 	destroys_starbases = yes
-	can_own_empty_planets = yes
+	can_own_empty_planets = no
+	show_in_contacts_list = yes
 	needs_survey = no
 	has_complete_sensor = yes
 	can_planets_be_attacked = yes
@@ -115,10 +117,9 @@ yourmod_virus = {
 	enforces_borders = no
 	ship_disengagement = yes
 	government = no
-	colonizing_title = "COLONIZING_PLANET_SWARM"
-	colonizing_desc = "PLANET_VIEW_UNDER_COLONIZATION_SWARM_DESC"
-	home_system = swarm_invasion_target_1
-	custom_starbase = starbase_swarm
+	colonizing_title = ""
+	colonizing_desc = ""
+	#custom_starbase = starbase_swarm
 	observable = yes
 	uses_origins = no
 
@@ -127,8 +128,7 @@ yourmod_virus = {
 		colonizer = yes
 		construction = yes
 		modules = {
-			swarm_interior_minister_module
-			swarm_military_minister_module
+
 		}
 	}
 	faction = {
