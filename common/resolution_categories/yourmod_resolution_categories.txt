@@ -1,0 +1,20 @@
+# Resolution Categories for Galactic Community
+
+### Galactic Priorities
+yourmod_resolution_category_galactic_focus = {
+	group = galactic_focus
+	icon = "GFX_resolution_galactic_focus_category"
+
+	resolution_types = {
+		"yourmodresolution_galactic_focus_crisis_virus"
+	}
+}
+
+yourmod_resolution_category_galactic_quarantine = {
+	group = yourmod_quarantine
+	icon = "GFX_resolution_galactic_focus_category"
+
+	resolution_types = {
+		"yourmodresolution_galactic_focus_crisis_virus"
+	}
+}
