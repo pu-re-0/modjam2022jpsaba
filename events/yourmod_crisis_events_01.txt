@@ -1,0 +1,168 @@
+namespace = yourmod_crisis_01
+#1 decide first victim country
+#2 notification for first victim
+
+#100 investigate virus trigger
+#101 investigate virus
+
+country_event = { # decide first victim country
+	id = yourmod_crisis_01.1
+	fire_only_once = yes
+	#is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		has_global_flag = yourmod_in_progress # see mid_game_crisis_trigger_events.txt
+		or = {
+			any_owned_fleet = { # Any research ship doing excavation
+				has_fleet_order = excavate_archaeological_site_fleet_order
+			}
+			any_owned_planet = {# Has death world or many pops or nojobs
+				or = {
+					is_planet_class = pc_nuked
+					num_pops > 49
+					num_unemployed > 4
+				}
+			}
+			
+			is_ai = yes # victim
+		}
+	}
+
+	mean_time_to_happen = {
+		years = 5
+		modifier = {
+			factor = 1.25
+			is_ai = yes
+		}
+		modifier = {
+			factor = 0.80
+			mid_game_years_passed >= 1
+		}
+
+		modifier = {
+			factor = 0.75
+			mid_game_years_passed >= 2
+		}
+
+		modifier = {
+			factor = 0.66
+			mid_game_years_passed >= 3
+		}
+
+		modifier = {
+			factor = 0.50
+			mid_game_years_passed >= 5
+		}
+
+		modifier = {
+			factor = 0.25
+			mid_game_years_passed >= 7
+		}
+
+		modifier = {
+			factor = 0.10
+			mid_game_years_passed >= 10
+		}
+	}
+
+	immediate = {
+		set_global_flag = yourmod_virus_first_infection
+		set_country_flag = yourmod_virus_infected
+		save_global_event_target_as = yourmod_virus_first_victim
+		random_owned_planet = {
+			trigger = {
+				is_colony = yes
+			}
+			save_global_event_target_as = yourmod_virus_first_onset_planet
+		}
+
+		country_event = {
+			id = yourmod_crisis_01.2 # bad news for first victim
+			days = 31
+		}
+	}
+}
+
+
+country_event = { # notification for first victim
+	id = yourmod_crisis_01.2
+	title = yourmod_crisis_01.2.name
+ 	desc = {
+ 		trigger = {
+ 			THIS = { is_robot_empire = yes }
+ 		}
+ 		text = yourmod_crisis_01.2.robotic.desc
+ 	}
+ 	desc = yourmod_crisis_01.2.desc
+
+	#未知の病気を確認
+	#最近、[yourmod_virus_first_onset_planet.GetName]において新種の病気が確認されている。感染者は発熱、嘔吐、倦怠感などの症状に襲われ、最悪の場合は死に至るようだ。奇妙なことに、病原体を発見する試みは成功していない。しかし感染は急速に拡大しているようで、[yourmod_virus_first_onset_planet.GetName]の市民はこの奇妙な病気を$yourmod_crisis$と呼んで恐れている。
+	#最近、[yourmod_virus_first_onset_planet.GetName]において奇妙な現象の発生が確認されている。ドローンの思考回路に異常が発生し、そのうえで機体内部が徐々に破壊され、最終的にドローンが死に至るという現象だ。この現象に遭遇したドローンはしばしば「不快感」と熱の異常発生を訴えている。さらに、当該のドローンに接触したドローンにもまた同様の現象が起こっているようだ。この現象には、有機生命体の言う感染症と近いものがあり、既に[yourmod_virus_first_onset_planet.GetName]上のかなりの数のドローンが「感染」しているとみられる。以後、本現象は$yourmod_crisis$と呼称する。
+
+	picture = GFX_evt_mining_station
+	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+
+	is_triggered_only = yes
+	location = event_target:yourmod_virus_first_onset_planet
+
+	option = { # Start First Situation
+		trigger = { is_robot_empire = no }
+		name = yourmod_crisis_01.2.a
+		#begin_yourmod_virus_infection_situation = yes
+	}
+
+	option = { # Start First Situation
+		trigger = { is_robot_empire = yes }
+		name = yourmod_crisis_01.2.b
+		#begin_yourmod_virus_infection_situation = yes
+	}
+}
+
+##############Investigate Virus
+
+country_event = { # investigate trigger
+	id = yourmod_crisis_01.100
+	fire_only_once = yes
+	#is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		has_global_flag = yourmod_in_progress # see mid_game_crisis_trigger_events.txt
+		#各国の状況が深刻化していることを判定するトリガーを後で入れておく
+	}
+
+	mean_time_to_happen = {
+		years = 3
+	}
+
+	immediate = {
+		every_playable_country = {
+			trigger = { is_country_type = default }
+			country_event = {
+				id = yourmod_crisis_01.101
+				days = 14
+			}
+		}
+	}
+}
+
+country_event = { # Start Investigation
+	id = yourmod_crisis_01.101
+	title = yourmod_crisis_01.101.name
+ 	desc = yourmod_crisis_01.101.desc
+
+	#$yourmod_crisis$の調査
+	#$yourmod_crisis$が猛威を振るい始めてからある程度時間が経過した。対策や調査に資源を投げ打ってはいるが、それでもまだ病原体の検出にさえ成功していない。有効な治療法も見つかっておらず、このままでは埒が明かない。ここで一回、帝国の総力を挙げて病原体の正体を突き止めるためのプロジェクトを実行するべきだ。例えプロジェクトを遂行する過程でいかなる犠牲や代償を払おうとも、このまま$yourmod_crisis$を放置するよりは遥かに安上がりだ。
+	
+	picture = GFX_evt_mining_station
+	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+	is_triggered_only = yes
+
+	option = { # Start First Situation
+		name = yourmod_crisis_01.101.a
+		#begin_yourmod_virus_investigation_situation = yes
+	}
+}
+
+
