@@ -104,11 +104,10 @@
 
 yourmod_virus = {
 	attack_unarmed_orbital_stations = yes
-	scaled_difficulty_bonuses = 3.0	# scales to setting
+	scaled_difficulty_bonuses = 5.0	# scales to setting
 	mid_game_crisis = yes
 	minimalist_contacts_list_profile = yes
 	destroys_starbases = yes
-	can_own_empty_planets = no
 	show_in_contacts_list = yes
 	needs_survey = no
 	has_complete_sensor = yes

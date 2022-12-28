@@ -16,6 +16,6 @@ on_five_year_pulse = {
 # From = source country
 on_custom_diplomacy = {
 	events = {
-		
+		yourmod_custom_diplomacy_events.0
 	}
 }
