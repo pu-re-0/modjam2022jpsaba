@@ -161,7 +161,7 @@ country_event = { # Start Investigation
 
 	option = { # Start First Situation
 		name = yourmod_crisis_01.101.a
-		#begin_yourmod_virus_investigation_situation = yes
+		start_situation = { type = yourmod_crisis_research_situation target = this }
 	}
 }
 
