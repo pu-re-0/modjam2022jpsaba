@@ -1,14 +1,16 @@
 namespace = yourmod_crisis_01
-#1 decide first victim country
-#2 notification for first victim
-#3 hide or dont(trigger start event chain)
-#4 informed conscent(start event chain)
-#5 uninformed conscent(start event chain)
+#1 decide first victim country			#最初の感染国決定
+#2 notification for first victim		#第一感染国へのお知らせ
+#3 hide or dont(trigger start event chain)	#感染症の存在を隠蔽するかしないか(半フレーバー)
+#4 informed consent(start event chain)		#情報公開した場合のイベント、イベントチェーン開始
+#5 uninformed consent(start event chain)	#隠した場合のイベント、イベントチェーン開始
 
-#100 investigate virus trigger
-#101 investigate virus
+#100 investigate virus trigger			#病原体の調査イベント(101)をすべての国家にトリガーするためのイベント
+#101 investigate virus				#病原体の調査シチュエーションを開始するイベント
 
-country_event = { # decide first victim country
+#300 Ground Zero Emerging			#病原体の調査が終わり、電波・超能力の送信先星系(聖地)が出現する
+
+country_event = { # decide first victim country#最初に感染する国家を決定
 	id = yourmod_crisis_01.1
 	fire_only_once = yes
 	#is_triggered_only = yes
@@ -81,14 +83,14 @@ country_event = { # decide first victim country
 		}
 
 		country_event = {
-			id = yourmod_crisis_01.2 # bad news for first victim
+			id = yourmod_crisis_01.2 # bad news for first victim#感染国への通知
 			days = 31
 		}
 	}
 }
 
 
-country_event = { # notification for first victim
+country_event = { # notification for first victim#お前が第一感染国という通知
 	id = yourmod_crisis_01.2
 	title = yourmod_crisis_01.2.name
  	desc = {
@@ -108,14 +110,21 @@ country_event = { # notification for first victim
 
 	is_triggered_only = yes
 	location = event_target:yourmod_virus_first_onset_planet
+	immediate = {
+		country_event = {
+			id = yourmod_crisis_01.3#隠蔽するかしないかの半フレーバーイベント
+			days = 14
+			random = 7
+		}
+	}
 
-	option = { # Start First Situation
+	option = { # Start First Situation#感染の状況を開始
 		trigger = { is_robot_empire = no }
 		name = yourmod_crisis_01.2.a
 		#begin_yourmod_virus_infection_situation = yes
 	}
 
-	option = { # Start First Situation
+	option = { # Start First Situation#感染の状況を開始
 		trigger = { is_robot_empire = yes }
 		name = yourmod_crisis_01.2.b
 		#begin_yourmod_virus_infection_situation = yes
@@ -177,7 +186,7 @@ country_event = { # Hide, or don't
 	#隠してもそのうちバレる
 }
 
-country_event = { #Informed consent
+country_event = { #Informed consent#公開した場合のイベント
 	id = yourmod_crisis_01.4
 	title = yourmod_crisis_01.4.name
  	desc = yourmod_crisis_01.4.desc.a
@@ -203,7 +212,7 @@ country_event = { #Informed consent
 	}
 }
 
-country_event = { #Uninformed consent
+country_event = { #Uninformed consent#隠した場合のイベント
 	id = yourmod_crisis_01.5
 	title = yourmod_crisis_01.5.name
  	desc = yourmod_crisis_01.5.desc.a
