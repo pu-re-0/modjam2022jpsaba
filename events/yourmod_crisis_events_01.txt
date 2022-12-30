@@ -1,11 +1,16 @@
 namespace = yourmod_crisis_01
-#1 decide first victim country
-#2 notification for first victim
+#1 decide first victim country			#最初の感染国決定
+#2 notification for first victim		#第一感染国へのお知らせ
+#3 hide or dont(trigger start event chain)	#感染症の存在を隠蔽するかしないか(半フレーバー)
+#4 informed consent(start event chain)		#情報公開した場合のイベント、イベントチェーン開始
+#5 uninformed consent(start event chain)	#隠した場合のイベント、イベントチェーン開始
 
-#100 investigate virus trigger
-#101 investigate virus
+#100 investigate virus trigger			#病原体の調査イベント(101)をすべての国家にトリガーするためのイベント
+#101 investigate virus				#病原体の調査シチュエーションを開始するイベント
 
-country_event = { # decide first victim country
+#300 Ground Zero Emerging			#病原体の調査が終わり、電波・超能力の送信先星系(聖地)が出現する
+
+country_event = { # decide first victim country#最初に感染する国家を決定
 	id = yourmod_crisis_01.1
 	fire_only_once = yes
 	#is_triggered_only = yes
@@ -78,14 +83,14 @@ country_event = { # decide first victim country
 		}
 
 		country_event = {
-			id = yourmod_crisis_01.2 # bad news for first victim
+			id = yourmod_crisis_01.2 # bad news for first victim#感染国への通知
 			days = 31
 		}
 	}
 }
 
 
-country_event = { # notification for first victim
+country_event = { # notification for first victim#お前が第一感染国という通知
 	id = yourmod_crisis_01.2
 	title = yourmod_crisis_01.2.name
  	desc = {
@@ -105,19 +110,134 @@ country_event = { # notification for first victim
 
 	is_triggered_only = yes
 	location = event_target:yourmod_virus_first_onset_planet
+	immediate = {
+		country_event = {
+			id = yourmod_crisis_01.3#隠蔽するかしないかの半フレーバーイベント
+			days = 14
+			random = 7
+		}
+	}
 
-	option = { # Start First Situation
+	option = { # Start First Situation#感染の状況を開始
 		trigger = { is_robot_empire = no }
 		name = yourmod_crisis_01.2.a
 		#begin_yourmod_virus_infection_situation = yes
 	}
 
-	option = { # Start First Situation
+	option = { # Start First Situation#感染の状況を開始
 		trigger = { is_robot_empire = yes }
 		name = yourmod_crisis_01.2.b
 		#begin_yourmod_virus_infection_situation = yes
 	}
 }
+
+
+country_event = { # Hide, or don't
+	id = yourmod_crisis_01.3
+	title = yourmod_crisis_01.3.name
+ 	desc = {
+ 		trigger = {
+ 			THIS = { is_robot_empire = yes }
+ 		}
+ 		text = yourmod_crisis_01.3.robotic.desc
+ 	}
+ 	desc = yourmod_crisis_01.3.desc
+
+	#隠すべきか知らせるべきかという問題
+	#未知の病気が我々を襲っている。これは帝国政府と[yourmod_virus_first_onset_planet.GetName]の住民にとっては周知の事実だ。だが、他の惑星や帝国にとってはそうではない。彼らは皆、今まで通りの日々が続くと信じている。もしかしたら、この問題は[yourmod_virus_first_onset_planet.GetName]に留めて対処することができるかもしれない。新種の感染症の存在を公開して、経済に大混乱が発生するのは容認できない。だが隠蔽して対処に失敗し、しかも他の惑星や帝国にも病気が広がるようなことがあれば、その時は責任問題はおろか、外交問題にさえ発展するかもしれない。
+	#未知の病気が我々を襲っている。これは我々全員に周知の事実だ。だが、他の帝国にとってはそうではない。彼らは皆、今まで通りの日々が続くと信じている。もしかしたら、この問題は[yourmod_virus_first_onset_planet.GetName]に留めて対処することができるかもしれない。もし他の帝国に病気の存在を知らせれば、彼らは態度を硬化させ、交易や交流を禁じるようなことがあるかもしれない。だが、隠蔽して他国に感染が広がり、そして病気の起源が我々の惑星にあると知られたら、これはもっと重大な問題になるかもしれない。
+
+	picture = GFX_evt_mining_station
+	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+
+	is_triggered_only = yes
+	location = event_target:yourmod_virus_first_onset_planet
+
+	option = { # Inform Galaxy
+		name = yourmod_crisis_01.3.a #隠しておくわけにはいくまい……。
+		hidden_effect = {
+			every_playable_country = {
+				trigger = {
+					is_country_type = default
+				}
+				country_event = {
+					id = yourmod_crisis_01.4
+					days = 7
+					random = 7
+				}
+			}
+		}
+	}
+	option = { # Hide
+		name = yourmod_crisis_01.3.b #我々のメンツが何よりも重要だ。
+		hidden_effect = {
+			every_playable_country = {
+				trigger = {
+					is_country_type = default
+				}
+				country_event = {
+					id = yourmod_crisis_01.5
+					days = 31
+					random = 60
+				}
+			}
+		}
+	}
+	#隠してもそのうちバレる
+}
+
+country_event = { #Informed consent#公開した場合のイベント
+	id = yourmod_crisis_01.4
+	title = yourmod_crisis_01.4.name
+ 	desc = yourmod_crisis_01.4.desc.a
+ 	desc = {
+ 		trigger = {
+ 			THIS = { is_same_value = FROM }
+ 		}
+ 		text = yourmod_crisis_01.4.desc.b
+ 	}
+
+	picture = GFX_evt_mining_station
+	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+
+	is_triggered_only = yes
+
+	#[From.GetName]で新種の病気が発見された
+	#[From.GetName]からの緊急通信が届いた。かの国によると、彼らの入植地である[yourmod_virus_first_onset_planet.GetName]において新種の感染症が発生し、感染が拡大しているのだという。彼らの科学力を以てしても病原体の特定すらできていないとしていて、[From.GetName]が$yourmod_crisis$と呼称するこの病気に対する警戒と対策をしていく必要があるだろう。
+	#我々は全ての銀河勢力に向けて緊急通信を送った。知る限りの情報を伝えた我々に対し、銀河中がよく評価してくれることを祈るばかりだ。
+
+	option = {
+		name = yourmod_crisis_01.3.a #これは大変なことになるかもしれない。
+		begin_event_chain = { event_chain = yourmod_crisis_chain_1 target = this }
+	}
+}
+
+country_event = { #Uninformed consent#隠した場合のイベント
+	id = yourmod_crisis_01.5
+	title = yourmod_crisis_01.5.name
+ 	desc = yourmod_crisis_01.5.desc.a
+ 	desc = {
+ 		trigger = {
+ 			THIS = { is_same_value = FROM }
+ 		}
+ 		text = yourmod_crisis_01.5.desc.b
+ 	}
+
+	picture = GFX_evt_mining_station
+	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+
+	is_triggered_only = yes
+
+	#[From.GetName]で新種の病気が発見された
+	#[From.GetName]の醜聞だ。彼らは[yourmod_virus_first_onset_planet.GetName]で新種の病気が発見されたことを知っていたのに、それを全銀河に対して隠していたのだ。各国が送り込んだ諜報員がいなければ、我々は彼らが$yourmod_crisis$と呼称するこの病気が別の場所で発生した病気と誤認させられていたことだろう。[From.GetName]の悪行はともかくとして、この新興感染症に対する備えをしなければならない。
+	#まずいことになった。我々が$yourmod_crisis$を隠蔽していた事実が全銀河に対して明らかになってしまった。我々は情報収集の遅れがあったとして釈明したが、他の帝国はまず信用しないだろう……。
+
+	option = {
+		name = yourmod_crisis_01.5.a #これは大変なことになるかもしれない。
+		begin_event_chain = { event_chain = yourmod_crisis_chain_1 target = this }
+	}
+}
+
 
 ##############Investigate Virus
 
@@ -161,8 +281,42 @@ country_event = { # Start Investigation
 
 	option = { # Start First Situation
 		name = yourmod_crisis_01.101.a
-		#begin_yourmod_virus_investigation_situation = yes
+		start_situation = { type = yourmod_crisis_research_situation target = this }
 	}
 }
+
+##############################Ground Zero Emerging
+
+country_event = { #Situation has done, Ground Zero Emerging, Create Notification
+	id = yourmod_crisis_01.300
+	title = yourmod_crisis_01.300.name
+ 	desc = yourmod_crisis_01.300.desc
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	# $yourmod_crisis$の正体を探るプロジェクトは、その正体をつかむところまではうまくいかなかったが、重要な知見を得ることができた。$yourmod_crisis$の病原体は、有機・無機問わず生命体を貪り、自己複製を行う何かだったのだ。グレイ・グーを引き起こす拙劣なナノマシンとの類似も指摘されたが、悪質なことにそれだけではなかった。病原体は電波を送受信する能力だけではなく、超能力を行使する能力まで持ち合わせていたのだ。ただ物質的に増殖するだけでなく、電波などの媒体を駆使して自らの情報を送信し、何もないところに発生するといった概念的な領域にまで到達している。自らの存在を隠蔽する性質もあり、検出には特殊な手段を要したが、これでいくらか未知のものへ対する恐怖を和らぐことだろう。\nそしてもう一つ重要な事がある。$yourmod_crisis$の病原体は、この銀河のある一つの場所に向かって電波やテレパシーウェーブを送信しているということだ。おそらくはそこに元凶となるものがあるのだろう。直ちにその場所へと急行し、何があるか突き止めなければならない。
+
+	immediate = {
+		set_global_flag = yourmod_crisis_ground_zero_entered
+		no_scope = {
+			set_spawn_system_batch = begin
+			spawn_system = {
+				#min_jumps = 1
+				#max_jumps = 3
+				min_distance = 25
+				max_distance = 35
+				initializer = yourmod_crisis_ground_zero_initializer
+				hyperlane = yes
+				is_discovered = no
+			}
+			set_spawn_system_batch = end
+		}
+	}
+
+	option = { # gotcha!
+		name = yourmod_crisis_01.300.a
+	}
+}
+
 
 
