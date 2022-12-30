@@ -37,7 +37,7 @@
 
 # NOTE: Remember to add Resolutions to a Resolution Category!
 
-yourmodresolution_galactic_focus_crisis_virus = {
+yourmod_resolution_galactic_focus_crisis_virus = {
 	icon = "GFX_resolution_emergency_measure"
 
 	resources = {
@@ -198,6 +198,387 @@ yourmodresolution_galactic_focus_crisis_virus = {
 				}
 			}
 			desc = ethic_xenophobe
+		}
+	}
+}
+
+yourmod_resolution_quarantine_1 = {
+	icon = "GFX_repeal_yellow"
+
+	resources = {
+		category = resolutions
+		cost = {
+			influence = @resolution_cost_t1
+		}
+	}
+	target = no
+
+	level = 1
+
+	effect = {
+		custom_tooltip = yourmod_resolution_quarantine_1_effect_success
+
+		hidden_effect = {
+			set_timed_country_flag = { flag = yourmod_galactic_community_resolution_passed_quarantine days = @resolution_flag_timer }
+			add_modifier = {
+				modifier = resolution_passed_diplomatic_weight
+				days = 2200
+			}
+		}
+	}
+
+	fail_effects = {
+		hidden_effect = {
+			set_timed_country_flag = { flag = yourmod_galactic_community_resolution_failed_quarantine days = @resolution_flag_timer }
+			add_modifier = {
+				modifier = resolution_failed_diplomatic_weight
+				days = 2200
+			}
+		}
+	}
+
+	potential = {
+		has_global_flag = yourmod_in_progress
+		NOR = {
+			is_active_resolution = "yourmod_resolution_quarantine_2"
+			is_active_resolution = "yourmod_resolution_quarantine_3"
+		}
+	}
+
+	allow = {
+		NOT = {
+			is_active_resolution = "yourmod_resolution_quarantine_1"
+		}
+	}
+
+	modifier = {
+		country_unity_produces_mult = -0.05
+		trade_value_mult = -0.1
+	}
+
+	ai_weight = {
+		base = @resolution_weight_unpopular
+
+		modifier = {
+			factor = 0.7
+			country_uses_food = no
+			desc = gal_com_country_uses_food_no
+		}
+
+		modifier = {
+			factor = 0.9
+			is_spiritualist = yes
+		}
+
+		modifier = {
+			factor = 0.95
+			is_egalitarian = yes
+		}
+
+		modifier = {
+			factor = 1.3
+			is_materialist = yes
+		}
+
+		modifier = {
+			factor = 1.2
+			is_authoritarian = yes
+		}
+		
+		modifier = {
+			factor = 2
+			any_neighbor_country = {
+				is_country_type = yourmod_virus
+			}
+		}
+	}
+}
+
+yourmod_resolution_quarantine_2 = {
+	icon = "GFX_repeal_yellow"
+
+	resources = {
+		category = resolutions
+		cost = {
+			influence = @resolution_cost_t2
+		}
+	}
+	target = no
+
+	level = 2
+
+	effect = {
+		custom_tooltip = yourmod_resolution_quarantine_2_effect_success
+
+		hidden_effect = {
+			set_timed_country_flag = { flag = yourmod_galactic_community_resolution_passed_quarantine days = @resolution_flag_timer }
+			add_modifier = {
+				modifier = resolution_passed_diplomatic_weight
+				days = 2200
+			}
+		}
+	}
+
+	fail_effects = {
+		hidden_effect = {
+			set_timed_country_flag = { flag = yourmod_galactic_community_resolution_failed_quarantine days = @resolution_flag_timer }
+			add_modifier = {
+				modifier = resolution_failed_diplomatic_weight
+				days = 2200
+			}
+		}
+	}
+
+	potential = {
+		has_global_flag = yourmod_in_progress
+		NOR = {
+			is_active_resolution = "yourmod_resolution_quarantine_3"
+		}
+	}
+
+	allow = {
+		is_active_resolution = "yourmod_resolution_quarantine_1"
+	}
+
+	modifier = {
+		country_unity_produces_mult = -0.10
+		trade_value_mult = -0.20
+		branch_office_value_mult = -0.15
+	}
+
+	ai_weight = {
+		base = @resolution_weight_unpopular
+
+		modifier = {
+			factor = 0.7
+			country_uses_food = no
+			desc = gal_com_country_uses_food_no
+		}
+
+		modifier = {
+			factor = 0.8
+			is_spiritualist = yes
+		}
+
+		modifier = {
+			factor = 0.9
+			is_egalitarian = yes
+		}
+
+		modifier = {
+			factor = 1.2
+			is_materialist = yes
+		}
+
+		modifier = {
+			factor = 1.1
+			is_authoritarian = yes
+		}
+
+		modifier = {
+			factor = 0.75
+			is_megacorp = yes
+		}
+
+		modifier = {
+			factor = 2
+			any_neighbor_country = {
+				is_country_type = yourmod_virus
+			}
+		}
+	}
+}
+
+yourmod_resolution_quarantine_3 = {
+	icon = "GFX_repeal_yellow"
+
+	resources = {
+		category = resolutions
+		cost = {
+			influence = @resolution_cost_t3
+		}
+	}
+	target = no
+
+	level = 3
+
+	effect = {
+		custom_tooltip = yourmod_resolution_quarantine_3_effect_success
+
+		hidden_effect = {
+			set_timed_country_flag = { flag = yourmod_galactic_community_resolution_passed_quarantine days = @resolution_flag_timer }
+			add_modifier = {
+				modifier = resolution_passed_diplomatic_weight
+				days = 2200
+			}
+		}
+	}
+
+	fail_effects = {
+		hidden_effect = {
+			set_timed_country_flag = { flag = yourmod_galactic_community_resolution_failed_quarantine days = @resolution_flag_timer }
+			add_modifier = {
+				modifier = resolution_failed_diplomatic_weight
+				days = 2200
+			}
+		}
+	}
+
+	potential = {
+		has_global_flag = yourmod_in_progress
+	}
+
+	allow = {
+		is_active_resolution = "yourmod_resolution_quarantine_2"
+	}
+
+	modifier = {
+		country_unity_produces_mult = -0.10
+		trade_value_mult = -0.4
+		branch_office_value_mult = -0.5
+	}
+
+	triggered_modifier = {
+		potential = {
+			OR = {
+				has_authority = auth_democratic
+				has_ethic = ethic_fanatic_egalitarian
+			}
+		}
+		modifier = {
+			country_unity_produces_mult = -0.10
+		}
+	}
+
+	ai_weight = {
+		base = @resolution_weight_unpopular
+
+		modifier = {
+			factor = 0.8
+			country_uses_food = no
+			desc = gal_com_country_uses_food_no
+		}
+
+		modifier = {
+			factor = 0.7
+			is_spiritualist = yes
+		}
+
+		modifier = {
+			factor = 0.7
+			is_egalitarian = yes
+		}
+
+		modifier = {
+			factor = 1.1
+			is_materialist = yes
+		}
+
+		modifier = {
+			factor = 1.2
+			is_authoritarian = yes
+		}
+		
+		modifier = {
+			factor = 0.25
+			is_megacorp = yes
+		}
+
+		modifier = {
+			factor = 2
+			any_neighbor_country = {
+				is_country_type = yourmod_virus
+			}
+		}
+	}
+}
+
+yourmod_resolution_GHO = {
+	icon = "GFX_repeal_red"
+
+	resources = {
+		category = resolutions
+		cost = {
+			influence = @resolution_cost_t1
+		}
+	}
+	target = no
+	fire_and_forget = yes
+
+	effect = {
+		custom_tooltip = yourmod_resolution_GHO_effect_success
+
+		hidden_effect = {
+			set_timed_country_flag = { flag = yourmod_galactic_community_resolution_passed_GHO days = @resolution_flag_timer }
+			add_modifier = {
+				modifier = resolution_passed_diplomatic_weight
+				days = 2200
+			}
+		}
+
+		add_modifier = {
+			modifier = {
+				country_energy_produces_mult = -0.02
+			}
+			days = 2200
+		}
+	}
+
+	fail_effects = {
+		hidden_effect = {
+			set_timed_country_flag = { flag = yourmod_galactic_community_resolution_failed_GHO days = @resolution_flag_timer }
+			add_modifier = {
+				modifier = resolution_failed_diplomatic_weight
+				days = 2200
+			}
+		}
+	}
+
+	potential = {
+		has_global_flag = yourmod_in_progress
+		NOT = {
+			is_active_resolution = "yourmod_resolution_GHO"
+		}
+	}
+
+	modifier = {
+		country_energy_produces_mult = -0.02
+	}
+
+	ai_weight = {
+		base = @resolution_weight_unpopular
+
+		modifier = {
+			factor = 0.7
+			country_uses_food = no
+			desc = gal_com_country_uses_food_no
+		}
+
+		modifier = {
+			factor = 0.9
+			is_spiritualist = yes
+		}
+
+		modifier = {
+			factor = 1.5
+			is_egalitarian = yes
+		}
+
+		modifier = {
+			factor = 1.2
+			is_materialist = yes
+		}
+
+		modifier = {
+			factor = 0.7
+			is_authoritarian = yes
+		}
+		
+		modifier = {
+			factor = 
+			any_neighbor_country = {
+				is_country_type = yourmod_virus
+			}
 		}
 	}
 }

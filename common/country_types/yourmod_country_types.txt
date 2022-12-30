@@ -102,6 +102,8 @@
 # CRISIS-RELATED
 #################
 
+#実装上変更したいところがあった時は、コメントアウトでどこ変えたか残してください
+
 yourmod_virus = {
 	attack_unarmed_orbital_stations = yes
 	scaled_difficulty_bonuses = 5.0	# scales to setting

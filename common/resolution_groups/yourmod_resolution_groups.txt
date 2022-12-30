@@ -2,5 +2,5 @@
 
 yourmod_quarantine = {
 	color_index = 1
-	text_color_code = "W"
+	text_color_code = "G"
 }
