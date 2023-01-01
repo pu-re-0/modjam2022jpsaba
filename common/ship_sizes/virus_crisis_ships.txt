@@ -12,7 +12,7 @@
 
 #small Virus ship
 small_virus_ship = {
-	entity = "pirate_01_pirate_corvette_entity" #仮
+	entity = "pirate_01_bemat_corvette_entity"
 	is_space_object = yes
 
 	is_designable = no
