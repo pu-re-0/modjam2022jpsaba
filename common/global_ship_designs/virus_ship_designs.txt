@@ -68,7 +68,7 @@ ship_design = {
 			template = "SMALL_XRAY_LASER"
 		}
 		component = {
-			slot = "SMALL_GUN_01"
+			slot = "SMALL_GUN_02"
 			template = "SMALL_XRAY_LASER"
 		}
 		component = {
