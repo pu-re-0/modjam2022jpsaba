@@ -5,6 +5,8 @@ namespace = yourmod_crisis_01
 #4 informed consent(start event chain)		#情報公開した場合のイベント、イベントチェーン開始
 #5 uninformed consent(start event chain)	#隠した場合のイベント、イベントチェーン開始
 
+#10 random new infection			#国家への感染判定イベント
+
 #100 investigate virus trigger			#病原体の調査イベント(101)をすべての国家にトリガーするためのイベント
 #101 investigate virus				#病原体の調査シチュエーションを開始するイベント
 
@@ -237,6 +239,78 @@ country_event = { #Uninformed consent#隠した場合のイベント
 		begin_event_chain = { event_chain = yourmod_crisis_chain_1 target = this }
 	}
 }
+
+
+#get infected
+country_event = { #Infected!#感染した！
+	id = yourmod_crisis_01.10
+	#is_triggered_only = yes
+	title = yourmod_crisis_01.10.name
+ 	desc = yourmod_crisis_01.10.desc.a
+
+	trigger = {
+		has_global_flag = yourmod_in_progress # see mid_game_crisis_trigger_events.txt
+		has_global_flag = yourmod_virus_first_infection #First victim exists
+		or = {
+			any_neighbor_country = {
+				has_country_flag = yourmod_virus_infected
+			}
+			any_country = {
+				has_country_flag = yourmod_virus_infected
+				or = {
+					has_embassy = root
+					is_at_war_with = root
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		years = 2
+		modifier = {
+			factor = 0.75
+			is_ai = yes
+		}
+		
+		modifier = {
+			factor = 0.90
+			num_envoys_to_galcom > 1
+		}
+		modifier = {
+			factor = 0.80
+			is_galactic_community_member = yes
+		}
+		modifier = {
+			factor = 8.00
+			is_homicidal = yes
+		}
+		modifier = {
+			factor = 2.0
+			has_ethic = ethic_xenophobe
+		}
+		modifier = {
+			factor = 4.0
+			has_ethic = ethic_fanatic_xenophobe
+		}
+		modifier = {
+			factor = 0.50
+			has_ethic = ethic_xenophile
+		}
+		modifier = {
+			factor = 0.25
+			has_ethic = ethic_fanatic_xenophile
+		}
+	}
+
+	immediate = {
+		set_country_flag = yourmod_virus_infected
+	}
+	
+	option = { # No way
+		name = yourmod_crisis_01.10.a
+	}
+}
+
 
 
 ##############Investigate Virus
