@@ -27,9 +27,9 @@ small_virus_ship = {
 	}
 
 	modifier = {
-		ship_hull_mult = 4
-		ship_shield_mult = 4
-		ship_armor_mult = 2.5
+		ship_hull_add = 10
+		ship_shield_add = 10
+		ship_armor_add = 10
 		ship_evasion_mult = -0.8
 	}
 
@@ -59,7 +59,7 @@ medium_virus_ship = {
 
 	is_designable = no
 
-	icon = ship_size_military_1
+	icon = ship_size_military_2
 
 	section_slots = {
 		"bow" = { locator = "part1" }
@@ -67,9 +67,9 @@ medium_virus_ship = {
 	}
 
 	modifier = {
-		ship_hull_mult = 4
-		ship_shield_mult = 4
-		ship_armor_mult = 2.5
+		ship_hull_add = 15
+		ship_shield_add = 15
+		ship_armor_add = 15
 		ship_evasion_mult = -0.8
 	}
 
