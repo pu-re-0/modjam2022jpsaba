@@ -17,7 +17,7 @@ small_virus_ship = {
 
 	is_designable = no
 
-	icon = shio_size_military_1  #仮
+	icon = ship_size_military_1  #仮
 	graphical_culture = no
 
 	section_slots = {
@@ -28,6 +28,8 @@ small_virus_ship = {
 
 	modifier = {
 		ship_hull_mult = 2
+		ship_shield_mult = 1.5
+		ship_armor_mult = 1.5
 		ship_evasion_mult = -0.8
 	}
 
@@ -49,6 +51,45 @@ small_virus_ship = {
 				nanites = @salvagecostsmall
 			}
 	}
+}
 
+medium_virus_ship = {
+	entity = humanoid_01_destroyer_entity #仮
+	is_space_object = yes
 
+	is_designable = no
+
+	icon = ship_size_military_1
+	graphical_culture = no
+
+	section_slots = {
+		"mid" = {
+			locator = part1
+		}
+	}
+
+	modifier = {
+		ship_hull_mult = 2
+		ship_shield_mult = 1.5
+		ship_armor_mult = 1.5
+		ship_evasion_mult = -0.8
+	}
+
+	max_speed = @speed_default
+	acceleration = 0.35
+	collision_radius = @destroyer_collision_radius
+	max_hitpoints = 500
+	size_multiplier = 2
+	fleet_slot_size = 2
+
+	class = shipclass_military
+	num_target_locators = 0
+	components_add_to_cost = no
+	resources = {
+		category = ships
+			cost = {
+				sr_zro = @salvagecostmedium
+				nanites = @salvagecostmedium
+			}
+	}
 }
