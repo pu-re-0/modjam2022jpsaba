@@ -12,7 +12,7 @@
 
 #small Virus ship
 small_virus_ship = {
-	entity = humanoid_01_corvette_entity #仮
+	entity = "humanoid_01_corvette_entity" #仮
 	is_space_object = yes
 
 	is_designable = no
@@ -54,7 +54,7 @@ small_virus_ship = {
 }
 
 medium_virus_ship = {
-	entity = humanoid_01_destroyer_entity #仮
+	entity = "humanoid_01_destroyer_entity" #仮
 	is_space_object = yes
 
 	is_designable = no
