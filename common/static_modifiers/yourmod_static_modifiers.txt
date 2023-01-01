@@ -1,0 +1,4 @@
+
+yourmod_has_GHO = {
+	country_energy_produces_mult = -0.02
+}

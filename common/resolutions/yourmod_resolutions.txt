@@ -517,11 +517,9 @@ yourmod_resolution_GHO = {
 		}
 
 		add_modifier = {
-			modifier = {
-				country_energy_produces_mult = -0.02
-			}
-			days = 2200
+			modifier = yourmod_has_GHO
 		}
+
 	}
 
 	fail_effects = {
@@ -575,7 +573,7 @@ yourmod_resolution_GHO = {
 		}
 		
 		modifier = {
-			factor = 
+			factor = 1.5
 			any_neighbor_country = {
 				is_country_type = yourmod_virus
 			}
