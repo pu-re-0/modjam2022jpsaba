@@ -12,7 +12,7 @@
 
 #small Virus ship
 small_virus_ship = {
-	entity = "bemat_corvette_entity" #仮
+	entity = "pirate_01_pirate_corvette_entity" #仮
 	is_space_object = yes
 
 	is_designable = no
@@ -27,9 +27,9 @@ small_virus_ship = {
 	}
 
 	modifier = {
-		ship_hull_mult = 2
-		ship_shield_mult = 1.5
-		ship_armor_mult = 1.5
+		ship_hull_mult = 4
+		ship_shield_mult = 4
+		ship_armor_mult = 2.5
 		ship_evasion_mult = -0.8
 	}
 
@@ -67,9 +67,9 @@ medium_virus_ship = {
 	}
 
 	modifier = {
-		ship_hull_mult = 2
-		ship_shield_mult = 1.5
-		ship_armor_mult = 1.5
+		ship_hull_mult = 4
+		ship_shield_mult = 4
+		ship_armor_mult = 2.5
 		ship_evasion_mult = -0.8
 	}
 
