@@ -26,34 +26,53 @@ ship_section_template = {
 	aux_utility_slots = 2
 }
 
+#### medium virus ####
+
 ship_section_template = {
-	key = "medium_virus_ship_key"
-	ship_size = medium_virus_ship
-	fits_on_slot = mid
-	entity = "humanoid_01_corvette_entity"
-	icon = "GFX_ship_part_core_mid"
+	key = "medium_virus_bow_01"
+	ship_size = "medium_virus_ship"
+	fits_on_slot = "bow"
+	should_draw_components = yes
+	
+	entity = "humanoid_01_destroyer_bow_S3_entity"
+	icon = "GFX_ship_part_core_bow"
 
 	component_slot = {
-		name = "MEDIUM_GUN_01"
-		template = "medium_turret"
-		locatorname = "medium_gun_01"
+		name = "POINT_DEFENCE_01"
+		template = "point_defence_turret"
+		locatorname = "small_gun_01"
 	}
 	component_slot = {
-		name = "MEDIUM_GUN_02"
-		template = "medium_turret"
-		locatorname = "medium_gun_02"
+		name = "SMALL_GUN_01"
+		template = "small_turret"
+		locatorname = "small_gun_02"
 	}
 	component_slot = {
-		name = "TORPEDO_01"
-		template = "medium_missile_turret"
-		locatorname = "medium_gun_02"
+		name = "SMALL_GUN_02"
+		template = "small_turret"
+		locatorname = "small_gun_03"
+	}
+
+	small_utility_slots = 6
+}
+ship_section_template = {
+	key = "medium_virus_stern_01"
+	ship_size = "medium_virus_ship"
+	fits_on_slot = "stern"
+	should_draw_components = yes
+	entity = "humanoid_01_destroyer_stern_S2_entity"
+	icon = "GFX_ship_part_core_stern"
+
+	component_slot = {
+		name = "POINT_DEFENCE_01"
+		template = "point_defence_turret"
+		locatorname = "small_gun_01"
 	}
 	component_slot = {
-		name = "PD_01"
+		name = "POINT_DEFENCE_02"
 		template = "point_defence_turret"
 		locatorname = "small_gun_02"
 	}
 
-	small_utility_slots = 6
-	aux_utility_slots = 2
+	aux_utility_slots = 1
 }

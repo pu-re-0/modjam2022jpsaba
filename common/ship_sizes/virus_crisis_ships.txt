@@ -12,7 +12,7 @@
 
 #small Virus ship
 small_virus_ship = {
-	entity = "humanoid_01_corvette_entity" #仮
+	entity = "corvette_entity" #仮
 	is_space_object = yes
 
 	is_designable = no
@@ -63,9 +63,8 @@ medium_virus_ship = {
 	graphical_culture = no
 
 	section_slots = {
-		"mid" = {
-			locator = part1
-		}
+		"bow" = { locator = "part1" }
+		"stern" = { locator = "part2" }
 	}
 
 	modifier = {
