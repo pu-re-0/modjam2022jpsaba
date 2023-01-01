@@ -3,7 +3,7 @@ ship_section_template = {
 	key = "small_virus_ship_key"
 	ship_size = small_virus_ship
 	fits_on_slot = mid
-	entity = "corvette_entity"
+	entity = "CORVETTE_MID_S3"
 	icon = "GFX_ship_part_core_mid"
 
 	component_slot = {

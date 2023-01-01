@@ -116,6 +116,6 @@ ship_design = {
 	required_component = "SENSOR_2"
 	required_component = "HYPER_DRIVE_2"
 	required_component = "SHIP_THRUSTER_3"
-	required_component = "DESTROYER_COLD_FUSION_REACTOR"
+	required_component = "DESTROYER_ZERO_POINT_REACTOR"
 	required_component = "COMBAT_COMPUTER_PICKET_BASIC"
 }
