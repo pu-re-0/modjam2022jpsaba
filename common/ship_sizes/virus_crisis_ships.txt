@@ -10,48 +10,48 @@
 @salvagecostmedium = 1000
 @salvagecostlarge = 2000
 
-#small Virus ship
-small_virus_ship = {
-	entity = "pirate_01_bemat_corvette_entity"
-	is_space_object = yes
-
-	is_designable = no
-
-	icon = ship_size_military_1  #仮
-	graphical_culture = no
-
-	section_slots = {
-		"mid" = {
-			locator = part1
-		}
-	}
-
-	modifier = {
-		ship_hull_add = 10
-		ship_shield_add = 10
-		ship_armor_add = 10
-		ship_evasion_mult = -0.8
-	}
-
-	max_speed = @speed_fast
-	acceleration = 0.35
-	rotation_speed = 0.1
-	collision_radius = @corvette_collision_radius
-	max_hitpoints = 350
-	size_multiplier = 1
-	fleet_slot_size = 1
-
-	class = shipclass_military
-	num_target_locators = 0
-	components_add_to_cost = no
-	resources = {
-		category = ships
-			cost = {
-				sr_zro = @salvagecostsmall
-				nanites = @salvagecostsmall
-			}
-	}
-}
+#small Virus ship(エラーにより凍結中)
+#small_virus_ship = {
+#	entity = "pirate_01_bemat_corvette_entity"
+#	is_space_object = yes
+#
+#	is_designable = no
+#
+#	icon = ship_size_military_1  #仮
+#	graphical_culture = no
+#
+#	section_slots = {
+#		"mid" = {
+#			locator = part1
+#		}
+#	}
+#
+#	modifier = {
+#		ship_hull_add = 10
+#		ship_shield_add = 10
+#		ship_armor_add = 10
+#		ship_evasion_mult = -0.8
+#	}
+#
+#	max_speed = @speed_fast
+#	acceleration = 0.35
+#	rotation_speed = 0.1
+#	collision_radius = @corvette_collision_radius
+#	max_hitpoints = 350
+#	size_multiplier = 1
+#	fleet_slot_size = 1
+#
+#	class = shipclass_military
+#	num_target_locators = 0
+#	components_add_to_cost = no
+#	resources = {
+#		category = ships
+#			cost = {
+#				sr_zro = @salvagecostsmall
+#				nanites = @salvagecostsmall
+#			}
+#	}
+#}
 
 medium_virus_ship = {
 	entity = "humanoid_01_destroyer_entity" #仮
@@ -67,9 +67,9 @@ medium_virus_ship = {
 	}
 
 	modifier = {
-		ship_hull_add = 15
-		ship_shield_add = 15
-		ship_armor_add = 15
+		ship_hull_mult = 15
+		ship_shield_mult = 15
+		ship_armor_mult = 15
 		ship_evasion_mult = -0.8
 	}
 
