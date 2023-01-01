@@ -60,7 +60,6 @@ medium_virus_ship = {
 	is_designable = no
 
 	icon = ship_size_military_1
-	graphical_culture = no
 
 	section_slots = {
 		"bow" = { locator = "part1" }
