@@ -1,4 +1,6 @@
 namespace = yourmod_crisis_01
+
+#Phase 1
 #1 decide first victim country			#最初の感染国決定
 #2 notification for first victim		#第一感染国へのお知らせ
 #3 hide or dont(trigger start event chain)	#感染症の存在を隠蔽するかしないか(半フレーバー)
@@ -17,6 +19,10 @@ namespace = yourmod_crisis_01
 #115 flavor					#病原体調査シチュエーションのフレーバーイベント(他国が状況を完了)
 
 #300 Ground Zero Emerging			#病原体の調査が終わり、電波・超能力の送信先星系(聖地)が出現する
+
+#Phase 2
+#1000 new stage trigger				#感染症段階の終了・戦闘段階へ
+#1000 Notification to Every country		#全国家に通知
 
 country_event = { # decide first victim country#最初に感染する国家を決定
 	id = yourmod_crisis_01.1
@@ -511,11 +517,6 @@ country_event = { #調査シチュエーションからのイベント
 	}
 }
 
-
-
-
-
-
 ##############################Ground Zero Emerging
 
 country_event = { #Situation has done, Ground Zero Emerging, Create Notification
@@ -549,5 +550,42 @@ country_event = { #Situation has done, Ground Zero Emerging, Create Notification
 	}
 }
 
+###############################Phese 2
+#分かりやすくするためにyourmod_crisis_02のnamespaceを使おうとしたら被って上書きされててマジ狂い
+
+ship_event = { # NEXT STAGE
+	id = yourmod_crisis_01.1000
+	fire_only_once = yes
+	#is_triggered_only = yes
+	is_triggered_only = yes
+	hidden_window = yes
+
+	trigger = {
+		from = {#system
+			has_star_flag = yourmod_crisis_ground_zero
+		}
+	}
+
+	immediate = {
+		set_global_flag = yourmod_crisis_stage_2
+		every_playable_country = {
+			country_event = {
+				id = yourmod_crisis_02.02
+				days = 1
+			}
+		}
+	}
+}
+
+country_event = { # NEXT STAGE
+	id = yourmod_crisis_01.1001
+	title = yourmod_crisis_01.1001.name
+	desc = yourmod_crisis_01.1001.desc
+	is_triggered_only = yes
+
+	option = {
+		name = yourmod_crisis_02.02.a
+	}
+}
 
 
