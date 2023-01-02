@@ -23,7 +23,7 @@ country_event = {
 	hide_window = yes
 
 	trigger = {
-		has_country_flag = 
+		has_country_flag = yourmod_virus_infected
 	}
 
 	mean_time_to_happen = {
@@ -31,6 +31,14 @@ country_event = {
 	}
 
 	immediate = {
-		
+		if = { #機械知性の場合
+			limit = {  }
+		}
+		else_if = { #ゲシュタルト意識の場合
+			limit = {  }
+		}
+		else = { #それ以外(通常国家)
+			
+		}
 	}
 }
