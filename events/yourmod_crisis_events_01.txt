@@ -9,6 +9,12 @@ namespace = yourmod_crisis_01
 
 #100 investigate virus trigger			#病原体の調査イベント(101)をすべての国家にトリガーするためのイベント
 #101 investigate virus				#病原体の調査シチュエーションを開始するイベント
+#110 flavor					#病原体調査シチュエーションのフレーバーイベント
+#111 flavor					#病原体調査シチュエーションのフレーバーイベント
+#112 flavor					#病原体調査シチュエーションのフレーバーイベント
+#113 flavor					#病原体調査シチュエーションのフレーバーイベント
+#114 flavor					#病原体調査シチュエーションのフレーバーイベント(状況の完了)
+#115 flavor					#病原体調査シチュエーションのフレーバーイベント(他国が状況を完了)
 
 #300 Ground Zero Emerging			#病原体の調査が終わり、電波・超能力の送信先星系(聖地)が出現する
 
@@ -78,7 +84,7 @@ country_event = { # decide first victim country#最初に感染する国家を�
 		set_country_flag = yourmod_virus_infected
 		save_global_event_target_as = yourmod_virus_first_victim
 		random_owned_planet = {
-			trigger = {
+			limit = {
 				is_colony = yes
 			}
 			save_global_event_target_as = yourmod_virus_first_onset_planet
@@ -159,7 +165,7 @@ country_event = { # Hide, or don't
 		name = yourmod_crisis_01.3.a #隠しておくわけにはいくまい……。
 		hidden_effect = {
 			every_playable_country = {
-				trigger = {
+				limit = {
 					is_country_type = default
 				}
 				country_event = {
@@ -174,7 +180,7 @@ country_event = { # Hide, or don't
 		name = yourmod_crisis_01.3.b #我々のメンツが何よりも重要だ。
 		hidden_effect = {
 			every_playable_country = {
-				trigger = {
+				limit = {
 					is_country_type = default
 				}
 				country_event = {
@@ -359,7 +365,7 @@ country_event = { # investigate trigger
 
 	immediate = {
 		every_playable_country = {
-			trigger = { is_country_type = default }
+			limit = { is_country_type = default }
 			country_event = {
 				id = yourmod_crisis_01.101
 				days = 14
