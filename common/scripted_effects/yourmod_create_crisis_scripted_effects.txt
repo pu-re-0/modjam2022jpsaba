@@ -26,15 +26,3 @@ yourmod_create_crisis = {
 		}
 	}
 }
-
-yourmod_create_crisis_creater_per_FTL = {
-	create_country = {
-		name = NAME_yourmod_crisis_creater_per_FTL
-		type = primitive
-		name_list = yourmod_crisis
-		species = random
-		effect = {
-			save_global_event_target_as = yourmod_crisis_creater_per_FTL_country
-		}
-	}
-}

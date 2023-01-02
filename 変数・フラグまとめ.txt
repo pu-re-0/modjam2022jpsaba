@@ -19,3 +19,7 @@ GHO関連
 		yourmod_GHO_institution 		#GHOが設立されている
 		yourmod_GHO_fund_institution 		#GHOの銀河基金が設立されている
 
+pre-FTL関係
+	country_flag
+		ancient_crisis_creater_pre_FTL_country #ウィルス作った奴らの生き残りの文明
+
