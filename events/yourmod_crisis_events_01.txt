@@ -309,6 +309,33 @@ country_event = { #Infected!#感染した！
 	option = { # No way
 		name = yourmod_crisis_01.10.a
 	}
+
+	after = {
+		#GHO発足イベント用 by ぷれ
+		hidden_effect = {
+			if = {
+				limit = {
+					count_country = {
+						count >= 3
+						limit = {
+							has_country_flag = yourmod_virus_infected
+						}
+					}
+				}
+				every_country = {
+					limit = {
+						is_ai = no
+					}
+					country_event = {
+						id = yourmod_GHO_event.0
+						days = 10
+						random = 5
+					}
+				}
+			}
+		}
+	}
+
 }
 
 
