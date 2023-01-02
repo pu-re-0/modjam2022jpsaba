@@ -22,7 +22,7 @@ yourmod_create_crisis = {
 			}
 		}
 		effect = {
-
+			save_global_event_target_as = yourmod_crisis_country
 		}
 	}
 }
