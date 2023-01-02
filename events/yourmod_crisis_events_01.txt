@@ -1,4 +1,6 @@
 namespace = yourmod_crisis_01
+
+#Phase 1
 #1 decide first victim country			#最初の感染国決定
 #2 notification for first victim		#第一感染国へのお知らせ
 #3 hide or dont(trigger start event chain)	#感染症の存在を隠蔽するかしないか(半フレーバー)
@@ -9,8 +11,18 @@ namespace = yourmod_crisis_01
 
 #100 investigate virus trigger			#病原体の調査イベント(101)をすべての国家にトリガーするためのイベント
 #101 investigate virus				#病原体の調査シチュエーションを開始するイベント
+#110 flavor					#病原体調査シチュエーションのフレーバーイベント
+#111 flavor					#病原体調査シチュエーションのフレーバーイベント
+#112 flavor					#病原体調査シチュエーションのフレーバーイベント
+#113 flavor					#病原体調査シチュエーションのフレーバーイベント
+#114 flavor					#病原体調査シチュエーションのフレーバーイベント(状況の完了)
+#115 flavor					#病原体調査シチュエーションのフレーバーイベント(他国が状況を完了)
 
 #300 Ground Zero Emerging			#病原体の調査が終わり、電波・超能力の送信先星系(聖地)が出現する
+
+#Phase 2
+#1000 new stage trigger				#感染症段階の終了・戦闘段階へ
+#1000 Notification to Every country		#全国家に通知
 
 country_event = { # decide first victim country#最初に感染する国家を決定
 	id = yourmod_crisis_01.1
@@ -78,7 +90,7 @@ country_event = { # decide first victim country#最初に感染する国家を�
 		set_country_flag = yourmod_virus_infected
 		save_global_event_target_as = yourmod_virus_first_victim
 		random_owned_planet = {
-			trigger = {
+			limit = {
 				is_colony = yes
 			}
 			save_global_event_target_as = yourmod_virus_first_onset_planet
@@ -159,7 +171,7 @@ country_event = { # Hide, or don't
 		name = yourmod_crisis_01.3.a #隠しておくわけにはいくまい……。
 		hidden_effect = {
 			every_playable_country = {
-				trigger = {
+				limit = {
 					is_country_type = default
 				}
 				country_event = {
@@ -174,7 +186,7 @@ country_event = { # Hide, or don't
 		name = yourmod_crisis_01.3.b #我々のメンツが何よりも重要だ。
 		hidden_effect = {
 			every_playable_country = {
-				trigger = {
+				limit = {
 					is_country_type = default
 				}
 				country_event = {
@@ -309,6 +321,33 @@ country_event = { #Infected!#感染した！
 	option = { # No way
 		name = yourmod_crisis_01.10.a
 	}
+
+	after = {
+		#GHO発足イベント用 by ぷれ
+		hidden_effect = {
+			if = {
+				limit = {
+					count_country = {
+						count >= 3
+						limit = {
+							has_country_flag = yourmod_virus_infected
+						}
+					}
+				}
+				every_country = {
+					limit = {
+						is_ai = no
+					}
+					country_event = {
+						id = yourmod_GHO_event.0
+						days = 10
+						random = 5
+					}
+				}
+			}
+		}
+	}
+
 }
 
 
@@ -332,7 +371,7 @@ country_event = { # investigate trigger
 
 	immediate = {
 		every_playable_country = {
-			trigger = { is_country_type = default }
+			limit = { is_country_type = default }
 			country_event = {
 				id = yourmod_crisis_01.101
 				days = 14
@@ -478,11 +517,6 @@ country_event = { #調査シチュエーションからのイベント
 	}
 }
 
-
-
-
-
-
 ##############################Ground Zero Emerging
 
 country_event = { #Situation has done, Ground Zero Emerging, Create Notification
@@ -516,5 +550,50 @@ country_event = { #Situation has done, Ground Zero Emerging, Create Notification
 	}
 }
 
+###############################Phese 2
+#分かりやすくするためにyourmod_crisis_02のnamespaceを使おうとしたら被って上書きされててマジ狂い
 
+ship_event = { # NEXT STAGE
+	id = yourmod_crisis_01.1000
+	fire_only_once = yes
+	#is_triggered_only = yes
+	is_triggered_only = yes
+	hidden_window = yes
+
+	trigger = {
+		from = {#system
+			has_star_flag = yourmod_crisis_ground_zero
+		}
+	}
+
+	immediate = {
+		set_global_flag = yourmod_crisis_phase_2
+		fromfrom = {
+			country_event = {
+				id = yourmod_crisis_01.1001
+				days = 1
+			}
+		}
+		from = {
+			event_target:yourmod_crisis_country = {
+				spawn_yourmod_crisis_fleet_01 = yes
+			}
+		}
+	}
+}
+
+country_event = { # NEXT STAGE
+	id = yourmod_crisis_01.1001
+	title = yourmod_crisis_01.1001.name
+	desc = yourmod_crisis_01.1001.desc
+	is_triggered_only = yes
+
+	#予感
+	#$yourmod_crisis$が放つ電波、超能力の波動の送信先となっていた星系にたどり着いた瞬間、何か不吉な予感が乗組員たちの脳裏をよぎった。異様に静かな空間だ。宇宙線もほとんど検出されない。ただの長閑な星系であるとも言えるが、不気味なまでに静かで安定しているのだ。この快適さが生み出していたその予感は的中した。ある惑星に近づいた瞬間、その惑星自体が惑星ではない何物かに変貌した。改めて観測をし直すと、その惑星は今や巨大な戦闘艦隊になっていたのだ！$yourmod_crisis$との関係は不明だが、これはその調査において重大な障害になり得るだろう。
+
+
+	option = {#戦闘準備！
+		name = yourmod_crisis_01.1001.a
+	}
+}
 
