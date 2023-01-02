@@ -5,8 +5,17 @@ yourmod_crisis_research_situation = {#病原体の正体を確かめる
 	complete_icon_frame = GFX_situation_outcome_frame_blue
 	complete_icon = GFX_situation_outcome_unknown
 	abort_trigger = {
-		has_global_flag = yourmod_crisis_ground_zero_entered #聖地に侵入したら次のフェイズに入るので中断する
+		has_global_flag = yourmod_crisis_ground_zero_entered #聖地が出現、侵入したら次のフェイズに入るので中断する
 	}
+	on_abort = {
+		owner = {
+			country_event = {
+				id = yourmod_crisis_01.115 #先を越された！
+				days = 1
+			}
+		}
+	}
+	
 	modifier = {
 	}
 	stages = {
@@ -14,32 +23,67 @@ yourmod_crisis_research_situation = {#病原体の正体を確かめる
 			icon = GFX_situation_stage_1
 			icon_background = GFX_situation_stage_frame_blue
 			end = 10
-			#on_first_enter = { }
+			on_first_enter = {
+				owner = {
+					country_event = {
+						id = yourmod_crisis_01.110
+						days = 1
+					}	
+				}
+			}
 		}
 		stage_2 = {#第一期実験段階
 			icon = GFX_situation_stage_2
 			icon_background = GFX_situation_stage_frame_blue
 			end = 30
-			#on_first_enter = { }
+			on_first_enter = {
+				owner = {
+				country_event = {
+					id = yourmod_crisis_01.111
+					days = 1
+				}	
+				}
+			}
 		}
 		stage_3 = {#電波送信能力解明
 			icon = GFX_situation_stage_3
 			icon_background = GFX_situation_stage_frame_blue
 			end = 50
-			#on_first_enter = { }
+			on_first_enter = {
+				owner = {
+					country_event = {
+						id = yourmod_crisis_01.112
+						days = 1
+					}	
+				}
+			}
 		}
 		stage_4 = {#超能力解明
 			icon = GFX_situation_stage_3
 			icon_background = GFX_situation_stage_frame_blue
 			end = 75
-			#on_first_enter = { }
+			on_first_enter = {
+				owner = {
+					country_event = {
+						id = yourmod_crisis_01.113
+						days = 1
+					}
+				}
+			}
 		}
 
 		stage_5 = {#正体の仮説
 			icon = GFX_situation_stage_3
 			icon_background = GFX_situation_stage_frame_blue
 			end = 100
-			#on_first_enter = { }
+			on_first_enter = {
+				owner = {
+					country_event = {
+						id = yourmod_crisis_01.114
+						days = 1
+					}
+				}
+			}
 		}
 	}
 	on_monthly = {
@@ -68,11 +112,11 @@ yourmod_crisis_research_situation = {#病原体の正体を確かめる
 	}
 	on_progress_complete = {
 		destroy_situation = this
-		#owner = {
-			#country_event = {
-			#	id = IBM_crisis_if.1000
-			#}
-		#}
+		owner = {
+			country_event = {
+				id = yourmod_crisis_01.300
+			}	
+		}
 	}
 	on_fail = {#
 

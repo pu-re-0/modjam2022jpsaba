@@ -19,3 +19,14 @@ on_custom_diplomacy = {
 		yourmod_custom_diplomacy_events.0
 	}
 }
+
+
+# Triggers event when each country first sends a ship into the system (once per country)
+# Scope = Ship
+# From = System
+# FromFrom = Country
+on_entering_system_first_time = {
+	events = {
+		yourmod_crisis_02.01
+	}
+}

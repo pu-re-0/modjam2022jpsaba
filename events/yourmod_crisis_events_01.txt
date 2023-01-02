@@ -5,6 +5,8 @@ namespace = yourmod_crisis_01
 #4 informed consent(start event chain)		#情報公開した場合のイベント、イベントチェーン開始
 #5 uninformed consent(start event chain)	#隠した場合のイベント、イベントチェーン開始
 
+#10 random new infection			#国家への感染判定イベント
+
 #100 investigate virus trigger			#病原体の調査イベント(101)をすべての国家にトリガーするためのイベント
 #101 investigate virus				#病原体の調査シチュエーションを開始するイベント
 
@@ -239,6 +241,78 @@ country_event = { #Uninformed consent#隠した場合のイベント
 }
 
 
+#get infected
+country_event = { #Infected!#感染した！
+	id = yourmod_crisis_01.10
+	#is_triggered_only = yes
+	title = yourmod_crisis_01.10.name
+ 	desc = yourmod_crisis_01.10.desc.a
+
+	trigger = {
+		has_global_flag = yourmod_in_progress # see mid_game_crisis_trigger_events.txt
+		has_global_flag = yourmod_virus_first_infection #First victim exists
+		or = {
+			any_neighbor_country = {
+				has_country_flag = yourmod_virus_infected
+			}
+			any_country = {
+				has_country_flag = yourmod_virus_infected
+				or = {
+					has_embassy = root
+					is_at_war_with = root
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		years = 2
+		modifier = {
+			factor = 0.75
+			is_ai = yes
+		}
+		
+		modifier = {
+			factor = 0.90
+			num_envoys_to_galcom > 1
+		}
+		modifier = {
+			factor = 0.80
+			is_galactic_community_member = yes
+		}
+		modifier = {
+			factor = 8.00
+			is_homicidal = yes
+		}
+		modifier = {
+			factor = 2.0
+			has_ethic = ethic_xenophobe
+		}
+		modifier = {
+			factor = 4.0
+			has_ethic = ethic_fanatic_xenophobe
+		}
+		modifier = {
+			factor = 0.50
+			has_ethic = ethic_xenophile
+		}
+		modifier = {
+			factor = 0.25
+			has_ethic = ethic_fanatic_xenophile
+		}
+	}
+
+	immediate = {
+		set_country_flag = yourmod_virus_infected
+	}
+	
+	option = { # No way
+		name = yourmod_crisis_01.10.a
+	}
+}
+
+
+
 ##############Investigate Virus
 
 country_event = { # investigate trigger
@@ -285,6 +359,130 @@ country_event = { # Start Investigation
 	}
 }
 
+country_event = { #調査シチュエーションからのイベント
+	id = yourmod_crisis_01.111
+	title = yourmod_crisis_01.111.name
+ 	desc = yourmod_crisis_01.111.desc
+
+	#$yourmod_crisis$の調査
+	#$yourmod_crisis$の洞察は、まずはその症状の調査から始める。過去に有機生命体という有機生命体を襲ってきた、銀河内に存在するあらゆる感染症と照合するためだ。先駆者文明が残した記録にも、古代から感染症が存在したことが書かれている。そのような古代の感染症が今さらになって猛威を振るっているということもありえるかもしれない。あるいは、とにかく、持てる限りの知識を総動員するのだ。
+	
+	picture = GFX_evt_mining_station
+	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+	is_triggered_only = yes
+
+	option = { # ok
+		name = yourmod_crisis_01.101.a
+	}
+}
+
+country_event = { #調査シチュエーションからのイベント
+	id = yourmod_crisis_01.110
+	title = yourmod_crisis_01.110.name
+ 	desc = yourmod_crisis_01.110.desc
+
+	#$yourmod_crisis$の調査
+	#$yourmod_crisis$の洞察は、まずはその症状の調査から始める。過去に有機生命体という有機生命体を襲ってきた、銀河内に存在するあらゆる感染症と照合するためだ。先駆者文明が残した記録にも、古代から感染症が存在したことが書かれている。そのような古代の感染症が今さらになって猛威を振るっているということもありえるかもしれない。あるいは、とにかく、持てる限りの知識を総動員するのだ。
+	
+	picture = GFX_evt_mining_station
+	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+	is_triggered_only = yes
+
+	option = { # ok
+		name = yourmod_crisis_01.110.a
+	}
+}
+
+country_event = { #調査シチュエーションからのイベント
+	id = yourmod_crisis_01.111
+	title = yourmod_crisis_01.111.name
+ 	desc = yourmod_crisis_01.111.desc
+
+	#$yourmod_crisis$の検出実験
+	#$yourmod_crisis$の最も厄介な性質は、その病原体が現時点でもなお不明なことだ。ウイルスなのか、細菌なのか、微生物なのか、はたまた何か超常的な存在なのか……それすらも分からない。分からないことにはワクチンも製造しようがなく、対症療法で粘るほかないのだ。それゆえ、我々は何としてでも正体をつかまなければいけない。たとえ$R人体実験$!が必要になったとしてもだ。
+	
+	picture = GFX_evt_mining_station
+	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+	is_triggered_only = yes
+
+	option = { # ok
+		name = yourmod_crisis_01.111.a
+	}
+}
+
+country_event = { #調査シチュエーションからのイベント
+	id = yourmod_crisis_01.112
+	title = yourmod_crisis_01.112.name
+ 	desc = yourmod_crisis_01.112.desc
+
+	#怪電波
+	#$yourmod_crisis$の正体をつかむ実験を行っている最中、ある天文台が由来不明の怪電波を検出した。施設近隣からの照射や未知の宇宙線の可能性が指摘されたが、意外な事実が判明した。その電波は、$yourmod_crisis$の犠牲になった遺体の集積場から放たれていたのだ。完全に壊れた機械でさえ電波を発信しないが、完全に死亡した有機生命体はなおさら電波を発信しない。この電波は確実に$yourmod_crisis$に関係している。もしかしたら、この電波そのものが人を死に追いやっているのではないかと考えるようになった科学者もいる。調査は続けられる。
+	
+	picture = GFX_evt_mining_station
+	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+	is_triggered_only = yes
+
+	option = { # ok
+		name = yourmod_crisis_01.112.a
+	}
+}
+
+country_event = { #調査シチュエーションからのイベント
+	id = yourmod_crisis_01.113
+	title = yourmod_crisis_01.113.name
+ 	desc = yourmod_crisis_01.113.desc
+
+	#超能力
+	#受け入れがたい事実が発覚した。$yourmod_crisis$は超能力を保有する存在だったのだ。この銀河には超能力者がいくらか存在するが、彼らはやはり遺体安置所から超能力波を感じたのだという。電波にしろ超能力の波動にしろ、どういうわけか遺体から放たれているようだ。この不気味な事実は受け入れがたいが、超能力者の言を信じる価値はあるだろう。
+	
+	picture = GFX_evt_mining_station
+	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+	is_triggered_only = yes
+
+	option = { # ok
+		name = yourmod_crisis_01.113.a
+	}
+}
+
+country_event = { #調査シチュエーションからのイベント
+	id = yourmod_crisis_01.114
+	title = yourmod_crisis_01.114.name
+ 	desc = yourmod_crisis_01.114.desc
+
+	#重大な発見！
+	#$yourmod_crisis$の正体にまつわる重大な発見があった。とても書けないような非情な実験により、初めて$yourmod_crisis$の病原体が発見されたのだ！それはウイルスでも、細菌でも、微生物でも、電波的な存在でも、超常的な実体でもなかった。ナノマシンに類する何かだったのだ。ナノマシンそのものではないのは、それが完全な無機物に見えながら超能力の波動を放つからである。この極めて異様な実体が病原体だったのであれば、機械にも感染していたことに説明がつく。これは食える物をとにかく食らって自己増殖するのだ。だが、自己増殖にも制限があるらしく、ちょうど感染先が死亡したところで活動を停止するようだ。$yourmod_crisis$は、明確に自然のものではない。おそらくは先駆文明の残した生物兵器だ。
+
+	picture = GFX_evt_mining_station
+	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+	is_triggered_only = yes
+
+	option = { # ok
+		name = yourmod_crisis_01.113.a
+	}
+}
+
+country_event = { #調査シチュエーションからのイベント
+	id = yourmod_crisis_01.115
+	title = yourmod_crisis_01.115.name
+ 	desc = yourmod_crisis_01.115.desc
+
+	#重大な発見が他国によって為された！
+	#他国において、$yourmod_crisis$の正体にまつわる重大な発見があった。なんでも、初めて$yourmod_crisis$の病原体が発見されたのだという！それはウイルスでも、細菌でも、微生物でも、電波的な存在でも、超常的な実体でもなかった。ナノマシンに類する何かだったというのだ。ナノマシンそのものではないのは、それが完全な無機物に見えながら超能力の波動を放つからである。この極めて異様な実体が病原体だったのであれば、機械にも感染していたことに説明がついた。これは食える物をとにかく食らって自己増殖するのだ。だが、自己増殖にも制限があるらしく、ちょうど感染先が死亡したところで活動を停止するようだ。$yourmod_crisis$は、明確に自然のものではない。おそらくは先駆文明の残した生物兵器だ。
+
+	picture = GFX_evt_mining_station
+	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+	is_triggered_only = yes
+
+	option = { # ok
+		name = yourmod_crisis_01.113.a
+	}
+}
+
+
+
+
+
+
 ##############################Ground Zero Emerging
 
 country_event = { #Situation has done, Ground Zero Emerging, Create Notification
@@ -294,7 +492,7 @@ country_event = { #Situation has done, Ground Zero Emerging, Create Notification
 	fire_only_once = yes
 	is_triggered_only = yes
 
-	# $yourmod_crisis$の正体を探るプロジェクトは、その正体をつかむところまではうまくいかなかったが、重要な知見を得ることができた。$yourmod_crisis$の病原体は、有機・無機問わず生命体を貪り、自己複製を行う何かだったのだ。グレイ・グーを引き起こす拙劣なナノマシンとの類似も指摘されたが、悪質なことにそれだけではなかった。病原体は電波を送受信する能力だけではなく、超能力を行使する能力まで持ち合わせていたのだ。ただ物質的に増殖するだけでなく、電波などの媒体を駆使して自らの情報を送信し、何もないところに発生するといった概念的な領域にまで到達している。自らの存在を隠蔽する性質もあり、検出には特殊な手段を要したが、これでいくらか未知のものへ対する恐怖を和らぐことだろう。\nそしてもう一つ重要な事がある。$yourmod_crisis$の病原体は、この銀河のある一つの場所に向かって電波やテレパシーウェーブを送信しているということだ。おそらくはそこに元凶となるものがあるのだろう。直ちにその場所へと急行し、何があるか突き止めなければならない。
+	# $yourmod_crisis$の正体を探るプロジェクトは、その完全な正体をつかむところまではうまくいかなかったが、重要な知見を得ることができた。$yourmod_crisis$の病原体は、有機・無機問わず生命体を貪り、自己複製を行う何かだったのだ。グレイ・グーを引き起こす拙劣なナノマシンとの類似も指摘されたが、悪質なことにそれだけではなかった。病原体は電波を送受信する能力だけではなく、超能力を行使する能力まで持ち合わせていたのだ。ただ物質的に増殖するだけでなく、自らの存在を隠蔽する性質もあり、検出には特殊な手段を要したが、これでいくらか未知のものへ対する恐怖を和らぐことだろう。\nそしてもう一つ重要な事がある。$yourmod_crisis$の病原体は、この銀河のある一つの場所に向かって電波やテレパシーウェーブを送信しているということだ。おそらくはそこに元凶となるものがあるのだろう。直ちにその場所へと急行し、何があるか突き止めなければならない。
 
 	immediate = {
 		set_global_flag = yourmod_crisis_ground_zero_entered
