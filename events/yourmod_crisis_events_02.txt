@@ -1,0 +1,36 @@
+namespace = yourmod_crisis_02
+# ファイル製作:ヒアルロン大陸
+# 概要:感染対策イベント群
+#
+#
+#####################################
+# 簡易目次
+# 01 メインランダムイベント
+# 
+#
+#
+#
+#
+#
+#
+#####################################
+
+
+
+
+country_event = {
+	id = yourmod_crisis_02.1
+	hide_window = yes
+
+	trigger = {
+		has_country_flag = 
+	}
+
+	mean_time_to_happen = {
+		
+	}
+
+	immediate = {
+		
+	}
+}

@@ -1,48 +1,121 @@
-#small ship
+#small ship(エラーにより凍結中)
+#ship_design = {
+#	name = "NAME_small_virus"
+#	ship_size = small_virus_ship
+#	is_event_design = yes
+#	section = {
+#		template = "small_virus_ship_key"
+#		slot = "mid"
+#
+#		component = {
+#			slot = "SMALL_GUN_01"
+#			template = "SMALL_AUTOCANNON_2"
+#		}
+#		component = {
+#			slot = "SMALL_GUN_02"
+#			template = "SMALL_AUTOCANNON_2"
+#		}
+#		component = {
+#			slot = "SMALL_GUN_03"
+#			template = "SMALL_AUTOCANNON_2"
+#		}
+#		component = {
+#			slot = "SMALL_UTILITY_1"
+#			template = "SMALL_SHIELD_3"
+#		}
+#		component = {
+#			slot = "SMALL_UTILITY_2"
+#			template = "SMALL_SHIELD_3"
+#		}
+#		component = {
+#			slot = "SMALL_UTILITY_3"
+#			template = "SMALL_ARMOR_3"
+#		}
+#		component = {
+#			slot = "SMALL_UTILITY_4"
+#			template = "SMALL_ARMOR_3"
+#		}
+#		component = {
+#			slot = "AUX_UTILITY_1"
+#			template = "AFTERBURNER_1"
+#		}
+#		component = {
+#			slot = "AUX_UTILITY_2"
+#			template = "AUTO_REPAIR"
+#		}
+#	}
+#	required_component = "SENSOR_2"
+#	required_component = "HYPER_DRIVE_2"
+#	required_component = "SHIP_THRUSTER_3"
+#	required_component = "CORVETTE_COLD_FUSION_REACTOR"
+#	required_component = "COMBAT_COMPUTER_SWARM_BASIC"
+#}
+
 ship_design = {
-	name = "NAME_small_virus"
-	ship_size = small_virus_ship
+	name = "NAME_medium_virus"
+	ship_size = medium_virus_ship
 	is_event_design = yes
 	section = {
-		template = "small_virus_ship_key"
-		slot = "mid"
+		template = "medium_virus_bow_01"
+		slot = "bow"
 
 		component = {
+			slot = "POINT_DEFENCE_01"
+			template = "POINT_DEFENCE_3"
+		}
+		component = {
 			slot = "SMALL_GUN_01"
-			template = "SMALL_AUTOCANNON_1"
+			template = "SMALL_XRAY_LASER"
 		}
 		component = {
 			slot = "SMALL_GUN_02"
-			template = "SMALL_AUTOCANNON_1"
-		}
-		component = {
-			slot = "SMALL_GUN_03"
-			template = "SMALL_AUTOCANNON_1"
+			template = "SMALL_XRAY_LASER"
 		}
 		component = {
 			slot = "SMALL_UTILITY_1"
-			template = "SMALL_SHIELD_2"
+			template = "SMALL_SHIELD_3"
 		}
 		component = {
 			slot = "SMALL_UTILITY_2"
-			template = "SMALL_SHIELD_2"
+			template = "SMALL_SHIELD_3"
 		}
 		component = {
 			slot = "SMALL_UTILITY_3"
-			template = "SMALL_ARMOR_2"
+			template = "SMALL_SHIELD_3"
 		}
 		component = {
 			slot = "SMALL_UTILITY_4"
-			template = "SMALL_ARMOR_2"
+			template = "SMALL_ARMOR_3"
+		}
+		component = {
+			slot = "SMALL_UTILITY_5"
+			template = "SMALL_ARMOR_3"
+		}
+		component = {
+			slot = "SMALL_UTILITY_6"
+			template = "SMALL_ARMOR_3"
+		}
+	}
+	section = {
+		template = "medium_virus_stern_01"
+		slot = "stern"
+
+		component = {
+			slot = "POINT_DEFENCE_01"
+			template = "POINT_DEFENCE_3"
+		}
+		component = {
+			slot = "POINT_DEFENCE_02"
+			template = "POINT_DEFENCE_3"
 		}
 		component = {
 			slot = "AUX_UTILITY_1"
-			template = "AFTERBURNER_1"
+			template = "AUTO_REPAIR"
 		}
 	}
 	required_component = "SENSOR_2"
-	required_component = "HYPER_DRIVE_1"
-	required_component = "SHIP_THRUSTER_2"
-	required_component = "CORVETTE_FUSION_REACTOR"
-	required_component = "COMBAT_COMPUTER_SWARM_DEFAULT"
+	required_component = "HYPER_DRIVE_2"
+	required_component = "SHIP_THRUSTER_3"
+	required_component = "DESTROYER_ZERO_POINT_REACTOR"
+	required_component = "COMBAT_COMPUTER_PICKET_BASIC"
 }
