@@ -1,20 +1,21 @@
 汎用
 	global_flag
-		yourmod_in_progress #クライシス発生中
-		yourmod_virus_first_infection #最初の感染が発生した
-		yourmod_crisis_ground_zero_entered #聖地がスポーンした(≒感染症フェイズの終了)
+		yourmod_in_progress 			#クライシス発生中
+		yourmod_virus_first_infection 		#最初の感染が発生した
+		yourmod_crisis_ground_zero_entered 	#聖地がスポーンした(≒感染症フェイズの終了)
 		
 	country_flag
-		yourmod_virus_infected #国家がウイルスに感染している
+		yourmod_virus_infected 			#国家がウイルスに感染しているフラグ
 		
 	global_event_target
-		yourmod_virus_first_victim #最初の感染が発生した国家
-		yourmod_virus_first_onset_planet #最初の感染が発生した惑星
+		yourmod_crisis_country			#危機の国家
+		yourmod_virus_first_victim 		#最初の感染が発生した国家
+		yourmod_virus_first_onset_planet	#最初の感染が発生した惑星
 
 GHO関連
 	global_flag
-		galactic_focus_crisis_virus #銀河コミュニティでvirusに対する共同戦線の布告が通っている
-		galactic_community_crisis_fighting #バニラの汎用フラグ
-		yourmod_GHO_institution #GHOが設立されている
-		yourmod_GHO_fund_institution #GHOの銀河基金が設立されている
+		galactic_focus_crisis_virus 		#銀河コミュニティでvirusに対する共同戦線の布告が通っている
+		galactic_community_crisis_fighting 	#バニラの汎用フラグ
+		yourmod_GHO_institution 		#GHOが設立されている
+		yourmod_GHO_fund_institution 		#GHOの銀河基金が設立されている
 
