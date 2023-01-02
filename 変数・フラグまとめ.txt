@@ -1,6 +1,15 @@
 汎用
 	global_flag
 		yourmod_in_progress #クライシス発生中
+		yourmod_virus_first_infection #最初の感染が発生した
+		yourmod_crisis_ground_zero_entered #聖地がスポーンした(≒感染症フェイズの終了)
+		
+	country_flag
+		yourmod_virus_infected #国家がウイルスに感染している
+		
+	global_event_target
+		yourmod_virus_first_victim #最初の感染が発生した国家
+		yourmod_virus_first_onset_planet #最初の感染が発生した惑星
 
 GHO関連
 	global_flag
