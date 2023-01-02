@@ -79,11 +79,6 @@ yourmod_resolution_galactic_focus_crisis_virus = {
 	potential = {
 		has_global_flag = yourmod_in_progress
 		NOT = { has_global_flag = galactic_focus_crisis_virus }
-
-		count_country = {
-			count > 3
-			has_country_flag = yourmod_virus_infected
-		}
 	}
 
 	active = { # Resolution only in effect while this trigger is met
@@ -317,7 +312,7 @@ yourmod_resolution_GHO_fund = {
 			}
 		}
 
-		set_global_flag = yourmod_GHO_institution
+		set_global_flag = yourmod_GHO_fund_institution
 
 	}
 
@@ -335,7 +330,7 @@ yourmod_resolution_GHO_fund = {
 		has_global_flag = yourmod_in_progress
 		has_global_flag = yourmod_GHO_institution
 		NOT = {
-			has_global_flag = yourmod_GHO_institution
+			has_global_flag = yourmod_GHO_fund_institution
 		}
 		count_country = {
 			count >= 3
