@@ -27,6 +27,6 @@ on_custom_diplomacy = {
 # FromFrom = Country
 on_entering_system_first_time = {
 	events = {
-		yourmod_crisis_02.01
+		yourmod_crisis_01.1000
 	}
 }
