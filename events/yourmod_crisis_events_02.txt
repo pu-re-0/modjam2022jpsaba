@@ -7,12 +7,17 @@ namespace = yourmod_crisis_02
 # 簡易目次
 # 01 メインランダムイベント
 # 
-#
-#
-#
-#
-#
-#
+# 
+# 100~ ランダムバフデバフイベント群
+# 
+# 200~ 感染済み惑星イベント
+# 
+# 300~ 未感染惑星イベント
+# 
+# 400~ 帝国規模の感染対処イベント
+# 
+# 
+# 
 #####################################
 
 
@@ -27,18 +32,77 @@ country_event = {
 	}
 
 	mean_time_to_happen = {
-		
+		days = 60
+		modifier = {
+			factor = 1.5
+			is_ai = yes
+		}
 	}
 
 	immediate = {
 		if = { #機械知性の場合
-			limit = {  }
+			limit = { is_robot_empire = yes }
+			random_list = {
+				10 = { #ランダムバフデバフイベント
+					random_list = {
+						10 = {
+
+						}
+						10 = {
+							
+						}
+						10 = {
+							
+						}
+						10 = {
+							
+						}
+						10 = {
+							
+						}
+					}
+				}
+
+				10 = { #感染済み惑星のイベント
+					modifier = {
+						factor = 0
+						any_owned_planet = {
+							has_planet_flag = yourmod_infected_planet
+						}
+					}
+					random_planet_within_border = {
+						planet_event = {
+							id = yourmod_crisis_02.201
+						}
+					}
+				}
+				
+				10 = { #未感染惑星のイベント
+					modifier = {
+						factor = 1.5
+						any_owned_planet = {
+							NOT = { has_planet_flag  = yourmod_infected_planet }
+						}
+					}
+					
+				}
+			}
 		}
-		else_if = { #ゲシュタルト意識の場合
-			limit = {  }
-		}
-		else = { #それ以外(通常国家)
-			
+		else = { #それ以外
+			random_list = {
+				10 = { #ランダムバフデバフイベント
+					
+				}
+
+				10 = { #感染済み惑星のイベント
+
+				}
+				
+				10 = { #未感染惑星のイベント
+
+				}
+			}
 		}
 	}
 }
+
