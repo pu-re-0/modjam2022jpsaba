@@ -25,6 +25,10 @@ country_event = {
 	is_triggered_only = yes
 	diplomatic = yes
 
+	trigger = {
+		trigger = { is_homicidal = no }
+	}
+
 	#custom_gui = "enclave_curator_window"
 	#custom_gui_option = "enclave_curator_option"
 
@@ -37,8 +41,6 @@ country_event = {
 
 	option = {
 		name = yourmod_custom_diplomacy_events.1.a
-		trigger = { is_homicidal = no }
-		desc = yourmod_custom_diplomacy_events.1.a.desc
 	}
 }
 
@@ -56,6 +58,39 @@ country_event = {
 	}
 
 	immediate = {
-		country_event = { id = yourmod_custom_diplomacy_events.1 }
+		country_event = { id = yourmod_custom_diplomacy_events.101 }
+	}
+}
+
+country_event = {
+	id = yourmod_custom_diplomacy_events.101
+	title = yourmod_custom_diplomacy_events.101.name
+	desc = yourmod_custom_diplomacy_events.101a.desc
+
+	is_triggered_only = yes
+	diplomatic = yes
+
+	trigger = {
+		has_global_flag = yourmod_in_progress
+		trigger = { is_homicidal = no }
+	}
+
+	picture_event_data = {
+		portrait = event_target:yourmod_cancient_crisis_creater_pre_FTL_country
+		room = enclave_curator_room
+	}
+
+	#location = event_target:curator_enclave_system
+
+	option = {
+		name = yourmod_custom_diplomacy_events.101.a
+	}
+
+	option = {
+		name = yourmod_custom_diplomacy_events.101.b
+	}
+
+	option = {
+		name = yourmod_custom_diplomacy_events.101.c
 	}
 }

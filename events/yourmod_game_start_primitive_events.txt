@@ -1,7 +1,7 @@
 namespace = yourmod_game_start_primitive
 
 event = {
-	id = yourmod_game_start_primitive.0
+	id = yourmod_game_start_primitive.0 #イベント用のprimitive countryを準備
 	hide_window = yes
 	trigger = {
 		always = yes
@@ -40,6 +40,11 @@ event = {
 					}
 					planet_size >= 13
 					planet_size <= 25
+					NOR = {
+						has_anomaly = yes
+						has_modifier = yes
+						has_owner = no
+					}
 				}
 
 				random_list = {
@@ -52,6 +57,8 @@ event = {
 					1 = { change_pc = pc_alpine }
 					1 = { change_pc = pc_savannah }
 					1 = { change_pc = pc_desert }
+					3 = { change_pc = pc_nuked }
+					3 = { change_pc = pc_relic }
 				}
 				
 				generate_late_primitives_on_planet = yes
