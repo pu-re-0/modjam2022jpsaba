@@ -10,10 +10,12 @@ country_event = {
 	diplomatic = no
 	is_triggered_only = yes #The game will not consider this event for starting on its own. Event will need to be triggered by another event, or by some other effect. Most events will use this.
 	trigger = {
-		
+		NOT = {
+			has_country_flag = yourmod_GHO_event_0_already
+		}
 	}
 	immediate = {
-		
+		set_country_flag = yourmod_GHO_event_0_already
 	}
 	option = {
 		name = yourmod_GHO_event.0.a

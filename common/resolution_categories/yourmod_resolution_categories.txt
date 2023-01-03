@@ -7,6 +7,7 @@ yourmod_resolution_category_galactic_focus = {
 
 	resolution_types = {
 		"yourmod_resolution_galactic_focus_crisis_virus"
+		"yourmod_resolution_GHO"
 	}
 }
 
@@ -15,7 +16,6 @@ yourmod_resolution_category_GHO = {
 	icon = "GFX_resolution_galactic_focus_category"
 
 	resolution_types = {
-		"yourmod_resolution_GHO"
 		"yourmod_resolution_quarantine_1"
 		"yourmod_resolution_quarantine_2"
 		"yourmod_resolution_quarantine_3"
