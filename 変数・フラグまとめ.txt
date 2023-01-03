@@ -3,6 +3,7 @@
 		yourmod_in_progress 			#クライシス発生中
 		yourmod_virus_first_infection 		#最初の感染が発生した
 		yourmod_crisis_ground_zero_entered 	#聖地がスポーンした(≒感染症フェイズの終了)
+		yourmod_crisis_phase_2			#艦隊戦フェイズの開始
 		
 	country_flag
 		yourmod_virus_infected 			#国家がウイルスに感染しているフラグ
@@ -11,6 +12,27 @@
 		yourmod_crisis_country			#危機の国家
 		yourmod_virus_first_victim 		#最初の感染が発生した国家
 		yourmod_virus_first_onset_planet	#最初の感染が発生した惑星
+		
+危機の起源関連
+	country_flag
+		yourmod_allow_origin_research		#遺物アクションによる調査とランダム調査イベントの発生を許可するフラグ
+		yourmod_has_more_impportant_point	#ランダム調査イベントが出てスペシャルプロジェクトが起きてるんだから遺物アクションなんか使ってる場合じゃないだろフラグ
+		yourmod_crisis_story_1			#ストーリーイベントが発生したかどうかを判定するフラグ
+		yourmod_crisis_story_2			#ストーリーイベントが発生したかどうかを判定するフラグ
+		yourmod_crisis_story_3			#ストーリーイベントが発生したかどうかを判定するフラグ
+		yourmod_crisis_story_4			#ストーリーイベントが発生したかどうかを判定するフラグ
+		yourmod_crisis_story_5			#ストーリーイベントが発生したかどうかを判定するフラグ
+		yourmod_crisis_story_6			#ストーリーイベントが発生したかどうかを判定するフラグ
+		
+	star_flag
+		yourmod_crisis_ground_zero 		#聖地の星系についているフラグ
+		
+	planet_flag
+		yourmod_crisis_vanish_planet 		#演出で消える惑星
+		yourmod_crisis_ground_zero_planet	#聖地
+	
+	global_event_target
+		yourmod_crisis_ground_zero_system	#聖地の星系スコープ
 
 GHO関連
 	global_flag
@@ -23,3 +45,11 @@ pre-FTL関係
 	country_flag
 		ancient_crisis_creater_pre_FTL_country #ウィルス作った奴らの生き残りの文明
 
+感染対処イベント関連
+	planet_flag
+		yourmod_infected_planet			#感染済み惑星　惑星の感染対処シチュエーションが発生している状態
+
+		planet_prevalence_level_0~5		#惑星の蔓延レベルのmodifier プレイ時に視覚的に把握できるようにするため　取りあえず効果は無し
+		
+	planet_variable
+		planet_prevalence_level			#惑星の蔓延レベル　感染対処シチュエーションが発生していない惑星で使用

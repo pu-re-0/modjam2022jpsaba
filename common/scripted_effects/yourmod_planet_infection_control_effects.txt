@@ -1,0 +1,125 @@
+# ファイル作成:ヒアルロン大陸
+# 未感染惑星の蔓延度を変えるeffect
+# 未感染惑星の蔓延度と感染済み惑星の感染レベルは別物
+# イベントはyourmod_crisis_events_02にて
+
+
+change_planet_prevalence_level = {
+	save_event_target_as = effect_target_planet
+
+	if = {
+		limit = {
+			NOT = { is_variable_set = planet_prevalence_level }
+		}
+		set_variable = {
+			which = planet_prevalence_level
+			value = 0
+		}
+	}
+
+	if = {
+		limit = { 
+			check_variable = {
+				which = planet_prevalence_level
+				value <= 1
+			} 
+		}
+		set_variable = {
+			which = planet_prevalence_level
+			value = 0
+		}
+		add_modifier = { modifier = planet_prevalence_level_0 }
+
+		remove_modifier = planet_prevalence_level_1
+		remove_modifier = planet_prevalence_level_2
+		remove_modifier = planet_prevalence_level_3
+		remove_modifier = planet_prevalence_level_4
+		remove_modifier = planet_prevalence_level_5
+	}
+	else_if = {
+		limit = { 
+			check_variable = {
+				which = planet_prevalence_level
+				value = 1
+			} 
+		}
+		add_modifier = { modifier = planet_prevalence_level_1 }
+
+		remove_modifier = planet_prevalence_level_0
+		remove_modifier = planet_prevalence_level_2
+		remove_modifier = planet_prevalence_level_3
+		remove_modifier = planet_prevalence_level_4
+		remove_modifier = planet_prevalence_level_5
+	}
+	else_if = {
+		limit = { 
+			check_variable = {
+				which = planet_prevalence_level
+				value = 2
+			} 
+		}
+		add_modifier = { modifier = planet_prevalence_level_2 }
+
+		remove_modifier = planet_prevalence_level_0
+		remove_modifier = planet_prevalence_level_1
+		remove_modifier = planet_prevalence_level_3
+		remove_modifier = planet_prevalence_level_4
+		remove_modifier = planet_prevalence_level_5
+	}
+	else_if = {
+		limit = { 
+			check_variable = {
+				which = planet_prevalence_level
+				value = 3
+			} 
+		}
+		add_modifier = { modifier = planet_prevalence_level_3 }
+		
+		remove_modifier = planet_prevalence_level_0
+		remove_modifier = planet_prevalence_level_1
+		remove_modifier = planet_prevalence_level_2
+		remove_modifier = planet_prevalence_level_4
+		remove_modifier = planet_prevalence_level_5
+	}
+	else_if = {
+		limit = { 
+			check_variable = {
+				which = planet_prevalence_level
+				value = 4
+			} 
+		}
+		add_modifier = { modifier = planet_prevalence_level_4 }
+
+		
+		remove_modifier = planet_prevalence_level_0
+		remove_modifier = planet_prevalence_level_1
+		remove_modifier = planet_prevalence_level_2
+		remove_modifier = planet_prevalence_level_3
+		remove_modifier = planet_prevalence_level_5
+	}
+	else_if = {
+		limit = { 
+			check_variable = {
+				which = planet_prevalence_level
+				value >= 5
+			} 
+		}
+
+		set_planet_flag = yourmod_infected_planet
+
+		owner = {
+			start_situation = {
+				type = yourmod_planet_infection_situation
+				target = event_target:effect_target_planet
+			}
+		}
+
+
+		remove_modifier = planet_prevalence_level_0
+		remove_modifier = planet_prevalence_level_1
+		remove_modifier = planet_prevalence_level_2
+		remove_modifier = planet_prevalence_level_3
+		remove_modifier = planet_prevalence_level_4
+	}
+}
+
