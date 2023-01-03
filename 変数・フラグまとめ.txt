@@ -11,6 +11,17 @@
 		yourmod_crisis_country			#危機の国家
 		yourmod_virus_first_victim 		#最初の感染が発生した国家
 		yourmod_virus_first_onset_planet	#最初の感染が発生した惑星
+		
+危機の起源関連
+	star_flag
+		yourmod_crisis_ground_zero 		#聖地の星系についているフラグ
+		
+	planet_flag
+		yourmod_crisis_vanish_planet 		#演出で消える惑星
+		yourmod_crisis_ground_zero_planet	#聖地
+	
+	global_event_target
+		yourmod_crisis_ground_zero_system	#聖地の星系スコープ
 
 GHO関連
 	global_flag
