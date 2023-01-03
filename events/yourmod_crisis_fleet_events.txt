@@ -1,5 +1,38 @@
 namespace = yourmod_crisis_fleet
 
+#################################################################
+namespace = yourmod_test
+
+country_event = {
+	id = yourmod_test.01
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	immediate = {
+		set_global_flag = yourmod_crisis_ground_zero_entered
+		no_scope = {
+			set_spawn_system_batch = begin
+			spawn_system = {
+				#min_jumps = 1
+				#max_jumps = 3
+				min_distance = 25
+				max_distance = 35
+				initializer = yourmod_crisis_ground_zero_initializer
+				hyperlane = yes
+				is_discovered = no
+			}
+			set_spawn_system_batch = end
+		}
+	}
+
+	option = {
+		name = yourmod_test.1.a
+		set_global_flag = yourmod_crisis_phase_2
+	}
+}
+
+##################################################################
+
 country_event = {
 	id = yourmod_crisis_fleet.01
 	trigger = {
