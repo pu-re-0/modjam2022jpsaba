@@ -274,6 +274,9 @@ country_event = { #Infected!#感染した！
 	trigger = {
 		has_global_flag = yourmod_in_progress # see mid_game_crisis_trigger_events.txt
 		has_global_flag = yourmod_virus_first_infection #First victim exists
+		NOT = {
+			has_country_flag = yourmod_virus_infected #繰り返し発生してたので入れといた
+		}
 		or = {
 			any_neighbor_country = {
 				has_country_flag = yourmod_virus_infected
@@ -339,7 +342,7 @@ country_event = { #Infected!#感染した！
 			if = {
 				limit = {
 					count_country = {
-						count >= 3
+						count = 3
 						limit = {
 							has_country_flag = yourmod_virus_infected
 						}
