@@ -1,5 +1,14 @@
 # ファイル作成:ヒアルロン大陸
 #
+#
+#
+#yourmod_planet_infection_situation		target:シチュエーションが発生している惑星
+#
+#
+#
+#
+#
+
 
 #惑星の感染対処用シチュエーション
 yourmod_planet_infection_situation = {
