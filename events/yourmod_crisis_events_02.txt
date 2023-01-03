@@ -43,7 +43,7 @@ country_event = {
 		if = { #機械知性の場合
 			limit = { is_robot_empire = yes }
 			random_list = {
-				10 = { #ランダムバフデバフイベント
+				20 = { #ランダムバフデバフイベント
 					random_list = {
 						10 = {
 
@@ -67,7 +67,7 @@ country_event = {
 					modifier = {
 						factor = 0
 						any_owned_planet = {
-							has_planet_flag = yourmod_infected_planet
+							NOT = { has_planet_flag = yourmod_infected_planet }
 						}
 					}
 					random_planet_within_border = {
@@ -78,13 +78,48 @@ country_event = {
 				}
 				
 				10 = { #未感染惑星のイベント
+					# ランダムなイベントにより感染具合のmodifierが付与される
+					# 感染具合がマックスを超えると、situationが発生し、感染済み惑星になる
 					modifier = {
 						factor = 1.5
 						any_owned_planet = {
 							NOT = { has_planet_flag  = yourmod_infected_planet }
 						}
 					}
+					random_planet_within_border = {
+						limit = {
+							NOT = { has_planet_flag  = yourmod_infected_planet }
+						}
+						random_list = {
+							10 = {
+								planet_event = {
+									id = yourmod_crisis_01.301
+								}
+							}
+							10 = {
+								planet_event = {
+									id = yourmod_crisis_01.302
+								}
+							}
+							10 = {
+								planet_event = {
+									id = yourmod_crisis_01.303
+								}
+							}
+							10 = {
+								planet_event = {
+									id = yourmod_crisis_01.304
+								}
+							}
+							10 = {
+								planet_event = {
+									id = yourmod_crisis_01.305
+								}
+							}
+						}
+					}
 					
+
 				}
 			}
 		}
@@ -106,3 +141,20 @@ country_event = {
 	}
 }
 
+planet_event = {
+	id = yourmod_crisis_01.301
+	title = yourmod_crisis_01.301.name
+	desc = yourmod_crisis_01.301.desc
+
+	picture = GFX_evt_mining_station #画像は後で探す
+
+	immediate = {
+		if = {
+			limit = { is_variable_set = planet_prevalence_level }
+			set_variable = {
+				which = planet_prevalence_level
+				value = 0
+			}
+		}
+	}
+}
