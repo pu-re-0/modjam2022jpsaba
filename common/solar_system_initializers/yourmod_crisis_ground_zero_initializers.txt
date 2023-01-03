@@ -33,6 +33,7 @@ yourmod_crisis_ground_zero_initializer = {
 		orbit_angle = { min = 90 max = 270 }
 		init_effect = {
 			set_planet_flag = yourmod_crisis_vanish_planet
+			save_global_event_target_as = yourmod_crisis_ground_zero_vanish_planet
 		}
 	}
 
@@ -44,6 +45,7 @@ yourmod_crisis_ground_zero_initializer = {
 		size = { min = 30 max = 30 }
 		init_effect = {
 			set_planet_flag = yourmod_crisis_ground_zero_planet
+			save_global_event_target_as = yourmod_crisis_ground_zero
 		}
 	}
 
