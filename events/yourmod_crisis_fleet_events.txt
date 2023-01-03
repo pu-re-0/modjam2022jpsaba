@@ -88,34 +88,32 @@ country_event = {
 			if = {
 				limit = {
 					any_system_planet = {
-						has_planet_flag = yourmod_infected_planet  #感染した惑星が存在するか
+						has_planet_flag = yourmod_infected_planet
 					}
 				}
-				event_target:yourmod_crisis_country = {
-					create_fleet = {
-						name = "NAME_Medium_Virus_fleet"
-						settings = {
-							garrison = yes
-						}
-						effect = {
-							set_owner = event_target:yourmod_crisis_country
-							set_fleet_bombardment_stance = armageddon
-							while = {
-								count = 5
-								create_ship = {
-									name = random
-									design = "NAME_medium_virus"
-									graphical_culture = event_target:yourmod_crisis_country
-								}
-							}
-							set_location = {
-								target = PREV
-								distance = 1
-								angle = random
+				create_fleet = {
+					name = "NAME_Medium_Virus_fleet"
+					settings = {
+						garrison = yes
+					}
+					effect = {
+						set_owner = event_target:yourmod_crisis_country
+						set_fleet_bombardment_stance = armageddon
+						while = {
+							count = 5
+							create_ship = {
+								name = random
+								design = "NAME_medium_virus"
+								graphical_culture = event_target:yourmod_crisis_country
 							}
 						}
-					}		
-				}
+						set_location = {
+							target = PREV
+							distance = 1
+							angle = random
+						}
+					}
+				}		
 			}
 		}
 	}
