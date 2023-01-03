@@ -1,3 +1,7 @@
+# 未感染惑星の蔓延度を変えるeffect
+# 未感染惑星の蔓延度と感染済み惑星の感染レベルは別物
+# イベントはyourmod_crisis_events_02にて
+
 change_planet_prevalence_level = {
 	if = {
 		limit = { 
