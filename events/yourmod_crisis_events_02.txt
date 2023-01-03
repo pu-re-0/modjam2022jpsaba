@@ -35,10 +35,6 @@ country_event = {
 
 	mean_time_to_happen = {
 		days = 60
-		modifier = {
-			factor = 1.5
-			is_ai = yes
-		}
 	}
 
 	immediate = {
@@ -96,27 +92,27 @@ country_event = {
 						random_list = {
 							10 = {
 								planet_event = {
-									id = yourmod_crisis_01.351
+									id = yourmod_crisis_02.351
 								}
 							}
 							10 = {
 								planet_event = {
-									id = yourmod_crisis_01.352
+									id = yourmod_crisis_02.352
 								}
 							}
 							10 = {
 								planet_event = {
-									id = yourmod_crisis_01.353
+									id = yourmod_crisis_02.353
 								}
 							}
 							10 = {
 								planet_event = {
-									id = yourmod_crisis_01.354
+									id = yourmod_crisis_02.354
 								}
 							}
 							10 = {
 								planet_event = {
-									id = yourmod_crisis_01.355
+									id = yourmod_crisis_02.355
 								}
 							}
 						}
@@ -222,7 +218,7 @@ planet_event = {
 
 	immediate = {
 		if = {
-			limit = { is_variable_set = planet_prevalence_level }
+			limit = { NOT = { is_variable_set = planet_prevalence_level } }
 			set_variable = {
 				which = planet_prevalence_level
 				value = 0
@@ -234,7 +230,7 @@ planet_event = {
 
 	option = {
 		#いくつかの人員を投入し、感染者の行く先と移動経路を探し出す。　小規模な感染が起こるかも知れないが、全員把握できるだろう。
-		name = yourmod_crisis_01.301.a
+		name = yourmod_crisis_02.301.a
 		allow = {
 			owner = {
 				has_country_resource = {
@@ -258,7 +254,7 @@ planet_event = {
 
 	option = {
 		#放置する　たった一人ぐらい問題がないだろう。　少しのち、集団感染が発生する　なお、本人は路地裏で死体として発見される。
-		name = yourmod_crisis_01.301.b
+		name = yourmod_crisis_02.301.b
 		hidden_effect = {
 			planet_event = {
 				id = yourmod_crisis_02.312
