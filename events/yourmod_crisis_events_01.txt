@@ -345,9 +345,14 @@ country_event = { #Infected!#感染した！
 					}
 				}
 			}
+			#ワクチン開発シチュエーション用 by ぷれ
+			country_event = {
+				id = yourmod_vaccine_dev_event.0
+				days = 45
+				random = 30
+			}
 		}
 	}
-
 }
 
 
