@@ -15,10 +15,12 @@ change_planet_prevalence_level = {
 		remove_modifier = planet_prevalence_level_5
 	}
 	else_if = {
-		limit = { check_variable = {
-			which = planet_prevalence_level
-			value = 1
-		} }
+		limit = { 
+			check_variable = {
+				which = planet_prevalence_level
+				value = 1
+			} 
+		}
 		add_modifier = planet_prevalence_level_1
 
 		remove_modifier = planet_prevalence_level_0
@@ -28,10 +30,12 @@ change_planet_prevalence_level = {
 		remove_modifier = planet_prevalence_level_5
 	}
 	else_if = {
-		limit = { check_variable = {
-			which = planet_prevalence_level
-			value = 2
-		} }
+		limit = { 
+			check_variable = {
+				which = planet_prevalence_level
+				value = 2
+			} 
+		}
 		add_modifier = planet_prevalence_level_2
 
 		remove_modifier = planet_prevalence_level_0
@@ -41,10 +45,12 @@ change_planet_prevalence_level = {
 		remove_modifier = planet_prevalence_level_5
 	}
 	else_if = {
-		limit = { check_variable = {
-			which = planet_prevalence_level
-			value = 3
-		} }
+		limit = { 
+			check_variable = {
+				which = planet_prevalence_level
+				value = 3
+			} 
+		}
 		add_modifier = planet_prevalence_level_3
 		
 		remove_modifier = planet_prevalence_level_0
@@ -54,10 +60,12 @@ change_planet_prevalence_level = {
 		remove_modifier = planet_prevalence_level_5
 	}
 	else_if = {
-		limit = { check_variable = {
-			which = planet_prevalence_level
-			value = 4
-		} }
+		limit = { 
+			check_variable = {
+				which = planet_prevalence_level
+				value = 4
+			} 
+		}
 		add_modifier = planet_prevalence_level_4
 
 		
@@ -68,10 +76,12 @@ change_planet_prevalence_level = {
 		remove_modifier = planet_prevalence_level_5
 	}
 	else_if = {
-		limit = { check_variable = {
-			which = planet_prevalence_level
-			value = 5
-		} }
+		limit = { 
+			check_variable = {
+				which = planet_prevalence_level
+				value = 5
+			} 
+		}
 		add_modifier = planet_prevalence_level_5
 
 		remove_modifier = planet_prevalence_level_0
