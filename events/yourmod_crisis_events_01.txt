@@ -563,6 +563,13 @@ country_event = { #Situation has done, Ground Zero Emerging, Create Notification
 
 	option = { # gotcha!
 		name = yourmod_crisis_01.300.a
+		create_point_of_interest = {
+			id = yourmod_crisis_chain_1.poi.1
+			name = yourmod_crisis_chain_1.poi.1.name	#新たに発見された星系
+			desc = yourmod_crisis_chain_1.poi.1.desc	#この星系に$yourmod_crisis$は電波などを送信しているようだ。
+			event_chain = yourmod_crisis_chain_1
+			location = event_target:yourmod_crisis_ground_zero_system
+		}
 	}
 }
 
