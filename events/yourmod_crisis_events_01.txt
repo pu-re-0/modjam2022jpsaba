@@ -22,7 +22,18 @@ namespace = yourmod_crisis_01
 
 #Phase 2
 #1000 new stage trigger				#感染症段階の終了・戦闘段階へ
-#1000 Notification to Every country		#全国家に通知
+#1001 Notification to Entered country		#聖地に突っ込んだ国
+#1002 Notification to Every country		#艦隊戦段階への移行を通知・艦隊戦、起源探索用イベントチェーン開始
+
+#1100						#起源の調査を開始
+#1200						#起源ストーリーイベント用のシステム的なイベント
+#1201						#起源ストーリーイベント1
+#1202						#起源ストーリーイベント2
+#1203						#起源ストーリーイベント3
+#1204						#起源ストーリーイベント4
+#1205						#起源ストーリーイベント5
+#1206						#起源ストーリーイベント6
+#1299						#遺物アクション失敗
 
 country_event = { # decide first victim country#最初に感染する国家を決定
 	id = yourmod_crisis_01.1
@@ -622,8 +633,271 @@ country_event = { # NEXT STAGE
 	#$yourmod_crisis$が放つ電波、超能力の波動の送信先となっていた星系にたどり着いた瞬間、何か不吉な予感が乗組員たちの脳裏をよぎった。異様に静かな空間だ。宇宙線もほとんど検出されない。ただの長閑な星系であるとも言えるが、不気味なまでに静かで安定しているのだ。この快適さが生み出していたその予感は的中した。ある惑星に近づいた瞬間、その惑星自体が惑星ではない何物かに変貌した。改めて観測をし直すと、その惑星は今や巨大な戦闘艦隊になっていたのだ！$yourmod_crisis$との関係は不明だが、これはその調査において重大な障害になり得るだろう。
 
 
+	immediate = {
+		every_playable_country = {
+			country_event = {
+				id = yourmod_crisis_01.1002
+				days = 7
+			}
+		}
+	}
 	option = {#戦闘準備！
 		name = yourmod_crisis_01.1001.a
 	}
 }
+country_event = {#Noooooootification that the next stage begin to everyone	#艦隊戦フェイズの開始を告げる
+	id = yourmod_crisis_01.1002
+	title = yourmod_crisis_01.1002.name
+ 	desc = yourmod_crisis_01.1002.desc
+
+	picture = GFX_evt_mining_station
+	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+
+	is_triggered_only = yes
+
+	#本当の恐怖
+	#突如として銀河中に謎の武装艦隊が出現した！彼らは今、自分以外のすべてを無差別に攻撃している。明らかに$yourmod_crisis$と関係しているこれらの艦隊は、一切の交信を拒んでいる。そもそも我々と通信するための装備がないのかもしれない。彼らの戦力はかなりのもので、一筋縄ではいかないことは明らかだ。
+
+	immediate = {
+		country_event = {
+			id = yourmod_crisis_01.1100
+			days = 60
+		}
+	}
+	option = {
+		name = yourmod_crisis_01.1002.a #これは大変なことになるかもしれない。
+		begin_event_chain = { event_chain = yourmod_crisis_chain_2 target = this }
+	}
+}
+
+
+
+########起源の詮索
+
+country_event = {#起源探しイベント
+	id = yourmod_crisis_01.1100
+	title = yourmod_crisis_01.1100.name
+ 	desc = yourmod_crisis_01.1100.desc
+
+	picture = GFX_evt_mining_station
+	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+
+	is_triggered_only = yes
+
+	#$yourmod_crisis$の起源の洞察
+	#これまでの研究成果を見て、$yourmod_crisis$が自然の物だと考える知的生命体はほとんど居ない。何者かが相応の悪意か害意を持って製造した兵器である可能性が極めて高いという結論がGHOで出された今、全銀河でこの悪質な兵器を製造した元凶の文明を探す必要がある。おそらくは既に滅んでしまった文明だろうが、何かしらの記録が現代まで遺っているかもしれない。その記録があれば、感染予防やあの艦隊の正体についても探りを入れることが可能だ。それに、この銀河規模のパンデミックが初めての流行ではない可能性は十分にある。その場合、$yourmod_crisis$に先駆文明たちがどのように対処をしたか知ることができるかもしれない。
+
+
+	immediate = {
+		set_country_flag = yourmod_allow_origin_research
+	}
+	option = {
+		name = yourmod_crisis_01.1100.a #考古学の時間だ。
+		create_point_of_interest = {
+			id = yourmod_crisis_chain_2.poi.1
+			name = yourmod_crisis_chain_2.poi.1.name	#$yourmod_crisis$に関係する記録を探す
+			desc = yourmod_crisis_chain_2.poi.1.desc	#$yourmod_crisis$の記録や、その製造者に関係する遺物がこの銀河にはあるはずだ。それをなんとかして見つけ出し、情報を集めなければならないだろう。
+			event_chain = yourmod_crisis_chain_2
+			location = this
+		}
+	}
+}
+
+#####起源ストーリーイベント集
+
+country_event = {#順番通りに再生させるためのイベント
+	id = yourmod_crisis_01.1200
+	is_triggered_only = yes
+	hidden_window = yes
+
+	immediate = {
+		if = {
+			limit = {
+				not = { has_country_flag = yourmod_crisis_story_1 }
+			}
+			country_event = { id = youmod_crisis_01.1201 }
+		}
+		else_if = {
+			limit = {
+				has_country_flag = yourmod_crisis_story_1
+				not = { has_country_flag = yourmod_crisis_story_2 }
+			}
+			country_event = { id = youmod_crisis_01.1202 }
+		}
+		else_if = {
+			limit = {
+				has_country_flag = yourmod_crisis_story_2
+				not = { has_country_flag = yourmod_crisis_story_3 }
+			}
+			country_event = { id = youmod_crisis_01.1203 }
+		}
+		else_if = {
+			limit = {
+				has_country_flag = yourmod_crisis_story_3
+				not = { has_country_flag = yourmod_crisis_story_4 }
+			}
+			country_event = { id = youmod_crisis_01.1204 }
+		}
+		else_if = {
+			limit = {
+				has_country_flag = yourmod_crisis_story_4
+				not = { has_country_flag = yourmod_crisis_story_5 }
+			}
+			country_event = { id = youmod_crisis_01.1205 }
+		}
+		else_if = {
+			limit = {
+				has_country_flag = yourmod_crisis_story_5
+				not = { has_country_flag = yourmod_crisis_story_6 }
+			}
+			country_event = { id = youmod_crisis_01.1206 }
+		}
+	}
+}
+
+country_event = {#起源探しイベント:核戦争で滅んだ惑星
+	id = yourmod_crisis_01.1201
+	title = yourmod_crisis_01.1201.name
+ 	desc = yourmod_crisis_01.1201.desc
+
+	picture = GFX_evt_mining_station
+	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+
+	is_triggered_only = yes
+
+	#$yourmod_crisis$の記述を古代の歴史書から発見
+	#我々の努力の結果、数千年前に滅びた原始文明によって書かれた歴史書の中に$yourmod_crisis$に関する記述があるものが発見された。古代から現代までを取り扱う概説書のようなもので、複数の国家同士で戦争を行っていたという単調な記述が数千ページにわたって続く中、最後の方に$yourmod_crisis$と酷似した特徴を持つ感染症に惑星全体が襲われたという記述があったのだ。核融合文明であった彼らは、肉体のサイボーグ化や完全な機械化によって難を逃れようとしたが、$yourmod_crisis$は彼らの努力を嘲笑うように、無慈悲に襲い掛かった。病気に対する手の打ちようのなさから人心は次第に廃れ、最終的には核戦争に至ったようだ。著者はこの文明が最終的には滅んでしまうことを予見していたようだ。締めくくりの文章は「おそらく、我々の文明は天罰によって滅ぶのだ。母なる星に反旗を翻し、あまりにもあらゆる場所を掘りすぎた。第一感染者が発生したのが、大深度地下掘削鉱山だったというのはその証左だ。地中に埋まる逆鱗に触れてしまったのだ。」という哀しいものであった。
+
+	immediate = {
+		set_country_flag = yourmod_crisis_story_1
+	}
+	option = {
+		name = yourmod_crisis_01.1201.a #やはり我々が最初ではなかったというわけか。
+	}
+}
+
+country_event = {#起源探しイベント:先駆者のクリスタル
+	id = yourmod_crisis_01.1202
+	title = yourmod_crisis_01.1202.name
+ 	desc = yourmod_crisis_01.1202.desc
+
+	picture = GFX_evt_mining_station
+	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+
+	is_triggered_only = yes
+
+	#先駆者文明による$yourmod_crisis$の記録を発見
+	#遺物をかき集めたことで、数万年前に存在していた古代の星間文明が$yourmod_crisis$の被害を受けていたということが明らかになった。雑多な小物の一つと思われていたクリスタルがその証人である。未知の方法によってカットされたクリスタルに特定の角度から光を当てると内部に微細な文字が浮かび上がるという凝った作りで、解読には時間がかかったものの、貴重な情報が得られた。クリスタルには、別の古代文明で$yourmod_crisis$と思しき病気が発生し、瞬く間に銀河中に感染が広がったということが書かれていた。彼らも我々と同様に銀河的な規模で対策に打ち込んだようだが、結局手の打ちようがなかったらしい。そして彼らは惑星間の連絡を完全に遮断するという強硬手段によって解決することを決定したようだ。その効果の程は不明だが、芳しいものではないだろう。
+
+	immediate = {
+		set_country_flag = yourmod_crisis_story_2
+	}
+	option = {
+		name = yourmod_crisis_01.1202.a #抜本的な解決にはならないな。
+	}
+}
+
+country_event = {#起源探しイベント:バッドアイデア
+	id = yourmod_crisis_01.1203
+	title = yourmod_crisis_01.1203.name
+ 	desc = yourmod_crisis_01.1203.desc
+
+	picture = GFX_evt_mining_station
+	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+
+	is_triggered_only = yes
+
+	#古代文明による$yourmod_crisis$破壊の試み
+	#およそ20万年前の遺物の中から、$yourmod_crisis$に関するものと思しき記述が載った石板が発見された。装甲板で作られた箱の中に封印されており、これを残した者たちは何がなんでもこれを後世に残したかったと推測される。その石板によると、感染症の銀河規模の流行が原因で第一感染国に対する懲罰戦争が行われたのだという。第一感染国が作った生物兵器だと考えられたのが戦争の理由であるというが、これが完全な誤解であることが分かったのは第一感染国の惑星がすべて軌道爆撃によって破壊されつくした後だった。その後の顛末は書かれていないため不明だが、この石板以降は彼らが何も残していないことから察することができる。
+
+	immediate = {
+		set_country_flag = yourmod_crisis_story_3
+	}
+	option = {
+		name = yourmod_crisis_01.1203.a #バッドアイデア。
+	}
+}
+
+country_event = {#起源探しイベント:大絶滅
+	id = yourmod_crisis_01.1204
+	title = yourmod_crisis_01.1204.name
+ 	desc = yourmod_crisis_01.1204.desc
+
+	picture = GFX_evt_mining_station
+	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+
+	is_triggered_only = yes
+
+	#大量絶滅の研究
+	#およそ200万年前の超古代の遺物の中から、「定期的な銀河規模の大量絶滅について」と題する論文のデータが発見された。時間の経過はデータに優しくないためところどころ欠落はあるが、この論文は極めて重大な示唆をしている。何らかの原因によって、銀河全体で大量絶滅が定期的に発生しているというのだ。隕石の落下など個別的な理由による大量絶滅が重なったというわけではなく、不明な理由によって銀河のほとんどの生物が定期的に死亡していると筆者は考えているようだ。筆者の言う大量絶滅は我々の生きる時代から見て400万年前、800万年前、1200万年前、1400万年前、2000万年前、2500万年前、(データ破損)万年前に起こっているとしている。
+
+	immediate = {
+		set_country_flag = yourmod_crisis_story_4
+	}
+	option = {
+		name = yourmod_crisis_01.1204.a #もしかすると$yourmod_crisis$が原因なのか？
+	}
+}
+
+country_event = {#起源探しイベント:
+	id = yourmod_crisis_01.1205
+	title = yourmod_crisis_01.1205.name
+ 	desc = yourmod_crisis_01.1205.desc
+
+	picture = GFX_evt_mining_station
+	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+
+	is_triggered_only = yes
+
+	#プレーステキストが思いつかないホルダー
+	#
+
+	immediate = {
+		set_country_flag = yourmod_crisis_story_5
+	}
+	option = {
+		name = yourmod_crisis_01.1205.a #
+	}
+}
+
+country_event = {#起源探しイベント:
+	id = yourmod_crisis_01.1206
+	title = yourmod_crisis_01.1206.name
+ 	desc = yourmod_crisis_01.1206.desc
+
+	picture = GFX_evt_mining_station
+	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+
+	is_triggered_only = yes
+
+	#プレーステキストが思いつかないホルダー
+	#
+
+	immediate = {
+		set_country_flag = yourmod_crisis_story_6
+	}
+	option = {
+		name = yourmod_crisis_01.1206.a #
+	}
+}
+
+country_event = {#遺物アクションガバ
+	id = yourmod_crisis_01.1299
+	title = yourmod_crisis_01.1299.name
+ 	desc = yourmod_crisis_01.1299.desc
+
+	picture = GFX_evt_mining_station
+	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+
+	is_triggered_only = yes
+
+	#プレーステキストが思いつかないホルダー
+	#
+
+	option = {
+		name = yourmod_crisis_01.1299.a #なんという時間の無駄だ！
+	}
+}
+
+
 
