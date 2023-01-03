@@ -1,7 +1,7 @@
 namespace = yourmod_vaccine_dev_event
 
 country_event = {
-	id = yourmod_vaccine_dev_event.0
+	id = yourmod_vaccine_dev_event.0 #ワクチン研究開始
 	title = yourmod_vaccine_dev_event.0.name	#
 	desc = yourmod_vaccine_dev_event.0.desc 
 	picture = GFX_board_meeting #a name of a picture to display
@@ -17,5 +17,9 @@ country_event = {
 	}
 	option = {
 		name = yourmod_vaccine_dev_event.0.a
+
+		start_situation = {
+			type = yourmod_crisis_vaccine_dev_situation
+		}
 	}
 }

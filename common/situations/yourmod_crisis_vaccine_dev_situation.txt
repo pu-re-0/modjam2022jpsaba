@@ -26,67 +26,53 @@ yourmod_crisis_vaccine_dev_situation = {	#ワクワク
 	}
 
 	stages = {
-		stage_1 = {#初期調査段階
+		stage_1 = {
 			icon = GFX_situation_stage_1
 			icon_background = GFX_situation_stage_frame_blue
-			end = 10
+			end = 100
 			on_first_enter = {
 				owner = {
 					country_event = {
-						id = yourmod_crisis_01.110
+						id = yourmod_vaccine_dev_event.110
 						days = 1
 					}	
 				}
 			}
 		}
-		stage_2 = {#第一期実験段階
+		stage_2 = {
 			icon = GFX_situation_stage_2
 			icon_background = GFX_situation_stage_frame_blue
-			end = 30
+			end = 100
 			on_first_enter = {
 				owner = {
 				country_event = {
-					id = yourmod_crisis_01.111
+					id = yourmod_vaccine_dev_event.111
 					days = 1
 				}	
 				}
 			}
 		}
-		stage_3 = {#電波送信能力解明
-			icon = GFX_situation_stage_3
-			icon_background = GFX_situation_stage_frame_blue
-			end = 50
-			on_first_enter = {
-				owner = {
-					country_event = {
-						id = yourmod_crisis_01.112
-						days = 1
-					}	
-				}
-			}
-		}
-		stage_4 = {#超能力解明
-			icon = GFX_situation_stage_3
-			icon_background = GFX_situation_stage_frame_blue
-			end = 75
-			on_first_enter = {
-				owner = {
-					country_event = {
-						id = yourmod_crisis_01.113
-						days = 1
-					}
-				}
-			}
-		}
-
-		stage_5 = {#正体の仮説
+		stage_3 = {
 			icon = GFX_situation_stage_3
 			icon_background = GFX_situation_stage_frame_blue
 			end = 100
 			on_first_enter = {
 				owner = {
 					country_event = {
-						id = yourmod_crisis_01.114
+						id = yourmod_vaccine_dev_event.112
+						days = 1
+					}	
+				}
+			}
+		}
+		stage_4 = {
+			icon = GFX_situation_stage_3
+			icon_background = GFX_situation_stage_frame_blue
+			end = 100
+			on_first_enter = {
+				owner = {
+					country_event = {
+						id = yourmod_vaccine_dev_event.113
 						days = 1
 					}
 				}
@@ -99,10 +85,10 @@ yourmod_crisis_vaccine_dev_situation = {	#ワクワク
 	}
 
 	monthly_progress = {
-		base = 0.0
+		base = -0.5
 		
 		modifier = {
-			add = 0.25
+			mult = 1.20
 			desc = yourmod_GHO_vaccine_global_dev_desc
 			has_global_flag = yourmod_GHO_vaccine_global_dev
 		}
@@ -118,12 +104,70 @@ yourmod_crisis_vaccine_dev_situation = {	#ワクワク
 			current_situation_approach = yourmod_crisis_vaccine_dev_approach_mid
 		}
 		modifier = {
-			add = 1.00
+			add = 0.75
 			desc = yourmod_crisis_vaccine_dev_approach_high_desc
 			current_situation_approach = yourmod_crisis_vaccine_dev_approach_high
 		}
+		modifier = {
+			add = 1.0
+			desc = yourmod_crisis_vaccine_dev_approach_super_high_desc
+			current_situation_approach = yourmod_crisis_vaccine_dev_approach_super_high
+		}
 
+		modifier = {
+			add = 0.20
+			desc = yourmod_crisis_research_situation_stage_1_desc
+			has_global_flag = yourmod_crisis_research_situation_stage_1
+		}
+		modifier = {
+			add = 0.20
+			desc = yourmod_crisis_research_situation_stage_2_desc
+			has_global_flag = yourmod_crisis_research_situation_stage_2
+		}
+		modifier = {
+			add = 0.20
+			desc = yourmod_crisis_research_situation_stage_3_desc
+			has_global_flag = yourmod_crisis_research_situation_stage_3
+		}
+		modifier = {
+			add = 0.20
+			desc = yourmod_crisis_research_situation_stage_4_desc
+			has_global_flag = yourmod_crisis_research_situation_stage_4
+		}
+		modifier = {
+			add = 0.20
+			desc = yourmod_crisis_research_situation_stage_4_desc
+			has_global_flag = yourmod_crisis_research_situation_stage_5
+		}
 
+		modifier = {
+			mult = 1.20
+			desc = yourmod_has_tech_society_1
+			owner = {
+				has_technology = tech_society_1
+				NOR = {
+					has_technology = tech_society_2
+					has_technology = tech_society_3
+				}
+			}
+		}
+		modifier = {
+			mult = 1.40
+			desc = yourmod_has_tech_society_2
+			owner = {
+				has_technology = tech_society_2
+				NOT = {
+					has_technology = tech_society_3
+				}
+			}
+		}
+		modifier = {
+			mult = 1.60
+			desc = yourmod_has_tech_society_3
+			owner = {
+				has_technology = tech_society_3
+			}
+		}
 	}
 
 	on_progress_complete = {
@@ -149,19 +193,19 @@ yourmod_crisis_vaccine_dev_situation = {	#ワクワク
  			category = situations
  			upkeep = {
 				society_research = 1
-				mult = yourmod_society_research_5
+				mult = yourmod_society_research_10
 
 				unity = 20
 			}
  			produces = { }
  		}
 		on_select = {
-			custom_tooltip = yourmod_crisis_research_approach_low_desc
+			custom_tooltip = yourmod_crisis_vaccine_dev_approach_low_desc
 		}
 	}
 
-	approach = {#中程度の努力
-		name = yourmod_crisis_research_approach_mid
+	approach = {#中程度の予算
+		name = yourmod_crisis_vaccine_dev_approach_mid
 		icon = GFX_situation_approach_unity #後で変えておく
 		icon_background = GFX_situation_approach_bg_green
 		default = yes
@@ -170,17 +214,17 @@ yourmod_crisis_vaccine_dev_situation = {	#ワクワク
  			category = situations
  			upkeep = {
 				society_research = 1
-				mult = yourmod_society_research_10
+				mult = yourmod_society_research_15
 			}
  			produces = { }
  		}
 		on_select = {
-			custom_tooltip = yourmod_crisis_research_approach_mid_desc
+			custom_tooltip = yourmod_crisisvaccine_dev_approach_mid_desc
 		}
 	}
 
-	approach = {#懸命な努力
-		name = yourmod_crisis_research_approach_high
+	approach = {#大きな予算
+		name = yourmod_crisis_vaccine_dev_approach_high
 		icon = GFX_situation_approach_unity #後で変えておく
 		icon_background = GFX_situation_approach_bg_green
 		default = yes
@@ -189,15 +233,37 @@ yourmod_crisis_vaccine_dev_situation = {	#ワクワク
  			category = situations
  			upkeep = { 
 				society_research = 1
-				mult = yourmod_society_research_15
+				mult = yourmod_society_research_20
+
 				energy = 20
 			}
  			produces = { }
  		}
 		on_select = {
-			custom_tooltip = yourmod_crisis_research_approach_high_desc
+			custom_tooltip = yourmod_crisis_vaccine_dev_approach_high_desc
 		}
 	}
+
+	approach = {#非常識な予算
+	name = yourmod_crisis_vaccine_dev_approach_super_high
+	icon = GFX_situation_approach_unity #後で変えておく
+	icon_background = GFX_situation_approach_bg_green
+	default = yes
+
+	 resources = { 	#Resource table as standard
+		 category = situations
+		 upkeep = { 
+			society_research = 1
+			mult = yourmod_society_research_30
+
+			energy = 50
+		}
+		 produces = { unity = 10 }
+	 }
+	on_select = {
+		custom_tooltip = yourmod_crisis_vaccine_dev_approach_high_desc
+	}
+}
 
 }
 
