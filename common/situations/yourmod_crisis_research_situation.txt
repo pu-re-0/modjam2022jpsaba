@@ -30,6 +30,7 @@ yourmod_crisis_research_situation = {#病原体の正体を確かめる
 						days = 1
 					}	
 				}
+				set_global_flag = yourmod_crisis_research_situation_stage_1 #ワクチン用 by ぷれ
 			}
 		}
 		stage_2 = {#第一期実験段階
@@ -38,11 +39,12 @@ yourmod_crisis_research_situation = {#病原体の正体を確かめる
 			end = 30
 			on_first_enter = {
 				owner = {
-				country_event = {
-					id = yourmod_crisis_01.111
-					days = 1
-				}	
+					country_event = {
+						id = yourmod_crisis_01.111
+						days = 1
+					}	
 				}
+				set_global_flag = yourmod_crisis_research_situation_stage_2 #ワクチン用 by ぷれ
 			}
 		}
 		stage_3 = {#電波送信能力解明
@@ -56,10 +58,11 @@ yourmod_crisis_research_situation = {#病原体の正体を確かめる
 						days = 1
 					}	
 				}
+				set_global_flag = yourmod_crisis_research_situation_stage_3 #ワクチン用 by ぷれ
 			}
 		}
 		stage_4 = {#超能力解明
-			icon = GFX_situation_stage_3
+			icon = GFX_situation_stage_4
 			icon_background = GFX_situation_stage_frame_blue
 			end = 75
 			on_first_enter = {
@@ -69,11 +72,12 @@ yourmod_crisis_research_situation = {#病原体の正体を確かめる
 						days = 1
 					}
 				}
+				set_global_flag = yourmod_crisis_research_situation_stage_4 #ワクチン用 by ぷれ
 			}
 		}
 
 		stage_5 = {#正体の仮説
-			icon = GFX_situation_stage_3
+			icon = GFX_situation_stage_5
 			icon_background = GFX_situation_stage_frame_blue
 			end = 100
 			on_first_enter = {
@@ -83,6 +87,7 @@ yourmod_crisis_research_situation = {#病原体の正体を確かめる
 						days = 1
 					}
 				}
+				set_global_flag = yourmod_crisis_research_situation_stage_5 #ワクチン用 by ぷれ
 			}
 		}
 	}

@@ -1,0 +1,270 @@
+#All scopes are this/root = situation. You can scope to owner for the country or target for the target.
+
+yourmod_crisis_vaccine_dev_situation = {	#ワクワク
+	picture = GFX_evt_atmospheric_entry
+	complete_icon_frame = GFX_situation_outcome_frame_blue
+	complete_icon = GFX_situation_outcome_unknown
+	
+	on_start = {
+		
+	}
+
+	abort_trigger = {
+		has_global_flag = yourmod_crisis_vaccine_dev_finish #マルチプレイ専用。国際研究可決時他のプレイヤーが開発を完了すると共有される。
+	}
+	on_abort = {
+		owner = {
+			country_event = {
+				id = yourmod_vaccine_dev_event.115 #ワクチン技術の共有
+				days = 1
+			}
+		}
+	}
+	
+	modifier = {
+
+	}
+
+	stages = {
+		stage_1 = {
+			icon = GFX_situation_stage_1
+			icon_background = GFX_situation_stage_frame_blue
+			end = 100
+			on_first_enter = {
+				owner = {
+					country_event = {
+						id = yourmod_vaccine_dev_event.110
+						days = 1
+					}	
+				}
+			}
+		}
+		stage_2 = {
+			icon = GFX_situation_stage_2
+			icon_background = GFX_situation_stage_frame_blue
+			end = 100
+			on_first_enter = {
+				owner = {
+				country_event = {
+					id = yourmod_vaccine_dev_event.111
+					days = 1
+				}	
+				}
+			}
+		}
+		stage_3 = {
+			icon = GFX_situation_stage_3
+			icon_background = GFX_situation_stage_frame_blue
+			end = 100
+			on_first_enter = {
+				owner = {
+					country_event = {
+						id = yourmod_vaccine_dev_event.112
+						days = 1
+					}	
+				}
+			}
+		}
+		stage_4 = {
+			icon = GFX_situation_stage_3
+			icon_background = GFX_situation_stage_frame_blue
+			end = 100
+			on_first_enter = {
+				owner = {
+					country_event = {
+						id = yourmod_vaccine_dev_event.113
+						days = 1
+					}
+				}
+			}
+		}
+	}
+
+	on_monthly = {
+
+	}
+
+	monthly_progress = {
+		base = -0.5
+		
+		modifier = {
+			mult = 1.20
+			desc = yourmod_GHO_vaccine_global_dev_desc
+			has_global_flag = yourmod_GHO_vaccine_global_dev
+		}
+
+		modifier = {
+			add = 0.25
+			desc = yourmod_crisis_vaccine_dev_approach_low_desc
+			current_situation_approach = yourmod_crisis_vaccine_dev_approach_low
+		}
+		modifier = {
+			add = 0.50
+			desc = yourmod_crisis_vaccine_devh_approach_mid_desc
+			current_situation_approach = yourmod_crisis_vaccine_dev_approach_mid
+		}
+		modifier = {
+			add = 0.75
+			desc = yourmod_crisis_vaccine_dev_approach_high_desc
+			current_situation_approach = yourmod_crisis_vaccine_dev_approach_high
+		}
+		modifier = {
+			add = 1.0
+			desc = yourmod_crisis_vaccine_dev_approach_super_high_desc
+			current_situation_approach = yourmod_crisis_vaccine_dev_approach_super_high
+		}
+
+		modifier = {
+			add = 0.20
+			desc = yourmod_crisis_research_situation_stage_1_desc
+			has_global_flag = yourmod_crisis_research_situation_stage_1
+		}
+		modifier = {
+			add = 0.20
+			desc = yourmod_crisis_research_situation_stage_2_desc
+			has_global_flag = yourmod_crisis_research_situation_stage_2
+		}
+		modifier = {
+			add = 0.20
+			desc = yourmod_crisis_research_situation_stage_3_desc
+			has_global_flag = yourmod_crisis_research_situation_stage_3
+		}
+		modifier = {
+			add = 0.20
+			desc = yourmod_crisis_research_situation_stage_4_desc
+			has_global_flag = yourmod_crisis_research_situation_stage_4
+		}
+		modifier = {
+			add = 0.20
+			desc = yourmod_crisis_research_situation_stage_4_desc
+			has_global_flag = yourmod_crisis_research_situation_stage_5
+		}
+
+		modifier = {
+			mult = 1.20
+			desc = yourmod_has_tech_society_1
+			owner = {
+				has_technology = tech_society_1
+				NOR = {
+					has_technology = tech_society_2
+					has_technology = tech_society_3
+				}
+			}
+		}
+		modifier = {
+			mult = 1.40
+			desc = yourmod_has_tech_society_2
+			owner = {
+				has_technology = tech_society_2
+				NOT = {
+					has_technology = tech_society_3
+				}
+			}
+		}
+		modifier = {
+			mult = 1.60
+			desc = yourmod_has_tech_society_3
+			owner = {
+				has_technology = tech_society_3
+			}
+		}
+	}
+
+	on_progress_complete = {
+		destroy_situation = this
+		owner = {
+			country_event = {
+				id = yourmod_vaccine_dev_event.300
+			}	
+		}
+	}
+
+	on_fail = {#
+
+	}
+	
+	approach = {#低予算
+		name = yourmod_crisis_vaccine_dev_approach_low
+		icon = GFX_situation_approach_unity #後で変えておく
+		icon_background = GFX_situation_approach_bg_green
+		default = yes
+
+ 		resources = { 	#Resource table as standard
+ 			category = situations
+ 			upkeep = {
+				society_research = 1
+				mult = yourmod_society_research_10
+
+				unity = 20
+			}
+ 			produces = { }
+ 		}
+		on_select = {
+			custom_tooltip = yourmod_crisis_vaccine_dev_approach_low_desc
+		}
+	}
+
+	approach = {#中程度の予算
+		name = yourmod_crisis_vaccine_dev_approach_mid
+		icon = GFX_situation_approach_unity #後で変えておく
+		icon_background = GFX_situation_approach_bg_green
+		default = yes
+
+ 		resources = { 	#Resource table as standard
+ 			category = situations
+ 			upkeep = {
+				society_research = 1
+				mult = yourmod_society_research_15
+			}
+ 			produces = { }
+ 		}
+		on_select = {
+			custom_tooltip = yourmod_crisisvaccine_dev_approach_mid_desc
+		}
+	}
+
+	approach = {#大きな予算
+		name = yourmod_crisis_vaccine_dev_approach_high
+		icon = GFX_situation_approach_unity #後で変えておく
+		icon_background = GFX_situation_approach_bg_green
+		default = yes
+
+ 		resources = { 	#Resource table as standard
+ 			category = situations
+ 			upkeep = { 
+				society_research = 1
+				mult = yourmod_society_research_20
+
+				energy = 20
+			}
+ 			produces = { }
+ 		}
+		on_select = {
+			custom_tooltip = yourmod_crisis_vaccine_dev_approach_high_desc
+		}
+	}
+
+	approach = {#非常識な予算
+	name = yourmod_crisis_vaccine_dev_approach_super_high
+	icon = GFX_situation_approach_unity #後で変えておく
+	icon_background = GFX_situation_approach_bg_green
+	default = yes
+
+	 resources = { 	#Resource table as standard
+		 category = situations
+		 upkeep = { 
+			society_research = 1
+			mult = yourmod_society_research_30
+
+			energy = 50
+		}
+		 produces = { unity = 10 }
+	 }
+	on_select = {
+		custom_tooltip = yourmod_crisis_vaccine_dev_approach_high_desc
+	}
+}
+
+}
+
+
