@@ -7,7 +7,7 @@ change_planet_prevalence_level = {
 		limit = { 
 			check_variable = {
 				which = planet_prevalence_level
-				value = 0
+				value =< 0
 			} 
 		}
 		add_modifier = planet_prevalence_level_0
@@ -83,7 +83,7 @@ change_planet_prevalence_level = {
 		limit = { 
 			check_variable = {
 				which = planet_prevalence_level
-				value = 5
+				value => 5
 			} 
 		}
 		add_modifier = planet_prevalence_level_5

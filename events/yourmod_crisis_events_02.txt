@@ -157,4 +157,8 @@ planet_event = {
 			}
 		}
 	}
+
+	option = {
+		name = 
+	}
 }

@@ -23,3 +23,8 @@ pre-FTL関係
 	country_flag
 		ancient_crisis_creater_pre_FTL_country #ウィルス作った奴らの生き残りの文明
 
+感染対処イベント関連
+	planet_flag
+		
+	planet_variable
+		planet_prevalence_level		#惑星の蔓延レベル　感染対処シチュエーションが発生していない惑星で使用
