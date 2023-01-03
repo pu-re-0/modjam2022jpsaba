@@ -14,6 +14,16 @@
 		yourmod_virus_first_onset_planet	#最初の感染が発生した惑星
 		
 危機の起源関連
+	country_flag
+		yourmod_allow_origin_research		#遺物アクションによる調査とランダム調査イベントの発生を許可するフラグ
+		yourmod_has_more_impportant_point	#ランダム調査イベントが出てスペシャルプロジェクトが起きてるんだから遺物アクションなんか使ってる場合じゃないだろフラグ
+		yourmod_crisis_story_1			#ストーリーイベントが発生したかどうかを判定するフラグ
+		yourmod_crisis_story_2			#ストーリーイベントが発生したかどうかを判定するフラグ
+		yourmod_crisis_story_3			#ストーリーイベントが発生したかどうかを判定するフラグ
+		yourmod_crisis_story_4			#ストーリーイベントが発生したかどうかを判定するフラグ
+		yourmod_crisis_story_5			#ストーリーイベントが発生したかどうかを判定するフラグ
+		yourmod_crisis_story_6			#ストーリーイベントが発生したかどうかを判定するフラグ
+		
 	star_flag
 		yourmod_crisis_ground_zero 		#聖地の星系についているフラグ
 		
