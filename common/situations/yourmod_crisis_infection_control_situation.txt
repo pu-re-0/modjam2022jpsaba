@@ -1,0 +1,162 @@
+# ファイル作成:ヒアルロン大陸
+#
+
+#惑星の感染対処用シチュエーション
+yourmod_planet_infection_situation = {
+	picture = GFX_evt_atmospheric_entry
+	complete_icon_frame = GFX_situation_outcome_frame_blue
+	complete_icon = GFX_situation_outcome_unknown
+
+	category = negative
+
+	abort_trigger = {
+		
+	}
+	on_abort = {
+
+	}
+	
+	modifier = {
+	}
+
+	start_value = 30
+
+	stages = {
+		stage_1 = {
+			icon = GFX_situation_stage_1
+			icon_background = GFX_situation_stage_frame_red
+			end = 60
+		}
+		stage_2 = {
+			icon = GFX_situation_stage_2
+			icon_background = GFX_situation_stage_frame_red
+			end = 100
+			on_first_enter = {
+				owner = {
+					country_event = {
+						id = yourmod_crisis_02.11
+					}
+				}
+			}
+		}
+	}
+	on_monthly = {
+		# アプローチによってデバフイベントを発生させるのを作る
+
+	}
+
+	monthly_progress = {
+		base = 0.75
+		modifier = {
+			add = 0.5
+			desc = yourmod_planet_infection_approach_0_desc
+			current_situation_approach = yourmod_planet_infection_approach_0
+		}
+		modifier = {
+			add = -1.00
+			desc = yourmod_planet_infection_approach_1_desc
+			current_situation_approach = yourmod_planet_infection_approach_1
+		}
+		modifier = {
+			add = -2.00
+			desc = yourmod_planet_infection_approach_1_desc
+			current_situation_approach = yourmod_planet_infection_approach_2
+		}
+		modifier = {
+			add = -5.00
+			desc = yourmod_planet_infection_approach_1_desc
+			current_situation_approach = yourmod_planet_infection_approach_3
+		}
+
+
+	}
+
+	on_start = {
+		country_event = {
+			id = yourmod_crisis_02.10
+		}
+	}
+
+	on_progress_complete = {
+		owner = {
+			country_event = {
+				id = yourmod_crisis_02.12
+			}
+		}
+	}
+	on_fail = {
+		destroy_situation = this
+		owner = {
+			country_event = {
+				id = yourmod_crisis_02.13
+			}
+		}
+	}
+
+	approach = {
+		name = yourmod_planet_infection_approach_0
+		icon = GFX_situation_approach_unity
+		icon_background = GFX_situation_approach_bg_green
+		default = yes
+
+ 		resources = { 	#Resource table as standard
+ 			category = situations
+ 			upkeep = { }
+ 			produces = { }
+ 		}
+		on_select = {
+			custom_tooltip = yourmod_planet_infection_approach_0_desc
+		}
+	}
+	approach = {
+		name = yourmod_planet_infection_approach_1
+		icon = GFX_situation_approach_unity
+		icon_background = GFX_situation_approach_bg_green
+		default = yes
+
+ 		resources = { 	#Resource table as standard
+ 			category = situations
+ 			upkeep = { energy = 10 }
+ 			produces = { }
+ 		}
+		on_select = {
+			custom_tooltip = yourmod_planet_infection_approach_1_desc
+		}
+	}
+	approach = {
+		name = yourmod_planet_infection_approach_2
+		icon = GFX_situation_approach_unity
+		icon_background = GFX_situation_approach_bg_green
+		default = yes
+
+ 		resources = { 	#Resource table as standard
+ 			category = situations
+ 			upkeep = { energy = 25 }
+ 			produces = { }
+ 		}
+		on_select = {
+			custom_tooltip = yourmod_planet_infection_approach_2_desc
+		}
+	}
+	approach = {
+		name = yourmod_planet_infection_approach_3
+		icon = GFX_situation_approach_unity
+		icon_background = GFX_situation_approach_bg_green
+		default = yes
+
+		potential = {
+			current_stage = stage_2
+		}
+
+ 		resources = { 	#Resource table as standard
+ 			category = situations
+ 			upkeep = { energy = 25 }
+ 			produces = { }
+ 		}
+		on_select = {
+			custom_tooltip = yourmod_planet_infection_approach_3_desc
+		}
+	}
+
+
+}

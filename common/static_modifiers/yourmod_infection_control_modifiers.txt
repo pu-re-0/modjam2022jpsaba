@@ -1,4 +1,4 @@
-
+# ファイル作成:ヒアルロン大陸
 # 画像は後で変えとく
 
 planet_prevalence_level_0 = {
@@ -8,7 +8,7 @@ planet_prevalence_level_0 = {
 
 planet_prevalence_level_1 = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_unknown.dds"
-	icon_frame = 1
+	icon_frame = 2
 }
 
 planet_prevalence_level_2 = {
@@ -18,7 +18,7 @@ planet_prevalence_level_2 = {
 
 planet_prevalence_level_3 = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_unknown.dds"
-	icon_frame = 2
+	icon_frame = 3
 }
 
 planet_prevalence_level_4 = {

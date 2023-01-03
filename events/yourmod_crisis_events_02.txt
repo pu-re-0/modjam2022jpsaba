@@ -7,6 +7,11 @@ namespace = yourmod_crisis_02
 # 簡易目次
 # 01 メインランダムイベント
 # 
+# 10~	感染シチュエーション関連のイベント
+# 10	惑星のシチュエーションが始まったとき
+# 11	惑星のシチュエーションがステージ2に入ったとき
+# 12	惑星のシチュエーションが完成した(悪化しきった)とき
+# 13	惑星のシチュエーションが消滅したとき
 # 
 # 100~	ランダムバフデバフイベント群
 # 
@@ -122,86 +127,182 @@ country_event = {
 		}
 		
 		else = { #それ以外の国家
-		random_list = {
-			20 = { #ランダムバフデバフイベント
-				random_list = {
-					10 = {
-
-					}
-					10 = {
-						
-					}
-					10 = {
-						
-					}
-					10 = {
-						
-					}
-					10 = {
-						
-					}
-				}
-			}
-
-			10 = { #感染済み惑星のイベント
-				modifier = {
-					factor = 0
-					any_owned_planet = {
-						NOT = { has_planet_flag = yourmod_infected_planet }
-					}
-				}
-				random_planet_within_border = {
-					planet_event = {
-						id = yourmod_crisis_02.201
-					}
-				}
-			}
-			
-			10 = { #未感染惑星のイベント
-				# ランダムなイベントにより感染具合のmodifierが付与される
-				# 感染具合がマックスを超えると、situationが発生し、感染済み惑星になる
-				modifier = {
-					factor = 1.5
-					any_owned_planet = {
-						NOT = { has_planet_flag  = yourmod_infected_planet }
-					}
-				}
-				random_planet_within_border = {
-					limit = {
-						NOT = { has_planet_flag  = yourmod_infected_planet }
-					}
-					save_event_target_as = yourmod_happen_event_planet
+			random_list = {
+				20 = { #ランダムバフデバフイベント
 					random_list = {
 						10 = {
-							planet_event = {
-								id = yourmod_crisis_02.301
-							}
+
 						}
 						10 = {
-							planet_event = {
-								id = yourmod_crisis_02.302
-							}
+							
 						}
 						10 = {
-							planet_event = {
-								id = yourmod_crisis_02.303
-							}
+							
 						}
 						10 = {
-							planet_event = {
-								id = yourmod_crisis_02.304
-							}
+							
 						}
 						10 = {
-							planet_event = {
-								id = yourmod_crisis_02.305
+							
+						}
+					}
+				}
+
+				10 = { #感染済み惑星のイベント
+					modifier = {
+						factor = 0
+						any_owned_planet = {
+							NOT = { has_planet_flag = yourmod_infected_planet }
+						}
+					}
+					random_planet_within_border = {
+						planet_event = {
+							id = yourmod_crisis_02.201
+						}
+					}
+				}
+				
+				10 = { #未感染惑星のイベント
+					# ランダムなイベントにより感染具合のmodifierが付与される
+					# 感染具合がマックスを超えると、situationが発生し、感染済み惑星になる
+					modifier = {
+						factor = 1.5
+						any_owned_planet = {
+							NOT = { has_planet_flag  = yourmod_infected_planet }
+						}
+					}
+					random_planet_within_border = {
+						limit = {
+							NOT = { has_planet_flag  = yourmod_infected_planet }
+						}
+						save_event_target_as = yourmod_happen_event_planet
+						random_list = {
+							10 = {
+								modifier = {
+									factor = 0
+									has_planet_flag = yourmod_happen_event_301
+								}
+								planet_event = {
+									id = yourmod_crisis_02.301
+								}
+							}
+							10 = {
+								planet_event = {
+									id = yourmod_crisis_02.302
+								}
+							}
+							10 = {
+								planet_event = {
+									id = yourmod_crisis_02.303
+								}
+							}
+							10 = {
+								planet_event = {
+									id = yourmod_crisis_02.304
+								}
+							}
+							10 = {
+								planet_event = {
+									id = yourmod_crisis_02.305
+								}
 							}
 						}
 					}
 				}
 			}
 		}
-		}
+	}
+}
+
+country_event = {
+	#惑星の感染シチュエーションがはじまった通知
+	id = yourmod_crisis_02.10
+	title = yourmod_crisis_02.10.name
+	desc = yourmod_crisis_02.10.desc
+
+	is_triggered_only = yes
+	picture = GFX_evt_mining_station #画像は後で探す
+
+	location = from.target
+
+	# 
+
+	immediate = {
+		
+	}
+
+	option = {
+		#
+		name = yourmod_crisis_02.10.a
+	}
+}
+
+country_event = {
+	#惑星の感染シチュエーションがステージ2に入った通知
+	id = yourmod_crisis_02.11
+	title = yourmod_crisis_02.11.name
+	desc = yourmod_crisis_02.11.desc
+
+	is_triggered_only = yes
+	picture = GFX_evt_mining_station #画像は後で探す
+
+	location = from.target
+
+	# 
+
+	immediate = {
+		
+	}
+
+	option = {
+		#
+		name = yourmod_crisis_02.11.a
+	}
+}
+
+country_event = {
+	#惑星の感染シチュエーションが成功(悪化しきった)通知
+	id = yourmod_crisis_02.12
+	title = yourmod_crisis_02.12.name
+	desc = yourmod_crisis_02.12.desc
+
+	is_triggered_only = yes
+	picture = GFX_evt_mining_station #画像は後で探す
+
+	location = from.target
+
+	# 
+
+	immediate = {
+		
+	}
+
+	option = {
+		#
+		name = yourmod_crisis_02.12.a
+	}
+}
+
+country_event = {
+	#惑星の感染シチュエーションが失敗(消滅した)通知
+	id = yourmod_crisis_02.13
+	title = yourmod_crisis_02.13.name
+	desc = yourmod_crisis_02.13.desc
+
+	is_triggered_only = yes
+	picture = GFX_evt_mining_station #画像は後で探す
+
+	location = from.target
+
+	# 
+
+	immediate = {
+		
+	}
+
+	option = {
+		#
+		name = yourmod_crisis_02.13.a
 	}
 }
 
@@ -210,6 +311,7 @@ planet_event = {
 	title = yourmod_crisis_02.301.name
 	desc = yourmod_crisis_02.301.desc
 
+	is_triggered_only = yes
 	picture = GFX_evt_mining_station #画像は後で探す
 
 	location = event_target:yourmod_happen_event_planet
@@ -217,14 +319,7 @@ planet_event = {
 	# [yourmod_happen_event_planet.GetName]に感染者が逃げ込んだ。　彼は他帝国へ旅行に行っており、そこで感染したと考えられる。　追跡調査を行わない場合、集団感染が発生する可能性がある
 
 	immediate = {
-		if = {
-			limit = { NOT = { is_variable_set = planet_prevalence_level } }
-			set_variable = {
-				which = planet_prevalence_level
-				value = 0
-			}
-			change_planet_prevalence_level = yes
-		}
+		change_planet_prevalence_level = yes
 		set_planet_flag = yourmod_happen_event_301
 	}
 
@@ -270,6 +365,7 @@ planet_event = {
 	title = yourmod_crisis_02.311.name
 	desc = yourmod_crisis_02.311.desc
 
+	is_triggered_only = yes
 	picture = GFX_evt_mining_station #画像は後で探す
 
 	location = event_target:yourmod_happen_event_planet
@@ -296,6 +392,7 @@ planet_event = {
 	title = yourmod_crisis_02.312.name
 	desc = yourmod_crisis_02.312.desc
 
+	is_triggered_only = yes
 	picture = GFX_evt_mining_station #画像は後で探す
 
 	location = event_target:yourmod_happen_event_planet
