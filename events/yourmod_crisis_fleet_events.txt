@@ -28,6 +28,9 @@ country_event = {
 	option = {
 		name = yourmod_test.1.a
 		set_global_flag = yourmod_crisis_phase_2
+		capital = {
+			set_planet_flag = yourmod_infected_planet
+		}
 	}
 }
 
