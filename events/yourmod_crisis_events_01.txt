@@ -567,7 +567,7 @@ ship_event = { # NEXT STAGE
 	}
 
 	immediate = {
-		set_global_flag = yourmod_crisis_phase_2
+		set_global_flag = yourmod_crisis_phase_2	#now the real space battle begin #本当の艦隊戦フェーズの開始
 		fromfrom = {
 			country_event = {
 				id = yourmod_crisis_01.1001
@@ -576,8 +576,33 @@ ship_event = { # NEXT STAGE
 		}
 		from = {
 			event_target:yourmod_crisis_country = {
-				spawn_yourmod_crisis_fleet_01 = yes
+				create_fleet = {
+					name = "NAME_Medium_Virus_fleet"
+					settings = {
+						garrison = yes
+					}
+					effect = {
+						set_owner = PREV
+						set_fleet_bombardment_stance = armageddon
+						while = {
+							count = 30
+							create_ship = {
+								name = random
+								design = "NAME_medium_virus"
+								graphical_culture = PREV
+							}
+						}
+						set_location = {
+							target = event_target:yourmod_crisis_ground_zero_vanish_planet
+							distance = 1
+							angle = random
+						}
+					}
+				}
 			}
+		}
+		event_target:yourmod_crisis_ground_zero_vanish_planet = {
+			remove_planet = yes
 		}
 	}
 }
