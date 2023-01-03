@@ -43,7 +43,7 @@ country_event = {
 
 	}
 	mean_time_to_happen = {
-		days > 2
+		days < 2
 	}
 	hide_window = yes
 	fire_only_once = yes
@@ -77,8 +77,6 @@ country_event = {
 ###仮
 country_event = {
 	id = yourmod_crisis_fleet.02
-	hide_window = yes
-	fire_only_once = yes
 	is_triggered_only = yes
 
 	trigger = {
