@@ -6,6 +6,7 @@ yourmod_create_crisis = {
 		name_list = yourmod_crisis
 		species = random
 		ignore_initial_colony_error = yes
+		auto_delete = no
 		flag = {
 			icon= {
 				category = "yourmod"
