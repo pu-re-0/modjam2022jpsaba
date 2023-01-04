@@ -737,42 +737,42 @@ country_event = {#順番通りに再生させるためのイベント
 			limit = {
 				not = { has_country_flag = yourmod_crisis_story_1 }
 			}
-			country_event = { id = youmod_crisis_01.1201 }
+			country_event = { id = yourmod_crisis_01.1201 }
 		}
 		else_if = {
 			limit = {
 				has_country_flag = yourmod_crisis_story_1
 				not = { has_country_flag = yourmod_crisis_story_2 }
 			}
-			country_event = { id = youmod_crisis_01.1202 }
+			country_event = { id = yourmod_crisis_01.1202 }
 		}
 		else_if = {
 			limit = {
 				has_country_flag = yourmod_crisis_story_2
 				not = { has_country_flag = yourmod_crisis_story_3 }
 			}
-			country_event = { id = youmod_crisis_01.1203 }
+			country_event = { id = yourmod_crisis_01.1203 }
 		}
 		else_if = {
 			limit = {
 				has_country_flag = yourmod_crisis_story_3
 				not = { has_country_flag = yourmod_crisis_story_4 }
 			}
-			country_event = { id = youmod_crisis_01.1204 }
+			country_event = { id = yourmod_crisis_01.1204 }
 		}
 		else_if = {
 			limit = {
 				has_country_flag = yourmod_crisis_story_4
 				not = { has_country_flag = yourmod_crisis_story_5 }
 			}
-			country_event = { id = youmod_crisis_01.1205 }
+			country_event = { id = yourmod_crisis_01.1205 }
 		}
 		else_if = {
 			limit = {
 				has_country_flag = yourmod_crisis_story_5
 				not = { has_country_flag = yourmod_crisis_story_6 }
 			}
-			country_event = { id = youmod_crisis_01.1206 }
+			country_event = { id = yourmod_crisis_01.1206 }
 		}
 	}
 }
