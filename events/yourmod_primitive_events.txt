@@ -140,6 +140,10 @@ country_event = {
 	}
 	option = {
 		name = yourmod_primitive.11.a	#コンタクトをとれ
+		country_event = {
+			id = yourmod_custom_diplomacy_events.100
+			days = 1
+		}
 	}
 	option = {
 		name = yourmod_primitive.11.b 	#そっとしておこう。何か深い意味があるはずだ

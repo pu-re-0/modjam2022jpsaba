@@ -26,7 +26,7 @@ country_event = {
 	diplomatic = yes
 
 	trigger = {
-		trigger = { is_homicidal = no }
+		is_homicidal = no
 	}
 
 	#custom_gui = "enclave_curator_window"
@@ -59,21 +59,32 @@ country_event = {
 	}
 
 	immediate = {
-		country_event = { id = yourmod_custom_diplomacy_events.101 }
+		if = {
+			limit = {
+				has_global_flag = yourmod_crisis_phase_2
+			}
+			country_event = { id = yourmod_custom_diplomacy_events.102 }
+		}
+		else = {
+			country_event = { id = yourmod_custom_diplomacy_events.101 }
+		}
 	}
 }
 
-country_event = {
+country_event = { #原始文明ホーム
 	id = yourmod_custom_diplomacy_events.101
 	title = yourmod_custom_diplomacy_events.101.name
-	desc = yourmod_custom_diplomacy_events.101a.desc
+	desc = yourmod_custom_diplomacy_events.101a.desc #何用だね。
+	desc = yourmod_custom_diplomacy_events.101b.desc #放っておいて貰えないか？
+	desc = yourmod_custom_diplomacy_events.101c.desc #騒がしいな
+	desc = yourmod_custom_diplomacy_events.101d.desc #忘れ去られたほうが良い物もあると思わないかね？
 
 	is_triggered_only = yes
 	diplomatic = yes
 
 	trigger = {
 		has_global_flag = yourmod_in_progress
-		trigger = { is_homicidal = no }
+		is_homicidal = no
 	}
 
 	picture_event_data = {
@@ -84,14 +95,108 @@ country_event = {
 	#location = event_target:curator_enclave_system
 
 	option = {
-		name = yourmod_custom_diplomacy_events.101.a
+		name = yourmod_custom_diplomacy_events.101.a #なぜ高度な技術を隠している？
+		response_text = yourmod_custom_diplomacy_events.101.a.reply #君たちに教える義理はない
+		is_dialog_only = yes
 	}
 
 	option = {
-		name = yourmod_custom_diplomacy_events.101.b
+		name = yourmod_custom_diplomacy_events.101.b #あなた方の起源は？
+		response_text = yourmod_custom_diplomacy_events.101.b.reply #何も語るべきことはない
+		is_dialog_only = yes
 	}
 
 	option = {
-		name = yourmod_custom_diplomacy_events.101.c
+		name = yourmod_custom_diplomacy_events.101.c #それではまた
+		response_text = yourmod_custom_diplomacy_events.101.c.reply #はあ
+	}
+}
+
+country_event = { #原始文明ホーム2
+	id = yourmod_custom_diplomacy_events.102
+	title = yourmod_custom_diplomacy_events.102.name
+	desc = yourmod_custom_diplomacy_events.102a.desc #どうも
+	desc = yourmod_custom_diplomacy_events.102b.desc #聞きたい事があるのだろう？
+	desc = yourmod_custom_diplomacy_events.102c.desc #よく気付いたな
+
+	is_triggered_only = yes
+	diplomatic = yes
+
+	trigger = {
+		has_global_flag = yourmod_in_progress
+		is_homicidal = no
+	}
+
+	picture_event_data = {
+		portrait = event_target:yourmod_cancient_crisis_creater_pre_FTL_country
+		room = enclave_curator_room
+	}
+
+	#location = event_target:curator_enclave_system
+
+	option = {
+		name = yourmod_custom_diplomacy_events.102.a #なぜ高度な技術を隠している？
+		response_text = yourmod_custom_diplomacy_events.102.a.reply #最早隠す必要はあるまい……略
+		is_dialog_only = yes
+	}
+
+	option = {
+		name = yourmod_custom_diplomacy_events.101.b #あなた方の起源は？
+		response_text = yourmod_custom_diplomacy_events.102.b.reply #今から3000万年前のこと……略
+		is_dialog_only = yes
+	}
+
+	option = {
+		name = yourmod_custom_diplomacy_events.102.c	#あのウィルスについて知っているのか？！
+		trigger = {
+			has_global_flag = yourmod_crisis_phase_2
+		}
+		country_event = {
+			id = yourmod_custom_diplomacy_events.103
+		}
+	}
+
+	option = {
+		name = yourmod_custom_diplomacy_events.103.d #それではまた
+		response_text = yourmod_custom_diplomacy_events.103.c.reply #どうも
+	}
+}
+
+country_event = { #原始文明クライシスについて聞く
+	id = yourmod_custom_diplomacy_events.103
+	title = yourmod_custom_diplomacy_events.103.name
+	desc = yourmod_custom_diplomacy_events.103.desc #ああ実はあれは我々の先祖の過ちそのものだ
+
+	is_triggered_only = yes
+	diplomatic = yes
+
+	trigger = {
+		has_global_flag = yourmod_in_progress
+	}
+
+	picture_event_data = {
+		portrait = event_target:yourmod_cancient_crisis_creater_pre_FTL_country
+		room = enclave_curator_room
+	}
+
+	#location = event_target:curator_enclave_system
+
+	option = {
+		name = yourmod_custom_diplomacy_events.103.a #なぜそのようなことに？
+		response_text = yourmod_custom_diplomacy_events.103.a.reply
+		is_dialog_only = yes
+	}
+
+	option = {
+		name = yourmod_custom_diplomacy_events.103.b #対処法はあるのか？
+		response_text = yourmod_custom_diplomacy_events.103.b.reply
+		is_dialog_only = yes
+	}
+
+	option = {
+		name = yourmod_custom_diplomacy_events.103.c #情報、感謝する
+		country_event = {
+			id = yourmod_custom_diplomacy_events.101
+		}
 	}
 }
