@@ -20,6 +20,7 @@ country_event = {
 
 		start_situation = {
 			type = yourmod_crisis_vaccine_dev_situation
+			target = this
 		}
 	}
 }
