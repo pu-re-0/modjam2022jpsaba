@@ -538,18 +538,15 @@ country_event = { #Situation has done, Ground Zero Emerging, Create Notification
 
 	immediate = {
 		set_global_flag = yourmod_crisis_ground_zero_entered
-		no_scope = {
+		random_system = {
+			limit = { not = { owner = { or = { has_ethic = ethic_xenophobe has_ethic = ethic_fanatic_xenophobe } } } }
 			set_spawn_system_batch = begin
 			spawn_system = {
-				#min_jumps = 1
-				#max_jumps = 3
-				min_distance = 25
-				max_distance = 350
+				min_jumps = 1
+				max_jumps = 3
 				initializer = yourmod_crisis_ground_zero_initializer
-				hyperlane = no
+				hyperlane = yes
 				is_discovered = yes
-				min_orientation_angle = 0 #
-				max_orientation_angle = 359 #
 			}
 			set_spawn_system_batch = end
 			add_extra_hyperlane_to_spawned_system_effect = yes
