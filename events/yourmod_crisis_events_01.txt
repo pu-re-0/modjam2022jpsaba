@@ -611,29 +611,27 @@ ship_event = { # NEXT STAGE
 				id = yourmod_crisis_01.1001
 			}
 		}
-		from = {
-			event_target:yourmod_crisis_country = {
-				create_fleet = {
-					name = "NAME_Medium_Virus_fleet"
-					settings = {
-						garrison = yes
+		event_target:yourmod_crisis_country = {
+			create_fleet = {
+				name = "NAME_Medium_Virus_fleet"
+				settings = {
+					garrison = yes
+				}
+				effect = {
+					set_owner = event_target:yourmod_crisis_country
+					set_fleet_bombardment_stance = armageddon
+					while = {
+						count = 30
+						create_ship = {
+							name = random
+							design = "NAME_medium_virus"
+							#graphical_culture = PREV
+						}
 					}
-					effect = {
-						set_owner = PREV
-						set_fleet_bombardment_stance = armageddon
-						while = {
-							count = 30
-							create_ship = {
-								name = random
-								design = "NAME_medium_virus"
-								graphical_culture = PREV
-							}
-						}
-						set_location = {
-							target = event_target:yourmod_crisis_ground_zero_vanish_planet
-							distance = 1
-							angle = random
-						}
+					set_location = {
+						target = event_target:yourmod_crisis_ground_zero_vanish_planet
+						distance = 1
+						angle = random
 					}
 				}
 			}
