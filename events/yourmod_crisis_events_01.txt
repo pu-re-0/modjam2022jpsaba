@@ -141,6 +141,18 @@ country_event = { # notification for first victim#お前が第一感染国とい
 			days = 14
 			random = 7
 		}
+		#ワクチン開発シチュエーション用 by ぷれ
+		if = {
+			limit = {
+				is_ai = no
+			}
+			country_event = {
+				id = yourmod_vaccine_dev_event.0
+				days = 45
+				random = 30
+				
+			}
+		}
 	}
 
 	option = { # Start First Situation#感染の状況を開始
@@ -359,11 +371,11 @@ country_event = { #Infected!#感染した！
 					}
 				}
 			}
-			#ワクチン開発シチュエーション用 by ぷれ
-			every_country = {
+			if = {
 				limit = {
 					is_ai = no
 				}
+				#ワクチン開発シチュエーション用 by ぷれ
 				country_event = {
 					id = yourmod_vaccine_dev_event.0
 					days = 45
@@ -538,18 +550,15 @@ country_event = { #Situation has done, Ground Zero Emerging, Create Notification
 
 	immediate = {
 		set_global_flag = yourmod_crisis_ground_zero_entered
-		no_scope = {
+		random_system = {
+			limit = { not = { owner = { or = { has_ethic = ethic_xenophobe has_ethic = ethic_fanatic_xenophobe } } } }
 			set_spawn_system_batch = begin
 			spawn_system = {
-				#min_jumps = 1
-				#max_jumps = 3
-				min_distance = 25
-				max_distance = 350
+				min_jumps = 1
+				max_jumps = 3
 				initializer = yourmod_crisis_ground_zero_initializer
-				hyperlane = no
+				hyperlane = yes
 				is_discovered = yes
-				min_orientation_angle = 0 #
-				max_orientation_angle = 359 #
 			}
 			set_spawn_system_batch = end
 			add_extra_hyperlane_to_spawned_system_effect = yes
