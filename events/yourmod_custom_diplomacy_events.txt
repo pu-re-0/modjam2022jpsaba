@@ -55,6 +55,7 @@ country_event = {
 			is_country_type = primitive
 			has_country_flag = ancient_crisis_creater_pre_FTL_country
 		}
+		has_global_flag = yourmod_can_contact_ancient_crisis_creater_pre_FTL_country
 	}
 
 	immediate = {
