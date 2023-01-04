@@ -232,7 +232,7 @@ country_event = { #Informed consent#公開した場合のイベント
 	#我々は全ての銀河勢力に向けて緊急通信を送った。知る限りの情報を伝えた我々に対し、銀河中がよく評価してくれることを祈るばかりだ。
 
 	option = {
-		name = yourmod_crisis_01.3.a #これは大変なことになるかもしれない。
+		name = yourmod_crisis_01.4.a #これは大変なことになるかもしれない。
 		begin_event_chain = { event_chain = yourmod_crisis_chain_1 target = this }
 	}
 }
@@ -386,11 +386,12 @@ country_event = { # investigate trigger
 
 	trigger = {
 		has_global_flag = yourmod_in_progress # see mid_game_crisis_trigger_events.txt
+		has_global_flag = yourmod_virus_first_infection
 		#各国の状況が深刻化していることを判定するトリガーを後で入れておく
 	}
 
 	mean_time_to_happen = {
-		years = 3
+		years = 4
 	}
 
 	immediate = {
@@ -419,23 +420,6 @@ country_event = { # Start Investigation
 	option = { # Start First Situation
 		name = yourmod_crisis_01.101.a
 		start_situation = { type = yourmod_crisis_research_situation target = this }
-	}
-}
-
-country_event = { #調査シチュエーションからのイベント
-	id = yourmod_crisis_01.111
-	title = yourmod_crisis_01.111.name
- 	desc = yourmod_crisis_01.111.desc
-
-	#$yourmod_crisis$の調査
-	#$yourmod_crisis$の洞察は、まずはその症状の調査から始める。過去に有機生命体という有機生命体を襲ってきた、銀河内に存在するあらゆる感染症と照合するためだ。先駆者文明が残した記録にも、古代から感染症が存在したことが書かれている。そのような古代の感染症が今さらになって猛威を振るっているということもありえるかもしれない。あるいは、とにかく、持てる限りの知識を総動員するのだ。
-	
-	picture = GFX_evt_mining_station
-	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
-	is_triggered_only = yes
-
-	option = { # ok
-		name = yourmod_crisis_01.101.a
 	}
 }
 
@@ -520,7 +504,7 @@ country_event = { #調査シチュエーションからのイベント
 	is_triggered_only = yes
 
 	option = { # ok
-		name = yourmod_crisis_01.113.a
+		name = yourmod_crisis_01.114.a
 	}
 }
 
@@ -537,7 +521,7 @@ country_event = { #調査シチュエーションからのイベント
 	is_triggered_only = yes
 
 	option = { # ok
-		name = yourmod_crisis_01.113.a
+		name = yourmod_crisis_01.114.a
 	}
 }
 
