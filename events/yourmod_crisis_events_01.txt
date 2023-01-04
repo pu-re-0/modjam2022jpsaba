@@ -560,12 +560,15 @@ country_event = { #Situation has done, Ground Zero Emerging, Create Notification
 				#min_jumps = 1
 				#max_jumps = 3
 				min_distance = 25
-				max_distance = 35
+				max_distance = 350
 				initializer = yourmod_crisis_ground_zero_initializer
-				hyperlane = yes
-				is_discovered = no
+				hyperlane = no
+				is_discovered = yes
+				min_orientation_angle = 0 #
+				max_orientation_angle = 359 #
 			}
 			set_spawn_system_batch = end
+			add_extra_hyperlane_to_spawned_system_effect = yes
 		}
 	}
 
@@ -589,7 +592,11 @@ ship_event = { # NEXT STAGE
 	fire_only_once = yes
 	#is_triggered_only = yes
 	is_triggered_only = yes
-	hidden_window = yes
+	title = yourmod_crisis_01.1000.name
+	desc = yourmod_crisis_01.1000.desc
+	
+	#謎めいた星系
+	#新しく発見された星系に到達したが、この星系は……奇妙だ。ありふれた恒星に、妙に巨大な惑星が二つだけ。小惑星帯どころか小惑星の一つもない。どういうことだろうか。
 
 	trigger = {
 		from = {#system
@@ -602,7 +609,6 @@ ship_event = { # NEXT STAGE
 		fromfrom = {
 			country_event = {
 				id = yourmod_crisis_01.1001
-				days = 1
 			}
 		}
 		from = {
@@ -635,6 +641,9 @@ ship_event = { # NEXT STAGE
 		event_target:yourmod_crisis_ground_zero_vanish_planet = {
 			remove_planet = yes
 		}
+	}
+	option = {
+		name = yourmod_crisis_01.1000.a		#警戒しろ。
 	}
 }
 
@@ -723,7 +732,7 @@ country_event = {#起源探しイベント
 country_event = {#順番通りに再生させるためのイベント
 	id = yourmod_crisis_01.1200
 	is_triggered_only = yes
-	hidden_window = yes
+	hide_window = yes
 
 	immediate = {
 		if = {
