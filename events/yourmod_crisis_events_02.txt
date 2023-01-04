@@ -172,9 +172,13 @@ country_event = {
 				10 = { #感染済み惑星のイベント
 					modifier = {
 						factor = 0
-						any_owned_planet = {
-							NOT = { has_planet_flag = yourmod_infected_planet }
+						or = {
+							any_owned_planet = {
+								NOT = { has_planet_flag = yourmod_infected_planet }
+							}
+							has_country_flag = yourmod_infected_country
 						}
+						
 					}
 					random_planet_within_border = {
 						planet_event = {
@@ -230,6 +234,8 @@ country_event = {
 						}
 					}
 				}
+
+				
 			}
 		}
 	}

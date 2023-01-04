@@ -19,10 +19,15 @@ yourmod_planet_infection_situation = {
 	category = negative
 
 	abort_trigger = {
-		
+		owner = {
+			has_country_flag = yourmod_infected_country
+		}
 	}
 	on_abort = {
-
+		destroy_situation = this
+		target = {
+			remove_planet_flag = yourmod_infected_planet
+		}
 	}
 	
 	modifier = {
@@ -81,18 +86,28 @@ yourmod_planet_infection_situation = {
 	}
 
 	on_start = {
-		country_event = {
-			id = yourmod_crisis_02.10
+		owner = {
+			country_event = {
+				id = yourmod_crisis_02.10
+			}
 		}
 	}
 
 	on_progress_complete = {
+		target = {
+			remove_planet_flag = yourmod_infected_planet
+		}
 		owner = {
+			start_situation = {
+				type = yourmod_country_infection_situation
+				target = owner
+			}
 			country_event = {
 				id = yourmod_crisis_02.12
 			}
 		}
 	}
+
 	on_fail = {
 		destroy_situation = this
 		owner = {
@@ -168,4 +183,96 @@ yourmod_planet_infection_situation = {
 	}
 
 
+}
+
+yourmod_country_infection_situation = {
+	picture = GFX_evt_atmospheric_entry
+	complete_icon_frame = GFX_situation_outcome_frame_blue
+	complete_icon = GFX_situation_outcome_unknown
+
+	category = negative
+
+	abort_trigger = {
+
+	}
+	on_abort = {
+		destroy_situation = this
+	}
+	
+	modifier = {
+	}
+
+	start_value = 20
+
+	stages = {
+		stage_1 = {
+			icon = GFX_situation_stage_1
+			icon_background = GFX_situation_stage_frame_red
+			end = 25
+		}
+		stage_2 = {
+			icon = GFX_situation_stage_2
+			icon_background = GFX_situation_stage_frame_red
+			end = 50
+			on_first_enter = {
+			}
+		}
+		stage_3 = {
+			icon = GFX_situation_stage_3
+			icon_background = GFX_situation_stage_frame_red
+			end = 75
+			on_first_enter = {
+			}
+		}
+		stage_4 = {
+			icon = GFX_situation_stage_4
+			icon_background = GFX_situation_stage_frame_red
+			end = 100
+			on_first_enter = {
+			}
+		}
+	}
+	on_monthly = {
+		
+	}
+
+	monthly_progress = {
+		base = 0.75
+		modifier = {
+			add = 0.5
+			desc = yourmod_planet_infection_approach_0_desc
+			current_situation_approach = yourmod_planet_infection_approach_0
+		}
+
+	}
+
+	on_start = {
+		owner = {
+			set_country_flag = yourmod_infected_country
+		}
+	}
+
+	on_progress_complete = {
+
+	}
+
+	on_fail = {
+		destroy_situation = this
+	}
+
+	approach = {
+		name = yourmod_country_infection_approach_0
+		icon = GFX_situation_approach_unity
+		icon_background = GFX_situation_approach_bg_green
+		default = yes
+
+ 		resources = { 	#Resource table as standard
+ 			category = situations
+ 			upkeep = { }
+ 			produces = { }
+ 		}
+		on_select = {
+			custom_tooltip = yourmod_planet_infection_approach_0_desc
+		}
+	}
 }

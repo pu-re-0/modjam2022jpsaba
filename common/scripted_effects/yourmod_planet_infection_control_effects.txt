@@ -105,12 +105,27 @@ change_planet_prevalence_level = {
 			} 
 		}
 
-		set_planet_flag = yourmod_infected_planet
-
-		owner = {
+		if = {
+			limit = {
+				owner = {
+					any_owned_planet = {
+						has_planet_flag = yourmod_infected_planet
+					}
+				}
+			}
 			start_situation = {
-				type = yourmod_planet_infection_situation
-				target = event_target:effect_target_planet
+				type = yourmod_country_infection_situation
+				target = owner
+			}
+		}
+		else = {
+			set_planet_flag = yourmod_infected_planet
+
+			owner = {
+				start_situation = {
+					type = yourmod_planet_infection_situation
+					target = event_target:effect_target_planet
+				}
 			}
 		}
 
