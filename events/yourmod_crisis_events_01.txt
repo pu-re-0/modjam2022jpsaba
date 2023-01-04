@@ -141,6 +141,18 @@ country_event = { # notification for first victim#お前が第一感染国とい
 			days = 14
 			random = 7
 		}
+		#ワクチン開発シチュエーション用 by ぷれ
+		if = {
+			limit = {
+				is_ai = no
+			}
+			country_event = {
+				id = yourmod_vaccine_dev_event.0
+				days = 45
+				random = 30
+				
+			}
+		}
 	}
 
 	option = { # Start First Situation#感染の状況を開始
@@ -359,11 +371,11 @@ country_event = { #Infected!#感染した！
 					}
 				}
 			}
-			#ワクチン開発シチュエーション用 by ぷれ
-			every_country = {
+			if = {
 				limit = {
 					is_ai = no
 				}
+				#ワクチン開発シチュエーション用 by ぷれ
 				country_event = {
 					id = yourmod_vaccine_dev_event.0
 					days = 45
