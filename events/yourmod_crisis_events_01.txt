@@ -40,7 +40,17 @@ namespace = yourmod_crisis_01
 #1204						#起源ストーリーイベント4
 #1205						#起源ストーリーイベント5
 #1206						#起源ストーリーイベント6
+#1207						#学術会
+#1208						#学術会
+#1209						#学術会
+#1210						#学術会(発掘現場追加)
+#1211						#発掘イベント
+#1212						#発掘イベント
+#1213						#発掘イベント
+#1214						#発掘イベント(終)
 #1299						#遺物アクション失敗
+
+#1300						#暗号解読シチュエーションの開始
 
 country_event = { # decide first victim country#最初に感染する国家を決定
 	id = yourmod_crisis_01.1
@@ -1146,6 +1156,223 @@ country_event = {#起源探しイベント:
 	}
 }
 
+country_event = {#起源探しイベント:学術会
+	id = yourmod_crisis_01.1207
+	title = yourmod_crisis_01.1207.name
+ 	desc = yourmod_crisis_01.1207.desc
+
+	picture = GFX_evt_mining_station
+	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+
+	trigger = {
+		has_country_flag = yourmod_crisis_story_6
+		exists = event_target:curator_enclave_country
+		event_target:curator_enclave_country = {
+			has_communications = ROOT
+		}
+	}
+
+	#意外な手助け
+	#帝国は$yourmod_crisis$に関係した史料を集め、解析を重ねている。しかし、重要な物が欠けている。それは、$yourmod_crisis$の$R製造者$!に関する情報である。名前も分からない古代文明も、レングルスタップも、シャダイハーも、$yourmod_crisis$に直面したすべての文明がこれは生物兵器であるという結論を出している。だが、誰も製造者が何者かという疑問については答えが出せなかったのだ。考古学者たちが頭をフル回転して考えているという中で、突如として学術会から交信が届いた。なんでも、$yourmod_crisis$について話があるという。
+
+	mean_time_to_happen = {
+		years = 2
+	}
+
+	immediate = {
+		set_country_flag = yourmod_crisis_story_7
+	}
+
+	option = {
+		name = yourmod_crisis_01.1207.a #画面に映せ。
+		trigger = { is_homicidal = no }
+		country_event = {
+			id = yourmod_crisis_01.1208
+		}
+	}
+	option = {
+		name = yourmod_crisis_01.1207.b #死ね……。
+		trigger = { is_homicidal = yes }
+	}
+}
+
+country_event = {
+	id = yourmod_crisis_01.1208
+	title = yourmod_crisis_01.1208.name
+	desc = yourmod_crisis_01.1208.desc
+	is_triggered_only = yes
+	diplomatic = yes
+	custom_gui = "enclave_curator_window"
+	custom_gui_option = "enclave_curator_option"
+	picture_event_data = {
+		portrait = event_target:curator_enclave_country
+		room = enclave_curator_room
+	}
+	location = event_target:curator_enclave_system
+
+	#通信が入った
+	#こんにちは、[from.GetName]の諸君。挨拶はこの程度にしておいて、本題に入ろう。君たちが$yourmod_crisis$と呼んでいる、あの実体の事だ。我々キュレーターは、アレについての情報を持っている。いや、持っていた、という方が正しいか。保管庫の奥の奥に厳重に封印されていて、$yourmod_crisis$について知るキュレーターはもはや居なかったからだ。最近の$yourmod_crisis$の出現を受けて再度調査を行っていたんだが、その結果がいまようやく出た。それを今から教えよう。
+
+	trigger = {
+		exists = event_target:curator_enclave_country
+	}
+
+	option = {
+		name = yourmod_crisis_01.1208.a #前書きはいい、銀河のために早く教えてくれ！
+		hidden_effect = {
+			country_event = { id = yourmod_crisis_01.1209 }
+		}
+	}
+}
+
+country_event = {
+	id = yourmod_crisis_01.1209
+	title = yourmod_crisis_01.1209.name
+	desc = yourmod_crisis_01.1209.desc
+	is_triggered_only = yes
+	diplomatic = yes
+	custom_gui = "enclave_curator_window"
+	custom_gui_option = "enclave_curator_option"
+	picture_event_data = {
+		portrait = event_target:curator_enclave_country
+		room = enclave_curator_room
+	}
+	location = event_target:curator_enclave_system
+
+	#通信が入った
+	#冷静になって聞いてくれ。$yourmod_crisis$の製造者に関することだ。仮にクリエイターとでも呼んでおくが、彼らは3000万年前に繁栄していた文明だ。ダークマター技術を取り入れたことで栄華を極め、銀河外からの危機も退けた非常に強大な帝国だったのだが、自らの発明した$yourmod_crisis$のせいで銀河全体を巻き込んで滅んだのだ。宿主を殺しつくした$yourmod_crisis$も同時に休眠状態に入ったが、数百万年単位で蘇って銀河に災厄を振り撒いている。
+
+	trigger = {
+		exists = event_target:curator_enclave_country
+	}
+
+	option = {
+		name = yourmod_crisis_01.1209.a #やはり生物兵器だったのか！続けてくれ。
+		hidden_effect = {
+			country_event = { id = yourmod_crisis_01.1210 }
+		}
+	}
+}
+
+country_event = {
+	id = yourmod_crisis_01.1210
+	title = yourmod_crisis_01.1210.name
+	desc = yourmod_crisis_01.1210.desc
+	is_triggered_only = yes
+	diplomatic = yes
+	custom_gui = "enclave_curator_window"
+	custom_gui_option = "enclave_curator_option"
+	picture_event_data = {
+		portrait = event_target:curator_enclave_country
+		room = enclave_curator_room
+	}
+	location = event_target:curator_enclave_system
+
+	#通信が入った
+	#それで、そのクリエイターだが……。実は、未だに存続している。技術を捨て、検疫と称して自己隔離状態に入っているがね。我々は数百万年前に彼らと接触してこの情報を得た。彼らの先祖が残した、$yourmod_crisis$を無害化する方法を保存している場所の情報も持っている。その座標を教えよう……。それと、今回に限っては情報の料金を請求しない。その代わりと言ってはなんだが、我々のステーションが破壊される前に$yourmod_crisis$をこの銀河から根絶してくれ。よろしく頼む。
+
+	trigger = {
+		exists = event_target:curator_enclave_country
+	}
+
+	option = {
+		name = yourmod_crisis_01.1209.a #分かった。さっそく情報を送れ。
+		random_planet_within_border = {
+			create_archaeological_site = yourmod_final_arc_site
+		}
+	}
+}
+
+####発掘イベント
+ship_event = {#1
+	id = yourmod_crisis_01.1211
+	title = yourmod_crisis_01.1211.name
+	desc = yourmod_crisis_01.1211.desc
+	is_triggered_only = yes
+	auto_opens = yes
+	location = from
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = {
+		from = { set_site_progress_locked = no }
+	}
+	#
+
+	option = {
+		name = SEARCH
+		small_artifact_reward = yes
+	}
+}
+
+ship_event = {#2
+	id = yourmod_crisis_01.1212
+	title = yourmod_crisis_01.1212.name
+	desc = yourmod_crisis_01.1212.desc
+	is_triggered_only = yes
+	auto_opens = yes
+	location = from
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = {
+		from = { set_site_progress_locked = no }
+	}
+	#
+
+	option = {
+		name = SEARCH
+		small_artifact_reward = yes
+	}
+}
+
+ship_event = {#3
+	id = yourmod_crisis_01.1213
+	title = yourmod_crisis_01.1213.name
+	desc = yourmod_crisis_01.1213.desc
+	is_triggered_only = yes
+	auto_opens = yes
+	location = from
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = {
+		from = { set_site_progress_locked = no }
+	}
+	#
+
+	option = {
+		name = SEARCH
+		small_artifact_reward = yes
+	}
+}
+
+ship_event = {#4
+	id = yourmod_crisis_01.1214
+	title = yourmod_crisis_01.1214.name
+	desc = yourmod_crisis_01.1214.desc
+	is_triggered_only = yes
+	auto_opens = yes
+	location = from
+
+	option = {
+		name = yourmod_crisis_10.1214 #それは……困ったな。
+		owner = {
+			country_event = {
+				id = yourmod_crisis_01.1300
+			}
+		}
+	}
+}
+
+###
+
 country_event = {#遺物アクションガバ
 	id = yourmod_crisis_01.1299
 	title = yourmod_crisis_01.1299.name
@@ -1161,6 +1388,27 @@ country_event = {#遺物アクションガバ
 
 	option = {
 		name = yourmod_crisis_01.1299.a #なんという時間の無駄だ！
+	}
+}
+
+####
+
+country_event = {#クソ暗号
+	id = yourmod_crisis_01.1300
+	title = yourmod_crisis_01.1300.name
+ 	desc = yourmod_crisis_01.1300.desc
+
+	picture = GFX_evt_mining_station
+	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+
+	is_triggered_only = yes
+
+	#プレースホルダー
+	#クリエイター文明許せねぇ！
+
+	option = {
+		name = yourmod_crisis_01.1300.a #急げ急げ急げ！
+		start_situation = { type = yourmod_decryption_situation target = this }
 	}
 }
 
