@@ -61,6 +61,9 @@ namespace = yourmod_crisis_01
 #1308						#他帝国からの手助け
 #1310						#暗号解読成功
 
+#1999						#艦隊が軌道上に来たかを判定するイベント(処理に良くないよねこれ)
+#2000						#危機の終了イベント
+
 country_event = { # decide first victim country#最初に感染する国家を決定
 	id = yourmod_crisis_01.1
 	fire_only_once = yes
