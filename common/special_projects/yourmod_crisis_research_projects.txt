@@ -1,0 +1,148 @@
+
+special_project = {#危機の起源探しプロジェクト:1
+	key = "YOURMOD_CRISIS_RESEARCH_PROJECT_1"
+	#cost = 250000
+	days_to_research = 60
+	#tech_department = society_technology
+	picture = GFX_evt_alien_propaganda
+	icon = "gfx/interface/icons/situation_log/situation_log_main_quest.dds"
+	event_chain = yourmod_crisis_chain_2
+	location = yes
+
+	event_scope = country_event
+
+	requirements = {
+		shipclass_science_ship = 1
+		leader = scientist
+	}
+
+	on_success = {
+		country_event = { id = yourmod_crisis_01.1201 }
+	}
+
+	on_fail = {
+	}
+}
+special_project = {#危機の起源探しプロジェクト:2
+	key = "YOURMOD_CRISIS_RESEARCH_PROJECT_2"
+	#cost = 250000
+	days_to_research = 60
+	#tech_department = society_technology
+	picture = GFX_evt_alien_propaganda
+	icon = "gfx/interface/icons/situation_log/situation_log_main_quest.dds"
+	event_chain = yourmod_crisis_chain_2
+	location = yes
+
+	event_scope = country_event
+
+	requirements = {
+		shipclass_science_ship = 1
+		leader = scientist
+	}
+
+	on_success = {
+		country_event = { id = yourmod_crisis_01.1202 }
+	}
+
+	on_fail = {
+	}
+}
+
+special_project = {#危機の起源探しプロジェクト:3
+	key = "YOURMOD_CRISIS_RESEARCH_PROJECT_3"
+	#cost = 250000
+	days_to_research = 60
+	#tech_department = society_technology
+	picture = GFX_evt_alien_propaganda
+	icon = "gfx/interface/icons/situation_log/situation_log_main_quest.dds"
+	event_chain = yourmod_crisis_chain_2
+	location = yes
+
+	event_scope = country_event
+
+	requirements = {
+		shipclass_science_ship = 1
+		leader = scientist
+	}
+
+	on_success = {
+		country_event = { id = yourmod_crisis_01.1203 }
+	}
+
+	on_fail = {
+	}
+}
+special_project = {#危機の起源探しプロジェクト:4
+	key = "YOURMOD_CRISIS_RESEARCH_PROJECT_4"
+	#cost = 250000
+	days_to_research = 60
+	#tech_department = society_technology
+	picture = GFX_evt_alien_propaganda
+	icon = "gfx/interface/icons/situation_log/situation_log_main_quest.dds"
+	event_chain = yourmod_crisis_chain_2
+	location = yes
+
+	event_scope = country_event
+
+	requirements = {
+		shipclass_science_ship = 1
+		leader = scientist
+	}
+
+	on_success = {
+		country_event = { id = yourmod_crisis_01.1204 }
+	}
+
+	on_fail = {
+	}
+}
+
+special_project = {#危機の起源探しプロジェクト:5
+	key = "YOURMOD_CRISIS_RESEARCH_PROJECT_5"
+	#cost = 250000
+	days_to_research = 60
+	#tech_department = society_technology
+	picture = GFX_evt_alien_propaganda
+	icon = "gfx/interface/icons/situation_log/situation_log_main_quest.dds"
+	event_chain = yourmod_crisis_chain_2
+	location = yes
+
+	event_scope = country_event
+
+	requirements = {
+		shipclass_science_ship = 1
+		leader = scientist
+	}
+
+	on_success = {
+		country_event = { id = yourmod_crisis_01.1205 }
+	}
+
+	on_fail = {
+	}
+}
+special_project = {#危機の起源探しプロジェクト:6
+	key = "YOURMOD_CRISIS_RESEARCH_PROJECT_6"
+	#cost = 250000
+	days_to_research = 60
+	#tech_department = society_technology
+	picture = GFX_evt_alien_propaganda
+	icon = "gfx/interface/icons/situation_log/situation_log_main_quest.dds"
+	event_chain = yourmod_crisis_chain_2
+	location = no
+
+	event_scope = country_event
+
+	requirements = {
+		shipclass_science_ship = 1
+		leader = scientist
+	}
+
+	on_success = {
+		country_event = { id = yourmod_crisis_01.1206 }
+	}
+
+	on_fail = {
+	}
+}
+
