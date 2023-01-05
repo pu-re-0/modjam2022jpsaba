@@ -107,7 +107,7 @@ country_event = {
 							}
 						}
 						set_location = {
-							target = PREV
+							target = THIS
 							distance = 1
 							angle = random
 						}
