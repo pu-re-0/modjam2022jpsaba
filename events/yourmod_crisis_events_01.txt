@@ -61,6 +61,9 @@ namespace = yourmod_crisis_01
 #1308						#他帝国からの手助け
 #1310						#暗号解読成功
 
+#1999						#艦隊が軌道上に来たかを判定するイベント(処理に良くないよねこれ)
+#2000						#危機の終了イベント
+
 country_event = { # decide first victim country#最初に感染する国家を決定
 	id = yourmod_crisis_01.1
 	fire_only_once = yes
@@ -1530,7 +1533,7 @@ country_event = {#暗号解読状況S4
 	option = {
 		name = yourmod_crisis_01.1304.a #二つ返事で協力してくれたらいいんだがな。
 		hidden_effect = {
-			every_playble_country = {
+			every_playable_country = {
 				limit = {
 					has_communications = ROOT
 				}
@@ -1555,7 +1558,7 @@ country_event = {#暗号解読状況S5
 	option = {
 		name = yourmod_crisis_01.1305.a #もう一度だけ頼む。
 		hidden_effect = {
-			every_playble_country = {
+			every_playable_country = {
 				limit = {
 					has_communications = ROOT
 				}
@@ -1648,13 +1651,45 @@ country_event = {#暗号解読の成功
 	#暗号解読に成功！
 	#我々の勝利だ。クリエイターの残した難解な暗号を解読することに成功した！解読した文には極めて有用な情報が書かれていた。$yourmod_crisis$への対処法だ。これは、設計段階で仕組んでいた意図的な弱点で、彼らは超超短波の電磁波や、単に強力なサイオニック攻撃に弱いのだという。また、彼らが$R聖地$!と呼ぶ惑星には停止コードを送信する装置があるとのことだが、それがどの惑星なのかということは書かれていない。だが、心当たりはある。$yourmod_crisis$が電波や超能力波を送っていたあの星系に浮かんでいる惑星だ。
 
+	immediate = {
+		set_global_flag = yourmod_now_can_end_the_crisis
+	}
+
 	option = {
 		name = yourmod_crisis_01.1310.a #ようやくだ！この情報を全銀河に伝えろ。
+		every_playable_country = {
+			limit = { not = { is_same_value = root } }
+			country_event = {
+				id = yourmod_crisis_01.1311
+			}
+		}
+		create_point_of_interest = {
+			id = yourmod_crisis_chain_2.poi.2
+			name = yourmod_crisis_chain_2.poi.2.name	#$yourmod_crisis$の停止装置がありそうな惑星
+			desc = yourmod_crisis_chain_2.poi.2.desc	#憶測でしかないが、この惑星に$yourmod_crisis$があると思われる。艦隊を軌道に乗せ、乗組員に停止装置を探させるのだ。
+			event_chain = yourmod_crisis_chain_2
+			location = event_target:yourmod_crisis_ground_zero
+		}
+		#この辺に危機に対する攻撃力が上がるmodifierをaddしておく
+	}
+}
+country_event = {#暗号解読の成功
+	id = yourmod_crisis_01.1311
+	title = yourmod_crisis_01.1311.name
+ 	desc = yourmod_crisis_01.1311.desc
+	picture = GFX_evt_mining_station
+	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+	is_triggered_only = yes
+
+	#暗号解読に成功！
+	#クリエイターの残した難解な暗号を解読することに成功したという知らせが届いた！解読した文には極めて有用な情報が書かれており、その内容は我々にも共有された。その内容というのは$yourmod_crisis$への対処法だ。これは、設計段階で仕組んでいた意図的な弱点で、彼らは超超短波の電磁波や、単に強力なサイオニック攻撃に弱いのだという。また、彼らが$R聖地$!と呼ぶ惑星には停止コードを送信する装置があるとのことだが、それがどの惑星なのかということは書かれていない。だが、心当たりはある。$yourmod_crisis$が電波や超能力波を送っていたあの星系に浮かんでいる惑星だ。
+	option = {
+		name = yourmod_crisis_01.1311.a #よし、そこへ行こう！
 
 		create_point_of_interest = {
 			id = yourmod_crisis_chain_2.poi.2
 			name = yourmod_crisis_chain_2.poi.2.name	#$yourmod_crisis$の停止装置がありそうな惑星
-			desc = yourmod_crisis_chain_2.poi.2.desc	#憶測でしかないが、この惑星に$yourmod_crisis$があると思われる。
+			desc = yourmod_crisis_chain_2.poi.2.desc	#憶測でしかないが、この惑星に$yourmod_crisis$があると思われる。艦隊を軌道に乗せ、乗組員に停止装置を探させるのだ。
 			event_chain = yourmod_crisis_chain_2
 			location = event_target:yourmod_crisis_ground_zero
 		}
@@ -1662,5 +1697,48 @@ country_event = {#暗号解読の成功
 	}
 }
 
+#####危機の終わり
+planet_event = {
+	id = yourmod_crisis_01.1999
+	hide_window = yes
+	fire_only_once = yes
+	trigger = {
+		has_global_flag = yourmod_in_progress
+		has_global_flag = yourmod_now_can_end_the_crisis
+		has_planet_flag = yourmod_crisis_ground_zero_planet
+		any_fleet_in_orbit = {
+			owner = {
+				is_country_type = default
+			}
+		}
+	}
+	immediate = {
+		remove_global_flag = yourmod_in_progress
+		remove_global_flag = yourmod_can_end_the_crisis
+		every_playable_country = {
+			country_event = {
+				id = yourmod_crisis_01.2000
+			}
+		}
+	}
+}
 
+
+country_event = {#大勝利
+	id = yourmod_crisis_01.2000
+	title = yourmod_crisis_01.2000.name
+ 	desc = yourmod_crisis_01.2000.desc
+	picture = GFX_evt_mining_station
+	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+	is_triggered_only = yes
+
+	#暗号解読に成功！
+	#$yourmod_crisis$の停止装置が発見され、停止スイッチが押されたことによって、全銀河の$yourmod_crisis$が瞬時に動作を停止した！$yourmod_crisis$艦隊は崩壊し、ほとんどの感染者は快方に向かいつつある。今日と言う日は記念すべき銀河の勝利の日だ。
+	option = {
+		name = yourmod_crisis_01.2000.a #我々の勝ちだ。
+		end_event_chain = yourmod_crisis_chain_1
+		end_event_chain = yourmod_crisis_chain_2
+		add_resources = { unity = 50000 }
+	}
+}
 

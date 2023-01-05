@@ -92,7 +92,7 @@ country_event = {
                         garrison = yes
                     }
                     effect = {
-                        set_owner = event_target:yourmod_crisis_country
+                        set_owner = global_event_target:yourmod_crisis_country
                         set_fleet_bombardment_stance = armageddon
                         while = {
                             count = 10
