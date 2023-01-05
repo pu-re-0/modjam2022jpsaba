@@ -26,6 +26,13 @@ namespace = yourmod_crisis_01
 #1002 Notification to Every country		#艦隊戦段階への移行を通知・艦隊戦、起源探索用イベントチェーン開始
 
 #1100						#起源の調査を開始
+#1101						#ストーリー用スペシャルプロジェクト
+#1102						#ストーリー用スペシャルプロジェクト
+#1103						#ストーリー用スペシャルプロジェクト
+#1104						#ストーリー用スペシャルプロジェクト
+#1105						#ストーリー用スペシャルプロジェクト
+#1106						#ストーリー用スペシャルプロジェクト
+
 #1200						#起源ストーリーイベント用のシステム的なイベント
 #1201						#起源ストーリーイベント1
 #1202						#起源ストーリーイベント2
@@ -718,6 +725,248 @@ country_event = {#起源探しイベント
 	}
 }
 
+
+country_event = {#起源探しイベント:1のスペシャルプロジェクト
+	id = yourmod_crisis_01.1101
+	title = yourmod_crisis_01.1101.name
+ 	desc = yourmod_crisis_01.1101.desc
+	picture = GFX_evt_mining_station
+	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+
+	trigger = {
+		not = { has_country_flag = yourmod_crisis_story_1 }
+		has_country_flag = yourmod_allow_origin_research
+		any_owned_planet = {
+			is_planet_class = pc_nuked
+		}
+	}
+
+	#死の惑星に希望を賭ける
+	#我が領内に存在する死の惑星は、過去に知的生命体が惑星で核戦争を起こしたことがある、ないしはFTL文明によって終末爆撃が実行されたことがあるという証拠だ。もしかしたら、$yourmod_crisis$についての情報が眠っているかもしれない。
+
+	immediate = {
+		set_country_flag = yourmod_has_more_impportant_point
+	}
+
+	mean_time_to_happen = {
+		years = 1
+	}
+
+	option = {
+		name = yourmod_crisis_01.1100.a #考古学の時間だ。
+		random_owned_planet = {
+			limit = {
+				is_planet_class = pc_nuked
+			}
+			enable_special_project = { name = YOURMOD_CRISIS_RESEARCH_PROJECT_1 owner = ROOT location = THIS }
+		}
+
+	}
+}
+
+country_event = {#起源探しイベント:2のスペシャルプロジェクト
+	id = yourmod_crisis_01.1102
+	title = yourmod_crisis_01.1102.name
+ 	desc = yourmod_crisis_01.1102.desc
+	picture = GFX_evt_mining_station
+	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+
+	trigger = {
+		has_country_flag = yourmod_crisis_story_1
+		not = { has_country_flag = yourmod_crisis_story_2 }
+		has_country_flag = yourmod_allow_origin_research
+		any_owned_planet = {
+			is_planet_class = pc_gas_giant
+		}
+
+	}
+
+	#謎の記録クリスタル
+	#帝国の総力を挙げた調査プロジェクトによって、謎の記録クリスタルがある惑星の軌道上を周回しているのが発見された。これを回収して何が書かれているのか調べてみよう。
+
+	immediate = {
+		set_country_flag = yourmod_has_more_impportant_point
+	}
+
+	mean_time_to_happen = {
+		years = 2
+	}
+
+	option = {
+		name = yourmod_crisis_01.1100.a #考古学の時間だ。
+		random_owned_planet = {
+			limit = {
+				is_planet_class = pc_gas_giant
+			}
+			enable_special_project = { name = YOURMOD_CRISIS_RESEARCH_PROJECT_2 owner = ROOT location = THIS }
+		}
+
+	}
+}
+
+country_event = {#起源探しイベント:3のスペシャルプロジェクト
+	id = yourmod_crisis_01.1103
+	title = yourmod_crisis_01.1103.name
+ 	desc = yourmod_crisis_01.1103.desc
+	picture = GFX_evt_mining_station
+	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+
+	trigger = {
+		has_country_flag = yourmod_crisis_story_2
+		not = { has_country_flag = yourmod_crisis_story_3 }
+		has_country_flag = yourmod_allow_origin_research
+		any_owned_planet = {
+			or = {
+				is_planet_class = pc_nuked
+				is_planet_class = pc_relic
+			}
+		}
+
+	}
+
+	#謎の遺物を発見
+	#我が植民地にある遺跡で、新しく謎めいた遺物が見つかった。極めて強固な装甲によって作られた箱のようなもので、中に何があるか確認するべきだろう。
+
+	immediate = {
+		set_country_flag = yourmod_has_more_impportant_point
+	}
+
+	mean_time_to_happen = {
+		years = 1
+	}
+
+	option = {
+		name = yourmod_crisis_01.1100.a #考古学の時間だ。
+		random_owned_planet = {
+			limit = {
+				or = {
+					is_planet_class = pc_nuked
+					is_planet_class = pc_relic
+				}
+			}
+			enable_special_project = { name = YOURMOD_CRISIS_RESEARCH_PROJECT_3 owner = ROOT location = THIS }
+		}
+
+	}
+}
+
+country_event = {#起源探しイベント:4のスペシャルプロジェクト
+	id = yourmod_crisis_01.1104
+	title = yourmod_crisis_01.1104.name
+ 	desc = yourmod_crisis_01.1104.desc
+	picture = GFX_evt_mining_station
+	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+
+	trigger = {
+		has_country_flag = yourmod_crisis_story_3
+		not = { has_country_flag = yourmod_crisis_story_4 }
+		has_country_flag = yourmod_allow_origin_research
+		any_owned_planet = {
+			or = {
+				is_planet_class = pc_frozen
+				is_planet_class = pc_barren
+			}
+		}
+
+	}
+
+	#異星人の図書館
+	#帝国領内にある居住不可能な惑星は、かつては古代文明の植民地だったようだ。都市が辛うじて残存しており、その中に何があるか確かめる必要がある。
+
+	immediate = {
+		set_country_flag = yourmod_has_more_impportant_point
+	}
+
+	mean_time_to_happen = {
+		years = 1
+	}
+
+	option = {
+		name = yourmod_crisis_01.1100.a #考古学の時間だ。
+		random_owned_planet = {
+			limit = {
+				or = {
+					is_planet_class = pc_frozen
+					is_planet_class = pc_barren
+				}
+			}
+			enable_special_project = { name = YOURMOD_CRISIS_RESEARCH_PROJECT_4 owner = ROOT location = THIS }
+		}
+
+	}
+}
+
+country_event = {#起源探しイベント:5のスペシャルプロジェクト
+	id = yourmod_crisis_01.1105
+	title = yourmod_crisis_01.1105.name
+ 	desc = yourmod_crisis_01.1105.desc
+	picture = GFX_evt_mining_station
+	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+
+	trigger = {
+		has_country_flag = yourmod_crisis_story_4
+		not = { has_country_flag = yourmod_crisis_story_5 }
+		has_country_flag = yourmod_allow_origin_research
+		any_owned_planet = {
+			has_resource = { type = sr_zro amount > 0 }
+		}
+
+	}
+
+	#超能力の痕跡
+	#帝国領内には、超能力に関係した資源であるズィロを産出する惑星が存在する。その惑星にはかつては古代文明が居住していたようで、そこには何かがあるかもしれない。
+
+	immediate = {
+		set_country_flag = yourmod_has_more_impportant_point
+	}
+
+	mean_time_to_happen = {
+		years = 2
+	}
+
+	option = {
+		name = yourmod_crisis_01.1100.a #考古学の時間だ。
+		random_owned_planet = {
+			limit = {
+				has_resource = { type = sr_zro amount > 0 }
+			}
+			enable_special_project = { name = YOURMOD_CRISIS_RESEARCH_PROJECT_5 owner = ROOT location = THIS }
+		}
+
+	}
+}
+
+country_event = {#起源探しイベント:6のスペシャルプロジェクト
+	id = yourmod_crisis_01.1106
+	title = yourmod_crisis_01.1106.name
+ 	desc = yourmod_crisis_01.1106.desc
+	picture = GFX_evt_mining_station
+	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+
+	trigger = {
+		has_country_flag = yourmod_crisis_story_5
+		not = { has_country_flag = yourmod_crisis_story_6 }
+		has_country_flag = yourmod_allow_origin_research
+
+	}
+
+	#記録の再構成
+	#我々の努力は、古代銀河史に関する知識を非常に高めてくれた。見つかった文献を整理することによって新たな知識を得られる可能性がある。
+
+	immediate = {
+		set_country_flag = yourmod_has_more_impportant_point
+	}
+
+	mean_time_to_happen = {
+		years = 2
+	}
+
+	option = {
+		name = yourmod_crisis_01.1100.a #考古学の時間だ。
+		enable_special_project = { name = YOURMOD_CRISIS_RESEARCH_PROJECT_6 }
+	}
+}
+
 #####起源ストーリーイベント集
 
 country_event = {#順番通りに再生させるためのイベント
@@ -726,6 +975,7 @@ country_event = {#順番通りに再生させるためのイベント
 	hide_window = yes
 
 	immediate = {
+		remove_country_flag = yourmod_has_more_impportant_point
 		if = {
 			limit = {
 				not = { has_country_flag = yourmod_crisis_story_1 }
