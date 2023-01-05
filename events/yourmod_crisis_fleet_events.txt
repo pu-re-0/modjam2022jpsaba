@@ -104,7 +104,6 @@ country_event = {
 									create_ship = {
 										name = random
 										design = "NAME_medium_virus"
-										graphical_culture = event_target:yourmod_crisis_country
 									}
 								}
 								set_location = {
