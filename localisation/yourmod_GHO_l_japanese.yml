@@ -1,0 +1,36 @@
+﻿l_japanese:
+
+#銀河の関心事項
+ yourmod_resolution_category_galactic_focus:0 "銀河の関心事項：$yourmod_crisis$"
+ yourmod_resolution_galactic_focus_crisis_virus:0 ""
+ yourmod_resolution_galactic_focus_crisis_virus_desc:0 ""
+ yourmod_resolution_GHO:0 "銀河的保健機関の設立"
+ yourmod_resolution_GHO_desc:0 ""
+
+#GHO
+ yourmod_GHO:0 "銀河保険機構"
+ yourmod_resolution_GHO_fund:0 "基金の設立"
+ yourmod_resolution_GHO_fund_desc:0 ""
+ yourmod_resolution_GHO_vaccine_global_dev:0 "ワクチンの国際共同開発"
+ yourmod_resolution_GHO_vaccine_global_dev_desc:0 "一国では困難な事業でも、力を合わせれば不可能ではなくなる"
+ yourmod_resolution_category_GHO:0 ""
+ yourmod_resolution_quarantine_1:0 ""
+ yourmod_resolution_quarantine_1_desc:0 ""
+ yourmod_resolution_quarantine_2:0 ""
+ yourmod_resolution_quarantine_2_desc:0 ""
+ yourmod_resolution_quarantine_3:0 ""
+ yourmod_resolution_quarantine_3_desc:0 ""
+
+#event
+ yourmod_GHO_event.0.name:0 ""
+ yourmod_GHO_event.0.desc:0 ""
+ yourmod_GHO_event.0.a:0 ""
+ yourmod_GHO_event.1.name:0 ""
+ yourmod_GHO_event.1.desc:0 ""
+ yourmod_GHO_event.1.a:0 ""
+ yourmod_GHO_event.2.name:0 ""
+ yourmod_GHO_event.2.desc:0 ""
+ yourmod_GHO_event.2.a:0 ""
+ yourmod_GHO_event.3.name:0 ""
+ yourmod_GHO_event.3.desc:0 ""
+ yourmod_GHO_event.3.a:0 ""
