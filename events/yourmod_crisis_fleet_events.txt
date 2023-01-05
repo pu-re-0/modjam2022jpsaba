@@ -84,35 +84,38 @@ country_event = {
 	}
 
 	immediate = {
-		every_system = {
-			if = {
-				limit = {
-					any_system_planet = {
-						has_planet_flag = yourmod_infected_planet
+		while = {
+			count = 2
+			every_country = {
+				random_owned_planet = {
+					if = {
+						limit = {
+								has_planet_flag = yourmod_infected_planet
+						}
+						create_fleet = {
+							name = "NAME_Medium_Virus_fleet"
+							settings = {
+								garrison = yes
+							}
+							effect = {
+								set_owner = event_target:yourmod_crisis_country
+								while = {
+									count = 5
+									create_ship = {
+										name = random
+										design = "NAME_medium_virus"
+										graphical_culture = event_target:yourmod_crisis_country
+									}
+								}
+								set_location = {
+									target = PREV
+									distance = 1
+									angle = random
+								}
+							}
+						}		
 					}
 				}
-				create_fleet = {
-					name = "NAME_Medium_Virus_fleet"
-					settings = {
-						garrison = yes
-					}
-					effect = {
-						set_owner = event_target:yourmod_crisis_country
-						while = {
-							count = 5
-							create_ship = {
-								name = random
-								design = "NAME_medium_virus"
-								graphical_culture = event_target:yourmod_crisis_country
-							}
-						}
-						set_location = {
-							target = THIS
-							distance = 1
-							angle = random
-						}
-					}
-				}		
 			}
 		}
 	}
