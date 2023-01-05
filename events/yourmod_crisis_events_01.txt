@@ -1646,16 +1646,21 @@ country_event = {#暗号解読の成功
 	is_triggered_only = yes
 
 	#暗号解読に成功！
-	#我々の勝利だ。クリエイターの残した難解な暗号を解読することに成功した！解読した文には極めて有用な情報が書かれていた。$yourmod_crisis$への対処法だ。これは、設計段階で仕組んでいた意図的な弱点で、彼らは超超短波の電磁波や、単に強力なサイオニック攻撃に弱いのだという。また、彼らが$R聖地$!と呼ぶ惑星には停止コードを送信する装置があるとのことだが、それがどの惑星なのかということは書かれていない。
+	#我々の勝利だ。クリエイターの残した難解な暗号を解読することに成功した！解読した文には極めて有用な情報が書かれていた。$yourmod_crisis$への対処法だ。これは、設計段階で仕組んでいた意図的な弱点で、彼らは超超短波の電磁波や、単に強力なサイオニック攻撃に弱いのだという。また、彼らが$R聖地$!と呼ぶ惑星には停止コードを送信する装置があるとのことだが、それがどの惑星なのかということは書かれていない。だが、心当たりはある。$yourmod_crisis$が電波や超能力波を送っていたあの星系に浮かんでいる惑星だ。
 
 	option = {
 		name = yourmod_crisis_01.1310.a #ようやくだ！この情報を全銀河に伝えろ。
+
+		create_point_of_interest = {
+			id = yourmod_crisis_chain_2.poi.2
+			name = yourmod_crisis_chain_2.poi.2.name	#$yourmod_crisis$の停止装置がありそうな惑星
+			desc = yourmod_crisis_chain_2.poi.2.desc	#憶測でしかないが、この惑星に$yourmod_crisis$があると思われる。
+			event_chain = yourmod_crisis_chain_2
+			location = event_target:yourmod_crisis_ground_zero
+		}
 		#この辺に危機に対する攻撃力が上がるmodifierをaddしておく
 	}
-
 }
-
-
 
 
 
