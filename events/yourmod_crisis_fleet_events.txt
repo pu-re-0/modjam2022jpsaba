@@ -50,26 +50,20 @@ country_event = {
 	fire_only_once = yes
 
 	immediate = {
-		if = {
-			limit = {
-				any_country = {
+		every_country = {
+			if = {
+				limit = {
 					has_country_flag = yourmod_virus_infected
 				}
-			}
-			every_country = {
-				if = {
-					limit = {
-						has_country_flag = yourmod_virus_infected
-					}
-					set_variable = {
-						which = virus_fleet_attack
-						value = 50
-					}
-					set_country_flag = virus_awakened_fleet
+				set_variable = {
+					which = virus_fleet_attack
+					value = 50
 				}
+				set_country_flag = virus_awakened_fleet
 			}
 			country_event = {
 				id = yourmod_crisis_fleet.02
+				days = 1
 			}
 		}
 	}
@@ -86,39 +80,34 @@ country_event = {
 	}
 
 	immediate = {
-		while = {
-			count = 2
-			every_country = {
-				random_owned_planet = {
-					if = {
-						limit = {
-								has_planet_flag = yourmod_infected_planet
+		every_country = {
+			every_owned_planet = {
+				if = {
+					limit = {
+						has_planet_flag = yourmod_infected_planet
+					}
+					create_fleet = {
+						name = "NAME_Medium_Virus_fleet"
+						settings = {
+							garrison = yes
 						}
-						event_target:yourmod_crisis_country = {
-							create_fleet = {
-								name = "NAME_Medium_Virus_fleet"
-								settings = {
-									garrison = yes
-								}
-								effect = {
-									set_owner = event_target:yourmod_crisis_country
-									set_fleet_bombardment_stance = armageddon
-									while = {
-										count = 10
-										create_ship = {
-											name = random
-											design = "NAME_medium_virus"
-											#graphical_culture = PREV
-										}
-									}
-									set_location = {
-										target = prevprevprev
-										distance = 1
-										angle = random
-									}
+						effect = {
+							set_owner = event_target:yourmod_crisis_country
+							set_fleet_bombardment_stance = armageddon
+							while = {
+								count = 10
+								create_ship = {
+									name = random
+									design = "NAME_medium_virus"
+									graphical_culture = PREV
 								}
 							}
-						}		
+							set_location = {
+								target = PREV
+								distance = 1
+								angle = random
+							}
+						}
 					}
 				}
 			}
