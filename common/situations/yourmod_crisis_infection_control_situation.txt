@@ -27,6 +27,7 @@ yourmod_planet_infection_situation = {
 		destroy_situation = this
 		target = {
 			remove_planet_flag = yourmod_infected_planet
+			remove_planet_flag = yourmod_crisis_vaccine_emergency
 		}
 	}
 	
@@ -56,7 +57,9 @@ yourmod_planet_infection_situation = {
 	}
 	on_monthly = {
 		# アプローチによってデバフイベントを発生させるのを作る
-
+		events = {
+			yourmod_vaccine_dev_event.22 #ワクチン緊急配布イべ
+		}
 	}
 
 	monthly_progress = {
@@ -82,7 +85,50 @@ yourmod_planet_infection_situation = {
 			current_situation_approach = yourmod_planet_infection_approach_3
 		}
 
+		#GHOから。数字は適当 byぷれ
+		modifier = {
+			add = -0.1
+			desc = yourmod_planet_infection_resolution_quarantine_desc #銀河共同体決議より
+			is_active_resolution = "yourmod_resolution_quarantine_1"
+			NOR = {
+				is_active_resolution = "yourmod_resolution_quarantine_2"
+				is_active_resolution = "yourmod_resolution_quarantine_3"
+			}
+		}
+		modifier = {
+			add = -0.2
+			desc = yourmod_planet_infection_resolution_quarantine_desc
+			is_active_resolution = "yourmod_resolution_quarantine_2"
+			NOR = {
+				is_active_resolution = "yourmod_resolution_quarantine_1"
+				is_active_resolution = "yourmod_resolution_quarantine_3"
+			}
+		}
+		modifier = {
+			add = -0.3
+			desc = yourmod_planet_infection_resolution_quarantine_desc
+			is_active_resolution = "yourmod_resolution_quarantine_3"
+			NOR = {
+				is_active_resolution = "yourmod_resolution_quarantine_1"
+				is_active_resolution = "yourmod_resolution_quarantine_2"
+			}
+		}
 
+		#ワクチンから
+		modifier = {
+			add = -3.00
+			desc = yourmod_planet_infection_vaccine_desc #ワクチン緊急配布イベントより
+			target = {
+				has_planet_flag = yourmod_crisis_vaccine_emergency
+			}
+		}
+		modifier = {
+			add = -3.00
+			desc = yourmod_planet_infection_vaccine_desc #ワクチン完成より
+			owner = {
+				has_country_flag = yourmod_crisis_vaccine_situation_complete
+			}
+		}
 	}
 
 	on_start = {
@@ -96,6 +142,7 @@ yourmod_planet_infection_situation = {
 	on_progress_complete = {
 		target = {
 			remove_planet_flag = yourmod_infected_planet
+			remove_planet_flag = yourmod_crisis_vaccine_emergency
 		}
 		owner = {
 			start_situation = {

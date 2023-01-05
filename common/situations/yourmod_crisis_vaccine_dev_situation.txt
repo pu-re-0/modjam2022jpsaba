@@ -338,6 +338,7 @@ yourmod_crisis_vaccine_production_situation = {	#ワクワク配布
 			country_event = {
 				id = yourmod_vaccine_dev_event.30
 			}	
+			set_country_flag = yourmod_crisis_vaccine_situation_complete
 		}
 	}
 
