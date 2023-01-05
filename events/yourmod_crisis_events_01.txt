@@ -1533,7 +1533,7 @@ country_event = {#暗号解読状況S4
 	option = {
 		name = yourmod_crisis_01.1304.a #二つ返事で協力してくれたらいいんだがな。
 		hidden_effect = {
-			every_playble_country = {
+			every_playable_country = {
 				limit = {
 					has_communications = ROOT
 				}
@@ -1558,7 +1558,7 @@ country_event = {#暗号解読状況S5
 	option = {
 		name = yourmod_crisis_01.1305.a #もう一度だけ頼む。
 		hidden_effect = {
-			every_playble_country = {
+			every_playable_country = {
 				limit = {
 					has_communications = ROOT
 				}
