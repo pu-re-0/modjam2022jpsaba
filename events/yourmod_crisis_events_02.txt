@@ -10,12 +10,14 @@ namespace = yourmod_crisis_02
 # 10~	感染シチュエーション関連のイベント
 # 10	惑星のシチュエーションが始まったとき
 # 11	惑星のシチュエーションがステージ2に入ったとき
-# 12	惑星のシチュエーションが完成した(悪化しきった)とき
-# 13	惑星のシチュエーションが消滅したとき
+# 12	惑星のシチュエーションが消滅したとき
+# 13	帝国規模のシチュエーションが発生した時
 # 
 # 100~	ランダムバフデバフイベント群
 # 
 # 200~	感染済み惑星イベント
+#
+# 250~	感染済み惑星イベント(機械知性用)
 # 
 # 300~	未感染惑星イベント(通常帝国用)
 # 
@@ -177,6 +179,7 @@ country_event = {
 								NOT = { has_planet_flag = yourmod_infected_planet }
 							}
 							has_country_flag = yourmod_infected_country
+							has_country_flag = yourmod_health_lost_country
 						}
 						
 					}
@@ -195,6 +198,10 @@ country_event = {
 						any_owned_planet = {
 							NOT = { has_planet_flag  = yourmod_infected_planet }
 						}
+					}
+					modifier = {
+						factor = 0
+						has_country_flag = yourmod_health_lost_country
 					}
 					random_planet_within_border = {
 						limit = {

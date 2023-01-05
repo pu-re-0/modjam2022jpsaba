@@ -149,9 +149,6 @@ yourmod_planet_infection_situation = {
 				type = yourmod_country_infection_situation
 				target = owner
 			}
-			country_event = {
-				id = yourmod_crisis_02.12
-			}
 		}
 	}
 
@@ -159,7 +156,7 @@ yourmod_planet_infection_situation = {
 		destroy_situation = this
 		owner = {
 			country_event = {
-				id = yourmod_crisis_02.13
+				id = yourmod_crisis_02.12
 			}
 		}
 	}
@@ -232,6 +229,8 @@ yourmod_planet_infection_situation = {
 
 }
 
+
+###帝国規模の感染対処シチュエーション
 yourmod_country_infection_situation = {
 	picture = GFX_evt_atmospheric_entry
 	complete_icon_frame = GFX_situation_outcome_frame_blue
@@ -256,12 +255,39 @@ yourmod_country_infection_situation = {
 			icon = GFX_situation_stage_1
 			icon_background = GFX_situation_stage_frame_red
 			end = 25
+			on_first_enter = {
+				
+			}
+			triggered_modifier = {
+				potential = { owner = { has_ethic = ethic_gestalt_consciousness } }
+				modifier = {
+
+				}
+			}
+			triggered_modifier = {
+				potential = { owner = { NOT = { has_ethic = ethic_gestalt_consciousness } } }
+				modifier = {
+
+				}
+			}
 		}
 		stage_2 = {
 			icon = GFX_situation_stage_2
 			icon_background = GFX_situation_stage_frame_red
 			end = 50
 			on_first_enter = {
+			}
+			triggered_modifier = {
+				potential = { owner = { has_ethic = ethic_gestalt_consciousness } }
+				modifier = { 
+
+				}
+			}
+			triggered_modifier = {
+				potential = { owner = { NOT = { has_ethic = ethic_gestalt_consciousness } } }
+				modifier = { 
+
+				}
 			}
 		}
 		stage_3 = {
@@ -270,12 +296,36 @@ yourmod_country_infection_situation = {
 			end = 75
 			on_first_enter = {
 			}
+			triggered_modifier = {
+				potential = { owner = { has_ethic = ethic_gestalt_consciousness } }
+				modifier = { 
+
+				}
+			}
+			triggered_modifier = {
+				potential = { owner = { NOT = { has_ethic = ethic_gestalt_consciousness } } }
+				modifier = { 
+
+				}
+			}
 		}
 		stage_4 = {
 			icon = GFX_situation_stage_4
 			icon_background = GFX_situation_stage_frame_red
 			end = 100
 			on_first_enter = {
+			}
+			triggered_modifier = {
+				potential = { owner = { has_ethic = ethic_gestalt_consciousness } }
+				modifier = { 
+
+				}
+			}
+			triggered_modifier = {
+				potential = { owner = { NOT = { has_ethic = ethic_gestalt_consciousness } } }
+				modifier = { 
+
+				}
 			}
 		}
 	}
@@ -284,7 +334,7 @@ yourmod_country_infection_situation = {
 	}
 
 	monthly_progress = {
-		base = 0.75
+		base = 1
 		modifier = {
 			add = 0.5
 			desc = yourmod_planet_infection_approach_0_desc
@@ -296,15 +346,35 @@ yourmod_country_infection_situation = {
 	on_start = {
 		owner = {
 			set_country_flag = yourmod_infected_country
+			country_event = {
+				id = yourmod_crisis_02.13
+			}
 		}
 	}
 
 	on_progress_complete = {
-
+		owner = {
+			remove_country_flag = yourmod_infected_country
+			set_country_flag = yourmod_health_lost_country
+			country_event = {
+				id = yourmod_crisis_02.14
+			}
+		}
 	}
 
 	on_fail = {
 		destroy_situation = this
+		
+		country_event = {
+			id = yourmod_crisis_02.15
+		}
+		random_owned_planet = {
+			set_planet_flag = yourmod_infected_planet
+			start_situation = {
+				type = yourmod_planet_infection_situation
+				target = this
+			}
+		}
 	}
 
 	approach = {
