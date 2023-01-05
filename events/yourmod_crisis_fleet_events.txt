@@ -98,7 +98,6 @@ country_event = {
 					}
 					effect = {
 						set_owner = event_target:yourmod_crisis_country
-						set_fleet_bombardment_stance = armageddon
 						while = {
 							count = 5
 							create_ship = {
