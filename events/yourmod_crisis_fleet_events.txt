@@ -61,10 +61,10 @@ country_event = {
 				}
 				set_country_flag = virus_awakened_fleet
 			}
-		}
-		country_event = {
-			id = yourmod_crisis_fleet.02
-			days = 1
+			country_event = {
+				id = yourmod_crisis_fleet.02
+				days = 1
+			}
 		}
 	}
 }
