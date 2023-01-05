@@ -371,6 +371,17 @@ yourmod_country_infection_situation = {
 			country_event = {
 				id = yourmod_crisis_02.14
 			}
+			if = {
+				limit = { has_ethic = ethic_gestalt_consciousness }
+				add_modifier = {
+					modifier = country_lost_health_gestalt
+				}
+			}
+			else = {
+				add_modifier = {
+					modifier = country_lost_health_default
+				}
+			}
 			
 		}
 	}

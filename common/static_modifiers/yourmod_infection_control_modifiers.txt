@@ -30,3 +30,13 @@ planet_prevalence_level_5 = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_unknown.dds"
 	icon_frame = 3
 }
+
+country_lost_health_default = {
+
+
+}
+
+country_lost_health_gestalt = {
+	
+
+}

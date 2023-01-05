@@ -3,8 +3,36 @@
  #作成ヒアルロン大陸
  #作業用　あとで他のファイルに統合します
  
+ #####    イベント    #####
+
+
+ #####    シチュエーション    #####
+
+
+ #####    モディファイアー    #####
+
+ planet_prevalence_level_0:0 "惑星の流行レベル:0"
+ planet_prevalence_level_0_desc:0 "この惑星では[ウイルスの名前が入る]はほとんど流行っていない。全てのpopが通常通り活動している。"
+
+ planet_prevalence_level_1:0 "惑星の流行レベル:1"
+ planet_prevalence_level_0_desc:0 "この惑星では[ウイルスの名前が入る]が少し流行っている。"
+
+ planet_prevalence_level_2:0 "惑星の流行レベル:2"
+ planet_prevalence_level_0_desc:0 "この惑星では[ウイルスの名前が入る]が流行っている。"
+
+ planet_prevalence_level_3:0 "惑星の流行レベル:3"
+ planet_prevalence_level_0_desc:0 "この惑星では[ウイルスの名前が入る]がかなり流行している。"
+
+ planet_prevalence_level_4:0 "惑星の流行レベル:4"
+ planet_prevalence_level_0_desc:0 "この惑星では[ウイルスの名前が入る]が爆発的に流行している。これ以上蔓延するようであれば、惑星規模の対処が必要だ。"
+
+ planet_prevalence_level_5:0 "惑星の流行レベル:5"
+ planet_prevalence_level_0_desc:0 "このモディファイアーは基本的に表示されないから、表示されてたらバグだよ"
  
- 
- 
+ country_lost_health_default:0 "失敗した感染対処"
+ country_lost_health_default_desc:0 "この帝国は[ウイルスの名前が入る]の対処を致命的に失敗してしまった。帝国の中で[ウイルスの名前]が存在しない箇所はほぼ無いだろう"
+
+ country_lost_health_gestalt:0 "失敗した感染対処"
+ country_lost_health_gestalt_desc:0 "この帝国は[ウイルスの名前が入る]の対処を致命的に失敗してしまった。帝国の中で[ウイルスの名前]が存在しない箇所はほぼ無いだろう"
  
  
