@@ -51,6 +51,15 @@ namespace = yourmod_crisis_01
 #1299						#遺物アクション失敗
 
 #1300						#暗号解読シチュエーションの開始
+#1301						#状況イベント
+#1302						#状況イベント
+#1303						#状況イベント
+#1304						#状況イベント
+#1305						#状況イベント
+#1306						#状況イベント
+#1307						#状況イベント
+#1308						#他帝国からの手助け
+#1310						#暗号解読成功
 
 country_event = { # decide first victim country#最初に感染する国家を決定
 	id = yourmod_crisis_01.1
@@ -1411,6 +1420,242 @@ country_event = {#クソ暗号
 		start_situation = { type = yourmod_decryption_situation target = this }
 	}
 }
+
+country_event = {#暗号解読状況S1
+	id = yourmod_crisis_01.1301
+	title = yourmod_crisis_01.1301.name
+ 	desc = yourmod_crisis_01.1301.desc
+	picture = GFX_evt_mining_station
+	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+	is_triggered_only = yes
+
+	#困難へ
+	#この暗号は……著しく困難だ。学術会にも問い合わせたが、解法については彼らも知らず、また解読も困難だという。成果が出れば共有するとのことだが、あまり期待できそうにない。当面は自力で頑張るしかなさそうだ。
+
+	immediate = {
+		root = { save_event_target_as = yourmod_decryption_situation }
+	}
+
+	option = {
+		name = yourmod_crisis_01.1301.a #頑張るしかないか……。
+	}
+}
+
+country_event = {#暗号解読状況S2
+	id = yourmod_crisis_01.1302
+	title = yourmod_crisis_01.1302.name
+ 	desc = yourmod_crisis_01.1302.desc
+	picture = GFX_evt_mining_station
+	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+	is_triggered_only = yes
+
+	#古代言語学
+	#暗号はどうやら、製造者たちが使っていた言語を数式と思しきものに変換したものでできているようだ。幸い、学術会から製造者たちの言語についての情報を共有してもらったが、どうも元々他の種族にとっては難解な言語のようだ。暗号になる前から暗号に等しい言語という非常な困難に科学者たちは立ち向かっている。
+
+	option = {
+		name = yourmod_crisis_01.1302.a #それは言語と呼んでいいのか？
+	}
+	option = {
+		trigger = {
+				#製造者文明との面識トリガー
+		}
+		name = yourmod_crisis_01.1302.b #我々はネイティブスピーカーを知っている。添削してもらおう。
+		event_target:yourmod_decryption_situation = { add_situation_progress = 15 }
+	}
+
+}
+
+country_event = {#暗号解読状況S3
+	id = yourmod_crisis_01.1303
+	title = yourmod_crisis_01.1303.name
+ 	desc = yourmod_crisis_01.1303.desc
+	picture = GFX_evt_mining_station
+	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+	is_triggered_only = yes
+
+	#あきらめ
+	#科学者たちは、この暗号に対して希望を失っている。あまりの困難さから帝国中のコンピューターを並列稼働させて総当たりするべきだと放言する者さえいる。彼らのやる気を上げなければ能率が落ちてしまうだろう。
+
+	option = {
+		allow = { has_resouce = { energy > 1999 } }
+		name = yourmod_crisis_01.1303.a #臨時給与だ。
+		add_recouce = { energy = -2000 }
+		event_target:yourmod_decryption_situation = { add_situation_progress = 5 }
+	}
+
+	option = {
+		allow = { has_resouce = { energy > 4999 } }
+		name = yourmod_crisis_01.1303.b #一理あるかもしれない。
+		add_recouce = { energy = -5000 }
+		random_list = {
+			25 = {
+				event_target:yourmod_decryption_situation = { add_situation_progress = 1 }
+			}
+			25 = {
+				event_target:yourmod_decryption_situation = { add_situation_progress = 5 }
+			}
+			25 = {
+				event_target:yourmod_decryption_situation = { add_situation_progress = 7 }
+			}
+			25 = {
+				event_target:yourmod_decryption_situation = { add_situation_progress = 10 }
+			}
+			5 = {
+				event_target:yourmod_decryption_situation = { add_situation_progress = 15 }
+			}
+			1 = {
+				event_target:yourmod_decryption_situation = { add_situation_progress = 20 }
+			}
+		}
+	}
+
+	option = {
+		name = yourmod_crisis_01.1303.c #言葉で勇気づけるしかないか……。
+	}
+
+}
+
+
+country_event = {#暗号解読状況S4
+	id = yourmod_crisis_01.1304
+	title = yourmod_crisis_01.1304.name
+ 	desc = yourmod_crisis_01.1304.desc
+	picture = GFX_evt_mining_station
+	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+	is_triggered_only = yes
+
+	#ブルートフォース
+	#科学者たちは、結局正攻法による解読を放棄し、総当たりによって答えを見つけ出すことを提案した。我々だけでは長い時間がかかるが、他帝国と共同して事に当たれば所要時間はより少なく済むはずだ。協力を呼び掛けよう。
+
+	option = {
+		name = yourmod_crisis_01.1304.a #二つ返事で協力してくれたらいいんだがな。
+		hidden_effect = {
+			every_playble_country = {
+				limit = {
+					has_communications = ROOT
+				}
+				country_event = { id = yourmod_crisis_01.1306 }
+			}
+		}
+	}
+
+}
+
+country_event = {#暗号解読状況S5
+	id = yourmod_crisis_01.1305
+	title = yourmod_crisis_01.1305.name
+ 	desc = yourmod_crisis_01.1305.desc
+	picture = GFX_evt_mining_station
+	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+	is_triggered_only = yes
+
+	#辞書攻撃
+	#科学者たちは、暗号解読にかなりの程度近づいたようだ。一部については、それがクリエイターの言葉でもともとどう書いてあったのが判明している。これにより、もっと効率的にゴールに近づけるようになった。他帝国の助力がもう一度必要だ。
+
+	option = {
+		name = yourmod_crisis_01.1305.a #もう一度だけ頼む。
+		hidden_effect = {
+			every_playble_country = {
+				limit = {
+					has_communications = ROOT
+				}
+				country_event = { id = yourmod_crisis_01.1307 }
+			}
+		}
+	}
+}
+
+country_event = {#暗号解読への手助け
+	id = yourmod_crisis_01.1306
+	title = yourmod_crisis_01.1306.name
+ 	desc = yourmod_crisis_01.1306.desc
+	picture = GFX_evt_mining_station
+	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+	is_triggered_only = yes
+
+	#[from.GetName]からの協力要請
+	#[from.GetName]から、$yourmod_crisis$に関係する暗号を解読するために計算能力を提供するように要請があった。我々はともに危機に立ち向かっているが、彼らに計算能力を提供するのはリスクでもある。
+	option = {
+		name = yourmod_crisis_01.1306.a #仕方がないな。
+		root = {
+			country_event = { id = yourmod_crisis_01.1308 }
+		}
+	}
+	option = {
+		name = yourmod_crisis_01.1306.b #断る。
+	}
+}
+
+
+country_event = {#暗号解読への手助け
+	id = yourmod_crisis_01.1307
+	title = yourmod_crisis_01.1307.name
+ 	desc = yourmod_crisis_01.1307.desc
+	picture = GFX_evt_mining_station
+	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+	is_triggered_only = yes
+
+	#[from.GetName]からの協力要請
+	#[from.GetName]から、$yourmod_crisis$に関係する暗号を解読するために計算能力を提供するように再度要請があった。我々はともに危機に立ち向かっているが、彼らに計算能力を提供するのはリスクでもある。
+	option = {
+		name = yourmod_crisis_01.1306.a #仕方がないな。
+		root = {
+			country_event = { id = yourmod_crisis_01.1308 }
+		}
+	}
+	option = {
+		name = yourmod_crisis_01.1306.b #断る。
+	}
+}
+country_event = {#暗号解読への手助け
+	id = yourmod_crisis_01.1308
+	title = yourmod_crisis_01.1308.name
+ 	desc = yourmod_crisis_01.1308.desc
+	picture = GFX_evt_mining_station
+	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+	is_triggered_only = yes
+
+	#[from.GetName]の協力
+	#[from.GetName]は我々の要請に応じ、計算能力を提供してくれた！
+	option = {
+		name = yourmod_crisis_01.1308.a #素晴らしい。
+		random_list = {
+			50 = {
+				event_target:yourmod_decryption_situation = { add_situation_progress = 1 }
+			}
+			25 = {
+				event_target:yourmod_decryption_situation = { add_situation_progress = 2 }
+			}
+			10 = {
+				event_target:yourmod_decryption_situation = { add_situation_progress = 3 }
+			}
+			5 = {
+				event_target:yourmod_decryption_situation = { add_situation_progress = 4 }
+			}
+		}
+	}
+
+}
+
+country_event = {#暗号解読の成功
+	id = yourmod_crisis_01.1310
+	title = yourmod_crisis_01.1310.name
+ 	desc = yourmod_crisis_01.1310.desc
+	picture = GFX_evt_mining_station
+	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+	is_triggered_only = yes
+
+	#暗号解読に成功！
+	#我々の勝利だ。クリエイターの残した難解な暗号を解読することに成功した！解読した文には極めて有用な情報が書かれていた。$yourmod_crisis$への対処法だ。これは、設計段階で仕組んでいた意図的な弱点で、彼らは超超短波の電磁波や、単に強力なサイオニック攻撃に弱いのだという。また、彼らが$R聖地$!と呼ぶ惑星には停止コードを送信する装置があるとのことだが、それがどの惑星なのかということは書かれていない。
+
+	option = {
+		name = yourmod_crisis_01.1310.a #ようやくだ！この情報を全銀河に伝えろ。
+		#この辺に危機に対する攻撃力が上がるmodifierをaddしておく
+	}
+
+}
+
+
 
 
 

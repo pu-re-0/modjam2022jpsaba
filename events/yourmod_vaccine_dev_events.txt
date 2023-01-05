@@ -171,6 +171,31 @@ situation_event = {
 	}
 }
 
+situation_event = {
+	id = yourmod_vaccine_dev_event.22 #ワクチン緊急配布
+	title = yourmod_vaccine_dev_event.21.name	#
+	desc = yourmod_vaccine_dev_event.21.desc 
+	picture = GFX_board_meeting #a name of a picture to display
+	location = from #A scope to the object that is relevant to the event that player can move to. For example, the planet where event is happening
+	show_sound = event_ship_bridge
+	situation = this
+	diplomatic = no
+	is_triggered_only = yes #The game will not consider this event for starting on its own. Event will need to be triggered by another event, or by some other effect. Most events will use this.
+	trigger = {
+		owner = {
+			has_country_flag = yourmod_crisis_vaccine_production_now
+		}
+	}
+	immediate = {
+		target = {
+			set_planet_flag = yourmod_crisis_vaccine_emergency
+		}
+	}
+	option = {
+		name = yourmod_vaccine_dev_event.21.a
+	}
+}
+
 country_event = {
 	id = yourmod_vaccine_dev_event.30 #ワクチン配布完了
 	title = yourmod_vaccine_dev_event.30.name	#
