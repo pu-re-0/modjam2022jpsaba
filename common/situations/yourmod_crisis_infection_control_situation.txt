@@ -261,13 +261,16 @@ yourmod_country_infection_situation = {
 			triggered_modifier = {
 				potential = { owner = { has_ethic = ethic_gestalt_consciousness } }
 				modifier = {
-
+					planet_jobs_produces_mult = -0.05
+					planet_amenities_add = -2
 				}
 			}
 			triggered_modifier = {
 				potential = { owner = { NOT = { has_ethic = ethic_gestalt_consciousness } } }
 				modifier = {
-
+					planet_jobs_produces_mult = -0.02
+					pop_happiness = -0.05
+					pop_growth_speed = -0.06
 				}
 			}
 		}
@@ -280,13 +283,16 @@ yourmod_country_infection_situation = {
 			triggered_modifier = {
 				potential = { owner = { has_ethic = ethic_gestalt_consciousness } }
 				modifier = { 
-
+					planet_jobs_produces_mult = -0.10
+					planet_amenities_add = -4
 				}
 			}
 			triggered_modifier = {
 				potential = { owner = { NOT = { has_ethic = ethic_gestalt_consciousness } } }
 				modifier = { 
-
+					planet_jobs_produces_mult = -0.05
+					pop_happiness = -0.15
+					pop_growth_speed = -0.9
 				}
 			}
 		}
@@ -299,13 +305,16 @@ yourmod_country_infection_situation = {
 			triggered_modifier = {
 				potential = { owner = { has_ethic = ethic_gestalt_consciousness } }
 				modifier = { 
-
+					planet_jobs_produces_mult = -0.15
+					planet_amenities_add = -8
 				}
 			}
 			triggered_modifier = {
 				potential = { owner = { NOT = { has_ethic = ethic_gestalt_consciousness } } }
 				modifier = { 
-
+					planet_jobs_produces_mult = -0.08
+					pop_happiness = -0.25
+					pop_growth_speed = -0.12
 				}
 			}
 		}
@@ -318,13 +327,16 @@ yourmod_country_infection_situation = {
 			triggered_modifier = {
 				potential = { owner = { has_ethic = ethic_gestalt_consciousness } }
 				modifier = { 
-
+					planet_jobs_produces_mult = -0.20
+					planet_amenities_add = -10
 				}
 			}
 			triggered_modifier = {
 				potential = { owner = { NOT = { has_ethic = ethic_gestalt_consciousness } } }
 				modifier = { 
-
+					planet_jobs_produces_mult = -0.12
+					pop_happiness = -0.40
+					pop_growth_speed = -0.15
 				}
 			}
 		}
@@ -359,6 +371,7 @@ yourmod_country_infection_situation = {
 			country_event = {
 				id = yourmod_crisis_02.14
 			}
+			
 		}
 	}
 
