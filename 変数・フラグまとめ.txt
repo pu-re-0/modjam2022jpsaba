@@ -45,11 +45,19 @@ pre-FTL関係
 	country_flag
 		ancient_crisis_creater_pre_FTL_country #ウィルス作った奴らの生き残りの文明
 
+	global_flag
+		yourmod_can_contact_ancient_crisis_creater_pre_FTL_country #上記国家と通信可能か
+
 感染対処イベント関連
 	planet_flag
 		yourmod_infected_planet			#感染済み惑星　惑星の感染対処シチュエーションが発生している状態
 
 		planet_prevalence_level_0~5		#惑星の蔓延レベルのmodifier プレイ時に視覚的に把握できるようにするため　取りあえず効果は無し
+
+		yourmod_happen_event_301		#イベント301が発生している状態 同じランダムイベントが複数発生しないためのフラグ
 		
+	country_flag
+		yourmod_infected_country		#帝国規模の対処シチュエーションが発生している状態
+
 	planet_variable
 		planet_prevalence_level			#惑星の蔓延レベル　感染対処シチュエーションが発生していない惑星で使用

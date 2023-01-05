@@ -5,6 +5,8 @@ yourmod_create_crisis = {
 		type = yourmod_virus
 		name_list = yourmod_crisis
 		species = random
+		ignore_initial_colony_error = yes
+		auto_delete = no
 		flag = {
 			icon= {
 				category = "yourmod"
@@ -23,6 +25,8 @@ yourmod_create_crisis = {
 		}
 		effect = {
 			save_global_event_target_as = yourmod_crisis_country
+			#add_global_ship_design = "NAME_small_virus"
+			add_global_ship_design = "NAME_medium_virus"
 		}
 	}
 }

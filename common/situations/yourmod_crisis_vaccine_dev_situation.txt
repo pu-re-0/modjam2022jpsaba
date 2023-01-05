@@ -1,5 +1,3 @@
-#All scopes are this/root = situation. You can scope to owner for the country or target for the target.
-
 yourmod_crisis_vaccine_dev_situation = {	#ワクワク
 	picture = GFX_evt_atmospheric_entry
 	complete_icon_frame = GFX_situation_outcome_frame_blue
@@ -15,7 +13,7 @@ yourmod_crisis_vaccine_dev_situation = {	#ワクワク
 	on_abort = {
 		owner = {
 			country_event = {
-				id = yourmod_vaccine_dev_event.115 #ワクチン技術の共有
+				id = yourmod_vaccine_dev_event.1 #ワクチン技術の共有
 				days = 1
 			}
 		}
@@ -31,12 +29,7 @@ yourmod_crisis_vaccine_dev_situation = {	#ワクワク
 			icon_background = GFX_situation_stage_frame_blue
 			end = 100
 			on_first_enter = {
-				owner = {
-					country_event = {
-						id = yourmod_vaccine_dev_event.110
-						days = 1
-					}	
-				}
+
 			}
 		}
 		stage_2 = {
@@ -45,10 +38,10 @@ yourmod_crisis_vaccine_dev_situation = {	#ワクワク
 			end = 100
 			on_first_enter = {
 				owner = {
-				country_event = {
-					id = yourmod_vaccine_dev_event.111
-					days = 1
-				}	
+					country_event = {
+						id = yourmod_vaccine_dev_event.10
+						days = 1
+					}	
 				}
 			}
 		}
@@ -59,7 +52,7 @@ yourmod_crisis_vaccine_dev_situation = {	#ワクワク
 			on_first_enter = {
 				owner = {
 					country_event = {
-						id = yourmod_vaccine_dev_event.112
+						id = yourmod_vaccine_dev_event.11
 						days = 1
 					}	
 				}
@@ -72,7 +65,7 @@ yourmod_crisis_vaccine_dev_situation = {	#ワクワク
 			on_first_enter = {
 				owner = {
 					country_event = {
-						id = yourmod_vaccine_dev_event.113
+						id = yourmod_vaccine_dev_event.12
 						days = 1
 					}
 				}
@@ -174,7 +167,7 @@ yourmod_crisis_vaccine_dev_situation = {	#ワクワク
 		destroy_situation = this
 		owner = {
 			country_event = {
-				id = yourmod_vaccine_dev_event.300
+				id = yourmod_vaccine_dev_event.13
 			}	
 		}
 	}
@@ -223,7 +216,7 @@ yourmod_crisis_vaccine_dev_situation = {	#ワクワク
 		}
 	}
 
-	approach = {#大きな予算
+	approach = {	#大きな予算
 		name = yourmod_crisis_vaccine_dev_approach_high
 		icon = GFX_situation_approach_unity #後で変えておく
 		icon_background = GFX_situation_approach_bg_green
@@ -244,27 +237,169 @@ yourmod_crisis_vaccine_dev_situation = {	#ワクワク
 		}
 	}
 
-	approach = {#非常識な予算
-	name = yourmod_crisis_vaccine_dev_approach_super_high
-	icon = GFX_situation_approach_unity #後で変えておく
-	icon_background = GFX_situation_approach_bg_green
-	default = yes
+	approach = {	#非常識な予算
+		name = yourmod_crisis_vaccine_dev_approach_super_high
+		icon = GFX_situation_approach_unity #後で変えておく
+		icon_background = GFX_situation_approach_bg_green
+		default = yes
 
-	 resources = { 	#Resource table as standard
-		 category = situations
-		 upkeep = { 
-			society_research = 1
-			mult = yourmod_society_research_30
+		resources = { 	#Resource table as standard
+		 	category = situations
+		 	upkeep = { 
+				society_research = 1
+				mult = yourmod_society_research_30
 
-			energy = 50
+				energy = 50
+			}
+			produces = { unity = 10 }
 		}
-		 produces = { unity = 10 }
-	 }
-	on_select = {
-		custom_tooltip = yourmod_crisis_vaccine_dev_approach_high_desc
+		on_select = {
+			custom_tooltip = yourmod_crisis_vaccine_dev_approach_high_desc
+		}
 	}
-}
 
 }
 
 
+#All scopes are this/root = situation. You can scope to owner for the country or target for the target.
+
+yourmod_crisis_vaccine_production_situation = {	#ワクワク配布
+	picture = GFX_evt_atmospheric_entry
+	complete_icon_frame = GFX_situation_outcome_frame_blue
+	complete_icon = GFX_situation_outcome_unknown
+	
+	on_start = {
+		owner = {
+			set_country_flag = yourmod_crisis_vaccine_production_now
+		}
+	}
+	
+	modifier = {
+
+	}
+
+	stages = {
+		stage_1 = { #製造
+			icon = GFX_situation_stage_1
+			icon_background = GFX_situation_stage_frame_blue
+			end = 100
+		}
+		stage_2 = { #配布
+			icon = GFX_situation_stage_2
+			icon_background = GFX_situation_stage_frame_blue
+			end = 50
+			on_first_enter = {
+				owner = {
+					remove_country_flag = yourmod_crisis_vaccine_production_now
+					country_event = {
+						id = yourmod_vaccine_dev_event.11
+						days = 1
+					}	
+				}
+			}
+		}
+	}
+
+	on_monthly = {
+		random_events = {
+			40 = 0
+			10 = yourmod_vaccine_dev_event.21
+		}
+	}
+
+	monthly_progress = {
+		base = 0
+
+		modifier = {
+			add = 0.5
+			desc = yourmod_crisis_vaccine_production_approach_low_desc
+			current_situation_approach = yourmod_crisis_vaccine_production_approach_low
+		}
+		modifier = {
+			add = 0.75
+			desc = yourmod_crisis_vaccine_production_approach_mid_desc
+			current_situation_approach = yourmod_crisis_vaccine_production_approach_mid
+		}
+		modifier = {
+			add = 1.0
+			desc = yourmod_crisis_vaccine_production_approach_high_desc
+			current_situation_approach = yourmod_crisis_vaccine_production_approach_high
+		}
+
+		modifier = {
+			mult = value:yourmod_size_effect #100 ÷ 帝国規模
+			desc = yourmod_size_effect_desc
+		}
+	}
+
+	on_progress_complete = {
+		destroy_situation = this
+		owner = {
+			country_event = {
+				id = yourmod_vaccine_dev_event.30
+			}	
+		}
+	}
+
+	on_fail = {#
+
+	}
+	
+	approach = {#低予算
+		name = yourmod_crisis_vaccine_production_approach_low
+		icon = GFX_situation_approach_unity #後で変えておく
+		icon_background = GFX_situation_approach_bg_green
+		default = yes
+
+ 		resources = { 	#Resource table as standard
+ 			category = situations
+ 			upkeep = {
+				energy = 10
+				mult = value:edict_size_effect
+			}
+ 			produces = { }
+ 		}
+		on_select = {
+			custom_tooltip = yourmod_crisis_vaccine_production_approach_low_desc
+		}
+	}
+
+	approach = {#中程度の予算
+		name = yourmod_crisis_vaccine_production_approach_mid
+		icon = GFX_situation_approach_unity #後で変えておく
+		icon_background = GFX_situation_approach_bg_green
+		default = yes
+
+ 		resources = { 	#Resource table as standard
+ 			category = situations
+ 			upkeep = {
+				energy = 20
+				mult = value:edict_size_effect
+			}
+ 			produces = { }
+ 		}
+		on_select = {
+			custom_tooltip = yourmod_crisisvaccine_production_approach_mid_desc
+		}
+	}
+
+	approach = {	#大きな予算
+		name = yourmod_crisis_vaccine_production_approach_high
+		icon = GFX_situation_approach_unity #後で変えておく
+		icon_background = GFX_situation_approach_bg_green
+		default = yes
+
+ 		resources = { 	#Resource table as standard
+ 			category = situations
+ 			upkeep = {
+				energy = 40
+				mult = value:edict_size_effect
+			}
+ 			produces = { }
+ 		}
+		on_select = {
+			custom_tooltip = yourmod_crisis_vaccine_production_approach_high_desc
+		}
+	}
+
+}

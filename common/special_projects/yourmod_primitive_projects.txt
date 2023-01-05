@@ -1,0 +1,30 @@
+
+special_project = {
+	key = "YOURMOD_ANCIENT_CRISIS_CREATER_PRE_FTL_COUNTRY_PLANET_RESEARCH"
+	cost = 0
+	days_to_research = 180
+	tech_department = society_technology
+	picture = GFX_evt_landing_ship
+
+	event_scope = planet_event
+
+	requirements = {
+		shipclass_science_ship = 1
+		leader = scientist
+		#skill = 3
+	}
+
+	on_success = {
+		solar_system = {
+			owner = {
+				country_event = {
+					id = yourmod_primitive.12
+				}
+			}
+		}
+		set_global_flag = yourmod_can_contact_ancient_crisis_creater_pre_FTL_country
+	}
+
+	on_fail = {
+	}
+}

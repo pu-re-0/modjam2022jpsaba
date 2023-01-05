@@ -26,6 +26,13 @@ namespace = yourmod_crisis_01
 #1002 Notification to Every country		#艦隊戦段階への移行を通知・艦隊戦、起源探索用イベントチェーン開始
 
 #1100						#起源の調査を開始
+#1101						#ストーリー用スペシャルプロジェクト
+#1102						#ストーリー用スペシャルプロジェクト
+#1103						#ストーリー用スペシャルプロジェクト
+#1104						#ストーリー用スペシャルプロジェクト
+#1105						#ストーリー用スペシャルプロジェクト
+#1106						#ストーリー用スペシャルプロジェクト
+
 #1200						#起源ストーリーイベント用のシステム的なイベント
 #1201						#起源ストーリーイベント1
 #1202						#起源ストーリーイベント2
@@ -33,7 +40,17 @@ namespace = yourmod_crisis_01
 #1204						#起源ストーリーイベント4
 #1205						#起源ストーリーイベント5
 #1206						#起源ストーリーイベント6
+#1207						#学術会
+#1208						#学術会
+#1209						#学術会
+#1210						#学術会(発掘現場追加)
+#1211						#発掘イベント
+#1212						#発掘イベント
+#1213						#発掘イベント
+#1214						#発掘イベント(終)
 #1299						#遺物アクション失敗
+
+#1300						#暗号解読シチュエーションの開始
 
 country_event = { # decide first victim country#最初に感染する国家を決定
 	id = yourmod_crisis_01.1
@@ -141,6 +158,18 @@ country_event = { # notification for first victim#お前が第一感染国とい
 			days = 14
 			random = 7
 		}
+		#ワクチン開発シチュエーション用 by ぷれ
+		if = {
+			limit = {
+				is_ai = no
+			}
+			country_event = {
+				id = yourmod_vaccine_dev_event.0
+				days = 45
+				random = 30
+				
+			}
+		}
 	}
 
 	option = { # Start First Situation#感染の状況を開始
@@ -232,7 +261,7 @@ country_event = { #Informed consent#公開した場合のイベント
 	#我々は全ての銀河勢力に向けて緊急通信を送った。知る限りの情報を伝えた我々に対し、銀河中がよく評価してくれることを祈るばかりだ。
 
 	option = {
-		name = yourmod_crisis_01.3.a #これは大変なことになるかもしれない。
+		name = yourmod_crisis_01.4.a #これは大変なことになるかもしれない。
 		begin_event_chain = { event_chain = yourmod_crisis_chain_1 target = this }
 	}
 }
@@ -274,6 +303,9 @@ country_event = { #Infected!#感染した！
 	trigger = {
 		has_global_flag = yourmod_in_progress # see mid_game_crisis_trigger_events.txt
 		has_global_flag = yourmod_virus_first_infection #First victim exists
+		NOT = {
+			has_country_flag = yourmod_virus_infected #繰り返し発生してたので入れといた
+		}
 		or = {
 			any_neighbor_country = {
 				has_country_flag = yourmod_virus_infected
@@ -339,7 +371,7 @@ country_event = { #Infected!#感染した！
 			if = {
 				limit = {
 					count_country = {
-						count >= 3
+						count = 3
 						limit = {
 							has_country_flag = yourmod_virus_infected
 						}
@@ -356,11 +388,16 @@ country_event = { #Infected!#感染した！
 					}
 				}
 			}
-			#ワクチン開発シチュエーション用 by ぷれ
-			country_event = {
-				id = yourmod_vaccine_dev_event.0
-				days = 45
-				random = 30
+			if = {
+				limit = {
+					is_ai = no
+				}
+				#ワクチン開発シチュエーション用 by ぷれ
+				country_event = {
+					id = yourmod_vaccine_dev_event.0
+					days = 45
+					random = 30
+				}
 			}
 		}
 	}
@@ -378,11 +415,12 @@ country_event = { # investigate trigger
 
 	trigger = {
 		has_global_flag = yourmod_in_progress # see mid_game_crisis_trigger_events.txt
+		has_global_flag = yourmod_virus_first_infection
 		#各国の状況が深刻化していることを判定するトリガーを後で入れておく
 	}
 
 	mean_time_to_happen = {
-		years = 3
+		years = 4
 	}
 
 	immediate = {
@@ -411,23 +449,6 @@ country_event = { # Start Investigation
 	option = { # Start First Situation
 		name = yourmod_crisis_01.101.a
 		start_situation = { type = yourmod_crisis_research_situation target = this }
-	}
-}
-
-country_event = { #調査シチュエーションからのイベント
-	id = yourmod_crisis_01.111
-	title = yourmod_crisis_01.111.name
- 	desc = yourmod_crisis_01.111.desc
-
-	#$yourmod_crisis$の調査
-	#$yourmod_crisis$の洞察は、まずはその症状の調査から始める。過去に有機生命体という有機生命体を襲ってきた、銀河内に存在するあらゆる感染症と照合するためだ。先駆者文明が残した記録にも、古代から感染症が存在したことが書かれている。そのような古代の感染症が今さらになって猛威を振るっているということもありえるかもしれない。あるいは、とにかく、持てる限りの知識を総動員するのだ。
-	
-	picture = GFX_evt_mining_station
-	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
-	is_triggered_only = yes
-
-	option = { # ok
-		name = yourmod_crisis_01.101.a
 	}
 }
 
@@ -512,7 +533,7 @@ country_event = { #調査シチュエーションからのイベント
 	is_triggered_only = yes
 
 	option = { # ok
-		name = yourmod_crisis_01.113.a
+		name = yourmod_crisis_01.114.a
 	}
 }
 
@@ -529,7 +550,7 @@ country_event = { #調査シチュエーションからのイベント
 	is_triggered_only = yes
 
 	option = { # ok
-		name = yourmod_crisis_01.113.a
+		name = yourmod_crisis_01.114.a
 	}
 }
 
@@ -546,18 +567,18 @@ country_event = { #Situation has done, Ground Zero Emerging, Create Notification
 
 	immediate = {
 		set_global_flag = yourmod_crisis_ground_zero_entered
-		no_scope = {
+		random_system = {
+			limit = { not = { owner = { or = { has_ethic = ethic_xenophobe has_ethic = ethic_fanatic_xenophobe } } } }
 			set_spawn_system_batch = begin
 			spawn_system = {
-				#min_jumps = 1
-				#max_jumps = 3
-				min_distance = 25
-				max_distance = 35
+				min_jumps = 1
+				max_jumps = 3
 				initializer = yourmod_crisis_ground_zero_initializer
 				hyperlane = yes
-				is_discovered = no
+				is_discovered = yes
 			}
 			set_spawn_system_batch = end
+			add_extra_hyperlane_to_spawned_system_effect = yes
 		}
 	}
 
@@ -581,7 +602,11 @@ ship_event = { # NEXT STAGE
 	fire_only_once = yes
 	#is_triggered_only = yes
 	is_triggered_only = yes
-	hidden_window = yes
+	title = yourmod_crisis_01.1000.name
+	desc = yourmod_crisis_01.1000.desc
+	
+	#謎めいた星系
+	#新しく発見された星系に到達したが、この星系は……奇妙だ。ありふれた恒星に、妙に巨大な惑星が二つだけ。小惑星帯どころか小惑星の一つもない。どういうことだろうか。
 
 	trigger = {
 		from = {#system
@@ -594,32 +619,29 @@ ship_event = { # NEXT STAGE
 		fromfrom = {
 			country_event = {
 				id = yourmod_crisis_01.1001
-				days = 1
 			}
 		}
-		from = {
-			event_target:yourmod_crisis_country = {
-				create_fleet = {
-					name = "NAME_Medium_Virus_fleet"
-					settings = {
-						garrison = yes
+		event_target:yourmod_crisis_country = {
+			create_fleet = {
+				name = "NAME_Medium_Virus_fleet"
+				settings = {
+					garrison = yes
+				}
+				effect = {
+					set_owner = event_target:yourmod_crisis_country
+					set_fleet_bombardment_stance = armageddon
+					while = {
+						count = 30
+						create_ship = {
+							name = random
+							design = "NAME_medium_virus"
+							#graphical_culture = PREV
+						}
 					}
-					effect = {
-						set_owner = PREV
-						set_fleet_bombardment_stance = armageddon
-						while = {
-							count = 30
-							create_ship = {
-								name = random
-								design = "NAME_medium_virus"
-								graphical_culture = PREV
-							}
-						}
-						set_location = {
-							target = event_target:yourmod_crisis_ground_zero_vanish_planet
-							distance = 1
-							angle = random
-						}
+					set_location = {
+						target = event_target:yourmod_crisis_ground_zero_vanish_planet
+						distance = 1
+						angle = random
 					}
 				}
 			}
@@ -627,6 +649,9 @@ ship_event = { # NEXT STAGE
 		event_target:yourmod_crisis_ground_zero_vanish_planet = {
 			remove_planet = yes
 		}
+	}
+	option = {
+		name = yourmod_crisis_01.1000.a		#警戒しろ。
 	}
 }
 
@@ -710,54 +735,297 @@ country_event = {#起源探しイベント
 	}
 }
 
+
+country_event = {#起源探しイベント:1のスペシャルプロジェクト
+	id = yourmod_crisis_01.1101
+	title = yourmod_crisis_01.1101.name
+ 	desc = yourmod_crisis_01.1101.desc
+	picture = GFX_evt_mining_station
+	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+
+	trigger = {
+		not = { has_country_flag = yourmod_crisis_story_1 }
+		has_country_flag = yourmod_allow_origin_research
+		any_owned_planet = {
+			is_planet_class = pc_nuked
+		}
+	}
+
+	#死の惑星に希望を賭ける
+	#我が領内に存在する死の惑星は、過去に知的生命体が惑星で核戦争を起こしたことがある、ないしはFTL文明によって終末爆撃が実行されたことがあるという証拠だ。もしかしたら、$yourmod_crisis$についての情報が眠っているかもしれない。
+
+	immediate = {
+		set_country_flag = yourmod_has_more_impportant_point
+	}
+
+	mean_time_to_happen = {
+		years = 1
+	}
+
+	option = {
+		name = yourmod_crisis_01.1100.a #考古学の時間だ。
+		random_owned_planet = {
+			limit = {
+				is_planet_class = pc_nuked
+			}
+			enable_special_project = { name = YOURMOD_CRISIS_RESEARCH_PROJECT_1 owner = ROOT location = THIS }
+		}
+
+	}
+}
+
+country_event = {#起源探しイベント:2のスペシャルプロジェクト
+	id = yourmod_crisis_01.1102
+	title = yourmod_crisis_01.1102.name
+ 	desc = yourmod_crisis_01.1102.desc
+	picture = GFX_evt_mining_station
+	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+
+	trigger = {
+		has_country_flag = yourmod_crisis_story_1
+		not = { has_country_flag = yourmod_crisis_story_2 }
+		has_country_flag = yourmod_allow_origin_research
+		any_owned_planet = {
+			is_planet_class = pc_gas_giant
+		}
+
+	}
+
+	#謎の記録クリスタル
+	#帝国の総力を挙げた調査プロジェクトによって、謎の記録クリスタルがある惑星の軌道上を周回しているのが発見された。これを回収して何が書かれているのか調べてみよう。
+
+	immediate = {
+		set_country_flag = yourmod_has_more_impportant_point
+	}
+
+	mean_time_to_happen = {
+		years = 2
+	}
+
+	option = {
+		name = yourmod_crisis_01.1100.a #考古学の時間だ。
+		random_owned_planet = {
+			limit = {
+				is_planet_class = pc_gas_giant
+			}
+			enable_special_project = { name = YOURMOD_CRISIS_RESEARCH_PROJECT_2 owner = ROOT location = THIS }
+		}
+
+	}
+}
+
+country_event = {#起源探しイベント:3のスペシャルプロジェクト
+	id = yourmod_crisis_01.1103
+	title = yourmod_crisis_01.1103.name
+ 	desc = yourmod_crisis_01.1103.desc
+	picture = GFX_evt_mining_station
+	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+
+	trigger = {
+		has_country_flag = yourmod_crisis_story_2
+		not = { has_country_flag = yourmod_crisis_story_3 }
+		has_country_flag = yourmod_allow_origin_research
+		any_owned_planet = {
+			or = {
+				is_planet_class = pc_nuked
+				is_planet_class = pc_relic
+			}
+		}
+
+	}
+
+	#謎の遺物を発見
+	#我が植民地にある遺跡で、新しく謎めいた遺物が見つかった。極めて強固な装甲によって作られた箱のようなもので、中に何があるか確認するべきだろう。
+
+	immediate = {
+		set_country_flag = yourmod_has_more_impportant_point
+	}
+
+	mean_time_to_happen = {
+		years = 1
+	}
+
+	option = {
+		name = yourmod_crisis_01.1100.a #考古学の時間だ。
+		random_owned_planet = {
+			limit = {
+				or = {
+					is_planet_class = pc_nuked
+					is_planet_class = pc_relic
+				}
+			}
+			enable_special_project = { name = YOURMOD_CRISIS_RESEARCH_PROJECT_3 owner = ROOT location = THIS }
+		}
+
+	}
+}
+
+country_event = {#起源探しイベント:4のスペシャルプロジェクト
+	id = yourmod_crisis_01.1104
+	title = yourmod_crisis_01.1104.name
+ 	desc = yourmod_crisis_01.1104.desc
+	picture = GFX_evt_mining_station
+	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+
+	trigger = {
+		has_country_flag = yourmod_crisis_story_3
+		not = { has_country_flag = yourmod_crisis_story_4 }
+		has_country_flag = yourmod_allow_origin_research
+		any_owned_planet = {
+			or = {
+				is_planet_class = pc_frozen
+				is_planet_class = pc_barren
+			}
+		}
+
+	}
+
+	#異星人の図書館
+	#帝国領内にある居住不可能な惑星は、かつては古代文明の植民地だったようだ。都市が辛うじて残存しており、その中に何があるか確かめる必要がある。
+
+	immediate = {
+		set_country_flag = yourmod_has_more_impportant_point
+	}
+
+	mean_time_to_happen = {
+		years = 1
+	}
+
+	option = {
+		name = yourmod_crisis_01.1100.a #考古学の時間だ。
+		random_owned_planet = {
+			limit = {
+				or = {
+					is_planet_class = pc_frozen
+					is_planet_class = pc_barren
+				}
+			}
+			enable_special_project = { name = YOURMOD_CRISIS_RESEARCH_PROJECT_4 owner = ROOT location = THIS }
+		}
+
+	}
+}
+
+country_event = {#起源探しイベント:5のスペシャルプロジェクト
+	id = yourmod_crisis_01.1105
+	title = yourmod_crisis_01.1105.name
+ 	desc = yourmod_crisis_01.1105.desc
+	picture = GFX_evt_mining_station
+	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+
+	trigger = {
+		has_country_flag = yourmod_crisis_story_4
+		not = { has_country_flag = yourmod_crisis_story_5 }
+		has_country_flag = yourmod_allow_origin_research
+		any_owned_planet = {
+			has_resource = { type = sr_zro amount > 0 }
+		}
+
+	}
+
+	#超能力の痕跡
+	#帝国領内には、超能力に関係した資源であるズィロを産出する惑星が存在する。その惑星にはかつては古代文明が居住していたようで、そこには何かがあるかもしれない。
+
+	immediate = {
+		set_country_flag = yourmod_has_more_impportant_point
+	}
+
+	mean_time_to_happen = {
+		years = 2
+	}
+
+	option = {
+		name = yourmod_crisis_01.1100.a #考古学の時間だ。
+		random_owned_planet = {
+			limit = {
+				has_resource = { type = sr_zro amount > 0 }
+			}
+			enable_special_project = { name = YOURMOD_CRISIS_RESEARCH_PROJECT_5 owner = ROOT location = THIS }
+		}
+
+	}
+}
+
+country_event = {#起源探しイベント:6のスペシャルプロジェクト
+	id = yourmod_crisis_01.1106
+	title = yourmod_crisis_01.1106.name
+ 	desc = yourmod_crisis_01.1106.desc
+	picture = GFX_evt_mining_station
+	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+
+	trigger = {
+		has_country_flag = yourmod_crisis_story_5
+		not = { has_country_flag = yourmod_crisis_story_6 }
+		has_country_flag = yourmod_allow_origin_research
+
+	}
+
+	#記録の再構成
+	#我々の努力は、古代銀河史に関する知識を非常に高めてくれた。見つかった文献を整理することによって新たな知識を得られる可能性がある。
+
+	immediate = {
+		set_country_flag = yourmod_has_more_impportant_point
+	}
+
+	mean_time_to_happen = {
+		years = 2
+	}
+
+	option = {
+		name = yourmod_crisis_01.1100.a #考古学の時間だ。
+		enable_special_project = { name = YOURMOD_CRISIS_RESEARCH_PROJECT_6 }
+	}
+}
+
 #####起源ストーリーイベント集
 
 country_event = {#順番通りに再生させるためのイベント
 	id = yourmod_crisis_01.1200
 	is_triggered_only = yes
-	hidden_window = yes
+	hide_window = yes
 
 	immediate = {
+		remove_country_flag = yourmod_has_more_impportant_point
 		if = {
 			limit = {
 				not = { has_country_flag = yourmod_crisis_story_1 }
 			}
-			country_event = { id = youmod_crisis_01.1201 }
+			country_event = { id = yourmod_crisis_01.1201 }
 		}
 		else_if = {
 			limit = {
 				has_country_flag = yourmod_crisis_story_1
 				not = { has_country_flag = yourmod_crisis_story_2 }
 			}
-			country_event = { id = youmod_crisis_01.1202 }
+			country_event = { id = yourmod_crisis_01.1202 }
 		}
 		else_if = {
 			limit = {
 				has_country_flag = yourmod_crisis_story_2
 				not = { has_country_flag = yourmod_crisis_story_3 }
 			}
-			country_event = { id = youmod_crisis_01.1203 }
+			country_event = { id = yourmod_crisis_01.1203 }
 		}
 		else_if = {
 			limit = {
 				has_country_flag = yourmod_crisis_story_3
 				not = { has_country_flag = yourmod_crisis_story_4 }
 			}
-			country_event = { id = youmod_crisis_01.1204 }
+			country_event = { id = yourmod_crisis_01.1204 }
 		}
 		else_if = {
 			limit = {
 				has_country_flag = yourmod_crisis_story_4
 				not = { has_country_flag = yourmod_crisis_story_5 }
 			}
-			country_event = { id = youmod_crisis_01.1205 }
+			country_event = { id = yourmod_crisis_01.1205 }
 		}
 		else_if = {
 			limit = {
 				has_country_flag = yourmod_crisis_story_5
 				not = { has_country_flag = yourmod_crisis_story_6 }
 			}
-			country_event = { id = youmod_crisis_01.1206 }
+			country_event = { id = yourmod_crisis_01.1206 }
 		}
 	}
 }
@@ -888,6 +1156,223 @@ country_event = {#起源探しイベント:
 	}
 }
 
+country_event = {#起源探しイベント:学術会
+	id = yourmod_crisis_01.1207
+	title = yourmod_crisis_01.1207.name
+ 	desc = yourmod_crisis_01.1207.desc
+
+	picture = GFX_evt_mining_station
+	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+
+	trigger = {
+		has_country_flag = yourmod_crisis_story_6
+		exists = event_target:curator_enclave_country
+		event_target:curator_enclave_country = {
+			has_communications = ROOT
+		}
+	}
+
+	#意外な手助け
+	#帝国は$yourmod_crisis$に関係した史料を集め、解析を重ねている。しかし、重要な物が欠けている。それは、$yourmod_crisis$の$R製造者$!に関する情報である。名前も分からない古代文明も、レングルスタップも、シャダイハーも、$yourmod_crisis$に直面したすべての文明がこれは生物兵器であるという結論を出している。だが、誰も製造者が何者かという疑問については答えが出せなかったのだ。考古学者たちが頭をフル回転して考えているという中で、突如として学術会から交信が届いた。なんでも、$yourmod_crisis$について話があるという。
+
+	mean_time_to_happen = {
+		years = 2
+	}
+
+	immediate = {
+		set_country_flag = yourmod_crisis_story_7
+	}
+
+	option = {
+		name = yourmod_crisis_01.1207.a #画面に映せ。
+		trigger = { is_homicidal = no }
+		country_event = {
+			id = yourmod_crisis_01.1208
+		}
+	}
+	option = {
+		name = yourmod_crisis_01.1207.b #死ね……。
+		trigger = { is_homicidal = yes }
+	}
+}
+
+country_event = {
+	id = yourmod_crisis_01.1208
+	title = yourmod_crisis_01.1208.name
+	desc = yourmod_crisis_01.1208.desc
+	is_triggered_only = yes
+	diplomatic = yes
+	custom_gui = "enclave_curator_window"
+	custom_gui_option = "enclave_curator_option"
+	picture_event_data = {
+		portrait = event_target:curator_enclave_country
+		room = enclave_curator_room
+	}
+	location = event_target:curator_enclave_system
+
+	#通信が入った
+	#こんにちは、[from.GetName]の諸君。挨拶はこの程度にしておいて、本題に入ろう。君たちが$yourmod_crisis$と呼んでいる、あの実体の事だ。我々キュレーターは、アレについての情報を持っている。いや、持っていた、という方が正しいか。保管庫の奥の奥に厳重に封印されていて、$yourmod_crisis$について知るキュレーターはもはや居なかったからだ。最近の$yourmod_crisis$の出現を受けて再度調査を行っていたんだが、その結果がいまようやく出た。それを今から教えよう。
+
+	trigger = {
+		exists = event_target:curator_enclave_country
+	}
+
+	option = {
+		name = yourmod_crisis_01.1208.a #前書きはいい、銀河のために早く教えてくれ！
+		hidden_effect = {
+			country_event = { id = yourmod_crisis_01.1209 }
+		}
+	}
+}
+
+country_event = {
+	id = yourmod_crisis_01.1209
+	title = yourmod_crisis_01.1209.name
+	desc = yourmod_crisis_01.1209.desc
+	is_triggered_only = yes
+	diplomatic = yes
+	custom_gui = "enclave_curator_window"
+	custom_gui_option = "enclave_curator_option"
+	picture_event_data = {
+		portrait = event_target:curator_enclave_country
+		room = enclave_curator_room
+	}
+	location = event_target:curator_enclave_system
+
+	#通信が入った
+	#冷静になって聞いてくれ。$yourmod_crisis$の製造者に関することだ。仮にクリエイターとでも呼んでおくが、彼らは3000万年前に繁栄していた文明だ。ダークマター技術を取り入れたことで栄華を極め、銀河外からの危機も退けた非常に強大な帝国だったのだが、自らの発明した$yourmod_crisis$のせいで銀河全体を巻き込んで滅んだのだ。宿主を殺しつくした$yourmod_crisis$も同時に休眠状態に入ったが、数百万年単位で蘇って銀河に災厄を振り撒いている。
+
+	trigger = {
+		exists = event_target:curator_enclave_country
+	}
+
+	option = {
+		name = yourmod_crisis_01.1209.a #やはり生物兵器だったのか！続けてくれ。
+		hidden_effect = {
+			country_event = { id = yourmod_crisis_01.1210 }
+		}
+	}
+}
+
+country_event = {
+	id = yourmod_crisis_01.1210
+	title = yourmod_crisis_01.1210.name
+	desc = yourmod_crisis_01.1210.desc
+	is_triggered_only = yes
+	diplomatic = yes
+	custom_gui = "enclave_curator_window"
+	custom_gui_option = "enclave_curator_option"
+	picture_event_data = {
+		portrait = event_target:curator_enclave_country
+		room = enclave_curator_room
+	}
+	location = event_target:curator_enclave_system
+
+	#通信が入った
+	#それで、そのクリエイターだが……。実は、未だに存続している。技術を捨て、検疫と称して自己隔離状態に入っているがね。我々は数百万年前に彼らと接触してこの情報を得た。彼らの先祖が残した、$yourmod_crisis$を無害化する方法を保存している場所の情報も持っている。その座標を教えよう……。それと、今回に限っては情報の料金を請求しない。その代わりと言ってはなんだが、我々のステーションが破壊される前に$yourmod_crisis$をこの銀河から根絶してくれ。よろしく頼む。
+
+	trigger = {
+		exists = event_target:curator_enclave_country
+	}
+
+	option = {
+		name = yourmod_crisis_01.1209.a #分かった。さっそく情報を送れ。
+		random_planet_within_border = {
+			create_archaeological_site = yourmod_final_arc_site
+		}
+	}
+}
+
+####発掘イベント
+ship_event = {#1
+	id = yourmod_crisis_01.1211
+	title = yourmod_crisis_01.1211.name
+	desc = yourmod_crisis_01.1211.desc
+	is_triggered_only = yes
+	auto_opens = yes
+	location = from
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = {
+		from = { set_site_progress_locked = no }
+	}
+	#
+
+	option = {
+		name = SEARCH
+		small_artifact_reward = yes
+	}
+}
+
+ship_event = {#2
+	id = yourmod_crisis_01.1212
+	title = yourmod_crisis_01.1212.name
+	desc = yourmod_crisis_01.1212.desc
+	is_triggered_only = yes
+	auto_opens = yes
+	location = from
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = {
+		from = { set_site_progress_locked = no }
+	}
+	#
+
+	option = {
+		name = SEARCH
+		small_artifact_reward = yes
+	}
+}
+
+ship_event = {#3
+	id = yourmod_crisis_01.1213
+	title = yourmod_crisis_01.1213.name
+	desc = yourmod_crisis_01.1213.desc
+	is_triggered_only = yes
+	auto_opens = yes
+	location = from
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = {
+		from = { set_site_progress_locked = no }
+	}
+	#
+
+	option = {
+		name = SEARCH
+		small_artifact_reward = yes
+	}
+}
+
+ship_event = {#4
+	id = yourmod_crisis_01.1214
+	title = yourmod_crisis_01.1214.name
+	desc = yourmod_crisis_01.1214.desc
+	is_triggered_only = yes
+	auto_opens = yes
+	location = from
+
+	option = {
+		name = yourmod_crisis_10.1214 #それは……困ったな。
+		owner = {
+			country_event = {
+				id = yourmod_crisis_01.1300
+			}
+		}
+	}
+}
+
+###
+
 country_event = {#遺物アクションガバ
 	id = yourmod_crisis_01.1299
 	title = yourmod_crisis_01.1299.name
@@ -903,6 +1388,27 @@ country_event = {#遺物アクションガバ
 
 	option = {
 		name = yourmod_crisis_01.1299.a #なんという時間の無駄だ！
+	}
+}
+
+####
+
+country_event = {#クソ暗号
+	id = yourmod_crisis_01.1300
+	title = yourmod_crisis_01.1300.name
+ 	desc = yourmod_crisis_01.1300.desc
+
+	picture = GFX_evt_mining_station
+	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+
+	is_triggered_only = yes
+
+	#プレースホルダー
+	#クリエイター文明許せねぇ！
+
+	option = {
+		name = yourmod_crisis_01.1300.a #急げ急げ急げ！
+		start_situation = { type = yourmod_decryption_situation target = this }
 	}
 }
 
