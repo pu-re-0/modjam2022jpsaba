@@ -810,7 +810,7 @@ country_event = {#起源探しイベント:2のスペシャルプロジェクト
 	}
 
 	mean_time_to_happen = {
-		years = 2
+		years = 1
 	}
 
 	option = {
@@ -942,7 +942,7 @@ country_event = {#起源探しイベント:5のスペシャルプロジェクト
 	}
 
 	mean_time_to_happen = {
-		years = 2
+		years = 1
 	}
 
 	option = {
@@ -979,7 +979,7 @@ country_event = {#起源探しイベント:6のスペシャルプロジェクト
 	}
 
 	mean_time_to_happen = {
-		years = 2
+		years = 1
 	}
 
 	option = {
@@ -1056,6 +1056,7 @@ country_event = {#起源探しイベント:核戦争で滅んだ惑星
 
 	immediate = {
 		set_country_flag = yourmod_crisis_story_1
+		remove_country_flag = yourmod_has_more_impportant_point
 	}
 	option = {
 		name = yourmod_crisis_01.1201.a #やはり我々が最初ではなかったというわけか。
@@ -1077,6 +1078,7 @@ country_event = {#起源探しイベント:先駆者のクリスタル
 
 	immediate = {
 		set_country_flag = yourmod_crisis_story_2
+		remove_country_flag = yourmod_has_more_impportant_point
 	}
 	option = {
 		name = yourmod_crisis_01.1202.a #抜本的な解決にはならないな。
@@ -1098,6 +1100,7 @@ country_event = {#起源探しイベント:バッドアイデア
 
 	immediate = {
 		set_country_flag = yourmod_crisis_story_3
+		remove_country_flag = yourmod_has_more_impportant_point
 	}
 	option = {
 		name = yourmod_crisis_01.1203.a #バッドアイデア。
@@ -1119,6 +1122,7 @@ country_event = {#起源探しイベント:大絶滅
 
 	immediate = {
 		set_country_flag = yourmod_crisis_story_4
+		remove_country_flag = yourmod_has_more_impportant_point
 	}
 	option = {
 		name = yourmod_crisis_01.1204.a #もしかすると$yourmod_crisis$が原因なのか？
@@ -1140,6 +1144,7 @@ country_event = {#起源探しイベント:
 
 	immediate = {
 		set_country_flag = yourmod_crisis_story_5
+		remove_country_flag = yourmod_has_more_impportant_point
 	}
 	option = {
 		name = yourmod_crisis_01.1205.a #
@@ -1161,6 +1166,7 @@ country_event = {#起源探しイベント:
 
 	immediate = {
 		set_country_flag = yourmod_crisis_story_6
+		remove_country_flag = yourmod_has_more_impportant_point
 	}
 	option = {
 		name = yourmod_crisis_01.1206.a #
