@@ -81,7 +81,7 @@ country_event = {
 	}
 
 	immediate = { #動くもので上書きしました by爆雷
-		every_galaxy_planet = [#本来あまり使うべきではない 重いので
+		every_galaxy_planet = [#本来あまり使うべきではない,重いので
 			limit = {
 				has_planet_flag = yourmod_infected_planet
 			}
