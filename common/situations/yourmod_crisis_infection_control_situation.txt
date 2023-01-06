@@ -353,6 +353,42 @@ yourmod_country_infection_situation = {
 			current_situation_approach = yourmod_planet_infection_approach_0
 		}
 
+		modifier = {
+			add = -0.25
+			desc = yourmod_planet_infection_vaccine_desc #ワクチン完成より
+			owner = {
+				has_country_flag = yourmod_crisis_vaccine_situation_complete
+			}
+		}
+
+		#GHOから。数字は適当 byぷれ
+		modifier = {
+			add = -0.05
+			desc = yourmod_planet_infection_resolution_quarantine_desc #銀河共同体決議より
+			is_active_resolution = "yourmod_resolution_quarantine_1"
+			NOR = {
+				is_active_resolution = "yourmod_resolution_quarantine_2"
+				is_active_resolution = "yourmod_resolution_quarantine_3"
+			}
+		}
+		modifier = {
+			add = -0.07
+			desc = yourmod_planet_infection_resolution_quarantine_desc
+			is_active_resolution = "yourmod_resolution_quarantine_2"
+			NOR = {
+				is_active_resolution = "yourmod_resolution_quarantine_1"
+				is_active_resolution = "yourmod_resolution_quarantine_3"
+			}
+		}
+		modifier = {
+			add = -0.1
+			desc = yourmod_planet_infection_resolution_quarantine_desc
+			is_active_resolution = "yourmod_resolution_quarantine_3"
+			NOR = {
+				is_active_resolution = "yourmod_resolution_quarantine_1"
+				is_active_resolution = "yourmod_resolution_quarantine_2"
+			}
+		}		
 	}
 
 	on_start = {
