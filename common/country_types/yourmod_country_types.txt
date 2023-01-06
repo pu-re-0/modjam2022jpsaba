@@ -120,6 +120,7 @@ yourmod_virus = {
 	government = no
 	colonizing_title = ""
 	colonizing_desc = ""
+	auto_delete = no
 	#custom_starbase = starbase_swarm
 	observable = yes
 	uses_origins = no
