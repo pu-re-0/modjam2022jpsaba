@@ -236,9 +236,27 @@
  yourmod_crisis_chain_2.poi.1.name:"$yourmod_crisis$に関係する記録を探す"
  yourmod_crisis_chain_2.poi.1.desc:"$yourmod_crisis$の記録や、その製造者に関係する遺物がこの銀河にはあるはずだ。遺物を使うなどしてなんとかして見つけ出し、情報を集めなければならないだろう。"
 
-
  artifact_yourmod_crisis_origin_research:"$yourmod_crisis$の起源を調べる"
  artifact_yourmod_crisis_origin_research_desc:"遺物の中には、もしかすると$yourmod_crisis$の正体に迫るために使えるものがあるかもしれない。"
-
+ 
  site_yourmod_final_arc_site:"$yourmod_crisis$の情報を収めた遺跡"
  site_yourmod_final_arc_site_desc:"学術会によると、ここにクリエイターが$yourmod_crisis$を無力化する方法を保存したという。"
+
+ YOURMOD_CRISIS_RESEARCH_PROJECT_1:"死の惑星調査"
+ YOURMOD_CRISIS_RESEARCH_PROJECT_1_DESC:"ここに$yourmod_crisis$に関係する何かがあるかもしれない。"
+
+ YOURMOD_CRISIS_RESEARCH_PROJECT_2:"クリスタルの回収"
+ YOURMOD_CRISIS_RESEARCH_PROJECT_2_DESC:"記録クリスタルに何が記録されているのか確かめるべきだ。"
+
+ YOURMOD_CRISIS_RESEARCH_PROJECT_3:"遺物の箱を開ける"
+ YOURMOD_CRISIS_RESEARCH_PROJECT_3_DESC:"もしかすると、箱の中には$yourmod_crisis$に関係するものがあるかもしれない。……ちょっと期待しすぎかもしれないが。"
+
+ YOURMOD_CRISIS_RESEARCH_PROJECT_4:"異星人の図書館"
+ YOURMOD_CRISIS_RESEARCH_PROJECT_4_DESC:"古代文明の築いた図書館のようなものがここにはある。何があるか確かめる。$yourmod_crisis$に関係した情報の存在も期待できるだろう。"
+
+ YOURMOD_CRISIS_RESEARCH_PROJECT_5:"ズィロ惑星の調査"
+ YOURMOD_CRISIS_RESEARCH_PROJECT_5_DESC:"古代のサイオニック種族がここに居住地を築いていたようだ。調査することによって何かしら古代史の手がかりをつかめるかもしれない。。"
+
+ YOURMOD_CRISIS_RESEARCH_PROJECT_6:"記録の再構成"
+ YOURMOD_CRISIS_RESEARCH_PROJECT_6_DESC:"古代銀河史の情報を大量に集めたが、洞察が欠けている。洞察を深めていけば、点と点を繋げて新しい図像が描けるかもしれない。"
+
