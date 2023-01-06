@@ -139,14 +139,14 @@ country_event = {
 		
 	}
 	option = {
-		name = yourmod_primitive.11.a	#コンタクトをとれ
+		name = yourmod_primitive.12.a	#コンタクトをとれ
 		country_event = {
 			id = yourmod_custom_diplomacy_events.100
 			days = 1
 		}
 	}
 	option = {
-		name = yourmod_primitive.11.b 	#そっとしておこう。何か深い意味があるはずだ
+		name = yourmod_primitive.12.b 	#そっとしておこう。何か深い意味があるはずだ
 	}
 }
 
@@ -166,6 +166,7 @@ country_event = {
 	}
 	option = {
 		name = yourmod_primitive.20.a
+		set_global_flag = yourmod_can_contact_ancient_crisis_creater_pre_FTL_country
 		country_event = {
 			id = yourmod_custom_diplomacy_events.90 #聞いてみよう
 		}
