@@ -132,7 +132,7 @@ yourmod_decryption_situation = {#対処法の暗号解読
 	}
 
 	approach = {#中程度の努力
-		name = yourmod_decryption_approach_mid
+		name = yourmod_decryption_research_approach_mid
 		icon = GFX_situation_approach_unity #後で変えておく
 		icon_background = GFX_situation_approach_bg_green
 		default = yes
@@ -148,7 +148,7 @@ yourmod_decryption_situation = {#対処法の暗号解読
 	}
 
 	approach = {#懸命な努力
-		name = yourmod_decryption_approach_high
+		name = yourmod_decryption_research_approach_high
 		icon = GFX_situation_approach_unity #後で変えておく
 		icon_background = GFX_situation_approach_bg_green
 		default = yes
