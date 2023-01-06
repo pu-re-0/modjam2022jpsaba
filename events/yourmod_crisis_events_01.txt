@@ -580,7 +580,6 @@ country_event = { #Situation has done, Ground Zero Emerging, Create Notification
 	immediate = {
 		set_global_flag = yourmod_crisis_ground_zero_entered
 		random_system = {
-			limit = { not = { owner = { or = { has_ethic = ethic_xenophobe has_ethic = ethic_fanatic_xenophobe } } } }
 			set_spawn_system_batch = begin
 			spawn_system = {
 				min_jumps = 1
