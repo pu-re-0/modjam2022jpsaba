@@ -71,15 +71,13 @@ country_event = {
 	}
 
 	immediate = { #動くもので上書きしました by爆雷
-		every_owned_planet = {
-			if = {
-				limit = {
-					owner = {
-						has_country_flag = yourmod_infected_country
-					}
+		every_galaxy_planet = {
+			limit = {
+				owner = {
+					has_country_flag = yourmod_infected_country
 				}
-				save_event_target_as = yourmod_fleet_spawn_planet_1
 			}
+			save_event_target_as = yourmod_fleet_spawn_planet_1
 		}
 		event_target:yourmod_crisis_country = {
 			while = {
