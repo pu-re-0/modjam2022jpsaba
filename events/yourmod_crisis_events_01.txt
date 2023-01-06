@@ -335,9 +335,9 @@ country_event = { #Infected!#感染した！
 	}
 
 	mean_time_to_happen = {
-		years = 2
+		days = 185
 		modifier = {
-			factor = 0.75
+			factor = 0.50
 			is_ai = yes
 		}
 		
@@ -350,15 +350,15 @@ country_event = { #Infected!#感染した！
 			is_galactic_community_member = yes
 		}
 		modifier = {
-			factor = 8.00
+			factor = 16.00
 			is_homicidal = yes
 		}
 		modifier = {
-			factor = 2.0
+			factor = 4.0
 			has_ethic = ethic_xenophobe
 		}
 		modifier = {
-			factor = 4.0
+			factor = 8.0
 			has_ethic = ethic_fanatic_xenophobe
 		}
 		modifier = {
@@ -430,11 +430,52 @@ country_event = { # investigate trigger
 	trigger = {
 		has_global_flag = yourmod_in_progress # see mid_game_crisis_trigger_events.txt
 		has_global_flag = yourmod_virus_first_infection
+		any_owned_planet = {
+			has_planet_flag  = yourmod_infected_planet
+		}
 		#各国の状況が深刻化していることを判定するトリガーを後で入れておく
 	}
 
 	mean_time_to_happen = {
 		years = 4
+		
+		modifier = {
+			factor = 0.75
+			has_ethic = ethic_materialism
+		}
+		modifier = {
+			factor = 0.50
+			has_ethic = ethic_fanatic_materialism
+		}
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_spiritualism
+		}
+		modifier = {
+			factor = 2.5
+			has_ethic = ethic_fanaticspiritualism
+		}
+		modifier = {
+			factor = 0.50
+			count_owned_planet = {
+				count = 2
+				limit = { has_planet_flag  = yourmod_infected_planet }
+			}
+		}
+		modifier = {
+			factor = 0.25
+			count_owned_planet = {
+				count = 3
+				limit = { has_planet_flag  = yourmod_infected_planet }
+			}
+		}
+		modifier = {
+			factor = 0.10
+			count_owned_planet = {
+				count > 3
+				limit = { has_planet_flag  = yourmod_infected_planet }
+			}
+		}
 	}
 
 	immediate = {
