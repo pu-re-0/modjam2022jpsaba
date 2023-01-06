@@ -11,27 +11,17 @@ country_event = {
 
 	immediate = {
 		set_global_flag = yourmod_crisis_ground_zero_entered
-		no_scope = {
-			set_spawn_system_batch = begin
-			spawn_system = {
-				#min_jumps = 1
-				#max_jumps = 3
-				min_distance = 25
-				max_distance = 35
-				initializer = yourmod_crisis_ground_zero_initializer
-				hyperlane = yes
-				is_discovered = no
-			}
-			set_spawn_system_batch = end
-		}
 	}
 
 	option = {
 		name = yourmod_test.1.a
 		set_global_flag = yourmod_crisis_phase_2
-		capital_scope = {
-			set_planet_flag = yourmod_infected_planet
-		}
+		set_country_flag = yourmod_infected_country
+	}
+	option = {
+		name = yourmod_test.1.b
+		set_global_flag = yourmod_crisis_phase_2
+		set_country_flag = yourmod_health_lost_country
 	}
 }
 
@@ -81,19 +71,43 @@ country_event = {
 	}
 
 	immediate = { #動くもので上書きしました by爆雷
-		every_galaxy_planet = {#本来あまり使うべきではない,重いので
-			limit = {
-				has_planet_flag = yourmod_infected_planet
+		every_owned_planet = {
+			if = {
+				limit = {
+					owner = {
+						has_country_flag = yourmod_infected_country
+					}
+				}
+				save_event_target_as = yourmod_fleet_spawn_planet_1
 			}
-			save_event_target_as = yourmod_fleet_spawn_planet
+			else_if = {
+				limit = {
+					owner = {
+						has_country_flag = yourmod_health_lost_country
+					}
+				}
+				save_event_target_as = yourmod_fleet_spawn_planet_2
+			}
+			else = {
+				set_planet_flag = yourmod_crisis_fleet_not_spawn
+			}
 		}
 		event_target:yourmod_crisis_country = {
 			while = {
 				limit = {
-					event_target:yourmod_fleet_spawn_planet = { not = { has_planet_flag = yourmod_crisis_fleet_spawned } }
+					event_target:yourmod_fleet_spawn_planet = {
+						OR = {
+							not = { has_planet_flag = yourmod_crisis_fleet_spawned_1 }
+							not = { has_planet_flag = yourmod_crisis_fleet_spawned_2 }
+							not = { has_planet_flag = yourmod_crisis_fleet_not_spawn }
+						}
+					}
 				}
-				event_target:yourmod_fleet_spawn_planet = {
-					set_planet_flag = yourmod_crisis_fleet_spawned
+				event_target:yourmod_fleet_spawn_planet_1 = {
+					set_planet_flag = yourmod_crisis_fleet_spawned_1
+				}
+				event_target:yourmod_fleet_spawn_planet_2 = {
+					set_planet_flag = yourmod_crisis_fleet_spawned_2
 				}
 				create_fleet = {
              			       name = "NAME_Medium_Virus_fleet"
@@ -113,7 +127,31 @@ country_event = {
 							}
 						}
 						set_location = {
-						target = event_target:yourmod_fleet_spawn_planet
+						target = event_target:yourmod_fleet_spawn_planet_1
+						distance = 1
+						angle = random
+						}
+					}
+				}
+				create_fleet = {
+             			       name = "NAME_Medium_Virus_fleet"
+					settings = {
+						garrison = yes
+						spawn_debris = no
+					}
+					effect = {
+						set_owner = event_target:yourmod_crisis_country
+						set_fleet_bombardment_stance = armageddon
+						while = {
+							count = 1
+							create_ship = {
+								name = random
+								design = "NAME_large_virus"
+								graphical_culture = event_target:yourmod_crisis_country
+							}
+						}
+						set_location = {
+						target = event_target:yourmod_fleet_spawn_planet_2
 						distance = 1
 						angle = random
 						}
