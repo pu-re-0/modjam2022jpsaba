@@ -773,7 +773,7 @@ country_event = {#Noooooootification that the next stage begin to everyone	#艦�
 country_event = { #聖地の増強・遠征艦隊
 	id = yourmod_crisis_01.1010
 	is_triggered_only = yes
-	hide_window ~ yes
+	hide_window = yes
 
 	immediate = {
 		event_target:yourmod_crisis_country = {
