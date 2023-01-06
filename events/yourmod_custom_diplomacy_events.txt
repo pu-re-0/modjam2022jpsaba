@@ -170,7 +170,7 @@ country_event = { #原始文明ホーム2
 	}
 
 	option = {
-		name = yourmod_custom_diplomacy_events.101.b #あなた方の起源は？
+		name = yourmod_custom_diplomacy_events.102.b #あなた方の起源は？
 		response_text = yourmod_custom_diplomacy_events.102.b.reply #今から3000万年前のこと……略
 		is_dialog_only = yes
 	}
@@ -187,7 +187,7 @@ country_event = { #原始文明ホーム2
 
 	option = {
 		name = yourmod_custom_diplomacy_events.103.d #それではまた
-		response_text = yourmod_custom_diplomacy_events.103.c.reply #どうも
+		response_text = yourmod_custom_diplomacy_events.103.d.reply #どうも
 	}
 }
 

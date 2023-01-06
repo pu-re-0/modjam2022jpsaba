@@ -1,7 +1,19 @@
 ﻿l_japanese:
 
 #event
+ yourmod_primitive.11.name:0 "奇妙な文明"
+ yourmod_primitive.11.desc:0 "観測拠点から奇妙な報告があった。どうやら文明水準からして不可解なかなり高度な電波信号が検出されたとのことだ。観測チームはさらなる調査を行いたいようだ。"
+ yourmod_primitive.11.a:0 "詳しい調査を"
+ yourmod_primitive.11.b:0 "時間の無駄だ"
+ yourmod_primitive.12.name:0 "隠し事"
+ yourmod_primitive.12.desc:0 "興味深い事実が発覚した。どうやらこの星の文明はFTL文明に匹敵する高度な技術を隠し持っていたことが分かったのだ！！現在科学者のチームはコンタクトを行うためのスペシャルプロジェクトを準備している。"
+ yourmod_primitive.12.a:0 "コンタクトをとれ"
+ yourmod_primitive.12.b:0 "そっとしておこう。何か深い意味があるはずだ"
+ yourmod_primitive.20.name:0 "緊急通信"
+ yourmod_primitive.20.desc:0 "未知の文明から銀河全体へ向けて公開回線での緊急通信が入った。"
+ yourmod_primitive.20.a:0 "聞いてみよう"
 
 #special_project
+ YOURMOD_ANCIENT_CRISIS_CREATER_PRE_FTL_COUNTRY_PLANET_RESEARCH:0 "奇妙な原始文明との通信の確立"
 
 #country
