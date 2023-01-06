@@ -425,16 +425,19 @@ yourmod_country_infection_situation = {
 	on_fail = {
 		destroy_situation = this
 		
-		country_event = {
-			id = yourmod_crisis_02.15
-		}
-		random_owned_planet = {
-			set_planet_flag = yourmod_infected_planet
-			start_situation = {
-				type = yourmod_planet_infection_situation
-				target = this
+		owner = {
+			country_event = {
+				id = yourmod_crisis_02.15
+			}
+			random_owned_planet = {
+				set_planet_flag = yourmod_infected_planet
+				start_situation = {
+					type = yourmod_planet_infection_situation
+					target = this
+				}
 			}
 		}
+
 	}
 
 	approach = {
