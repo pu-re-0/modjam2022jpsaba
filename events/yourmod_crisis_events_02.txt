@@ -245,11 +245,49 @@ country_event = {
 							has_country_flag = yourmod_infected_country
 							has_country_flag = yourmod_health_lost_country
 						}
-						
+					}
+					modifier = {
+						factor = 0.5
+						has_global_flag = yourmod_crisis_phase_2
 					}
 					random_planet_within_border = {
-						planet_event = {
-							id = yourmod_crisis_02.201
+						random_list = {
+							10 = {
+								#日用品の不足
+								planet_event = {
+									id = yourmod_crisis_02.201
+								}
+							}
+							10 = {
+								#中規模な集団感染
+								planet_event = {
+									id = yourmod_crisis_02.202
+								}
+							}
+							10 = {
+								#大規模な集団感染
+								planet_event = {
+									id = yourmod_crisis_02.203
+								}
+							}
+							10 = {
+								#感染者の減少
+								planet_event = {
+									id = yourmod_crisis_02.204
+								}
+							}
+							10 = {
+								#ブラック企業摘発
+								planet_event = {
+									id = yourmod_crisis_02.205
+								}
+							}
+							10 = {
+								#反感染対策派の暴動
+								planet_event = {
+									id = yourmod_crisis_02.206
+								}
+							}
 						}
 					}
 				}
@@ -265,7 +303,12 @@ country_event = {
 					}
 					modifier = {
 						factor = 0
+						has_country_flag = yourmod_infected_country
 						has_country_flag = yourmod_health_lost_country
+					}
+					modifier = {
+						factor = 0.5
+						has_global_flag = yourmod_crisis_phase_2
 					}
 					random_planet_within_border = {
 						limit = {
