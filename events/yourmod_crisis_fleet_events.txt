@@ -10,9 +10,6 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		effect = {
-			yourmod_create_crisis = yes
-		}
 		set_global_flag = yourmod_crisis_ground_zero_entered
 		no_scope = {
 			set_spawn_system_batch = begin
@@ -102,6 +99,7 @@ country_event = {
              			       name = "NAME_Medium_Virus_fleet"
 					settings = {
 						garrison = yes
+						spawn_debris = no
 					}
 					effect = {
 						set_owner = event_target:yourmod_crisis_country
