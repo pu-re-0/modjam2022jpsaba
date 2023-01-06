@@ -155,20 +155,82 @@ country_event = {
 			random_list = {
 				20 = { #ランダムバフデバフイベント
 					random_list = {
-						10 = {
-
+						6 = {
+							#科学者が狂気特性を獲得
+							modifier = {
+								factor = 0
+								any_owned_leader = {
+									has_trait = leader_trait_maniacal
+								}
+							}
+							country_event = {
+								id = yourmod_crisis_02.101
+							}
 						}
 						10 = {
-							
+							#コンピュータに異常が発生
+							modifier = {
+								factor = 0
+								has_modifier = yourmod_modifier_event_102
+							}
+							country_event = {
+								id = yourmod_crisis_02.102
+							}
 						}
 						10 = {
-							
+							#コンピュータに異常が発生
+							modifier = {
+								factor = 0
+								has_modifier = yourmod_modifier_event_103
+							}
+							modifier = {
+								factor = 0
+								has_ethic = ethic_gestalt_consciousness
+							}
+							country_event = {
+								id = yourmod_crisis_02.103
+							}
 						}
 						10 = {
-							
+							#市民が暴動
+							modifier = {
+								factor = 0
+								any_owned_planet = {
+									has_modifier = yourmod_modifier_event_104
+								}
+							}
+							random_owned_planet = {
+								id = yourmod_crisis_02.104
+							}
 						}
 						10 = {
-							
+							#外出制限の結果ちょっと快適
+							modifier = {
+								factor = 0
+								any_owned_planet = {
+									has_modifier = yourmod_modifier_event_105
+								}
+							}
+							country_event = {
+								id = yourmod_crisis_02.105
+							}
+						}
+						10 = {
+							#彗星より
+							modifier = {
+								factor = 0
+								any_owned_planet = {
+									or = {
+										has_modifier = yourmod_modifier_event_106
+										has_modifier = yourmod_modifier_event_110
+									}
+								}
+							}
+							random_owned_planet = {
+								planet_event = {
+									id = yourmod_crisis_02.106
+								}
+							}
 						}
 					}
 				}
@@ -223,8 +285,8 @@ country_event = {
 							}
 							10 = {
 								modifier = {
-									factor = 0
-
+									factor = 0.5
+									has_modifier = yourmod_modifier_event_302
 								}
 								planet_event = {
 									#小規模な集団感染
@@ -233,8 +295,8 @@ country_event = {
 							}
 							10 = {
 								modifier = {
-									factor = 0
-									
+									factor = 0.2
+									has_modifier = yourmod_modifier_event_303
 								}
 								planet_event = {
 									#中規模な集団感染
@@ -255,6 +317,13 @@ country_event = {
 								}
 							}
 							10 = {
+								modifier = {
+									factor = 0
+									or = {
+										has_planet_flag = yourmod_happen_event_305
+										has_modifier = yourmod_modifier_event_305
+									}
+								}
 								planet_event = {
 									#感染者の再捜査
 									id = yourmod_crisis_02.305
@@ -270,7 +339,7 @@ country_event = {
 	}
 }
 
-##################################################################
+################################################################## 通知用イベント
 
 country_event = {
 	#惑星の感染シチュエーションがはじまった通知
@@ -411,6 +480,147 @@ country_event = {
 }
 
 ##################################################################
+
+country_event = {
+	id = yourmod_crisis_02.101
+	title = yourmod_crisis_02.101.name
+	desc = yourmod_crisis_02.101.desc
+
+	is_triggered_only = yes
+	picture = GFX_evt_mining_station #画像は後で探す
+
+	immediate = {
+		random_owned_leader = {
+			limit = {
+				leader_class = scientist
+				NOT = { has_trait = leader_trait_maniacal }
+			}
+			add_trait = leader_trait_maniacal
+		}
+	}
+	option = {
+		name = yourmod_crisis_02.101.a
+	}
+}
+
+country_event = {
+	id = yourmod_crisis_02.102
+	title = yourmod_crisis_02.102.name
+	desc = yourmod_crisis_02.102.desc
+
+	is_triggered_only = yes
+	picture = GFX_evt_mining_station #画像は後で探す
+
+	immediate = {
+		add_modifer = {
+			modifier = yourmod_modifier_event_102
+			months = 10
+		}
+	}
+	option = {
+		name = yourmod_crisis_02.102.a
+	}
+}
+
+country_event = {
+	id = yourmod_crisis_02.103
+	title = yourmod_crisis_02.103.name
+	desc = yourmod_crisis_02.103.desc
+
+	is_triggered_only = yes
+	picture = GFX_evt_mining_station #画像は後で探す
+
+	immediate = {
+		add_modifer = {
+			modifier = yourmod_modifier_event_103
+			months = 10
+		}
+	}
+	option = {
+		name = yourmod_crisis_02.103.a
+	}
+}
+
+planet_event = {
+	id = yourmod_crisis_02.104
+	title = yourmod_crisis_02.104.name
+	desc = yourmod_crisis_02.104.desc
+
+	is_triggered_only = yes
+	picture = GFX_evt_mining_station #画像は後で探す
+
+	immediate = {
+		add_modifer = {
+			modifier = yourmod_modifier_event_104
+			months = 5
+		}
+	}
+	option = {
+		name = yourmod_crisis_02.104.a
+	}
+}
+
+planet_event = {
+	id = yourmod_crisis_02.105
+	title = yourmod_crisis_02.105.name
+	desc = yourmod_crisis_02.105.desc
+
+	is_triggered_only = yes
+	picture = GFX_evt_mining_station #画像は後で探す
+
+	immediate = {
+		add_modifer = {
+			modifier = yourmod_modifier_event_105
+			months = 14
+		}
+	}
+	option = {
+		name = yourmod_crisis_02.105.a
+	}
+}
+
+planet_event = {
+	id = yourmod_crisis_02.106
+	title = yourmod_crisis_02.106.name
+	desc = yourmod_crisis_02.106.desc
+
+	is_triggered_only = yes
+	picture = GFX_evt_mining_station #画像は後で探す
+
+	immediate = {
+		add_modifier = {
+			modifier = yourmod_modifier_event_106
+		}
+	}
+	option = {
+		name = yourmod_crisis_02.106.a
+		hidden_effect = {
+			planet_event = {
+				id = yourmod_crisis_02.110
+				days = 60
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = yourmod_crisis_02.110
+	title = yourmod_crisis_02.110.name
+	desc = yourmod_crisis_02.110.desc
+
+	is_triggered_only = yes
+	picture = GFX_evt_mining_station #画像は後で探す
+
+	immediate = {
+		remove_modifier = yourmod_modifier_event_106
+		add_modifier = {
+			modifier = yourmod_modifier_event_110
+		}
+	}
+	option = {
+		name = yourmod_crisis_02.110.a
+	}
+}
 
 planet_event = {
 	id = yourmod_crisis_02.301
@@ -653,6 +863,7 @@ planet_event = {
 		#放っておこう
 		name = yourmod_crisis_02.305.b
 		hidden_effect = {
+			set_planet_flag = yourmod_happen_event_305
 			planet_event = {
 				id = yourmod_crisis_02.314
 				days = 30
@@ -664,32 +875,57 @@ planet_event = {
 }
 
 planet_event = {
-	id = yourmod_crisis_02.304
-	title = yourmod_crisis_02.304.name
-	desc = yourmod_crisis_02.304.desc
+	id = yourmod_crisis_02.313
+	title = yourmod_crisis_02.313.name
+	desc = yourmod_crisis_02.313.desc
 
 	is_triggered_only = yes
 	picture = GFX_evt_mining_station #画像は後で探す
 
 	location = event_target:yourmod_happen_event_planet
 
-	# [yourmod_happen_event_planet.GetName]で感染者が減少している
+	# [yourmod_happen_event_planet.GetName]
 
 	immediate = {
+		remove_modifier = yourmod_modifier_event_305
 		change_variable = {
 			which = planet_prevalence_level
 			value = -1
-		}
-		add_modifier = {
-			modifier = yourmod_modifier_event_304
-			months = 4
 		}
 		change_planet_prevalence_level = yes
 		
 	}
 	option = {
 		#
-		name = yourmod_crisis_02.304.a
+		name = yourmod_crisis_02.313.a
+		
+	}
+}
+
+planet_event = {
+	id = yourmod_crisis_02.314
+	title = yourmod_crisis_02.314.name
+	desc = yourmod_crisis_02.314.desc
+
+	is_triggered_only = yes
+	picture = GFX_evt_mining_station #画像は後で探す
+
+	location = event_target:yourmod_happen_event_planet
+
+	# [yourmod_happen_event_planet.GetName]
+
+	immediate = {
+		remove_planet_flag = yourmod_happen_event_305
+		change_variable = {
+			which = planet_prevalence_level
+			value = 2
+		}
+		change_planet_prevalence_level = yes
+		
+	}
+	option = {
+		#
+		name = yourmod_crisis_02.314.a
 		
 	}
 }
