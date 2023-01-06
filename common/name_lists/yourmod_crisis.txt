@@ -11,6 +11,7 @@ yourmod_crisis = {
 			virus_ship_name
 		}
 		
+		
 
 		mining_station = { }
 		research_station = { }
@@ -22,7 +23,7 @@ yourmod_crisis = {
 	}
 
 	fleet_names = {
-		sequential_name = Prethoryn_STARBROOD
+		sequential_name = virus_fleet_name
 	}
 
 	### CHARACTERS

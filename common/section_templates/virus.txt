@@ -187,5 +187,5 @@ ship_section_template = {
 	}
 
 	large_utility_slots = 22
-	aux_utility_slots = 5
+	aux_utility_slots = 3
 }
