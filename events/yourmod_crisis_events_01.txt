@@ -25,6 +25,8 @@ namespace = yourmod_crisis_01
 #1001 Notification to Entered country		#聖地に突っ込んだ国
 #1002 Notification to Every country		#艦隊戦段階への移行を通知・艦隊戦、起源探索用イベントチェーン開始
 
+#1010						#危機でのイベント・聖地の強化と遠征艦隊湧き
+
 #1100						#起源の調査を開始
 #1101						#ストーリー用スペシャルプロジェクト
 #1102						#ストーリー用スペシャルプロジェクト
@@ -734,7 +736,7 @@ country_event = { #聖地の増強・遠征艦隊
 
 	immediate = {
 		event_target:yourmod_crisis_country = {
-			create_fleet = {
+			create_fleet = {#守備隊
 				name = "NAME_Medium_Virus_fleet"
 				settings = {
 					garrison = yes
@@ -743,6 +745,76 @@ country_event = { #聖地の増強・遠征艦隊
 					set_owner = event_target:yourmod_crisis_country
 					#set_fleet_bombardment_stance = armageddon
 					create_yourmod_crisis_medium_ships = yes
+					create_yourmod_crisis_medium_ships = yes
+					create_yourmod_crisis_medium_ships = yes
+					create_yourmod_crisis_large_ships = yes
+					create_yourmod_crisis_large_ships = yes
+					create_yourmod_crisis_large_ships = yes
+					set_location = {
+						target = event_target:yourmod_crisis_ground_zero_system.star
+						distance = 1
+						angle = random
+					}
+				}
+			}
+			
+			create_fleet = {#遠征艦隊1
+				name = "NAME_Medium_Virus_fleet"
+				effect = {
+					set_owner = event_target:yourmod_crisis_country
+					#set_fleet_bombardment_stance = armageddon
+					create_yourmod_crisis_medium_ships = yes
+					create_yourmod_crisis_medium_ships = yes
+					create_yourmod_crisis_large_ships = yes
+					set_location = {
+						target = event_target:yourmod_crisis_ground_zero_system.star
+						distance = 1
+						angle = random
+					}
+				}
+			}
+			
+			create_fleet = {#遠征艦隊2
+				name = "NAME_Medium_Virus_fleet"
+				effect = {
+					set_owner = event_target:yourmod_crisis_country
+					#set_fleet_bombardment_stance = armageddon
+					create_yourmod_crisis_medium_ships = yes
+					create_yourmod_crisis_medium_ships = yes
+					create_yourmod_crisis_large_ships = yes
+					set_location = {
+						target = event_target:yourmod_crisis_ground_zero_system.star
+						distance = 1
+						angle = random
+					}
+				}
+			}
+			
+			create_fleet = {#遠征艦隊3
+				name = "NAME_Medium_Virus_fleet"
+				effect = {
+					set_owner = event_target:yourmod_crisis_country
+					#set_fleet_bombardment_stance = armageddon
+					create_yourmod_crisis_medium_ships = yes
+					create_yourmod_crisis_medium_ships = yes
+					create_yourmod_crisis_large_ships = yes
+					set_location = {
+						target = event_target:yourmod_crisis_ground_zero_system.star
+						distance = 1
+						angle = random
+					}
+				}
+			}
+			
+			create_fleet = {#主力艦隊
+				name = "NAME_Medium_Virus_fleet"
+				effect = {
+					set_owner = event_target:yourmod_crisis_country
+					#set_fleet_bombardment_stance = armageddon
+					create_yourmod_crisis_medium_ships = yes
+					create_yourmod_crisis_medium_ships = yes
+					create_yourmod_crisis_medium_ships = yes
+					create_yourmod_crisis_large_ships = yes
 					create_yourmod_crisis_large_ships = yes
 					set_location = {
 						target = event_target:yourmod_crisis_ground_zero_system.star
