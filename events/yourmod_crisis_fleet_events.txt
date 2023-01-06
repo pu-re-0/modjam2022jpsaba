@@ -74,7 +74,10 @@ country_event = {
 		every_galaxy_planet = {
 			limit = {
 				owner = {
-					has_country_flag = yourmod_infected_country
+					OR = {
+						has_country_flag = yourmod_infected_country
+						has_country_flag = yourmod_health_lost_country
+					}
 				}
 			}
 			save_event_target_as = yourmod_fleet_spawn_planet_1
