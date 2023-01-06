@@ -56,7 +56,7 @@
  yourmod_crisis_01.110.a:"努力をしよう。"
 
  yourmod_crisis_01.111.name:"$yourmod_crisis$の検出実験"
- yourmod_crisis_01.111.desc:"$yourmod_crisis$の最も厄介な性質は、その病原体が現時点でもなお不明なことだ。ウイルスなのか、細菌なのか、微生物なのか、はたまた何か超常的な存在なのか……それすらも分からない。分からないことにはワクチンも製造しようがなく、対症療法で粘るほかないのだ。それゆえ、我々は何としてでも正体をつかまなければいけない。たとえ$R人体実験$!が必要になったとしてもだ。"
+ yourmod_crisis_01.111.desc:"$yourmod_crisis$の最も厄介な性質は、その病原体が現時点でもなお不明なことだ。ウイルスなのか、細菌なのか、微生物なのか、はたまた何か超常的な存在なのか……それすらも分からない。分からないことにはワクチンも製造しようがなく、対症療法で粘るほかないのだ。それゆえ、我々は何としてでも正体をつかまなければいけない。たとえ§R人体実験§!が必要になったとしてもだ。"
  yourmod_crisis_01.111.a:"仕方あるまい……。"
 
  yourmod_crisis_01.112.name:"怪電波"
@@ -213,7 +213,7 @@
  yourmod_crisis_chain_1.poi.1.name:"新たに発見された星系"
  yourmod_crisis_chain_1.poi.1.desc:"この星系に$yourmod_crisis$は電波などを送信しているようだ。"
 
- yourmod_crisis_chain_2_title:"$R$yourmod_crisis$$!"
+ yourmod_crisis_chain_2_title:"§R$yourmod_crisis$§!"
  yourmod_crisis_chain_2_desc:"$yourmod_crisis$と関係がありそうな星系を調べた途端、全銀河に敵対的な艦隊が出現した！この艦隊は明らかに$yourmod_crisis$と関連しているが、詳細は一切不明だ。"
  yourmod_crisis_chain_2.poi.1.name:"$yourmod_crisis$に関係する記録を探す"
  yourmod_crisis_chain_2.poi.1.desc:"$yourmod_crisis$の記録や、その製造者に関係する遺物がこの銀河にはあるはずだ。遺物を使うなどしてなんとかして見つけ出し、情報を集めなければならないだろう。"
