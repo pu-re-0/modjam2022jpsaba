@@ -86,7 +86,7 @@ ship_section_template = {
 	ship_size = large_virus_ship
 	fits_on_slot = hull
 	should_draw_components = no
-	entity = "npc_warship_01_hull_entity"
+	entity = "npf_01_npc_warship_01_hull_entity"
 	icon = "GFX_ship_part_core_mid"
 
 	#only one because it uses a titan laser
