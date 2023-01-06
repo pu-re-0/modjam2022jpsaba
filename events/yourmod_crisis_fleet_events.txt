@@ -82,7 +82,7 @@ country_event = {
 		event_target:yourmod_crisis_country = {
 			while = {
 				limit = {
-					event_target:yourmod_fleet_spawn_planet = {
+					event_target:yourmod_fleet_spawn_planet_1 = {
 						not = { has_planet_flag = yourmod_crisis_fleet_spawned_1 }
 					}
 				}
