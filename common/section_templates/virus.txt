@@ -85,7 +85,7 @@ ship_section_template = {
 	key = "large_virus_hull_01"
 	ship_size = large_virus_ship
 	fits_on_slot = hull
-	should_draw_components = yes
+	should_draw_components = no
 	entity = "npc_warship_01_hull_entity"
 	icon = "GFX_ship_part_core_mid"
 
