@@ -80,37 +80,45 @@ country_event = {
 		has_global_flag = yourmod_crisis_phase_2
 	}
 
-	immediate = {
-		every_country = {
-            every_owned_planet = {
-                limit = {
-                    has_planet_flag = yourmod_infected_planet
-                }
-                create_fleet = {
-                    name = "NAME_Medium_Virus_fleet"
-                    settings = {
-                        garrison = yes
-                    }
-                    effect = {
-                        set_owner = global_event_target:yourmod_crisis_country
-                        set_fleet_bombardment_stance = armageddon
-                        while = {
-                            count = 10
-                            create_ship = {
-                                name = random
-                                design = "NAME_medium_virus"
-                                graphical_culture = event_target:yourmod_crisis_country
-                            }
-                        }
-                        set_location = {
-                            target = PREV.PREV
-                            distance = 1
-                            angle = random
-                        }
-                    }
-                }
-            }
-        }
+	immediate = { #動くもので上書きしました by爆雷
+		every_galaxy_planet = [#本来あまり使うべきではない 重いので
+			limit = {
+				has_planet_flag = yourmod_infected_planet
+			}
+			save_event_target_as = yourmod_fleet_spawn_planet
+		}
+		event_target:yourmod_crisis_country = {
+			while = {
+				limit = {
+					event_target:yourmod_fleet_spawn_planet = { not = { has_planet_flag = yourmod_crisis_fleet_spawned } }
+				}
+				event_target:yourmod_fleet_spawn_planet = {
+					set_planet_flag = yourmod_crisis_fleet_spawned
+				}
+				create_fleet = {
+             			       name = "NAME_Medium_Virus_fleet"
+					settings = {
+						garrison = yes
+					}
+					effect = {
+						set_owner = event_target:yourmod_crisis_country
+						set_fleet_bombardment_stance = armageddon
+						while = {
+							count = 10
+							create_ship = {
+								name = random
+								design = "NAME_medium_virus"
+								graphical_culture = event_target:yourmod_crisis_country
+							}
+						}
+					set_location = {
+						target = event_target:yourmod_fleet_spawn_planet
+						distance = 1
+						angle = random
+					}
+				}
+			}
+		}
 	}
 	option = {
 		name = yourmod_crisis_fleet.02.a
