@@ -42,8 +42,8 @@ event = {
 					planet_size <= 25
 					NOR = {
 						has_anomaly = yes
-						has_modifier = yes
-						has_owner = no
+						has_modifier = terraforming_candidate
+						has_modifier = toxic_terraforming_candidate
 					}
 				}
 
@@ -57,8 +57,8 @@ event = {
 					1 = { change_pc = pc_alpine }
 					1 = { change_pc = pc_savannah }
 					1 = { change_pc = pc_desert }
-					3 = { change_pc = pc_nuked }
-					3 = { change_pc = pc_relic }
+					1 = { change_pc = pc_nuked }
+					5 = { change_pc = pc_relic }
 				}
 				
 				generate_late_primitives_on_planet = yes
@@ -147,5 +147,27 @@ country_event = {
 	}
 	option = {
 		name = yourmod_primitive.11.b 	#そっとしておこう。何か深い意味があるはずだ
+	}
+}
+
+country_event = {
+	id = yourmod_primitive.20 #緊急通信
+	title = yourmod_primitive.20.name
+	desc = yourmod_primitive.20.desc
+	picture = GFX_evt_mining_station 
+	location = event_target:yourmod_ancient_crisis_creater_pre_FTL_country_planet
+	show_sound = event_primitive_civilization 
+	is_triggered_only = yes
+	trigger = {
+		is_ai = no
+	}
+	immediate = {
+		
+	}
+	option = {
+		name = yourmod_primitive.20.a
+		country_event = {
+			id = yourmod_custom_diplomacy_events.90 #聞いてみよう
+		}
 	}
 }

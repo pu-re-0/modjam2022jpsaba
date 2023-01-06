@@ -738,6 +738,14 @@ country_event = { # NEXT STAGE
 				days = 7
 			}
 		}
+		every_country = {
+			limit = {
+				is_ai = no
+			}
+			country_event = {
+				id = yourmod_primitive.20 
+			}
+		}
 	}
 	option = {#戦闘準備！
 		name = yourmod_crisis_01.1001.a
