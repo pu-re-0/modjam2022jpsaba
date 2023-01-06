@@ -118,7 +118,7 @@ large_virus_ship = {#勝手に追加 by爆雷
 	acceleration = 0.15
 	rotation_speed = 0.1
 	collision_radius = @battleship_collision_radius
-	max_hitpoints = 1500
+	max_hitpoints = 20000
 	size_multiplier = 8
 	fleet_slot_size = 4
 
