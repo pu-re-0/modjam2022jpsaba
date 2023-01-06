@@ -16,3 +16,4 @@
 
   ###shipname
   virus_ship_name:0 "第$C$ウイルス艦"
+  NAME_Medium_Virus_fleet:0 "艦船化ウイルス艦隊"
