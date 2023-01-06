@@ -10,6 +10,9 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
+		effect = {
+			yourmod_create_crisis = yes
+		}
 		set_global_flag = yourmod_crisis_ground_zero_entered
 		no_scope = {
 			set_spawn_system_batch = begin

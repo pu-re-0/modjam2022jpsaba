@@ -738,6 +738,14 @@ country_event = { # NEXT STAGE
 				days = 7
 			}
 		}
+		every_country = {
+			limit = {
+				is_ai = no
+			}
+			country_event = {
+				id = yourmod_primitive.20 
+			}
+		}
 	}
 	option = {#戦闘準備！
 		name = yourmod_crisis_01.1001.a
@@ -773,7 +781,7 @@ country_event = {#Noooooootification that the next stage begin to everyone	#艦�
 country_event = { #聖地の増強・遠征艦隊
 	id = yourmod_crisis_01.1010
 	is_triggered_only = yes
-	hide_window ~ yes
+	hide_window = yes
 
 	immediate = {
 		event_target:yourmod_crisis_country = {

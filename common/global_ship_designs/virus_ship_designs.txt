@@ -294,14 +294,6 @@ ship_design = {
 			slot = "AUX_UTILITY_3"
 			template = "SHIELD_BOOSTER"
 		}
-		component = {
-			slot = "AUX_UTILITY_4"
-			template = "AUTO_REPAIR"
-		}
-		component = {
-			slot = "AUX_UTILITY_5"
-			template = "AUTO_REPAIR"
-		}
 	}
 	required_component = "BATTLESHIP_DARK_MATTER_REACTOR"
 

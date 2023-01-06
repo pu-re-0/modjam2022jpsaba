@@ -260,3 +260,28 @@
  YOURMOD_CRISIS_RESEARCH_PROJECT_6:"記録の再構成"
  YOURMOD_CRISIS_RESEARCH_PROJECT_6_DESC:"古代銀河史の情報を大量に集めたが、洞察が欠けている。洞察を深めていけば、点と点を繋げて新しい図像が描けるかもしれない。"
 
+
+ yourmod_crisis_research_situation:"$yourmod_crisis$の正体を探る"
+ yourmod_crisis_research_situation_desc:"未だに正体不明の$yourmod_crisis$の病原体を特定すべきだ！あらゆる資源と手段を以て病原体を見極めれば、対処もより容易になるはずだ。"
+
+ yourmod_crisis_research_approach_low:"低い予算"
+ yourmod_crisis_research_approach_low_desc:"こんなことは他国に任せ、我々は感染拡大の防止に全力を注ぐべきだ！"
+
+ yourmod_crisis_research_approach_mid:"中程度の予算"
+ yourmod_crisis_research_approach_mid_desc:"可能ならば全力を注ぎたいが、そんな予算はない。"
+
+ yourmod_crisis_research_approach_mid:"高い予算"
+ yourmod_crisis_research_approach_mid_desc:"全力でこの病気の正体を明らかにしろ！"
+
+ yourmod_decryption_situation:"暗号の解読"
+ yourmod_decryption_situation:"$yourmod_crisis$の製造者であるクリエイターは、我々に彼らが生み出したものに対する対処法を教えてくれた。ただし、非常に高度に暗号化された状態で。帝国が$yourmod_crisis$に滅ぼされるのと、この暗号が解読されるのとではどちらが早いかは分からないが、全力を注ぐしかない。"
+
+ yourmod_decryption_approach_low:"低い予算"
+ yourmod_decryption_approach_low_desc:"金はないが、時間が解決してくれるだろう。"
+
+ yourmod_decryption_approach_mid:"中程度の予算"
+ yourmod_decryption_approach_mid_desc:"可能ならば全力を注ぎたいが、そんな予算はない。"
+
+ yourmod_decryption_approach_mid:"高い予算"
+ yourmod_decryption_approach_mid_desc:"全力でこの暗号を解読しろ！"
+

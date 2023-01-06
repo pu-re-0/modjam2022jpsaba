@@ -14,4 +14,7 @@
 
   large_virus_hull_01:0 "ゲノム"
 
-  
+  ###shipname
+  virus_ship_name:0 "ウイルス艦"
+  NAME_Medium_Virus_fleet:0 "艦船化ウイルス艦隊"
+  virus_fleet_name:0 "艦船化ウイルス艦隊"

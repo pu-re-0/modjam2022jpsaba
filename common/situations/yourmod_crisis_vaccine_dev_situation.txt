@@ -88,22 +88,22 @@ yourmod_crisis_vaccine_dev_situation = {	#ワクワク
 
 		modifier = {
 			add = 0.25
-			desc = yourmod_crisis_vaccine_dev_approach_low_desc
+			desc = yourmod_crisis_vaccine_dev_approach_low
 			current_situation_approach = yourmod_crisis_vaccine_dev_approach_low
 		}
 		modifier = {
 			add = 0.50
-			desc = yourmod_crisis_vaccine_devh_approach_mid_desc
+			desc = yourmod_crisis_vaccine_dev_approach_mid
 			current_situation_approach = yourmod_crisis_vaccine_dev_approach_mid
 		}
 		modifier = {
 			add = 0.75
-			desc = yourmod_crisis_vaccine_dev_approach_high_desc
+			desc = yourmod_crisis_vaccine_dev_approach_high
 			current_situation_approach = yourmod_crisis_vaccine_dev_approach_high
 		}
 		modifier = {
 			add = 1.0
-			desc = yourmod_crisis_vaccine_dev_approach_super_high_desc
+			desc = yourmod_crisis_vaccine_dev_approach_super_high
 			current_situation_approach = yourmod_crisis_vaccine_dev_approach_super_high
 		}
 
@@ -134,7 +134,7 @@ yourmod_crisis_vaccine_dev_situation = {	#ワクワク
 		}
 
 		modifier = {
-			mult = 1.20
+			add = 0.1
 			desc = yourmod_has_tech_society_1
 			owner = {
 				has_technology = tech_society_1
@@ -145,7 +145,7 @@ yourmod_crisis_vaccine_dev_situation = {	#ワクワク
 			}
 		}
 		modifier = {
-			mult = 1.40
+			add = 0.2
 			desc = yourmod_has_tech_society_2
 			owner = {
 				has_technology = tech_society_2
@@ -155,11 +155,16 @@ yourmod_crisis_vaccine_dev_situation = {	#ワクワク
 			}
 		}
 		modifier = {
-			mult = 1.60
+			add = 0.3
 			desc = yourmod_has_tech_society_3
 			owner = {
 				has_technology = tech_society_3
 			}
+		}
+
+		modifier = {
+			mult = yourmod_society_research_effect
+			desc = yourmod_society_research_power
 		}
 	}
 
@@ -188,7 +193,7 @@ yourmod_crisis_vaccine_dev_situation = {	#ワクワク
 				society_research = 1
 				mult = yourmod_society_research_10
 
-				unity = 20
+				energy = 10
 			}
  			produces = { }
  		}
@@ -208,11 +213,13 @@ yourmod_crisis_vaccine_dev_situation = {	#ワクワク
  			upkeep = {
 				society_research = 1
 				mult = yourmod_society_research_15
+
+				energy = 20
 			}
  			produces = { }
  		}
 		on_select = {
-			custom_tooltip = yourmod_crisisvaccine_dev_approach_mid_desc
+			custom_tooltip = yourmod_crisis_vaccine_dev_approach_mid_desc
 		}
 	}
 
@@ -228,7 +235,7 @@ yourmod_crisis_vaccine_dev_situation = {	#ワクワク
 				society_research = 1
 				mult = yourmod_society_research_20
 
-				energy = 20
+				energy = 40
 			}
  			produces = { }
  		}
@@ -249,7 +256,7 @@ yourmod_crisis_vaccine_dev_situation = {	#ワクワク
 				society_research = 1
 				mult = yourmod_society_research_30
 
-				energy = 50
+				energy = 80
 			}
 			produces = { unity = 10 }
 		}
@@ -312,17 +319,17 @@ yourmod_crisis_vaccine_production_situation = {	#ワクワク配布
 
 		modifier = {
 			add = 0.5
-			desc = yourmod_crisis_vaccine_production_approach_low_desc
+			desc = yourmod_crisis_vaccine_production_approach_low
 			current_situation_approach = yourmod_crisis_vaccine_production_approach_low
 		}
 		modifier = {
 			add = 0.75
-			desc = yourmod_crisis_vaccine_production_approach_mid_desc
+			desc = yourmod_crisis_vaccine_production_approach_mid
 			current_situation_approach = yourmod_crisis_vaccine_production_approach_mid
 		}
 		modifier = {
 			add = 1.0
-			desc = yourmod_crisis_vaccine_production_approach_high_desc
+			desc = yourmod_crisis_vaccine_production_approach_high
 			current_situation_approach = yourmod_crisis_vaccine_production_approach_high
 		}
 
