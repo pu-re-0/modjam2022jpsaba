@@ -10,7 +10,7 @@
 #GHO
  yourmod_GHO:0 "銀河保険機構"
  yourmod_resolution_GHO_fund:0 "基金の設立"
- yourmod_resolution_GHO_fund_desc:0 ""
+ yourmod_resolution_GHO_fund_desc:0 "最も大事なことは公衆衛生の充実のための投資だ。"
  yourmod_resolution_GHO_vaccine_global_dev:0 "ワクチンの国際共同開発"
  yourmod_resolution_GHO_vaccine_global_dev_desc:0 "一国では困難な事業でも、力を合わせれば不可能ではなくなる"
  yourmod_resolution_category_GHO:0 "$yourmod_GHO$"
