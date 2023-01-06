@@ -7,8 +7,9 @@ site_yourmod_final_arc_site = {
 		exists = leader
 		leader = { leader_class = scientist }
 	}
-	#visible = {
-	#}
+	visible = {
+		always = yes
+	}
 
 	#on_visible = {
 	#}
