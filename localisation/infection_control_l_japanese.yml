@@ -6,27 +6,27 @@
  #####    イベント    #####
 
  yourmod_crisis_02.10.name:0 "惑星規模の感染対処"
- yourmod_crisis_02.10.desc:0 "[root.target.GetName]での[ウイルスの名前]の蔓延はもはや見過ごすことはできない。直ちに渡航制限や住民の監視など、対処を進めていかなければ。"
+ yourmod_crisis_02.10.desc:0 "[root.target.GetName]での$yourmod_crisis$の蔓延はもはや見過ごすことはできない。直ちに渡航制限や住民の監視など、対処を進めていかなければ。"
  yourmod_crisis_02.10.a:0 "はやく収まるといいのだが…"
 
  yourmod_crisis_02.11.name:0 "感染の拡大"
- yourmod_crisis_02.11.desc:0 "[root.target.GetName]での[ウイルスの名前]は更なる拡大を見せている。これ以上広がると、この惑星だけで対処しきれなくなってしまう。より強い感染対策を行い、直ちに流行を収めなければ。"
+ yourmod_crisis_02.11.desc:0 "[root.target.GetName]での$yourmod_crisis$は更なる拡大を見せている。これ以上広がると、この惑星だけで対処しきれなくなってしまう。より強い感染対策を行い、直ちに流行を収めなければ。"
  yourmod_crisis_02.11.a:0 "それはマズイ"
 
  yourmod_crisis_02.12.name:0 "感染の縮小"
- yourmod_crisis_02.12.desc:0 "[root.target.GetName]での[ウイルスの名前]は収まりを見せている。まだ油断できない状況ではあるが、ひとまず安心だ"
+ yourmod_crisis_02.12.desc:0 "[root.target.GetName]での$yourmod_crisis$は収まりを見せている。まだ油断できない状況ではあるが、ひとまず安心だ"
  yourmod_crisis_02.12.a:0 "$EXCELLENT$"
 
  yourmod_crisis_02.13.name:0 "帝国規模の感染対処"
- yourmod_crisis_02.13.desc:0 "もはや我が国の[ウイルスの名前]は一つの惑星で対処しきれないほど、流行してしまった。これは帝国の危機である。直ちに流行を収めなければ帝国は麻痺してしまうだろう。"
+ yourmod_crisis_02.13.desc:0 "もはや我が国の$yourmod_crisis$は一つの惑星で対処しきれないほど、流行してしまった。これは帝国の危機である。直ちに流行を収めなければ帝国は麻痺してしまうだろう。"
  yourmod_crisis_02.13.a:0 "直ちに対処をすすめろ"
 
  yourmod_crisis_02.14.name:0 "感染対処の失敗"
- yourmod_crisis_02.14.desc:0 "我が国は[ウイルスの名前]の対処に失敗した。もはや帝国から[ウイルスの名前]を取り除く方法はなく、共存を考えなければならないだろう。ただし、我々は殺され続けてしまうが。"
+ yourmod_crisis_02.14.desc:0 "我が国は$yourmod_crisis$の対処に失敗した。もはや帝国から$yourmod_crisis$を取り除く方法はなく、共存を考えなければならないだろう。ただし、我々は殺され続けてしまうが。"
  yourmod_crisis_02.14.a:0 "なんということだ"
 
  yourmod_crisis_02.15.name:0 "感染対処の成功"
- yourmod_crisis_02.15.desc:0 "我が国は[ウイルスの名前]の対処に成功した。帝国全体で蔓延していた脅威はおおよそ取り除かれた。ただし、一つの惑星ではまだ収束していないため、注意が必要である。"
+ yourmod_crisis_02.15.desc:0 "我が国は$yourmod_crisis$の対処に成功した。帝国全体で蔓延していた脅威はおおよそ取り除かれた。ただし、一つの惑星ではまだ収束していないため、注意が必要である。"
  yourmod_crisis_02.15.a:0 "なんにせよ良くやってくれた"
 
  #####    シチュエーション    #####
@@ -35,27 +35,27 @@
  #####    モディファイアー    #####
 
  planet_prevalence_level_0:0 "惑星の流行レベル:0"
- planet_prevalence_level_0_desc:0 "この惑星では[ウイルスの名前が入る]はほとんど流行っていない。全てのpopが通常通り活動している。"
+ planet_prevalence_level_0_desc:0 "この惑星では$yourmod_crisis$はほとんど流行っていない。全てのpopが通常通り活動している。"
 
  planet_prevalence_level_1:0 "惑星の流行レベル:1"
- planet_prevalence_level_0_desc:0 "この惑星では[ウイルスの名前が入る]が少し流行っている。"
+ planet_prevalence_level_0_desc:0 "この惑星では$yourmod_crisis$が少し流行っている。"
 
  planet_prevalence_level_2:0 "惑星の流行レベル:2"
- planet_prevalence_level_0_desc:0 "この惑星では[ウイルスの名前が入る]が流行っている。"
+ planet_prevalence_level_0_desc:0 "この惑星では$yourmod_crisis$が流行っている。"
 
  planet_prevalence_level_3:0 "惑星の流行レベル:3"
- planet_prevalence_level_0_desc:0 "この惑星では[ウイルスの名前が入る]がかなり流行している。"
+ planet_prevalence_level_0_desc:0 "この惑星では$yourmod_crisis$がかなり流行している。"
 
  planet_prevalence_level_4:0 "惑星の流行レベル:4"
- planet_prevalence_level_0_desc:0 "この惑星では[ウイルスの名前が入る]が爆発的に流行している。これ以上蔓延するようであれば、惑星規模の対処が必要だ。"
+ planet_prevalence_level_0_desc:0 "この惑星では$yourmod_crisis$が爆発的に流行している。これ以上蔓延するようであれば、惑星規模の対処が必要だ。"
 
  planet_prevalence_level_5:0 "惑星の流行レベル:5"
  planet_prevalence_level_0_desc:0 "このモディファイアーは基本的に表示されないから、表示されてたらバグだよ"
  
  country_lost_health_default:0 "失敗した感染対処"
- country_lost_health_default_desc:0 "この帝国は[ウイルスの名前が入る]の対処を致命的に失敗してしまった。帝国の中で[ウイルスの名前]が存在しない箇所はほぼ無いだろう"
+ country_lost_health_default_desc:0 "この帝国は$yourmod_crisis$の対処を致命的に失敗してしまった。帝国の中で$yourmod_crisis$が存在しない箇所はほぼ無いだろう"
 
  country_lost_health_gestalt:0 "失敗した感染対処"
- country_lost_health_gestalt_desc:0 "この帝国は[ウイルスの名前が入る]の対処を致命的に失敗してしまった。帝国の中で[ウイルスの名前]が存在しない箇所はほぼ無いだろう"
+ country_lost_health_gestalt_desc:0 "この帝国は$yourmod_crisis$の対処を致命的に失敗してしまった。帝国の中で$yourmod_crisis$が存在しない箇所はほぼ無いだろう"
  
  
