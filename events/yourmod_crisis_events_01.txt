@@ -633,6 +633,10 @@ ship_event = { # NEXT STAGE
 			}
 		}
 		event_target:yourmod_crisis_country = {
+			country_event = {
+				id = yourmod_crisis_01.1010
+				days = 3 #聖地星系の強化と増援艦隊
+			}
 			create_fleet = {
 				name = "NAME_Medium_Virus_fleet"
 				settings = {
@@ -640,12 +644,20 @@ ship_event = { # NEXT STAGE
 				}
 				effect = {
 					set_owner = event_target:yourmod_crisis_country
-					set_fleet_bombardment_stance = armageddon
+					#set_fleet_bombardment_stance = armageddon
 					while = {
 						count = 30
 						create_ship = {
 							name = random
 							design = "NAME_medium_virus"
+							#graphical_culture = PREV
+						}
+					}
+					while = {
+						count = 5
+						create_ship = {
+							name = random
+							design = "NAME_large_virus"
 							#graphical_culture = PREV
 						}
 					}
@@ -713,6 +725,35 @@ country_event = {#Noooooootification that the next stage begin to everyone	#艦�
 	}
 }
 
+####
+
+country_event = { #聖地の増強・遠征艦隊
+	id = yourmod_crisis_01.1010
+	is_triggered_only = yes
+	hide_window ~ yes
+
+	immediate = {
+		event_target:yourmod_crisis_country = {
+			create_fleet = {
+				name = "NAME_Medium_Virus_fleet"
+				settings = {
+					garrison = yes
+				}
+				effect = {
+					set_owner = event_target:yourmod_crisis_country
+					#set_fleet_bombardment_stance = armageddon
+					create_yourmod_crisis_medium_ships = yes
+					create_yourmod_crisis_large_ships = yes
+					set_location = {
+						target = event_target:yourmod_crisis_ground_zero_system.star
+						distance = 1
+						angle = random
+					}
+				}
+			}
+		}
+	}
+}
 
 
 ########起源の詮索
