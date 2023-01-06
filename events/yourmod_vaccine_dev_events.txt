@@ -173,8 +173,8 @@ situation_event = {
 
 situation_event = {
 	id = yourmod_vaccine_dev_event.22 #ワクチン緊急配布
-	title = yourmod_vaccine_dev_event.21.name	#
-	desc = yourmod_vaccine_dev_event.21.desc 
+	title = yourmod_vaccine_dev_event.22.name	#
+	desc = yourmod_vaccine_dev_event.22.desc 
 	picture = GFX_board_meeting #a name of a picture to display
 	location = from #A scope to the object that is relevant to the event that player can move to. For example, the planet where event is happening
 	show_sound = event_ship_bridge
@@ -192,7 +192,7 @@ situation_event = {
 		}
 	}
 	option = {
-		name = yourmod_vaccine_dev_event.21.a
+		name = yourmod_vaccine_dev_event.22.a
 	}
 }
 
