@@ -1,0 +1,19 @@
+﻿l_japanese:
+
+  ###shipsize
+  medium_virus_ship:0 "デストロイヤー"
+  large_virus_ship:0 "ドレッドノート"
+
+  ###design
+  NAME_medium_virus:0 "エピデミック"
+  NAME_large_virus:0 "パンデミック"
+  
+  ###section
+  medium_virus_bow_01:0 "スパイク"
+  medium_virus_stern_01:0 "エンペローブ"
+
+  large_virus_hull_01:0 "ゲノム"
+
+  ###shipname
+  virus_ship_name:0 "第$C$ウイルス艦"
+  NAME_Medium_Virus_fleet:0 "艦船化ウイルス艦隊"

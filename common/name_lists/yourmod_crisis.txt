@@ -8,8 +8,9 @@ yourmod_crisis = {
 	ship_names = {
 
 		generic = {
-
+			virus_ship_name
 		}
+		
 
 		mining_station = { }
 		research_station = { }

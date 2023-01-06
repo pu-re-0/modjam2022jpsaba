@@ -217,26 +217,46 @@ country_event = {
 									has_planet_flag = yourmod_happen_event_301
 								}
 								planet_event = {
+									#感染者の脱走
 									id = yourmod_crisis_02.301
 								}
 							}
 							10 = {
+								modifier = {
+									factor = 0
+
+								}
 								planet_event = {
+									#小規模な集団感染
 									id = yourmod_crisis_02.302
 								}
 							}
 							10 = {
+								modifier = {
+									factor = 0
+									
+								}
 								planet_event = {
+									#中規模な集団感染
 									id = yourmod_crisis_02.303
 								}
 							}
 							10 = {
+								modifier = {
+									factor = 0
+									check_variable = {
+										which = planet_prevalence_level
+										value <= 0
+									}
+								}
 								planet_event = {
+									#感染者の減少
 									id = yourmod_crisis_02.304
 								}
 							}
 							10 = {
 								planet_event = {
+									#感染者の再捜査
 									id = yourmod_crisis_02.305
 								}
 							}
@@ -249,6 +269,8 @@ country_event = {
 		}
 	}
 }
+
+##################################################################
 
 country_event = {
 	#惑星の感染シチュエーションがはじまった通知
@@ -388,6 +410,8 @@ country_event = {
 	}
 }
 
+##################################################################
+
 planet_event = {
 	id = yourmod_crisis_02.301
 	title = yourmod_crisis_02.301.name
@@ -493,5 +517,179 @@ planet_event = {
 	option = {
 		#
 		name = yourmod_crisis_02.312.a
+	}
+}
+
+planet_event = {
+	id = yourmod_crisis_02.302
+	title = yourmod_crisis_02.302.name
+	desc = yourmod_crisis_02.302.desc
+
+	is_triggered_only = yes
+	picture = GFX_evt_mining_station #画像は後で探す
+
+	location = event_target:yourmod_happen_event_planet
+
+	# [yourmod_happen_event_planet.GetName]で小規模な集団感染が発生した。
+
+	immediate = {
+		change_variable = {
+			which = planet_prevalence_level
+			value = 1
+		}
+		add_modifier = {
+			modifier = yourmod_modifier_event_302
+			months = 4
+		}
+		change_planet_prevalence_level = yes
+		
+	}
+
+	option = {
+		#
+		name = yourmod_crisis_02.302.a
+		
+	}
+
+}
+
+planet_event = {
+	id = yourmod_crisis_02.303
+	title = yourmod_crisis_02.303.name
+	desc = yourmod_crisis_02.303.desc
+
+	is_triggered_only = yes
+	picture = GFX_evt_mining_station #画像は後で探す
+
+	location = event_target:yourmod_happen_event_planet
+
+	# [yourmod_happen_event_planet.GetName]で中規模な集団感染が発生した。
+
+	immediate = {
+		change_variable = {
+			which = planet_prevalence_level
+			value = 2
+		}
+		add_modifier = {
+			modifier = yourmod_modifier_event_303
+			months = 4
+		}
+		change_planet_prevalence_level = yes
+		
+	}
+
+	option = {
+		#
+		name = yourmod_crisis_02.303.a
+		
+	}
+
+}
+
+planet_event = {
+	id = yourmod_crisis_02.304
+	title = yourmod_crisis_02.304.name
+	desc = yourmod_crisis_02.304.desc
+
+	is_triggered_only = yes
+	picture = GFX_evt_mining_station #画像は後で探す
+
+	location = event_target:yourmod_happen_event_planet
+
+	# [yourmod_happen_event_planet.GetName]で感染者が減少している
+
+	immediate = {
+		change_variable = {
+			which = planet_prevalence_level
+			value = -1
+		}
+		add_modifier = {
+			modifier = yourmod_modifier_event_304
+			months = 4
+		}
+		change_planet_prevalence_level = yes
+		
+	}
+	option = {
+		#
+		name = yourmod_crisis_02.304.a
+		
+	}
+}
+
+planet_event = {
+	id = yourmod_crisis_02.305
+	title = yourmod_crisis_02.305.name
+	desc = yourmod_crisis_02.305.desc
+
+	is_triggered_only = yes
+	picture = GFX_evt_mining_station #画像は後で探す
+
+	location = event_target:yourmod_happen_event_planet
+
+	# [yourmod_happen_event_planet.GetName]で感染者の集団を確保した。彼らはこれまで数多くの場所をめぐっており、移動経路を調査すればより多くの感染者が見つかるかもしれない
+
+	immediate = {
+		
+		
+	}
+
+	option = {
+		#捜査してみよう
+		name = yourmod_crisis_02.305.a
+		add_modifer = {
+			id = yourmod_modifier_event_305
+		}
+		hidden_effect = {
+			planet_event = {
+				id = yourmod_crisis_02.313
+				days = 80
+				random = 23
+			}
+		}
+		
+	}
+	option = {
+		#放っておこう
+		name = yourmod_crisis_02.305.b
+		hidden_effect = {
+			planet_event = {
+				id = yourmod_crisis_02.314
+				days = 30
+				random = 5
+			}
+		}
+		
+	}
+}
+
+planet_event = {
+	id = yourmod_crisis_02.304
+	title = yourmod_crisis_02.304.name
+	desc = yourmod_crisis_02.304.desc
+
+	is_triggered_only = yes
+	picture = GFX_evt_mining_station #画像は後で探す
+
+	location = event_target:yourmod_happen_event_planet
+
+	# [yourmod_happen_event_planet.GetName]で感染者が減少している
+
+	immediate = {
+		change_variable = {
+			which = planet_prevalence_level
+			value = -1
+		}
+		add_modifier = {
+			modifier = yourmod_modifier_event_304
+			months = 4
+		}
+		change_planet_prevalence_level = yes
+		
+	}
+	option = {
+		#
+		name = yourmod_crisis_02.304.a
+		
 	}
 }

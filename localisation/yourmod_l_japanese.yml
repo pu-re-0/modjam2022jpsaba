@@ -93,6 +93,24 @@
  yourmod_crisis_01.1100.name:"$yourmod_crisis$の起源の洞察"
  yourmod_crisis_01.1100.desc:"これまでの研究成果を見て、$yourmod_crisis$が自然の物だと考える知的生命体はほとんど居ない。何者かが相応の悪意か害意を持って製造した兵器である可能性が極めて高いという結論がGHOで出された今、全銀河でこの悪質な兵器を製造した元凶の文明を探す必要がある。おそらくは既に滅んでしまった文明だろうが、何かしらの記録が現代まで遺っているかもしれない。その記録があれば、感染予防やあの艦隊の正体についても探りを入れることが可能だ。それに、この銀河規模のパンデミックが初めての流行ではない可能性は十分にある。その場合、$yourmod_crisis$に先駆文明たちがどのように対処をしたか知ることができるかもしれない。"
  yourmod_crisis_01.1100.a:"考古学の時間だ。"
+ 
+ yourmod_crisis_01.1101.name:"死の惑星に希望を賭ける"
+ yourmod_crisis_01.1101.desc:"我が領内に存在する死の惑星は、過去に知的生命体が惑星で核戦争を起こしたことがある、ないしはFTL文明によって終末爆撃が実行されたことがあるという証拠だ。もしかしたら、$yourmod_crisis$についての情報が眠っているかもしれない。"
+
+ yourmod_crisis_01.1102.name:"謎の記録クリスタル"
+ yourmod_crisis_01.1102.desc:"帝国の総力を挙げた調査プロジェクトによって、謎の記録クリスタルがある惑星の軌道上を周回しているのが発見された。これを回収して何が書かれているのか調べてみよう。"
+
+ yourmod_crisis_01.1103.name:"謎の遺物を発見"
+ yourmod_crisis_01.1103.desc:"我が植民地にある遺跡で、新しく謎めいた遺物が見つかった。極めて強固な装甲によって作られた箱のようなもので、中に何があるか確認するべきだろう。"
+
+ yourmod_crisis_01.1104.name:"異星人の図書館"
+ yourmod_crisis_01.1104.desc:"帝国領内にある居住不可能な惑星は、かつては古代文明の植民地だったようだ。都市が辛うじて残存しており、その中に何があるか確かめる必要がある。"
+
+ yourmod_crisis_01.1105.name:"超能力の痕跡"
+ yourmod_crisis_01.1105.desc:"帝国領内には、超能力に関係した資源であるズィロを産出する惑星が存在する。その惑星にはかつては古代文明が居住していたようで、そこには何かがあるかもしれない。"
+
+ yourmod_crisis_01.1106.name:"記録の再構成"
+ yourmod_crisis_01.1106.desc:"我々の努力は、古代銀河史に関する知識を非常に高めてくれた。見つかった文献を整理することによって新たな知識を得られる可能性がある。
 
  yourmod_crisis_01.1201.name:"$yourmod_crisis$の記述を古代の歴史書から発見"
  yourmod_crisis_01.1201.desc:"我々の努力の結果、数千年前に滅びた原始文明によって書かれた歴史書の中に$yourmod_crisis$に関する記述があるものが発見された。古代から現代までを取り扱う概説書のようなもので、複数の国家同士で戦争を行っていたという単調な記述が数千ページにわたって続く中、最後の方に$yourmod_crisis$と酷似した特徴を持つ感染症に惑星全体が襲われたという記述があったのだ。核融合文明であった彼らは、肉体のサイボーグ化や完全な機械化によって難を逃れようとしたが、$yourmod_crisis$は彼らの努力を嘲笑うように、無慈悲に襲い掛かった。病気に対する手の打ちようのなさから人心は次第に廃れ、最終的には核戦争に至ったようだ。著者はこの文明が最終的には滅んでしまうことを予見していたようだ。締めくくりの文章は「おそらく、我々の文明は天罰によって滅ぶのだ。母なる星に反旗を翻し、あまりにもあらゆる場所を掘りすぎた。第一感染者が発生したのが、大深度地下掘削鉱山だったというのはその証左だ。地中に埋まる逆鱗に触れてしまったのだ。」という哀しいものであった。"
@@ -135,29 +153,29 @@
  yourmod_crisis_01.1210.desc:"それで、そのクリエイターだが……。実は、未だに存続している。技術を捨て、検疫と称して自己隔離状態に入っているがね。我々は数百万年前に彼らと接触してこの情報を得た。彼らの先祖が残した、$yourmod_crisis$を無害化する方法を保存している場所の情報も持っている。その座標を教えよう……。それと、今回に限っては情報の料金を請求しない。その代わりと言ってはなんだが、我々のステーションが破壊される前に$yourmod_crisis$をこの銀河から根絶してくれ。よろしく頼む。"
  yourmod_crisis_01.1210.a:"分かった。さっそく情報を送れ。"
 
- yourmod_crisis_01.1211.name:""
- yourmod_crisis_01.1211.desc:""
- yourmod_crisis_01.1211.a:""
+ yourmod_crisis_01.1211.name:"クリエイターの痕跡"
+ yourmod_crisis_01.1211.desc:"かつてこの惑星には、クリエイターの基地があったらしい。だが、3000万年の時に耐えられるほどの強靭さはなかった。学術会から聞いた場所へと来たはいいが、そこにはもはや何もなかったのだ！調査隊は座標周辺にも探索の手を広げている。"
+ yourmod_crisis_01.1211.a:"仕方あるまい。"
  
- yourmod_crisis_01.1212.name:""
- yourmod_crisis_01.1212.desc:""
- yourmod_crisis_01.1212.a:""
+ yourmod_crisis_01.1212.name:"基地を発見"
+ yourmod_crisis_01.1212.desc:"調査隊はクリエイターが残した基地の残骸を発見した！元々聞いていた座標からは何十キロメートルも離れた位置に埋もれていたのだ。予期しないで無駄な時間を使ってしまったが、ボロボロゆえにセキュリティはないも同然で、簡単に奥まで進めそうだと報告がされている。"
+ yourmod_crisis_01.1212.a:"よし、早く探索しろ！"
 
- yourmod_crisis_01.1213.name:""
- yourmod_crisis_01.1213.desc:""
- yourmod_crisis_01.1213.a:""
+ yourmod_crisis_01.1213.name:"暗闇を進む"
+ yourmod_crisis_01.1213.desc:"調査隊は、見立てが甘かったということを正直に報告してきた。基地は壊れているものと考えていたが、実際は中枢部分はいまだに生きていたのだ！謎めいた動力炉が電力を供給しているらしく、侵入者排除システムへの対応と、毎時のように構造の変わるダンジョンと化した基地に苦労させられているとのことだ。"
+ yourmod_crisis_01.1213.a:"さすがに栄光ある古代種族だけはあるか。"
 
- yourmod_crisis_01.1214.name:""
- yourmod_crisis_01.1214.desc:""
- yourmod_crisis_01.1214.a:""
+ yourmod_crisis_01.1214.name:"暗闇でつかんだものは"
+ yourmod_crisis_01.1214.desc:"クリエイターが残した基地の探索が終了した！調査隊は嬉しそうに報告をしてきた……と思ったが、調査隊長の科学者の顔は暗かった。基地の中心部に一つだけ置いてあった端末(なんとまだ起動するらしい)を回収し、調査隊の基地で初期調査を行ったところ、なんとその中身は高度に暗号化されていたというのだ！"
+ yourmod_crisis_01.1214.a:"それは……よくない。"
 
  yourmod_crisis_01.1299.name:"失敗"
  yourmod_crisis_01.1299.desc:"我々の努力は失敗に終わったようだ。遺物の中には有用そうなものは何一つなかった。"
  yourmod_crisis_01.1299.a:"なんという時間の無駄だ！"
  
- yourmod_crisis_01.1300.name:""
- yourmod_crisis_01.1300.desc:""
- yourmod_crisis_01.1300.a:""
+ yourmod_crisis_01.1300.name:"泣きっ面に蜂"
+ yourmod_crisis_01.1300.desc:"クリエイターの端末を回収したはいいが、その中身は残念ながら高度に暗号化されていて、情報を抜き取れない。学術会の言葉を信じるならば、この中に$yourmod_crisis$を無力化する方法が保存されているはずなのだが、これではどうしようもない。帝国の全力を挙げて、このクリエイターからの試練をねじ伏せる必要がある。"
+ yourmod_crisis_01.1300.a:"全国民でこのクソ暗号を粉砕しろ！"
  
  yourmod_crisis_01.1301.name:"困難へ"
  yourmod_crisis_01.1301.desc:"この暗号は……著しく困難だ。学術会にも問い合わせたが、解法については彼らも知らず、また解読も困難だという。成果が出れば共有するとのことだが、あまり期待できそうにない。当面は自力で頑張るしかなさそうだ。"
@@ -217,3 +235,53 @@
  yourmod_crisis_chain_2_desc:"$yourmod_crisis$と関係がありそうな星系を調べた途端、全銀河に敵対的な艦隊が出現した！この艦隊は明らかに$yourmod_crisis$と関連しているが、詳細は一切不明だ。"
  yourmod_crisis_chain_2.poi.1.name:"$yourmod_crisis$に関係する記録を探す"
  yourmod_crisis_chain_2.poi.1.desc:"$yourmod_crisis$の記録や、その製造者に関係する遺物がこの銀河にはあるはずだ。遺物を使うなどしてなんとかして見つけ出し、情報を集めなければならないだろう。"
+
+ artifact_yourmod_crisis_origin_research:"$yourmod_crisis$の起源を調べる"
+ artifact_yourmod_crisis_origin_research_desc:"遺物の中には、もしかすると$yourmod_crisis$の正体に迫るために使えるものがあるかもしれない。"
+ 
+ site_yourmod_final_arc_site:"$yourmod_crisis$の情報を収めた遺跡"
+ site_yourmod_final_arc_site_desc:"学術会によると、ここにクリエイターが$yourmod_crisis$を無力化する方法を保存したという。"
+
+ YOURMOD_CRISIS_RESEARCH_PROJECT_1:"死の惑星調査"
+ YOURMOD_CRISIS_RESEARCH_PROJECT_1_DESC:"ここに$yourmod_crisis$に関係する何かがあるかもしれない。"
+
+ YOURMOD_CRISIS_RESEARCH_PROJECT_2:"クリスタルの回収"
+ YOURMOD_CRISIS_RESEARCH_PROJECT_2_DESC:"記録クリスタルに何が記録されているのか確かめるべきだ。"
+
+ YOURMOD_CRISIS_RESEARCH_PROJECT_3:"遺物の箱を開ける"
+ YOURMOD_CRISIS_RESEARCH_PROJECT_3_DESC:"もしかすると、箱の中には$yourmod_crisis$に関係するものがあるかもしれない。……ちょっと期待しすぎかもしれないが。"
+
+ YOURMOD_CRISIS_RESEARCH_PROJECT_4:"異星人の図書館"
+ YOURMOD_CRISIS_RESEARCH_PROJECT_4_DESC:"古代文明の築いた図書館のようなものがここにはある。何があるか確かめる。$yourmod_crisis$に関係した情報の存在も期待できるだろう。"
+
+ YOURMOD_CRISIS_RESEARCH_PROJECT_5:"ズィロ惑星の調査"
+ YOURMOD_CRISIS_RESEARCH_PROJECT_5_DESC:"古代のサイオニック種族がここに居住地を築いていたようだ。調査することによって何かしら古代史の手がかりをつかめるかもしれない。。"
+
+ YOURMOD_CRISIS_RESEARCH_PROJECT_6:"記録の再構成"
+ YOURMOD_CRISIS_RESEARCH_PROJECT_6_DESC:"古代銀河史の情報を大量に集めたが、洞察が欠けている。洞察を深めていけば、点と点を繋げて新しい図像が描けるかもしれない。"
+
+
+ yourmod_crisis_research_situation:"$yourmod_crisis$の正体を探る"
+ yourmod_crisis_research_situation_desc:"未だに正体不明の$yourmod_crisis$の病原体を特定すべきだ！あらゆる資源と手段を以て病原体を見極めれば、対処もより容易になるはずだ。"
+
+ yourmod_crisis_research_approach_low:"低い予算"
+ yourmod_crisis_research_approach_low_desc:"こんなことは他国に任せ、我々は感染拡大の防止に全力を注ぐべきだ！"
+
+ yourmod_crisis_research_approach_mid:"中程度の予算"
+ yourmod_crisis_research_approach_mid_desc:"可能ならば全力を注ぎたいが、そんな予算はない。"
+
+ yourmod_crisis_research_approach_mid:"高い予算"
+ yourmod_crisis_research_approach_mid_desc:"全力でこの病気の正体を明らかにしろ！"
+
+ yourmod_decryption_situation:"暗号の解読"
+ yourmod_decryption_situation:"$yourmod_crisis$の製造者であるクリエイターは、我々に彼らが生み出したものに対する対処法を教えてくれた。ただし、非常に高度に暗号化された状態で。帝国が$yourmod_crisis$に滅ぼされるのと、この暗号が解読されるのとではどちらが早いかは分からないが、全力を注ぐしかない。"
+
+ yourmod_decryption_approach_low:"低い予算"
+ yourmod_decryption_approach_low_desc:"金はないが、時間が解決してくれるだろう。"
+
+ yourmod_decryption_approach_mid:"中程度の予算"
+ yourmod_decryption_approach_mid_desc:"可能ならば全力を注ぎたいが、そんな予算はない。"
+
+ yourmod_decryption_approach_mid:"高い予算"
+ yourmod_decryption_approach_mid_desc:"全力でこの暗号を解読しろ！"
+
