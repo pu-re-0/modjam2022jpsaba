@@ -85,6 +85,9 @@ yourmod_planet_infection_situation = {
 			current_situation_approach = yourmod_planet_infection_approach_3
 		}
 
+
+		#############################################################
+		
 		#GHOから。数字は適当 byぷれ
 		modifier = {
 			add = -0.1
@@ -352,6 +355,9 @@ yourmod_country_infection_situation = {
 			desc = yourmod_planet_infection_approach_0_desc
 			current_situation_approach = yourmod_planet_infection_approach_0
 		}
+
+
+		#############################################################
 
 		modifier = {
 			add = -0.25
