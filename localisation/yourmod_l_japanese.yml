@@ -217,3 +217,10 @@
  yourmod_crisis_chain_2_desc:"$yourmod_crisis$と関係がありそうな星系を調べた途端、全銀河に敵対的な艦隊が出現した！この艦隊は明らかに$yourmod_crisis$と関連しているが、詳細は一切不明だ。"
  yourmod_crisis_chain_2.poi.1.name:"$yourmod_crisis$に関係する記録を探す"
  yourmod_crisis_chain_2.poi.1.desc:"$yourmod_crisis$の記録や、その製造者に関係する遺物がこの銀河にはあるはずだ。遺物を使うなどしてなんとかして見つけ出し、情報を集めなければならないだろう。"
+
+
+ artifact_yourmod_crisis_origin_research:"$yourmod_crisis$の起源を調べる"
+ artifact_yourmod_crisis_origin_research_desc:"遺物の中には、もしかすると$yourmod_crisis$の正体に迫るために使えるものがあるかもしれない。"
+
+ site_yourmod_final_arc_site:"$yourmod_crisis$の情報を収めた遺跡"
+ site_yourmod_final_arc_site_desc:"学術会によると、ここにクリエイターが$yourmod_crisis$を無力化する方法を保存したという。"
