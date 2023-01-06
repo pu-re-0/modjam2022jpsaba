@@ -77,3 +77,115 @@ ship_section_template = {
 
 	aux_utility_slots = 1
 }
+
+
+#勝手に追加 by爆雷
+#Large Virus ship -Copy -Copy and Paste - Automated Dreadnought Section
+ship_section_template = {
+	key = "large_virus_hull_01"
+	ship_size = large_virus_ship
+	fits_on_slot = hull
+	should_draw_components = yes
+	entity = "npc_warship_01_hull_entity"
+	icon = "GFX_ship_part_core_mid"
+
+	#only one because it uses a titan laser
+	component_slot = {
+		name = "EXTRA_LARGE_01"
+		template = "invisible_extra_large_fixed"
+		locatorname = "large_gun_01"
+	}
+	component_slot = {
+		name = "LARGE_GUN_01"
+		template = "large_turret"
+		locatorname = "large_gun_01"
+	}
+	component_slot = {
+		name = "LARGE_GUN_02"
+		template = "large_turret"
+		locatorname = "large_gun_02"
+	}
+
+	component_slot = {
+		name = "SMALL_GUN_01"
+		template = "small_turret"
+		locatorname = "small_gun_01"
+	}
+
+	component_slot = {
+		name = "SMALL_GUN_02"
+		template = "small_turret"
+		locatorname = "small_gun_02"
+	}
+
+	component_slot = {
+		name = "SMALL_GUN_03"
+		template = "small_turret"
+		locatorname = "small_gun_03"
+	}
+	component_slot = {
+		name = "SMALL_GUN_04"
+		template = "small_turret"
+		is_side_slot = yes
+		locatorname = "small_gun_04"
+	}
+	component_slot = {
+		name = "SMALL_GUN_05"
+		template = "small_turret"
+		is_side_slot = yes
+		locatorname = "small_gun_05"
+	}
+
+	component_slot = {
+		name = "LARGE_GUN_03"
+		template = "large_turret"
+		is_side_slot = yes
+		locatorname = "large_gun_03"
+	}
+	component_slot = {
+		name = "LARGE_GUN_04"
+		template = "large_turret"
+		is_side_slot = yes
+		locatorname = "large_gun_04"
+	}
+	component_slot = {
+		name = "LARGE_GUN_05"
+		template = "large_turret"
+		is_side_slot = yes
+		locatorname = "large_gun_05"
+	}
+
+	component_slot = {
+		name = "LARGE_GUN_06"
+		template = "large_turret"
+		locatorname = "large_gun_06"
+	}
+
+	component_slot = {
+		name = "LARGE_GUN_07"
+		template = "large_turret"
+		is_side_slot = yes
+		locatorname = "large_gun_07"
+	}
+
+	component_slot = {
+		name = "PD_08"
+		template = "point_defence_turret"
+		locatorname = "small_gun_08"
+	}
+
+	component_slot = {
+		name = "PD_09"
+		template = "point_defence_turret"
+		locatorname = "small_gun_09"
+	}
+
+	component_slot = {
+		name = "PD_10"
+		template = "point_defence_turret"
+		locatorname = "small_gun_10"
+	}
+
+	large_utility_slots = 22
+	aux_utility_slots = 5
+}
