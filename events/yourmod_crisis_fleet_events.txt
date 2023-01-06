@@ -81,7 +81,7 @@ country_event = {
 	}
 
 	immediate = { #動くもので上書きしました by爆雷
-		every_galaxy_planet = [#本来あまり使うべきではない 重いので
+		every_galaxy_planet = {#本来あまり使うべきではない,重いので
 			limit = {
 				has_planet_flag = yourmod_infected_planet
 			}
@@ -111,10 +111,11 @@ country_event = {
 								graphical_culture = event_target:yourmod_crisis_country
 							}
 						}
-					set_location = {
+						set_location = {
 						target = event_target:yourmod_fleet_spawn_planet
 						distance = 1
 						angle = random
+						}
 					}
 				}
 			}
