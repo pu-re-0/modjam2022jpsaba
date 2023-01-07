@@ -251,6 +251,7 @@ country_event = {
 								or = {
 									has_modifier = yourmod_modifier_event_216
 									has_modifier = yourmod_modifier_event_206
+									has_modifier = yourmod_modifier_event_206_0
 								}
 							}
 							planet_event = {
@@ -879,7 +880,9 @@ planet_event = {
 	picture = GFX_evt_mining_station #画像は後で探す
 
 	immediate = {
-		
+		add_modifier = {
+			modifier = yourmod_modifier_event_206_0
+		}
 	}
 	option = {
 		#鎮圧しろ
@@ -915,6 +918,7 @@ planet_event = {
 	picture = GFX_evt_mining_station #画像は後で探す
 
 	immediate = {
+		remove_modifier = yourmod_modifier_event_206_0
 		remove_modifier = yourmod_modifier_event_206
 	}
 	option = {
@@ -932,6 +936,7 @@ planet_event = {
 	picture = GFX_evt_mining_station #画像は後で探す
 
 	immediate = {
+		remove_modifier = yourmod_modifier_event_206_0
 		add_modifier = {
 			modifier = yourmod_modifier_event_216
 			days = 360
@@ -1253,6 +1258,27 @@ planet_event = {
 
 ##################################################################		400番台
 
+
+situation_event= {
+	id = yourmod_crisis_02.411
+
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	# [yourmod_happen_event_planet.GetName]
+
+	immediate = {
+		owner = {
+			random_owned_leader = {
+				leader_event = {
+					id = yourmod_crisis_02.401
+				}
+			}
+		}
+	}
+}
+
 leader_event = {
 	id = yourmod_crisis_02.401
 	title = yourmod_crisis_02.401.name
@@ -1274,7 +1300,7 @@ leader_event = {
 	}
 }
 
-country_event = {
+situation_event = {
 	id = yourmod_crisis_02.402
 	title = yourmod_crisis_02.402.name
 	desc = yourmod_crisis_02.402.desc
@@ -1294,7 +1320,7 @@ country_event = {
 	}
 }
 
-country_event = {
+situation_event = {
 	id = yourmod_crisis_02.403
 	title = yourmod_crisis_02.403.name
 	desc = yourmod_crisis_02.403.desc
@@ -1314,7 +1340,7 @@ country_event = {
 	}
 }
 
-country_event = {
+situation_event = {
 	id = yourmod_crisis_02.404
 	title = yourmod_crisis_02.404.name
 	desc = yourmod_crisis_02.404.desc

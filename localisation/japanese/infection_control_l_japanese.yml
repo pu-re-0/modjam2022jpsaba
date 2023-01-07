@@ -151,6 +151,8 @@
  yourmod_planet_infection_approach_3:0 "徹底的感染対策"
  yourmod_planet_infection_approach_3_desc:0 "徹底的な外出制限、全市民の監視、あらゆる行動の記録、例え帝国が傾こうと流行を防ぐのだ！"
 
+ yourmod_planet_situation_modifier_desc:0 "惑星のモディファイアーより"
+
  yourmod_country_infection_situation:0 "帝国規模の感染対処"
 
  yourmod_country_infection_approach_0:0 "活発な活動の呼びかけ"
@@ -239,6 +241,9 @@
 
  yourmod_modifier_event_206:0 "暴動の鎮圧"
  yourmod_modifier_event_206_desc:0 "機動部隊による鎮圧に、市民は恐怖している。"
+
+ yourmod_modifier_event_206_0:0 "市民の暴動"
+ yourmod_modifier_event_206_0_desc:0 "終わらない感染症への恐怖や、感染対策への不満により暴動が発生している。"
 
  yourmod_modifier_event_216:0 "大規模な市民の暴動"
  yourmod_modifier_event_216_desc:0 "人が人を呼び、大規模な暴動が発生している。"
