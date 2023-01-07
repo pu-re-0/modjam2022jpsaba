@@ -2,7 +2,7 @@ yourmod_society_research_5 = {
 	base = 0
 	complex_trigger_modifier = {
 		trigger = resource_income_compare
-		trigger_scope = target.owner
+		trigger_scope = owner
 		parameters = {
 			resource = society_research
 		}
@@ -15,7 +15,7 @@ yourmod_society_research_10 = {
 	base = 0
 	complex_trigger_modifier = {
 		trigger = resource_income_compare
-		trigger_scope = target.owner
+		trigger_scope = owner
 		parameters = {
 			resource = society_research
 		}
@@ -28,7 +28,7 @@ yourmod_society_research_15 = {
 	base = 0
 	complex_trigger_modifier = {
 		trigger = resource_income_compare
-		trigger_scope = target.owner
+		trigger_scope = owner
 		parameters = {
 			resource = society_research
 		}
@@ -42,7 +42,7 @@ yourmod_society_research_20 = {
 	base = 0
 	complex_trigger_modifier = {
 		trigger = resource_income_compare
-		trigger_scope = target.owner
+		trigger_scope = owner
 		parameters = {
 			resource = society_research
 		}
@@ -55,7 +55,7 @@ yourmod_society_research_30 = {
 	base = 0
 	complex_trigger_modifier = {
 		trigger = resource_income_compare
-		trigger_scope = target.owner
+		trigger_scope = owner
 		parameters = {
 			resource = society_research
 		}
@@ -68,7 +68,7 @@ yourmod_society_research_45 = {
 	base = 0
 	complex_trigger_modifier = {
 		trigger = resource_income_compare
-		trigger_scope = target.owner
+		trigger_scope = owner
 		parameters = {
 			resource = society_research
 		}
@@ -81,13 +81,15 @@ yourmod_society_research_effect = {
 	base = 0
 	complex_trigger_modifier = {
 		trigger = resource_income_compare
-		trigger_scope = target.owner
+		trigger_scope = owner
 		parameters = {
 			resource = society_research
 		}
 		mode = add
 	}
 	divide = 300
+	max = 10
+	min = 0.01
 }
 
 yourmod_size_effect = {
