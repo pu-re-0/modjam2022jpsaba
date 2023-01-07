@@ -135,7 +135,6 @@ yourmod_decryption_situation = {#対処法の暗号解読
 		name = yourmod_decryption_research_approach_mid
 		icon = GFX_situation_approach_unity #後で変えておく
 		icon_background = GFX_situation_approach_bg_green
-		default = yes
 
  		resources = { 	#Resource table as standard
  			category = situations
@@ -151,7 +150,6 @@ yourmod_decryption_situation = {#対処法の暗号解読
 		name = yourmod_decryption_research_approach_high
 		icon = GFX_situation_approach_unity #後で変えておく
 		icon_background = GFX_situation_approach_bg_green
-		default = yes
 
  		resources = { 	#Resource table as standard
  			category = situations
