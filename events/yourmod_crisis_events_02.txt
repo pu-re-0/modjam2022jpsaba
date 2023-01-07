@@ -234,6 +234,8 @@ country_event = {
 							modifier = {
 								factor = 0
 								or = {
+									has_ethic = ethic_gestalt_consciousness
+
 									has_modifier = yourmod_modifier_event_205a
 									has_modifier = yourmod_modifier_event_205a
 									has_modifier = yourmod_modifier_event_213
@@ -249,6 +251,8 @@ country_event = {
 							modifier = {
 								factor = 0
 								or = {
+									has_ethic = ethic_gestalt_consciousness
+
 									has_modifier = yourmod_modifier_event_216
 									has_modifier = yourmod_modifier_event_206
 									has_modifier = yourmod_modifier_event_206_0
@@ -631,6 +635,7 @@ planet_event = {
 		remove_modifier = yourmod_modifier_event_106
 		add_modifier = {
 			modifier = yourmod_modifier_event_110
+			months = 14
 		}
 	}
 	option = {
@@ -705,7 +710,7 @@ planet_event = {
 		name = yourmod_crisis_02.211.a
 		add_modifier = {
 			modifier = yourmod_modifier_event_211
-			days = 90
+			days = 150
 		}
 	}
 }
@@ -726,7 +731,7 @@ planet_event = {
 		name = yourmod_crisis_02.212.a
 		add_modifier = {
 			modifier = yourmod_modifier_event_212
-			days = 180
+			days = 210
 		}
 	}
 }
