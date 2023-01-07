@@ -100,7 +100,7 @@ country_event = {
 					}
 					effect = {
 						set_owner = event_target:yourmod_crisis_country
-						set_fleet_bombardment_stance = armageddon
+						#set_fleet_bombardment_stance = armageddon #エラーを吐くのでコメントアウト
 						while = {
 							count = 10
 							create_ship = {
@@ -110,9 +110,9 @@ country_event = {
 							}
 						}
 						set_location = {
-						target = event_target:yourmod_fleet_spawn_planet_1
-						distance = 1
-						angle = random
+							target = event_target:yourmod_fleet_spawn_planet_1
+							distance = 1
+							angle = random
 						}
 					}
 				}
