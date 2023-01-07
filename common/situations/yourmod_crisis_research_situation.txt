@@ -146,7 +146,6 @@ yourmod_crisis_research_situation = {#病原体の正体を確かめる
 		name = yourmod_crisis_research_approach_mid
 		icon = GFX_situation_approach_unity #後で変えておく
 		icon_background = GFX_situation_approach_bg_green
-		default = yes
 
  		resources = { 	#Resource table as standard
  			category = situations
@@ -162,7 +161,6 @@ yourmod_crisis_research_situation = {#病原体の正体を確かめる
 		name = yourmod_crisis_research_approach_high
 		icon = GFX_situation_approach_unity #後で変えておく
 		icon_background = GFX_situation_approach_bg_green
-		default = yes
 
  		resources = { 	#Resource table as standard
  			category = situations
