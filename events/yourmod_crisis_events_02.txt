@@ -1302,7 +1302,7 @@ planet_event = {
 
 ##################################################################		400番台
 
-country_event = {
+leader_event = {
 	id = yourmod_crisis_02.401
 	title = yourmod_crisis_02.401.name
 	desc = yourmod_crisis_02.401.desc
@@ -1317,10 +1317,9 @@ country_event = {
 	option = {
 		#リーダーが不利な特性を獲得
 		name = yourmod_crisis_02.401.a
-		random_owned_leader = {
-			add_trait = leader_trait_arrested_development
-			add_trait = leader_trait_stubborn
-		}	
+		add_trait = leader_trait_arrested_development
+		add_trait = leader_trait_stubborn
+		add_skill = -2
 	}
 }
 
