@@ -1,7 +1,6 @@
 ﻿l_japanese:
  
  #作成ヒアルロン大陸
- #作業用　あとで他のファイルに統合します
  
  #####    イベント    #####
 
@@ -31,6 +30,9 @@
 
  #####    シチュエーション    #####
 
+ yourmod_planet_infection_situation:0 "[target.GetName]での感染対処"
+
+ yourmod_country_infection_situation:0 "帝国規模の感染対処"
 
  #####    モディファイアー    #####
 

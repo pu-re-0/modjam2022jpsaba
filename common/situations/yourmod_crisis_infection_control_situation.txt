@@ -76,12 +76,12 @@ yourmod_planet_infection_situation = {
 		}
 		modifier = {
 			add = -2.00
-			desc = yourmod_planet_infection_approach_1_desc
+			desc = yourmod_planet_infection_approach_2_desc
 			current_situation_approach = yourmod_planet_infection_approach_2
 		}
 		modifier = {
 			add = -5.00
-			desc = yourmod_planet_infection_approach_1_desc
+			desc = yourmod_planet_infection_approach_3_desc
 			current_situation_approach = yourmod_planet_infection_approach_3
 		}
 
@@ -345,16 +345,39 @@ yourmod_country_infection_situation = {
 		}
 	}
 	on_monthly = {
-		
+		random_events = {
+			100 = 0
+			5 = yourmod_crisis_02.401
+			5 = yourmod_crisis_02.402
+			5 = yourmod_crisis_02.403
+			1 = yourmod_crisis_02.404
+		}
 	}
 
 	monthly_progress = {
 		base = 1
 		modifier = {
 			add = 0.5
-			desc = yourmod_planet_infection_approach_0_desc
-			current_situation_approach = yourmod_planet_infection_approach_0
+			desc = yourmod_country_infection_approach_0_desc
+			current_situation_approach = yourmod_country_infection_approach_0
 		}
+		modifier = {
+			add = -1.0
+			desc = yourmod_country_infection_approach_1_desc
+			current_situation_approach = yourmod_country_infection_approach_1
+		}
+		modifier = {
+			add = -2.5
+			desc = yourmod_country_infection_approach_2_desc
+			current_situation_approach = yourmod_country_infection_approach_2
+		}
+		modifier = {
+			add = -5.0
+			desc = yourmod_country_infection_approach_3_desc
+			current_situation_approach = yourmod_country_infection_approach_3
+		}
+		#############################################################
+
 
 
 		#############################################################
@@ -457,8 +480,75 @@ yourmod_country_infection_situation = {
  			upkeep = { }
  			produces = { }
  		}
+		target_modifier = {
+			planet_jobs_produces_mult = 0.1
+		}
 		on_select = {
-			custom_tooltip = yourmod_planet_infection_approach_0_desc
+			custom_tooltip = yourmod_country_infection_approach_0_desc
+		}
+	}
+	approach = {
+		name = yourmod_country_infection_approach_1
+		icon = GFX_situation_approach_unity
+		icon_background = GFX_situation_approach_bg_green
+
+ 		resources = { 	#Resource table as standard
+ 			category = situations
+ 			upkeep = { energy = 10 }
+ 			produces = { }
+ 		}
+		target_modifier = {
+			planet_jobs_produces_mult = -0.1
+			pop_growth_speed = -0.15
+			pop_assembly_speed = -0.15
+			planet_amenities_mult = -0.1
+		}
+		on_select = {
+			custom_tooltip = yourmod_country_infection_approach_1_desc
+		}
+	}
+	approach = {
+		name = yourmod_country_infection_approach_2
+		icon = GFX_situation_approach_unity
+		icon_background = GFX_situation_approach_bg_green
+
+ 		resources = { 	#Resource table as standard
+ 			category = situations
+ 			upkeep = { energy = 20 }
+ 			produces = { }
+ 		}
+		target_modifier = {
+			planet_jobs_produces_mult = -0.3
+			planet_jobs_upkeep_mult = -0.2
+			pop_growth_speed = -0.5
+			pop_assembly_speed = -0.5
+			planet_amenities_mult = -0.25
+			pop_amenities_usage_mult = -0.15
+		}
+		on_select = {
+			custom_tooltip = yourmod_country_infection_approach_2_desc
+		}
+	}
+	approach = {
+		name = yourmod_country_infection_approach_3
+		icon = GFX_situation_approach_unity
+		icon_background = GFX_situation_approach_bg_green
+
+ 		resources = { 	#Resource table as standard
+ 			category = situations
+ 			upkeep = { energy = 30 }
+ 			produces = { }
+ 		}
+		target_modifier = {
+			planet_jobs_produces_mult = -0.5
+			planet_jobs_upkeep_mult = -0.5
+			pop_growth_speed = -0.75
+			pop_assembly_speed = -0.75
+			planet_amenities_mult = -0.5
+			pop_amenities_usage_mult = -0.4
+		}
+		on_select = {
+			custom_tooltip = yourmod_country_infection_approach_3_desc
 		}
 	}
 }
