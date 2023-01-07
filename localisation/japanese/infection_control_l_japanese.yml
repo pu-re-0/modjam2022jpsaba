@@ -29,8 +29,8 @@
  yourmod_crisis_02.15.a:0 "なんにせよ良くやってくれた"
 
  #100番台イベント
- yourmod_crisis_02.101.name:0 ""
- yourmod_crisis_02.101.desc:0 ""
+ yourmod_crisis_02.101.name:0 "感染した科学者"
+ yourmod_crisis_02.101.desc:0 "わが国の著名な科学者である[Root.GetName]は、"
  yourmod_crisis_02.101.a:0 ""
  yourmod_crisis_02.102.name:0 ""
  yourmod_crisis_02.102.desc:0 ""
