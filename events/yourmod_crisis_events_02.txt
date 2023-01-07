@@ -207,12 +207,18 @@ country_event = {
 								}
 							}
 						}
-						10 = {
+						3 = {
 							#外出制限の結果ちょっと快適
 							modifier = {
 								factor = 0
 								any_owned_planet = {
 									has_modifier = yourmod_modifier_event_105
+								}
+							}
+							modifier = {
+								factor = 5
+								owner.owner_species = {
+									has_trait = trait_solitary #孤立的特性持ち
 								}
 							}
 							random_owned_planet = {

@@ -206,7 +206,6 @@ yourmod_crisis_vaccine_dev_situation = {	#ワクワク
 		name = yourmod_crisis_vaccine_dev_approach_mid
 		icon = GFX_situation_approach_unity #後で変えておく
 		icon_background = GFX_situation_approach_bg_green
-		default = yes
 
  		resources = { 	#Resource table as standard
  			category = situations
@@ -227,7 +226,6 @@ yourmod_crisis_vaccine_dev_situation = {	#ワクワク
 		name = yourmod_crisis_vaccine_dev_approach_high
 		icon = GFX_situation_approach_unity #後で変えておく
 		icon_background = GFX_situation_approach_bg_green
-		default = yes
 
  		resources = { 	#Resource table as standard
  			category = situations
@@ -248,7 +246,6 @@ yourmod_crisis_vaccine_dev_situation = {	#ワクワク
 		name = yourmod_crisis_vaccine_dev_approach_super_high
 		icon = GFX_situation_approach_unity #後で変えておく
 		icon_background = GFX_situation_approach_bg_green
-		default = yes
 
 		resources = { 	#Resource table as standard
 		 	category = situations
@@ -376,7 +373,6 @@ yourmod_crisis_vaccine_production_situation = {	#ワクワク配布
 		name = yourmod_crisis_vaccine_production_approach_mid
 		icon = GFX_situation_approach_unity #後で変えておく
 		icon_background = GFX_situation_approach_bg_green
-		default = yes
 
  		resources = { 	#Resource table as standard
  			category = situations
@@ -395,7 +391,6 @@ yourmod_crisis_vaccine_production_situation = {	#ワクワク配布
 		name = yourmod_crisis_vaccine_production_approach_high
 		icon = GFX_situation_approach_unity #後で変えておく
 		icon_background = GFX_situation_approach_bg_green
-		default = yes
 
  		resources = { 	#Resource table as standard
  			category = situations

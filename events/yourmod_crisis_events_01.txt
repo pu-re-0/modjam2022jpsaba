@@ -446,19 +446,19 @@ country_event = { # investigate trigger
 		
 		modifier = {
 			factor = 0.75
-			has_ethic = ethic_materialism
+			has_ethic = ethic_materialist
 		}
 		modifier = {
 			factor = 0.50
-			has_ethic = ethic_fanatic_materialism
+			has_ethic = ethic_fanatic_materialist
 		}
 		modifier = {
 			factor = 1.5
-			has_ethic = ethic_spiritualism
+			has_ethic = ethic_spiritualist
 		}
 		modifier = {
 			factor = 2.5
-			has_ethic = ethic_fanaticspiritualism
+			has_ethic = ethic_fanaticspiritualist
 		}
 		modifier = {
 			factor = 0.50
@@ -1462,13 +1462,13 @@ country_event = {
 	option = {
 		name = yourmod_crisis_01.1209.a #分かった。さっそく情報を送れ。
 		random_planet_within_border = {
-			create_archaeological_site = yourmod_final_arc_site
+			create_archaeological_site = site_yourmod_final_arc_site
 		}
 	}
 }
 
 ####発掘イベント
-ship_event = {#1
+fleet_event = {#1
 	id = yourmod_crisis_01.1211
 	title = yourmod_crisis_01.1211.name
 	desc = yourmod_crisis_01.1211.desc
@@ -1493,7 +1493,7 @@ ship_event = {#1
 	}
 }
 
-ship_event = {#2
+fleet_event = {#2
 	id = yourmod_crisis_01.1212
 	title = yourmod_crisis_01.1212.name
 	desc = yourmod_crisis_01.1212.desc
@@ -1518,7 +1518,7 @@ ship_event = {#2
 	}
 }
 
-ship_event = {#3
+fleet_event = {#3
 	id = yourmod_crisis_01.1213
 	title = yourmod_crisis_01.1213.name
 	desc = yourmod_crisis_01.1213.desc
@@ -1543,7 +1543,7 @@ ship_event = {#3
 	}
 }
 
-ship_event = {#4
+fleet_event = {#4
 	id = yourmod_crisis_01.1214
 	title = yourmod_crisis_01.1214.name
 	desc = yourmod_crisis_01.1214.desc
@@ -1661,16 +1661,16 @@ country_event = {#暗号解読状況S3
 	#科学者たちは、この暗号に対して希望を失っている。あまりの困難さから帝国中のコンピューターを並列稼働させて総当たりするべきだと放言する者さえいる。彼らのやる気を上げなければ能率が落ちてしまうだろう。
 
 	option = {
-		allow = { has_resouce = { type = energy amount > 1999 } }
+		allow = { has_resource = { type = energy amount > 1999 } }
 		name = yourmod_crisis_01.1303.a #臨時給与だ。
-		add_recouce = { energy = -2000 }
+		add_resource = { energy = -2000 }
 		event_target:yourmod_decryption_situation = { add_situation_progress = 5 }
 	}
 
 	option = {
-		allow = { has_resouce = { type = energy amount > 4999 } }
+		allow = { has_resource = { type = energy amount > 4999 } }
 		name = yourmod_crisis_01.1303.b #一理あるかもしれない。
-		add_recouce = { energy = -5000 }
+		add_resource = { energy = -5000 }
 		random_list = {
 			25 = {
 				event_target:yourmod_decryption_situation = { add_situation_progress = 1 }
