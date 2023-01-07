@@ -81,7 +81,7 @@ yourmod_society_research_effect = {
 	base = 0
 	complex_trigger_modifier = {
 		trigger = resource_income_compare
-		trigger_scope = owner
+		trigger_scope = target.owner
 		parameters = {
 			resource = society_research
 		}
