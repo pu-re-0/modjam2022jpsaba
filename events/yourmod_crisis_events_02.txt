@@ -382,7 +382,7 @@ country_event = {
 	}
 }
 
-################################################################## 通知用イベント
+##################################################################		通知用イベント
 
 country_event = {
 	#惑星の感染シチュエーションがはじまった通知
@@ -522,7 +522,7 @@ country_event = {
 	}
 }
 
-##################################################################
+##################################################################		100番台
 
 country_event = {
 	id = yourmod_crisis_02.101
@@ -664,6 +664,139 @@ planet_event = {
 		name = yourmod_crisis_02.110.a
 	}
 }
+
+##################################################################		200番台
+
+planet_event = {
+	id = yourmod_crisis_02.201
+	title = yourmod_crisis_02.201.name
+	desc = yourmod_crisis_02.201.desc
+
+	is_triggered_only = yes
+	picture = GFX_evt_mining_station #画像は後で探す
+
+	immediate = {
+		add_modifier = {
+			modifier = yourmod_modifier_event_201
+		}
+	}
+	option = {
+		#配給
+		name = yourmod_crisis_02.201.a
+		allow = {
+			owner = {
+				has_country_resource = {
+					type = energy
+					amount > 800
+				}
+			}
+		}
+		owner = {
+			add_resource = {
+				energy = -800
+			}
+		}
+		hidden_effect = {
+			planet_event = {
+				id = 
+				days = 
+			}
+		}
+	}
+
+	option = {
+		#放置
+		name = yourmod_crisis_02.201.b
+		hidden_effect = {
+			planet_event = {
+				id = 
+				days = 
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = yourmod_crisis_02.202
+	title = yourmod_crisis_02.202.name
+	desc = yourmod_crisis_02.202.desc
+
+	is_triggered_only = yes
+	picture = GFX_evt_mining_station #画像は後で探す
+
+	immediate = {
+		
+	}
+	option = {
+		name = yourmod_crisis_02.202.a
+	}
+}
+
+planet_event = {
+	id = yourmod_crisis_02.203
+	title = yourmod_crisis_02.203.name
+	desc = yourmod_crisis_02.203.desc
+
+	is_triggered_only = yes
+	picture = GFX_evt_mining_station #画像は後で探す
+
+	immediate = {
+		
+	}
+	option = {
+		name = yourmod_crisis_02.203.a
+	}
+}
+
+planet_event = {
+	id = yourmod_crisis_02.204
+	title = yourmod_crisis_02.204.name
+	desc = yourmod_crisis_02.204.desc
+
+	is_triggered_only = yes
+	picture = GFX_evt_mining_station #画像は後で探す
+
+	immediate = {
+		
+	}
+	option = {
+		name = yourmod_crisis_02.204.a
+	}
+}
+
+planet_event = {
+	id = yourmod_crisis_02.205
+	title = yourmod_crisis_02.205.name
+	desc = yourmod_crisis_02.205.desc
+
+	is_triggered_only = yes
+	picture = GFX_evt_mining_station #画像は後で探す
+
+	immediate = {
+		
+	}
+	option = {
+		name = yourmod_crisis_02.205.a
+	}
+}
+
+planet_event = {
+	id = yourmod_crisis_02.206
+	title = yourmod_crisis_02.206.name
+	desc = yourmod_crisis_02.206.desc
+
+	is_triggered_only = yes
+	picture = GFX_evt_mining_station #画像は後で探す
+
+	immediate = {
+		
+	}
+	option = {
+		name = yourmod_crisis_02.206.a
+	}
+}
+
+##################################################################		300番台
 
 planet_event = {
 	id = yourmod_crisis_02.301

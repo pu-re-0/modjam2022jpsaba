@@ -71,43 +71,26 @@ country_event = {
 	}
 
 	immediate = { #動くもので上書きしました by爆雷
-		every_owned_planet = {
-			if = {
-				limit = {
-					owner = {
+		every_galaxy_planet = {
+			limit = {
+				owner = {
+					OR = {
 						has_country_flag = yourmod_infected_country
-					}
-				}
-				save_event_target_as = yourmod_fleet_spawn_planet_1
-			}
-			else_if = {
-				limit = {
-					owner = {
 						has_country_flag = yourmod_health_lost_country
 					}
 				}
-				save_event_target_as = yourmod_fleet_spawn_planet_2
 			}
-			else = {
-				set_planet_flag = yourmod_crisis_fleet_not_spawn
-			}
+			save_event_target_as = yourmod_fleet_spawn_planet_1
 		}
 		event_target:yourmod_crisis_country = {
 			while = {
 				limit = {
-					event_target:yourmod_fleet_spawn_planet = {
-						OR = {
-							not = { has_planet_flag = yourmod_crisis_fleet_spawned_1 }
-							not = { has_planet_flag = yourmod_crisis_fleet_spawned_2 }
-							not = { has_planet_flag = yourmod_crisis_fleet_not_spawn }
-						}
+					event_target:yourmod_fleet_spawn_planet_1 = {
+						not = { has_planet_flag = yourmod_crisis_fleet_spawned_1 }
 					}
 				}
 				event_target:yourmod_fleet_spawn_planet_1 = {
 					set_planet_flag = yourmod_crisis_fleet_spawned_1
-				}
-				event_target:yourmod_fleet_spawn_planet_2 = {
-					set_planet_flag = yourmod_crisis_fleet_spawned_2
 				}
 				create_fleet = {
              			       name = "NAME_Medium_Virus_fleet"
@@ -128,30 +111,6 @@ country_event = {
 						}
 						set_location = {
 						target = event_target:yourmod_fleet_spawn_planet_1
-						distance = 1
-						angle = random
-						}
-					}
-				}
-				create_fleet = {
-             			       name = "NAME_Medium_Virus_fleet"
-					settings = {
-						garrison = yes
-						spawn_debris = no
-					}
-					effect = {
-						set_owner = event_target:yourmod_crisis_country
-						set_fleet_bombardment_stance = armageddon
-						while = {
-							count = 1
-							create_ship = {
-								name = random
-								design = "NAME_large_virus"
-								graphical_culture = event_target:yourmod_crisis_country
-							}
-						}
-						set_location = {
-						target = event_target:yourmod_fleet_spawn_planet_2
 						distance = 1
 						angle = random
 						}
