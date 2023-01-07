@@ -202,7 +202,9 @@ country_event = {
 								}
 							}
 							random_owned_planet = {
-								id = yourmod_crisis_02.104
+								planet_event = {
+									id = yourmod_crisis_02.104
+								}
 							}
 						}
 						10 = {
@@ -213,9 +215,12 @@ country_event = {
 									has_modifier = yourmod_modifier_event_105
 								}
 							}
-							country_event = {
-								id = yourmod_crisis_02.105
+							random_owned_planet = {
+								planet_event = {
+									id = yourmod_crisis_02.105
+								}
 							}
+							
 						}
 						10 = {
 							#彗星より
@@ -1309,13 +1314,14 @@ country_event = {
 	# [yourmod_happen_event_planet.GetName]
 
 	immediate = {
-		
 	}
 	option = {
-		#
+		#リーダーが不利な特性を獲得
 		name = yourmod_crisis_02.401.a
-		
-		
+		random_owned_leader = {
+			add_trait = leader_trait_arrested_development
+			add_trait = leader_trait_stubborn
+		}	
 	}
 }
 
@@ -1333,9 +1339,9 @@ country_event = {
 		
 	}
 	option = {
-		#
+		#小規模な集団感染
 		name = yourmod_crisis_02.402.a
-		
+		add_situation_progress = 15
 	}
 }
 
@@ -1353,9 +1359,9 @@ country_event = {
 		
 	}
 	option = {
-		#
+		#中規模な集団感染
 		name = yourmod_crisis_02.403.a
-		
+		add_situation_progress = 30
 	}
 }
 
@@ -1373,8 +1379,8 @@ country_event = {
 		
 	}
 	option = {
-		#
+		#致命的な集団感染
 		name = yourmod_crisis_02.404.a
-		
+		add_situation_progress = 60
 	}
 }
