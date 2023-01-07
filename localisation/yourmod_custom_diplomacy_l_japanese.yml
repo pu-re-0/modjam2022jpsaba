@@ -2,8 +2,8 @@
 
 
  yourmod_custom_diplomacy_events.1.name:0 "通信が届いた"
- yourmod_custom_diplomacy_events.1a.desc:0 "＾＾"
- yourmod_custom_diplomacy_events.1.a:0 "……？"
+ yourmod_custom_diplomacy_events.1a.desc:0 "……"
+ yourmod_custom_diplomacy_events.1.a:0 "何も答えないようだな"
  yourmod_custom_diplomacy_events.90.name:0 ""
  yourmod_custom_diplomacy_events.90.desc:0 "全銀河の住民へ。我々は$yourmod_crisis$の生みの親だ。今銀河で起こってることについて我々には説明責任がある。聞いてくれ。"
  yourmod_custom_diplomacy_events.90.a:0 "これは驚いた"
