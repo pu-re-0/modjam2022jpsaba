@@ -122,6 +122,21 @@
  yourmod_crisis_02.314.desc:0 ""
  yourmod_crisis_02.314.a:0 ""
 
+#400番台
+
+ yourmod_crisis_02.401.name:0 "感染したリーダー"
+ yourmod_crisis_02.401.desc:0 "帝国の中で重要な人材である[this.GetName]が$yourmod_crisis$に感染してしまったようだ。運悪く、重症化してしまった彼は何とか復帰することが出来たものの、その能力は落ちてしまったようだ。"
+ yourmod_crisis_02.401.a:0 "なんということだ……"
+ yourmod_crisis_02.402.name:0 "小規模な集団感染"
+ yourmod_crisis_02.402.desc:0 "帝国の一部の地域で集団感染が発生している。これらが大きく影響することはまだないが、着実に流行を進めている事は注意しなければならない。"
+ yourmod_crisis_02.402.a:0 "早く対処しよう。"
+ yourmod_crisis_02.403.name:0 "中規模な集団感染"
+ yourmod_crisis_02.403.desc:0 "帝国の複数の地域で集団感染が発生している。これらは帝国の感染対処の障害となるため、迅速な対応が必要だ。"
+ yourmod_crisis_02.403.a:0 "早く対処しよう。"
+ yourmod_crisis_02.404.name:0 "致命的な集団感染"
+ yourmod_crisis_02.404.desc:0 "帝国の至る箇所で集団感染が発生している。これらを抑え込むのは非常に困難で、帝国の感染対処の致命的な障害となるだろう。"
+ yourmod_crisis_02.404.a:0 "なんということだ！"
+
  #####    シチュエーション    #####
 
  yourmod_planet_infection_situation:0 "[target.GetName]での感染対処"
