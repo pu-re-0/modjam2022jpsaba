@@ -64,7 +64,7 @@ country_event = {
 	}
 
 	mean_time_to_happen = {
-		days = 60
+		days = 90
 	}
 
 	immediate = {
@@ -74,7 +74,7 @@ country_event = {
 		
 		#それ以外の国家
 		random_list = {
-			20 = { #ランダムバフデバフイベント
+			10 = { #ランダムバフデバフイベント
 				random_list = {
 					6 = {
 						#科学者が狂気特性を獲得
@@ -201,30 +201,58 @@ country_event = {
 						}
 						10 = {
 							#中規模な集団感染
+							modifier = {
+								factor = 0.5
+								has_modifier = yourmod_modifier_event_202
+							}
 							planet_event = {
 								id = yourmod_crisis_02.202
 							}
 						}
 						10 = {
 							#大規模な集団感染
+							modifier = {
+								factor = 0.2
+								has_modifier = yourmod_modifier_event_203
+							}
 							planet_event = {
 								id = yourmod_crisis_02.203
 							}
 						}
 						5 = {
 							#感染者の減少
+							modifier = {
+								factor = 0
+								has_modifier = yourmod_modifier_event_204
+							}
 							planet_event = {
 								id = yourmod_crisis_02.204
 							}
 						}
 						10 = {
 							#ブラック企業摘発
+							modifier = {
+								factor = 0
+								or = {
+									has_modifier = yourmod_modifier_event_205a
+									has_modifier = yourmod_modifier_event_205a
+									has_modifier = yourmod_modifier_event_213
+									has_modifier = yourmod_modifier_event_214
+								}
+							}
 							planet_event = {
 								id = yourmod_crisis_02.205
 							}
 						}
 						10 = {
 							#反感染対策派の暴動
+							modifier = {
+								factor = 0
+								or = {
+									has_modifier = yourmod_modifier_event_216
+									has_modifier = yourmod_modifier_event_206
+								}
+							}
 							planet_event = {
 								id = yourmod_crisis_02.206
 							}
