@@ -187,12 +187,24 @@ situation_event = {
 		}
 	}
 	immediate = {
-		target = {
-			set_planet_flag = yourmod_crisis_vaccine_emergency
-		}
+
 	}
 	option = {
 		name = yourmod_vaccine_dev_event.22.a
+		target = {
+			set_planet_flag = yourmod_crisis_vaccine_emergency
+		}
+		add_situation_progress = -15
+	}
+	option = {
+		name = yourmod_vaccine_dev_event.22.b
+		target = {
+			owner = {
+				add_resource = {
+					unity = -200
+				}
+			}
+		}
 	}
 }
 

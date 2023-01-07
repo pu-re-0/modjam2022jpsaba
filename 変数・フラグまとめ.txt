@@ -61,5 +61,7 @@ pre-FTL関係
 
 		yourmod_health_lost_country		#帝国規模の対処シチュエーションに失敗したフラグ
 
+		yourmod_crisis_vaccine_situation_complete #ワクチン開発完遂
+
 	planet_variable
 		planet_prevalence_level			#惑星の蔓延レベル　感染対処シチュエーションが発生していない惑星で使用

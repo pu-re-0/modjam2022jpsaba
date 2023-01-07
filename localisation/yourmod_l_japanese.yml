@@ -18,7 +18,7 @@
 # §Y thisisyellow §!
 # §! this returns to the default text color §!
 
- yourmod_crisis:"インフェクション"
+ yourmod_crisis:"インフェクション" #仮称
 #The Infection
 
  yourmod_crisis_01.2.name:"未知の病気を確認"

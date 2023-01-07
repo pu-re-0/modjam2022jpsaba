@@ -649,6 +649,7 @@ yourmod_resolution_quarantine_2 = {
 		country_unity_produces_mult = -0.10
 		trade_value_mult = -0.20
 		branch_office_value_mult = -0.15
+		pop_happiness = -0.03
 	}
 
 	ai_weight = {
@@ -745,9 +746,10 @@ yourmod_resolution_quarantine_3 = {
 	}
 
 	modifier = {
-		country_unity_produces_mult = -0.10
+		country_unity_produces_mult = -0.15
 		trade_value_mult = -0.4
 		branch_office_value_mult = -0.5
+		pop_happiness = -0.07
 	}
 
 	triggered_modifier = {
@@ -759,6 +761,7 @@ yourmod_resolution_quarantine_3 = {
 		}
 		modifier = {
 			country_unity_produces_mult = -0.10
+			pop_happiness = -0.03
 		}
 	}
 
@@ -777,7 +780,7 @@ yourmod_resolution_quarantine_3 = {
 		}
 
 		modifier = {
-			factor = 0.7
+			factor = 0.6
 			is_egalitarian = yes
 		}
 
