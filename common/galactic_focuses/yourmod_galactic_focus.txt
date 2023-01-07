@@ -8,7 +8,7 @@ yourmod_galactic_focus_crisis_virus = {
 
 	potential = {
 		has_global_flag = galactic_focus_crisis_virus
-		NOT = { has_global_flag = yourmod_in_progress }
+		has_global_flag = yourmod_in_progress
 	}
 
 	trigger = {

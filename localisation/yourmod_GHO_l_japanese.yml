@@ -24,15 +24,15 @@
 #event
  yourmod_GHO_event.0.name:0 "銀河的保健機関構想"
  yourmod_GHO_event.0.desc:0 ""
- yourmod_GHO_event.0.a:0 ""
+ yourmod_GHO_event.0.a:0 "興味深いな"
  yourmod_GHO_event.1.name:0 "銀河的保健機関構想 - 設立"
- yourmod_GHO_event.1.desc:0 ""
+ yourmod_GHO_event.1.desc:0 "よろしい"
  yourmod_GHO_event.1.a:0 ""
  yourmod_GHO_event.2.name:0 "国際基金の設立"
- yourmod_GHO_event.2.desc:0 ""
+ yourmod_GHO_event.2.desc:0 "よろしい"
  yourmod_GHO_event.2.a:0 ""
  yourmod_GHO_event.3.name:0 "ワクチンの共同開発：可決"
- yourmod_GHO_event.3.desc:0 ""
+ yourmod_GHO_event.3.desc:0 "よろしい"
  yourmod_GHO_event.3.a:0 ""
 
 #vaccine

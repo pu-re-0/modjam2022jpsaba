@@ -23,6 +23,9 @@ special_project = {
 			}
 		}
 		set_global_flag = yourmod_can_contact_ancient_crisis_creater_pre_FTL_country
+		event_target:yourmod_cancient_crisis_creater_pre_FTL_country = {
+			set_country_type = yourmod_primitive
+		}
 	}
 
 	on_fail = {

@@ -55,7 +55,6 @@ yourmod_resolution_galactic_focus_crisis_virus = {
 			repeal_all_galactic_focus_resolutions = yes
 			set_global_flag = galactic_focus_crisis_virus
 			set_global_flag = galactic_community_crisis_fighting
-
 			set_global_flag = galactic_community_resolution_passed
 
 			set_timed_country_flag = { flag = galactic_community_resolution_passed_general days = @resolution_flag_timer }

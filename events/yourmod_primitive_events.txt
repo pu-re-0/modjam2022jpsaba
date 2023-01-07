@@ -167,6 +167,10 @@ country_event = {
 	option = {
 		name = yourmod_primitive.20.a
 		set_global_flag = yourmod_can_contact_ancient_crisis_creater_pre_FTL_country
+		event_target:yourmod_cancient_crisis_creater_pre_FTL_country = {
+			set_country_type = yourmod_primitive
+		}
+		this = { establish_communications_no_message = event_target:yourmod_cancient_crisis_creater_pre_FTL_country }
 		country_event = {
 			id = yourmod_custom_diplomacy_events.90 #聞いてみよう
 		}

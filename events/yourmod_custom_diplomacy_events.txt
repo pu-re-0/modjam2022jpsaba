@@ -81,7 +81,7 @@ country_event = {
 	trigger = {
 		has_yourmod_custom_diplomacy_event = no
 		from = {
-			is_country_type = primitive
+			is_country_type = yourmod_primitive
 			has_country_flag = ancient_crisis_creater_pre_FTL_country
 		}
 		has_global_flag = yourmod_can_contact_ancient_crisis_creater_pre_FTL_country
@@ -225,7 +225,7 @@ country_event = { #原始文明クライシスについて聞く
 	option = {
 		name = yourmod_custom_diplomacy_events.103.c #情報、感謝する
 		country_event = {
-			id = yourmod_custom_diplomacy_events.101
+			id = yourmod_custom_diplomacy_events.102
 		}
 	}
 }
