@@ -172,5 +172,24 @@
 
  country_lost_health_gestalt:0 "失敗した感染対処"
  country_lost_health_gestalt_desc:0 "この帝国は$yourmod_crisis$の対処を致命的に失敗してしまった。帝国の中で$yourmod_crisis$が存在しない箇所はほぼ無いだろう"
+
+ yourmod_modifier_event_102:0 "コンピューターの異常"
+ yourmod_modifier_event_102_desc:0 "帝国の一部のコンピューターで異常が発生している。"
+
+ yourmod_modifier_event_103:0 "コンピューターの異常"
+ yourmod_modifier_event_103_desc:0 "帝国の一部のコンピューターで異常が発生している。"
+
+ yourmod_modifier_event_104:0 "市民の暴動"
+ yourmod_modifier_event_104_desc:0 "$yourmod_crisis$への恐怖などが重なり、市民が暴動を起こしている。"
+
+ yourmod_modifier_event_105:0 "快適な自宅生活"
+ yourmod_modifier_event_105_desc:0 "[this.GetName]の住民は外出制限などの感染対策に不安を感じていたが、実際は案外快適だったようだ。"
+
+ yourmod_modifier_event_106:0 "彗星の通過"
+ yourmod_modifier_event_106_desc:0 "[this.GetName]にて彗星を観測した。いい兆候だとして市民たちは喜んでいる。"
+
+ yourmod_modifier_event_110:0 "天からのいたずら"
+ yourmod_modifier_event_110_desc:0 "[this.GetName]で感染者が急増している。それどころか、惑星周囲の宇宙空間にすら確認されている。このことから、先日観測した彗星にウイルスが付着していたのではと噂されている。"
+
  
  
