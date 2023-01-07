@@ -285,7 +285,7 @@ country_event = {
 									id = yourmod_crisis_02.203
 								}
 							}
-							10 = {
+							5 = {
 								#感染者の減少
 								planet_event = {
 									id = yourmod_crisis_02.204
@@ -361,7 +361,7 @@ country_event = {
 									id = yourmod_crisis_02.303
 								}
 							}
-							10 = {
+							5 = {
 								modifier = {
 									factor = 0
 									check_variable = {
@@ -981,7 +981,6 @@ planet_event = {
 	picture = GFX_evt_mining_station #画像は後で探す
 
 	immediate = {
-		remove_modifier = yourmod_modifier_event_206
 		add_modifier = {
 			modifier = yourmod_modifier_event_216
 			days = 360
