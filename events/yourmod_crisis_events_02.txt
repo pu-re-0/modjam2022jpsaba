@@ -68,340 +68,257 @@ country_event = {
 	}
 
 	immediate = {
-		if = { #機械知性の場合
-			limit = { is_robot_empire = yes }
-			random_list = {
-				20 = { #ランダムバフデバフイベント
-					random_list = {
-						10 = {
-
+		#if = { #機械知性の場合
+		#	没
+		#}
+		
+		#それ以外の国家
+		random_list = {
+			20 = { #ランダムバフデバフイベント
+				random_list = {
+					6 = {
+						#科学者が狂気特性を獲得
+						modifier = {
+							factor = 0
+							any_owned_leader = {
+								has_trait = leader_trait_maniacal
+							}
 						}
-						10 = {
-							
-						}
-						10 = {
-							
-						}
-						10 = {
-							
-						}
-						10 = {
-							
+						random_owned_leader = {
+							leader_event = {
+									id = yourmod_crisis_02.101
+							}
 						}
 					}
-				}
-
-				10 = { #感染済み惑星のイベント
-					modifier = {
-						factor = 0
-						any_owned_planet = {
-							NOT = { has_planet_flag = yourmod_infected_planet }
+					10 = {
+						#コンピュータに異常が発生
+						modifier = {
+							factor = 0
+							has_modifier = yourmod_modifier_event_102
+						}
+						country_event = {
+							id = yourmod_crisis_02.102
 						}
 					}
-					random_planet_within_border = {
-						planet_event = {
-							id = yourmod_crisis_02.201
+					10 = {
+						#コンピュータに異常が発生
+						modifier = {
+							factor = 0
+							has_modifier = yourmod_modifier_event_103
+						}
+						modifier = {
+							factor = 0
+							has_ethic = ethic_gestalt_consciousness
+						}
+						country_event = {
+							id = yourmod_crisis_02.103
 						}
 					}
-				}
-				
-				10 = { #未感染惑星のイベント
-					# ランダムなイベントにより感染具合のmodifierが付与される
-					# 感染具合がマックスを超えると、situationが発生し、感染済み惑星になる
-					modifier = {
-						factor = 1.5
-						any_owned_planet = {
-							NOT = { has_planet_flag  = yourmod_infected_planet }
+					10 = {
+						#市民が暴動
+						modifier = {
+							factor = 0
+							any_owned_planet = {
+								has_modifier = yourmod_modifier_event_104
+							}
+						}
+						random_owned_planet = {
+							planet_event = {
+								id = yourmod_crisis_02.104
+							}
 						}
 					}
-					random_planet_within_border = {
-						limit = {
-							NOT = { has_planet_flag  = yourmod_infected_planet }
+					3 = {
+						#外出制限の結果ちょっと快適
+						modifier = {
+							factor = 0
+							any_owned_planet = {
+								has_modifier = yourmod_modifier_event_105
+							}
 						}
-						save_event_target_as = yourmod_happen_event_planet
-						random_list = {
-							10 = {
-								planet_event = {
-									id = yourmod_crisis_02.351
+						modifier = {
+							factor = 5
+							owner.owner_species = {
+								has_trait = trait_solitary #孤立的特性持ち
+							}
+						}
+						random_owned_planet = {
+							planet_event = {
+								id = yourmod_crisis_02.105
+							}
+						}
+						
+					}
+					10 = {
+						#彗星より
+						modifier = {
+							factor = 0
+							any_owned_planet = {
+								or = {
+									has_modifier = yourmod_modifier_event_106
+									has_modifier = yourmod_modifier_event_110
 								}
 							}
-							10 = {
-								planet_event = {
-									id = yourmod_crisis_02.352
-								}
-							}
-							10 = {
-								planet_event = {
-									id = yourmod_crisis_02.353
-								}
-							}
-							10 = {
-								planet_event = {
-									id = yourmod_crisis_02.354
-								}
-							}
-							10 = {
-								planet_event = {
-									id = yourmod_crisis_02.355
-								}
+						}
+						random_owned_planet = {
+							planet_event = {
+								id = yourmod_crisis_02.106
 							}
 						}
 					}
 				}
 			}
-		}
-		
-		else = { #それ以外の国家
-			random_list = {
-				20 = { #ランダムバフデバフイベント
-					random_list = {
-						6 = {
-							#科学者が狂気特性を獲得
-							modifier = {
-								factor = 0
-								any_owned_leader = {
-									has_trait = leader_trait_maniacal
-								}
-							}
-							random_owned_leader = {
-								leader_event = {
-									id = yourmod_crisis_02.101
-								}
-							}
-						}
-						10 = {
-							#コンピュータに異常が発生
-							modifier = {
-								factor = 0
-								has_modifier = yourmod_modifier_event_102
-							}
-							country_event = {
-								id = yourmod_crisis_02.102
-							}
-						}
-						10 = {
-							#コンピュータに異常が発生
-							modifier = {
-								factor = 0
-								has_modifier = yourmod_modifier_event_103
-							}
-							modifier = {
-								factor = 0
-								has_ethic = ethic_gestalt_consciousness
-							}
-							country_event = {
-								id = yourmod_crisis_02.103
-							}
-						}
-						10 = {
-							#市民が暴動
-							modifier = {
-								factor = 0
-								any_owned_planet = {
-									has_modifier = yourmod_modifier_event_104
-								}
-							}
-							random_owned_planet = {
-								planet_event = {
-									id = yourmod_crisis_02.104
-								}
-							}
-						}
-						3 = {
-							#外出制限の結果ちょっと快適
-							modifier = {
-								factor = 0
-								any_owned_planet = {
-									has_modifier = yourmod_modifier_event_105
-								}
-							}
-							modifier = {
-								factor = 5
-								owner.owner_species = {
-									has_trait = trait_solitary #孤立的特性持ち
-								}
-							}
-							random_owned_planet = {
-								planet_event = {
-									id = yourmod_crisis_02.105
-								}
-							}
-							
-						}
-						10 = {
-							#彗星より
-							modifier = {
-								factor = 0
-								any_owned_planet = {
-									or = {
-										has_modifier = yourmod_modifier_event_106
-										has_modifier = yourmod_modifier_event_110
-									}
-								}
-							}
-							random_owned_planet = {
-								planet_event = {
-									id = yourmod_crisis_02.106
-								}
-							}
-						}
-					}
-				}
-
-				10 = { #感染済み惑星のイベント
-					modifier = {
-						factor = 0
-						or = {
-							any_owned_planet = {
-								NOT = { has_planet_flag = yourmod_infected_planet }
-							}
-							has_country_flag = yourmod_infected_country
-							has_country_flag = yourmod_health_lost_country
-						}
-					}
-					modifier = {
-						factor = 0.5
-						has_global_flag = yourmod_crisis_phase_2
-					}
-					random_planet_within_border = {
-						random_list = {
-							10 = {
-								#日用品の不足
-								modifier = {
-									factor = 0
-									or = {
-										has_modifier = yourmod_modifier_event_201
-										has_modifier = yourmod_modifier_event_211
-										has_modifier = yourmod_modifier_event_212
-									}
-								}
-								planet_event = {
-									id = yourmod_crisis_02.201
-								}
-							}
-							10 = {
-								#中規模な集団感染
-								planet_event = {
-									id = yourmod_crisis_02.202
-								}
-							}
-							10 = {
-								#大規模な集団感染
-								planet_event = {
-									id = yourmod_crisis_02.203
-								}
-							}
-							5 = {
-								#感染者の減少
-								planet_event = {
-									id = yourmod_crisis_02.204
-								}
-							}
-							10 = {
-								#ブラック企業摘発
-								planet_event = {
-									id = yourmod_crisis_02.205
-								}
-							}
-							10 = {
-								#反感染対策派の暴動
-								planet_event = {
-									id = yourmod_crisis_02.206
-								}
-							}
-						}
-					}
-				}
-				
-				10 = { #未感染惑星のイベント
-					# ランダムなイベントにより感染具合のmodifierが付与される
-					# 感染具合がマックスを超えると、situationが発生し、感染済み惑星になる
-					modifier = {
-						factor = 1.5
+			10 = { #感染済み惑星のイベント
+				modifier = {
+					factor = 0
+					or = {
 						any_owned_planet = {
-							NOT = { has_planet_flag  = yourmod_infected_planet }
+							NOT = { has_planet_flag = yourmod_infected_planet }
 						}
-					}
-					modifier = {
-						factor = 0
 						has_country_flag = yourmod_infected_country
 						has_country_flag = yourmod_health_lost_country
 					}
-					modifier = {
-						factor = 0.5
-						has_global_flag = yourmod_crisis_phase_2
-					}
-					random_planet_within_border = {
-						limit = {
-							NOT = { has_planet_flag  = yourmod_infected_planet }
+				}
+				modifier = {
+					factor = 0.5
+					has_global_flag = yourmod_crisis_phase_2
+				}
+				random_planet_within_border = {
+					random_list = {
+						10 = {
+							#日用品の不足
+							modifier = {
+								factor = 0
+								or = {
+									has_modifier = yourmod_modifier_event_201
+									has_modifier = yourmod_modifier_event_211
+									has_modifier = yourmod_modifier_event_212
+								}
+							}
+							planet_event = {
+								id = yourmod_crisis_02.201
+							}
 						}
-						save_event_target_as = yourmod_happen_event_planet
-						random_list = {
-							10 = {
-								modifier = {
-									factor = 0
-									has_planet_flag = yourmod_happen_event_301
-								}
-								planet_event = {
-									#感染者の脱走
-									id = yourmod_crisis_02.301
-								}
+						10 = {
+							#中規模な集団感染
+							planet_event = {
+								id = yourmod_crisis_02.202
 							}
-							10 = {
-								modifier = {
-									factor = 0.5
-									has_modifier = yourmod_modifier_event_302
-								}
-								planet_event = {
-									#小規模な集団感染
-									id = yourmod_crisis_02.302
-								}
+						}
+						10 = {
+							#大規模な集団感染
+							planet_event = {
+								id = yourmod_crisis_02.203
 							}
-							10 = {
-								modifier = {
-									factor = 0.2
-									has_modifier = yourmod_modifier_event_303
-								}
-								planet_event = {
-									#中規模な集団感染
-									id = yourmod_crisis_02.303
-								}
+						}
+						5 = {
+							#感染者の減少
+							planet_event = {
+								id = yourmod_crisis_02.204
 							}
-							5 = {
-								modifier = {
-									factor = 0
-									check_variable = {
-										which = planet_prevalence_level
-										value <= 0
-									}
-								}
-								planet_event = {
-									#感染者の減少
-									id = yourmod_crisis_02.304
-								}
+						}
+						10 = {
+							#ブラック企業摘発
+							planet_event = {
+								id = yourmod_crisis_02.205
 							}
-							10 = {
-								modifier = {
-									factor = 0
-									or = {
-										has_planet_flag = yourmod_happen_event_305
-										has_modifier = yourmod_modifier_event_305
-									}
-								}
-								planet_event = {
-									#感染者の再捜査
-									id = yourmod_crisis_02.305
-								}
+						}
+						10 = {
+							#反感染対策派の暴動
+							planet_event = {
+								id = yourmod_crisis_02.206
 							}
 						}
 					}
 				}
-
-				20 = {#何も起きない
-					modifier = {
-						factor = 0.1
-						NOT = { has_country_flag = yourmod_infected_country }
+			}		
+			10 = { #未感染惑星のイベント
+				# ランダムなイベントにより感染具合のmodifierが付与される
+				# 感染具合がマックスを超えると、situationが発生し、感染済み惑星になる
+				modifier = {
+					factor = 1.5
+					any_owned_planet = {
+						NOT = { has_planet_flag  = yourmod_infected_planet }
 					}
+				}
+				modifier = {
+					factor = 0
+					has_country_flag = yourmod_infected_country
+					has_country_flag = yourmod_health_lost_country
+				}
+				modifier = {
+					factor = 0.5
+					has_global_flag = yourmod_crisis_phase_2
+				}
+				random_planet_within_border = {
+					limit = {
+						NOT = { has_planet_flag  = yourmod_infected_planet }
+					}
+					save_event_target_as = yourmod_happen_event_planet
+					random_list = {
+						10 = {
+							modifier = {
+								factor = 0
+								has_planet_flag = yourmod_happen_event_301
+							}
+							planet_event = {
+								#感染者の脱走
+								id = yourmod_crisis_02.301
+							}
+						}
+						10 = {
+							modifier = {
+								factor = 0.5
+								has_modifier = yourmod_modifier_event_302
+							}
+							planet_event = {
+								#小規模な集団感染
+								id = yourmod_crisis_02.302
+							}
+						}
+						10 = {
+							modifier = {
+								factor = 0.2
+								has_modifier = yourmod_modifier_event_303
+							}
+							planet_event = {
+								#中規模な集団感染
+								id = yourmod_crisis_02.303
+							}
+						}
+						5 = {
+							modifier = {
+								factor = 0
+								check_variable = {
+									which = planet_prevalence_level
+									value <= 0
+								}
+							}
+							planet_event = {
+								#感染者の減少
+								id = yourmod_crisis_02.304
+							}
+						}
+						10 = {
+							modifier = {
+								factor = 0
+								or = {
+									has_planet_flag = yourmod_happen_event_305
+									has_modifier = yourmod_modifier_event_305
+								}
+							}
+							planet_event = {
+								#感染者の再捜査
+								id = yourmod_crisis_02.305
+							}
+						}
+					}
+				}
+			}
+			20 = {#何も起きない
+				modifier = {
+					factor = 0.1
+					NOT = { has_country_flag = yourmod_infected_country }
 				}
 			}
 		}
