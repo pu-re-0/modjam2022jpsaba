@@ -163,7 +163,7 @@ country_event = { # notification for first victim#お前が第一感染国とい
 	#最近、[yourmod_virus_first_onset_planet.GetName]において奇妙な現象の発生が確認されている。ドローンの思考回路に異常が発生し、そのうえで機体内部が徐々に破壊され、最終的にドローンが死に至るという現象だ。この現象に遭遇したドローンはしばしば「不快感」と熱の異常発生を訴えている。さらに、当該のドローンに接触したドローンにもまた同様の現象が起こっているようだ。この現象には、有機生命体の言う感染症と近いものがあり、既に[yourmod_virus_first_onset_planet.GetName]上のかなりの数のドローンが「感染」しているとみられる。以後、本現象は$yourmod_crisis$と呼称する。
 
 	picture = GFX_evt_microscopic_life
-	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+	show_sound = event_red_alert # この辺はあとでいい感じの奴にしておく
 
 	is_triggered_only = yes
 	location = event_target:yourmod_virus_first_onset_planet
@@ -217,7 +217,7 @@ country_event = { # Hide, or don't
 	#未知の病気が我々を襲っている。これは我々全員に周知の事実だ。だが、他の帝国にとってはそうではない。彼らは皆、今まで通りの日々が続くと信じている。もしかしたら、この問題は[yourmod_virus_first_onset_planet.GetName]に留めて対処することができるかもしれない。もし他の帝国に病気の存在を知らせれば、彼らは態度を硬化させ、交易や交流を禁じるようなことがあるかもしれない。だが、隠蔽して他国に感染が広がり、そして病気の起源が我々の惑星にあると知られたら、これはもっと重大な問題になるかもしれない。
 
 	picture = GFX_evt_mysterious_signal
-	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+	show_sound = event_default_02 # この辺はあとでいい感じの奴にしておく
 
 	is_triggered_only = yes
 	location = event_target:yourmod_virus_first_onset_planet
@@ -267,7 +267,7 @@ country_event = { #Informed consent#公開した場合のイベント
  	}
 
 	picture = GFX_evt_announcement
-	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+	show_sound = event_default_02 # この辺はあとでいい感じの奴にしておく
 
 	is_triggered_only = yes
 
@@ -293,7 +293,7 @@ country_event = { #Uninformed consent#隠した場合のイベント
  	}
 
 	picture = GFX_evt_assembly_fight
-	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+	show_sound = event_default_02 # この辺はあとでいい感じの奴にしておく
 
 	is_triggered_only = yes
 
@@ -315,6 +315,7 @@ country_event = { #Infected!#感染した！
 	title = yourmod_crisis_01.10.name
  	desc = yourmod_crisis_01.10.desc.a
 	picture = GFX_evt_deficit
+	show_sound = event_air_raid_siren # この辺はあとでいい感じの奴にしておく
 
 	trigger = {
 		has_global_flag = yourmod_in_progress # see mid_game_crisis_trigger_events.txt
@@ -502,7 +503,7 @@ country_event = { # Start Investigation
 	#$yourmod_crisis$が猛威を振るい始めてからある程度時間が経過した。対策や調査に資源を投げ打ってはいるが、それでもまだ病原体の検出にさえ成功していない。有効な治療法も見つかっておらず、このままでは埒が明かない。ここで一回、帝国の総力を挙げて病原体の正体を突き止めるためのプロジェクトを実行するべきだ。例えプロジェクトを遂行する過程でいかなる犠牲や代償を払おうとも、このまま$yourmod_crisis$を放置するよりは遥かに安上がりだ。
 	
 	picture = GFX_evt_board_meeting
-	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+	show_sound = event_radio_chatter # この辺はあとでいい感じの奴にしておく
 	is_triggered_only = yes
 
 	option = { # Start First Situation
@@ -520,7 +521,7 @@ country_event = { #調査シチュエーションからのイベント
 	#$yourmod_crisis$の洞察は、まずはその症状の調査から始める。過去に有機生命体という有機生命体を襲ってきた、銀河内に存在するあらゆる感染症と照合するためだ。先駆者文明が残した記録にも、古代から感染症が存在したことが書かれている。そのような古代の感染症が今さらになって猛威を振るっているということもありえるかもしれない。あるいは、とにかく、持てる限りの知識を総動員するのだ。
 	
 	picture = GFX_evt_decryption
-	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+	show_sound = event_radio_chatter # この辺はあとでいい感じの奴にしておく
 	is_triggered_only = yes
 
 	option = { # ok
@@ -554,7 +555,7 @@ country_event = { #調査シチュエーションからのイベント
 	#$yourmod_crisis$の正体をつかむ実験を行っている最中、ある天文台が由来不明の怪電波を検出した。施設近隣からの照射や未知の宇宙線の可能性が指摘されたが、意外な事実が判明した。その電波は、$yourmod_crisis$の犠牲になった遺体の集積場から放たれていたのだ。完全に壊れた機械でさえ電波を発信しないが、完全に死亡した有機生命体はなおさら電波を発信しない。この電波は確実に$yourmod_crisis$に関係している。もしかしたら、この電波そのものが人を死に追いやっているのではないかと考えるようになった科学者もいる。調査は続けられる。
 	
 	picture = GFX_evt_mysterious_signal
-	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+	show_sound = event_radio_chatter_04 # この辺はあとでいい感じの奴にしておく
 	is_triggered_only = yes
 
 	option = { # ok
@@ -571,7 +572,7 @@ country_event = { #調査シチュエーションからのイベント
 	#受け入れがたい事実が発覚した。$yourmod_crisis$は超能力を保有する存在だったのだ。この銀河には超能力者がいくらか存在するが、彼らはやはり遺体安置所から超能力波を感じたのだという。電波にしろ超能力の波動にしろ、どういうわけか遺体から放たれているようだ。この不気味な事実は受け入れがたいが、超能力者の言を信じる価値はあるだろう。
 	
 	picture = GFX_evt_shrouded_planet
-	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+	show_sound = event_alien_signal_05 # この辺はあとでいい感じの奴にしておく
 	is_triggered_only = yes
 
 	option = { # ok
@@ -588,7 +589,7 @@ country_event = { #調査シチュエーションからのイベント
 	#$yourmod_crisis$の正体にまつわる重大な発見があった。とても書けないような非情な実験により、初めて$yourmod_crisis$の病原体が発見されたのだ！それはウイルスでも、細菌でも、微生物でも、電波的な存在でも、超常的な実体でもなかった。ナノマシンに類する何かだったのだ。ナノマシンそのものではないのは、それが完全な無機物に見えながら超能力の波動を放つからである。この極めて異様な実体が病原体だったのであれば、機械にも感染していたことに説明がつく。これは食える物をとにかく食らって自己増殖するのだ。だが、自己増殖にも制限があるらしく、ちょうど感染先が死亡したところで活動を停止するようだ。$yourmod_crisis$は、明確に自然のものではない。おそらくは先駆文明の残した生物兵器だ。
 
 	picture = GFX_evt_smugglers_in_bar
-	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+	show_sound = event_mystic_reveal # この辺はあとでいい感じの奴にしておく
 	is_triggered_only = yes
 
 	option = { # ok
@@ -605,7 +606,7 @@ country_event = { #調査シチュエーションからのイベント
 	#他国において、$yourmod_crisis$の正体にまつわる重大な発見があった。なんでも、初めて$yourmod_crisis$の病原体が発見されたのだという！それはウイルスでも、細菌でも、微生物でも、電波的な存在でも、超常的な実体でもなかった。ナノマシンに類する何かだったというのだ。ナノマシンそのものではないのは、それが完全な無機物に見えながら超能力の波動を放つからである。この極めて異様な実体が病原体だったのであれば、機械にも感染していたことに説明がついた。これは食える物をとにかく食らって自己増殖するのだ。だが、自己増殖にも制限があるらしく、ちょうど感染先が死亡したところで活動を停止するようだ。$yourmod_crisis$は、明確に自然のものではない。おそらくは先駆文明の残した生物兵器だ。
 
 	picture = GFX_evt_smugglers_in_bar
-	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+	show_sound = event_mystic_reveal # この辺はあとでいい感じの奴にしておく
 	is_triggered_only = yes
 
 	option = { # ok
@@ -622,6 +623,7 @@ country_event = { #Situation has done, Ground Zero Emerging, Create Notification
 	fire_only_once = yes
 	is_triggered_only = yes
 	picture = GFX_evt_surreal_visions
+	show_sound = event_ship_thrusters # この辺はあとでいい感じの奴にしておく
 
 	# $yourmod_crisis$の正体を探るプロジェクトは、その完全な正体をつかむところまではうまくいかなかったが、重要な知見を得ることができた。$yourmod_crisis$の病原体は、有機・無機問わず生命体を貪り、自己複製を行う何かだったのだ。グレイ・グーを引き起こす拙劣なナノマシンとの類似も指摘されたが、悪質なことにそれだけではなかった。病原体は電波を送受信する能力だけではなく、超能力を行使する能力まで持ち合わせていたのだ。ただ物質的に増殖するだけでなく、自らの存在を隠蔽する性質もあり、検出には特殊な手段を要したが、これでいくらか未知のものへ対する恐怖を和らぐことだろう。\nそしてもう一つ重要な事がある。$yourmod_crisis$の病原体は、この銀河のある一つの場所に向かって電波やテレパシーウェーブを送信しているということだ。おそらくはそこに元凶となるものがあるのだろう。直ちにその場所へと急行し、何があるか突き止めなければならない。
 
@@ -664,6 +666,7 @@ ship_event = { # NEXT STAGE
 	title = yourmod_crisis_01.1000.name
 	desc = yourmod_crisis_01.1000.desc
 	picture = GFX_evt_unknown_ships
+	show_sound = event_ship_thrusters # この辺はあとでいい感じの奴にしておく
 	
 	#謎めいた星系
 	#新しく発見された星系に到達したが、この星系は……奇妙だ。ありふれた恒星に、妙に巨大な惑星が二つだけ。小惑星帯どころか小惑星の一つもない。どういうことだろうか。
@@ -732,6 +735,7 @@ country_event = { # NEXT STAGE
 	title = yourmod_crisis_01.1001.name
 	desc = yourmod_crisis_01.1001.desc
 	picture = GFX_evt_gray_goo_ships
+	show_sound = event_red_alert # この辺はあとでいい感じの奴にしておく
 	is_triggered_only = yes
 
 	#予感
@@ -764,7 +768,7 @@ country_event = {#Noooooootification that the next stage begin to everyone	#艦�
  	desc = yourmod_crisis_01.1002.desc
 
 	picture = GFX_evt_gray_goo_ships
-	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+	show_sound = event_red_alert # この辺はあとでいい感じの奴にしておく
 
 	is_triggered_only = yes
 
@@ -886,7 +890,7 @@ country_event = {#起源探しイベント
  	desc = yourmod_crisis_01.1100.desc
 
 	picture = GFX_evt_intelligence_report
-	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+	show_sound = event_laboratory_sound_02 # この辺はあとでいい感じの奴にしておく
 
 	is_triggered_only = yes
 
@@ -915,7 +919,7 @@ country_event = {#起源探しイベント:1のスペシャルプロジェクト
 	title = yourmod_crisis_01.1101.name
  	desc = yourmod_crisis_01.1101.desc
 	picture = GFX_evt_tomb_world
-	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+	show_sound = event_laboratory_sound_02 # この辺はあとでいい感じの奴にしておく
 
 	trigger = {
 		not = { has_country_flag = yourmod_crisis_story_1 }
@@ -953,7 +957,7 @@ country_event = {#起源探しイベント:2のスペシャルプロジェクト
 	title = yourmod_crisis_01.1102.name
  	desc = yourmod_crisis_01.1102.desc
 	picture = GFX_evt_baol_datacrystals
-	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+	show_sound = event_laboratory_sound_02 # この辺はあとでいい感じの奴にしておく
 
 	trigger = {
 		has_country_flag = yourmod_crisis_story_1
@@ -993,7 +997,7 @@ country_event = {#起源探しイベント:3のスペシャルプロジェクト
 	title = yourmod_crisis_01.1103.name
  	desc = yourmod_crisis_01.1103.desc
 	picture = GFX_evt_ancient_records
-	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+	show_sound = event_laboratory_sound_02 # この辺はあとでいい感じの奴にしておく
 
 	trigger = {
 		has_country_flag = yourmod_crisis_story_2
@@ -1039,7 +1043,7 @@ country_event = {#起源探しイベント:4のスペシャルプロジェクト
 	title = yourmod_crisis_01.1104.name
  	desc = yourmod_crisis_01.1104.desc
 	picture = GFX_evt_ancient_databank
-	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+	show_sound = event_laboratory_sound_02 # この辺はあとでいい感じの奴にしておく
 
 	trigger = {
 		has_country_flag = yourmod_crisis_story_3
@@ -1085,7 +1089,7 @@ country_event = {#起源探しイベント:5のスペシャルプロジェクト
 	title = yourmod_crisis_01.1105.name
  	desc = yourmod_crisis_01.1105.desc
 	picture = GFX_evt_zro_5
-	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+	show_sound = event_laboratory_sound_02 # この辺はあとでいい感じの奴にしておく
 
 	trigger = {
 		has_country_flag = yourmod_crisis_story_4
@@ -1125,7 +1129,7 @@ country_event = {#起源探しイベント:6のスペシャルプロジェクト
 	title = yourmod_crisis_01.1106.name
  	desc = yourmod_crisis_01.1106.desc
 	picture = GFX_evt_psionics
-	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+	show_sound = event_laboratory_sound_02 # この辺はあとでいい感じの奴にしておく
 
 	trigger = {
 		has_country_flag = yourmod_crisis_story_5
@@ -1210,7 +1214,7 @@ country_event = {#起源探しイベント:核戦争で滅んだ惑星
  	desc = yourmod_crisis_01.1201.desc
 
 	picture = GFX_evt_partition
-	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+	show_sound = event_ghost_town # この辺はあとでいい感じの奴にしておく
 
 	is_triggered_only = yes
 
@@ -1232,7 +1236,7 @@ country_event = {#起源探しイベント:先駆者のクリスタル
  	desc = yourmod_crisis_01.1202.desc
 
 	picture = GFX_evt_gray_gooed_planet
-	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+	show_sound = event_mystic_reveal # この辺はあとでいい感じの奴にしておく
 
 	is_triggered_only = yes
 
@@ -1254,7 +1258,7 @@ country_event = {#起源探しイベント:バッドアイデア
  	desc = yourmod_crisis_01.1203.desc
 
 	picture = GFX_evt_exploding_planet
-	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+	show_sound = event_super_explosion # この辺はあとでいい感じの奴にしておく
 
 	is_triggered_only = yes
 
@@ -1276,7 +1280,7 @@ country_event = {#起源探しイベント:大絶滅
  	desc = yourmod_crisis_01.1204.desc
 
 	picture = GFX_evt_vortex
-	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+	show_sound = event_super_explosion # この辺はあとでいい感じの奴にしておく
 
 	is_triggered_only = yes
 
@@ -1342,7 +1346,7 @@ country_event = {#起源探しイベント:学術会
  	desc = yourmod_crisis_01.1207.desc
 
 	picture = GFX_evt_acquire_asset
-	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+	show_sound = event_radio_chatter_04 # この辺はあとでいい感じの奴にしておく
 
 	trigger = {
 		has_country_flag = yourmod_crisis_story_6
@@ -1469,6 +1473,7 @@ ship_event = {#1
 	title = yourmod_crisis_01.1211.name
 	desc = yourmod_crisis_01.1211.desc
 	picture = GFX_evt_alien_city
+	show_sound = event_default # この辺はあとでいい感じの奴にしておく
 	is_triggered_only = yes
 	auto_opens = yes
 	location = from
@@ -1493,6 +1498,7 @@ ship_event = {#2
 	title = yourmod_crisis_01.1212.name
 	desc = yourmod_crisis_01.1212.desc
 	picture = GFX_evt_archaeological_dig
+	show_sound = event_default # この辺はあとでいい感じの奴にしておく
 	is_triggered_only = yes
 	auto_opens = yes
 	location = from
@@ -1517,6 +1523,7 @@ ship_event = {#3
 	title = yourmod_crisis_01.1213.name
 	desc = yourmod_crisis_01.1213.desc
 	picture = GFX_evt_ancient_databank
+	show_sound = event_default # この辺はあとでいい感じの奴にしておく
 	is_triggered_only = yes
 	auto_opens = yes
 	location = from
@@ -1541,12 +1548,13 @@ ship_event = {#4
 	title = yourmod_crisis_01.1214.name
 	desc = yourmod_crisis_01.1214.desc
 	picture = GFX_evt_ancient_artifact
+	show_sound = event_default # この辺はあとでいい感じの奴にしておく
 	is_triggered_only = yes
 	auto_opens = yes
 	location = from
 
 	option = {
-		name = yourmod_crisis_10.1214 #それは……困ったな。
+		name = yourmod_crisis_01.1214.a #それは……困ったな。
 		owner = {
 			country_event = {
 				id = yourmod_crisis_01.1300
@@ -1563,7 +1571,7 @@ country_event = {#遺物アクションガバ
  	desc = yourmod_crisis_01.1299.desc
 
 	picture = GFX_evt_deficit
-	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+	show_sound = event_structural_collapse_02 # この辺はあとでいい感じの奴にしておく
 
 	is_triggered_only = yes
 
@@ -1583,7 +1591,7 @@ country_event = {#クソ暗号
  	desc = yourmod_crisis_01.1300.desc
 
 	picture = GFX_evt_deficit
-	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+	show_sound = event_yellow_alert_01 # この辺はあとでいい感じの奴にしておく
 
 	is_triggered_only = yes
 
@@ -1601,7 +1609,7 @@ country_event = {#暗号解読状況S1
 	title = yourmod_crisis_01.1301.name
  	desc = yourmod_crisis_01.1301.desc
 	picture = GFX_evt_board_meeting
-	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+	show_sound = event_laboratory_sound # この辺はあとでいい感じの奴にしておく
 	is_triggered_only = yes
 
 	#困難へ
@@ -1621,7 +1629,7 @@ country_event = {#暗号解読状況S2
 	title = yourmod_crisis_01.1302.name
  	desc = yourmod_crisis_01.1302.desc
 	picture = GFX_evt_hand_shake
-	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+	show_sound = event_laboratory_sound # この辺はあとでいい感じの奴にしておく
 	is_triggered_only = yes
 
 	#古代言語学
@@ -1646,7 +1654,7 @@ country_event = {#暗号解読状況S3
 	title = yourmod_crisis_01.1303.name
  	desc = yourmod_crisis_01.1303.desc
 	picture = GFX_evt_mysterious_signal
-	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+	show_sound = event_laboratory_sound # この辺はあとでいい感じの奴にしておく
 	is_triggered_only = yes
 
 	#あきらめ
@@ -1697,7 +1705,7 @@ country_event = {#暗号解読状況S4
 	title = yourmod_crisis_01.1304.name
  	desc = yourmod_crisis_01.1304.desc
 	picture = GFX_evt_one_sided_deal
-	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+	show_sound = event_laboratory_sound # この辺はあとでいい感じの奴にしておく
 	is_triggered_only = yes
 
 	#ブルートフォース
@@ -1722,7 +1730,7 @@ country_event = {#暗号解読状況S5
 	title = yourmod_crisis_01.1305.name
  	desc = yourmod_crisis_01.1305.desc
 	picture = GFX_evt_voting
-	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+	show_sound = event_laboratory_sound # この辺はあとでいい感じの奴にしておく
 	is_triggered_only = yes
 
 	#辞書攻撃
@@ -1788,7 +1796,7 @@ country_event = {#暗号解読への手助け
 	title = yourmod_crisis_01.1308.name
  	desc = yourmod_crisis_01.1308.desc
 	picture = GFX_evt_tradedeal
-	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+	show_sound = event_laboratory_sound # この辺はあとでいい感じの奴にしておく
 	is_triggered_only = yes
 
 	#[from.GetName]の協力
@@ -1818,7 +1826,7 @@ country_event = {#暗号解読の成功
 	title = yourmod_crisis_01.1310.name
  	desc = yourmod_crisis_01.1310.desc
 	picture = GFX_evt_zro_4
-	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+	show_sound = event_radio_chatter # この辺はあとでいい感じの奴にしておく
 	is_triggered_only = yes
 
 	#暗号解読に成功！
@@ -1851,7 +1859,7 @@ country_event = {#暗号解読の成功
 	title = yourmod_crisis_01.1311.name
  	desc = yourmod_crisis_01.1311.desc
 	picture = GFX_evt_zro_4
-	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+	show_sound = event_radio_chatter # この辺はあとでいい感じの奴にしておく
 	is_triggered_only = yes
 
 	#暗号解読に成功！
@@ -1875,6 +1883,7 @@ planet_event = {
 	id = yourmod_crisis_01.1999
 	hide_window = yes
 	fire_only_once = yes
+	mean_time_to_happen = { days = 1 }
 	trigger = {
 		has_global_flag = yourmod_in_progress
 		has_global_flag = yourmod_now_can_end_the_crisis
@@ -1902,7 +1911,7 @@ country_event = {#大勝利
 	title = yourmod_crisis_01.2000.name
  	desc = yourmod_crisis_01.2000.desc
 	picture = GFX_evt_crisis_defeated
-	show_sound = event_ship_bridge # この辺はあとでいい感じの奴にしておく
+	show_sound = event_celebration # この辺はあとでいい感じの奴にしておく
 	is_triggered_only = yes
 
 	#暗号解読に成功！
