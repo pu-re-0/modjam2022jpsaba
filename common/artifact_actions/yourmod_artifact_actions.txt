@@ -3,7 +3,7 @@ artifact_yourmod_crisis_origin_research = {
 		category = artifact_actions
 		cost = {
 			energy = 500
-			minor_artifacts = 5
+			minor_artifacts = 2
 		}
 	}
 	
