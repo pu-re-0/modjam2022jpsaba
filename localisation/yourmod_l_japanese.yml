@@ -44,7 +44,7 @@
  yourmod_crisis_01.5.a:"大変なことになるかもしれない。"
 
  yourmod_crisis_01.10.name:"$yourmod_crisis$の感染者を国内で確認"
- yourmod_crisis_01.10.desc:"帝国はこれまで$yourmod_crisis$の存在を国内では確認していなかったが、総力を挙げた検疫作戦によって数人の$yourmod_crisis$感染者が確認された！彼らの行動履歴の確認と接触者の隔離が大急ぎで進められている。"
+ yourmod_crisis_01.10.desc.a:"帝国はこれまで$yourmod_crisis$の存在を国内では確認していなかったが、総力を挙げた検疫作戦によって数人の$yourmod_crisis$感染者が確認された！彼らの行動履歴の確認と接触者の隔離が大急ぎで進められている。"
  yourmod_crisis_01.10.a:"なんてことだ……。"
 
  yourmod_crisis_01.101.name:"$yourmod_crisis$の調査"
