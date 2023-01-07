@@ -1468,7 +1468,7 @@ country_event = {
 }
 
 ####発掘イベント
-ship_event = {#1
+fleet_event = {#1
 	id = yourmod_crisis_01.1211
 	title = yourmod_crisis_01.1211.name
 	desc = yourmod_crisis_01.1211.desc
@@ -1493,7 +1493,7 @@ ship_event = {#1
 	}
 }
 
-ship_event = {#2
+fleet_event = {#2
 	id = yourmod_crisis_01.1212
 	title = yourmod_crisis_01.1212.name
 	desc = yourmod_crisis_01.1212.desc
@@ -1518,7 +1518,7 @@ ship_event = {#2
 	}
 }
 
-ship_event = {#3
+fleet_event = {#3
 	id = yourmod_crisis_01.1213
 	title = yourmod_crisis_01.1213.name
 	desc = yourmod_crisis_01.1213.desc
@@ -1543,7 +1543,7 @@ ship_event = {#3
 	}
 }
 
-ship_event = {#4
+fleet_event = {#4
 	id = yourmod_crisis_01.1214
 	title = yourmod_crisis_01.1214.name
 	desc = yourmod_crisis_01.1214.desc
