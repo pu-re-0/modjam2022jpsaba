@@ -869,7 +869,7 @@ planet_event = {
 
 	option = {
 		#ただの1企業だろう
-		name = yourmod_crisis_02.205.a
+		name = yourmod_crisis_02.205.b
 		add_modifier = {
 			modifier = yourmod_modifier_event_205b
 		}

@@ -131,6 +131,7 @@ yourmod_modifier_event_213 = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_unknown.dds"
 	icon_frame = 1
 	planet_stability_add = 3
+	trade_value_mult = -0.05
 }
 
 yourmod_modifier_event_214 = {
