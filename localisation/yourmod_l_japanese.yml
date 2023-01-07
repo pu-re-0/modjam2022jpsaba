@@ -240,7 +240,7 @@
  artifact_yourmod_crisis_origin_research_desc:"遺物の中には、もしかすると$yourmod_crisis$の正体に迫るために使えるものがあるかもしれない。"
  
  site_yourmod_final_arc_site:"$yourmod_crisis$の情報を収めた遺跡"
- site_yourmod_final_arc_site_intro:"$yourmod_crisis$の情報を収めた遺跡"
+ site_yourmod_final_arc_site_intro:"学術会によると、ここにクリエイターが$yourmod_crisis$を無力化する方法を保存したという。"
  site_yourmod_final_arc_site_desc:"学術会によると、ここにクリエイターが$yourmod_crisis$を無力化する方法を保存したという。"
 
  YOURMOD_CRISIS_RESEARCH_PROJECT_1:"死の惑星調査"
