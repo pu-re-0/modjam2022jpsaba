@@ -183,7 +183,6 @@ yourmod_planet_infection_situation = {
 		name = yourmod_planet_infection_approach_1
 		icon = GFX_situation_approach_unity
 		icon_background = GFX_situation_approach_bg_green
-		default = yes
 
  		resources = { 	#Resource table as standard
  			category = situations
@@ -198,7 +197,6 @@ yourmod_planet_infection_situation = {
 		name = yourmod_planet_infection_approach_2
 		icon = GFX_situation_approach_unity
 		icon_background = GFX_situation_approach_bg_green
-		default = yes
 
  		resources = { 	#Resource table as standard
  			category = situations
@@ -213,7 +211,6 @@ yourmod_planet_infection_situation = {
 		name = yourmod_planet_infection_approach_3
 		icon = GFX_situation_approach_unity
 		icon_background = GFX_situation_approach_bg_green
-		default = yes
 
 		potential = {
 			current_stage = stage_2
@@ -346,10 +343,10 @@ yourmod_country_infection_situation = {
 	}
 	on_monthly = {
 		random_events = {
-			100 = 0
-			5 = yourmod_crisis_02.401
-			5 = yourmod_crisis_02.402
-			5 = yourmod_crisis_02.403
+			200 = 0
+			10 = yourmod_crisis_02.401
+			10 = yourmod_crisis_02.402
+			10 = yourmod_crisis_02.403
 			1 = yourmod_crisis_02.404
 		}
 	}

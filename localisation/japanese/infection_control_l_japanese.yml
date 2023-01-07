@@ -31,8 +31,27 @@
  #####    シチュエーション    #####
 
  yourmod_planet_infection_situation:0 "[target.GetName]での感染対処"
+ 
+ yourmod_planet_infection_approach_0:0 "感染対処:なし"
+ yourmod_planet_infection_approach_0_desc:0 "この程度の流行であれば、対策の必要はないだろう。"
+ yourmod_planet_infection_approach_1:0 "軽い感染対策"
+ yourmod_planet_infection_approach_1_desc:0 "外出の自粛要請、感染対策への呼びかけ、あまりコストのかからない対策を行おう。"
+ yourmod_planet_infection_approach_2:0 "中程度の感染対策"
+ yourmod_planet_infection_approach_2_desc:0 "外出制限、感染者の監視、流行を止めるために踏み入った対策を行おう。"
+ yourmod_planet_infection_approach_3:0 "徹底的感染対策"
+ yourmod_planet_infection_approach_3_desc:0 "徹底的な外出制限、全市民の監視、あらゆる行動の記録、例え帝国が傾こうと流行を防ぐのだ！"
 
  yourmod_country_infection_situation:0 "帝国規模の感染対処"
+
+ yourmod_country_infection_approach_0:0 "活発な活動の呼びかけ"
+ yourmod_country_infection_approach_0_desc:0 "このような病気に負けてはいけない！より活発に活動し、国を立て直すのだ！"
+ yourmod_country_infection_approach_1:0 "活動の自粛"
+ yourmod_country_infection_approach_1_desc:0 "流行を抑えるには活動を抑える必要がある。国民に活動自粛の呼びかけを行おう。"
+ yourmod_country_infection_approach_2:0 "活動制限"
+ yourmod_country_infection_approach_2_desc:0 "呼びかけるだけではだめだ。全ての国民の活動制限を行う。"
+ yourmod_country_infection_approach_3:0 "徹底的感染対策"
+ yourmod_country_infection_approach_3_desc:0 "例え国がどうなろうと、この流行は止めなければならない。ほぼすべての国民の活動停止を強制する。"
+ 
 
  #####    モディファイアー    #####
 
