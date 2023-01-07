@@ -163,8 +163,10 @@ country_event = {
 									has_trait = leader_trait_maniacal
 								}
 							}
-							country_event = {
-								id = yourmod_crisis_02.101
+							random_owned_leader = {
+								leader_event = {
+									id = yourmod_crisis_02.101
+								}
 							}
 						}
 						10 = {
