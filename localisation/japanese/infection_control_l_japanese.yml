@@ -30,12 +30,12 @@
 
  #100番台イベント
  yourmod_crisis_02.101.name:0 "感染した科学者"
- yourmod_crisis_02.101.desc:0 "わが国の著名な科学者である[Root.GetName]は、"
- yourmod_crisis_02.101.a:0 ""
- yourmod_crisis_02.102.name:0 ""
- yourmod_crisis_02.102.desc:0 ""
+ yourmod_crisis_02.101.desc:0 "わが国の著名な科学者である[this.GetName]は、どうやら$yourmod_crisis$感染したようである。このようなことは帝国のアカデミーの中ですでに何件か起こっており既定の手続きに従って療養をとらせようとしていた。ところが不可解なことに[Root.GetName]は高熱の中自らを被検体としたウィルスに関する実験を行うとしたそうだ。すぐさま彼は取り押さえられベットに連れ戻されたもののどうやら彼の狂気的な熱意はいまだに覚めていないようだ。"
+ yourmod_crisis_02.101.a:0 "興味深いな"
+ yourmod_crisis_02.102.name:0 "コンピューターの異常-幸運"
+ yourmod_crisis_02.102.desc:0 "[Root.Capital.GetName]のコンピュータ技師がどうやら奇妙な"
  yourmod_crisis_02.102.a:0 ""
- yourmod_crisis_02.103.name:0 ""
+ yourmod_crisis_02.103.name:0 "コンピューターの異常-不運"
  yourmod_crisis_02.103.desc:0 ""
  yourmod_crisis_02.103.a:0 ""
  yourmod_crisis_02.104.name:0 ""
