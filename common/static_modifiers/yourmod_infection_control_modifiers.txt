@@ -146,6 +146,12 @@ yourmod_modifier_event_206 = {
 	planet_amenities_add = -5
 }
 
+yourmod_modifier_event_206_0 = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_unknown.dds"
+	icon_frame = 2
+	planet_stability_add = -2
+}
+
 yourmod_modifier_event_216 = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_unknown.dds"
 	icon_frame = 3
