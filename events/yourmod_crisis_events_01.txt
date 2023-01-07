@@ -74,6 +74,7 @@ country_event = { # decide first victim country#最初に感染する国家を�
 
 	trigger = {
 		has_global_flag = yourmod_in_progress # see mid_game_crisis_trigger_events.txt
+		is_country_type = default
 		or = {
 			any_owned_fleet = { # Any research ship doing excavation
 				has_fleet_order = excavate_archaeological_site_fleet_order
@@ -317,6 +318,7 @@ country_event = { #Infected!#感染した！
 	trigger = {
 		has_global_flag = yourmod_in_progress # see mid_game_crisis_trigger_events.txt
 		has_global_flag = yourmod_virus_first_infection #First victim exists
+		is_country_type = default
 		NOT = {
 			has_country_flag = yourmod_virus_infected #繰り返し発生してたので入れといた
 		}
@@ -331,11 +333,12 @@ country_event = { #Infected!#感染した！
 					is_at_war_with = root
 				}
 			}
+			is_ai = yes
 		}
 	}
 
 	mean_time_to_happen = {
-		days = 185
+		days = 90
 		modifier = {
 			factor = 0.50
 			is_ai = yes
@@ -814,7 +817,6 @@ country_event = { #聖地の増強・遠征艦隊
 					#set_fleet_bombardment_stance = armageddon
 					create_yourmod_crisis_medium_ships = yes
 					create_yourmod_crisis_medium_ships = yes
-					create_yourmod_crisis_large_ships = yes
 					set_location = {
 						target = event_target:yourmod_crisis_ground_zero_system.star
 						distance = 1
@@ -828,8 +830,6 @@ country_event = { #聖地の増強・遠征艦隊
 				effect = {
 					set_owner = event_target:yourmod_crisis_country
 					#set_fleet_bombardment_stance = armageddon
-					create_yourmod_crisis_medium_ships = yes
-					create_yourmod_crisis_medium_ships = yes
 					create_yourmod_crisis_large_ships = yes
 					set_location = {
 						target = event_target:yourmod_crisis_ground_zero_system.star
@@ -844,7 +844,6 @@ country_event = { #聖地の増強・遠征艦隊
 				effect = {
 					set_owner = event_target:yourmod_crisis_country
 					#set_fleet_bombardment_stance = armageddon
-					create_yourmod_crisis_medium_ships = yes
 					create_yourmod_crisis_medium_ships = yes
 					create_yourmod_crisis_large_ships = yes
 					set_location = {
@@ -862,8 +861,6 @@ country_event = { #聖地の増強・遠征艦隊
 					#set_fleet_bombardment_stance = armageddon
 					create_yourmod_crisis_medium_ships = yes
 					create_yourmod_crisis_medium_ships = yes
-					create_yourmod_crisis_medium_ships = yes
-					create_yourmod_crisis_large_ships = yes
 					create_yourmod_crisis_large_ships = yes
 					set_location = {
 						target = event_target:yourmod_crisis_ground_zero_system.star
@@ -1648,14 +1645,14 @@ country_event = {#暗号解読状況S3
 	#科学者たちは、この暗号に対して希望を失っている。あまりの困難さから帝国中のコンピューターを並列稼働させて総当たりするべきだと放言する者さえいる。彼らのやる気を上げなければ能率が落ちてしまうだろう。
 
 	option = {
-		allow = { has_resouce = { energy > 1999 } }
+		allow = { has_resouce = { type = energy amount > 1999 } }
 		name = yourmod_crisis_01.1303.a #臨時給与だ。
 		add_recouce = { energy = -2000 }
 		event_target:yourmod_decryption_situation = { add_situation_progress = 5 }
 	}
 
 	option = {
-		allow = { has_resouce = { energy > 4999 } }
+		allow = { has_resouce = { type = energy amount > 4999 } }
 		name = yourmod_crisis_01.1303.b #一理あるかもしれない。
 		add_recouce = { energy = -5000 }
 		random_list = {
@@ -1906,7 +1903,7 @@ country_event = {#大勝利
 		name = yourmod_crisis_01.2000.a #我々の勝ちだ。
 		end_event_chain = yourmod_crisis_chain_1
 		end_event_chain = yourmod_crisis_chain_2
-		add_resources = { unity = 50000 }
+		add_resource = { unity = 50000 }
 	}
 }
 
