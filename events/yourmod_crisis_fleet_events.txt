@@ -73,6 +73,7 @@ country_event = {
 	immediate = { #動くもので上書きしました by爆雷
 		every_galaxy_planet = {
 			limit = {
+				exists = owner
 				owner = {
 					OR = {
 						has_country_flag = yourmod_infected_country
