@@ -75,6 +75,10 @@ country_event = {
 		#それ以外の国家
 		random_list = {
 			10 = { #ランダムバフデバフイベント
+				modifier = {
+					factor = 0.5
+					has_global_flag = yourmod_crisis_phase_2
+				}
 				random_list = {
 					6 = {
 						#科学者が狂気特性を獲得
