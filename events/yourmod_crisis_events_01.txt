@@ -923,6 +923,7 @@ country_event = {#起源探しイベント:1のスペシャルプロジェクト
 
 	trigger = {
 		not = { has_country_flag = yourmod_crisis_story_1 }
+		add_resource = { minor_artifacts = 5 }
 		has_country_flag = yourmod_allow_origin_research
 		any_owned_planet = {
 			is_planet_class = pc_nuked
@@ -982,6 +983,7 @@ country_event = {#起源探しイベント:2のスペシャルプロジェクト
 
 	option = {
 		name = yourmod_crisis_01.1100.a #考古学の時間だ。
+		add_resource = { minor_artifacts = 5 }
 		random_owned_planet = {
 			limit = {
 				is_planet_class = pc_gas_giant
@@ -1025,6 +1027,7 @@ country_event = {#起源探しイベント:3のスペシャルプロジェクト
 
 	option = {
 		name = yourmod_crisis_01.1100.a #考古学の時間だ。
+		add_resource = { minor_artifacts = 5 }
 		random_owned_planet = {
 			limit = {
 				or = {
@@ -1071,6 +1074,7 @@ country_event = {#起源探しイベント:4のスペシャルプロジェクト
 
 	option = {
 		name = yourmod_crisis_01.1100.a #考古学の時間だ。
+		add_resource = { minor_artifacts = 5 }
 		random_owned_planet = {
 			limit = {
 				or = {
@@ -1114,6 +1118,7 @@ country_event = {#起源探しイベント:5のスペシャルプロジェクト
 
 	option = {
 		name = yourmod_crisis_01.1100.a #考古学の時間だ。
+		add_resource = { minor_artifacts = 5 }
 		random_owned_planet = {
 			limit = {
 				has_resource = { type = sr_zro amount > 0 }
@@ -1227,6 +1232,7 @@ country_event = {#起源探しイベント:核戦争で滅んだ惑星
 	}
 	option = {
 		name = yourmod_crisis_01.1201.a #やはり我々が最初ではなかったというわけか。
+		add_resource = { minor_artifacts = 5 }
 	}
 }
 
@@ -1249,6 +1255,7 @@ country_event = {#起源探しイベント:先駆者のクリスタル
 	}
 	option = {
 		name = yourmod_crisis_01.1202.a #抜本的な解決にはならないな。
+		add_resource = { minor_artifacts = 5 }
 	}
 }
 
@@ -1271,6 +1278,7 @@ country_event = {#起源探しイベント:バッドアイデア
 	}
 	option = {
 		name = yourmod_crisis_01.1203.a #バッドアイデア。
+		add_resource = { minor_artifacts = 5 }
 	}
 }
 
@@ -1293,6 +1301,7 @@ country_event = {#起源探しイベント:大絶滅
 	}
 	option = {
 		name = yourmod_crisis_01.1204.a #もしかすると$yourmod_crisis$が原因なのか？
+		add_resource = { minor_artifacts = 5 }
 	}
 }
 
@@ -1590,7 +1599,8 @@ country_event = {#遺物アクションガバ
 	#
 
 	option = {
-		name = yourmod_crisis_01.1299.a #なんという時間の無駄だ！
+		name = yourmod_crisis_01.1299.a #なんという時間の無駄だ
+		add_resource = { minor_artifacts = 2 }
 	}
 }
 
