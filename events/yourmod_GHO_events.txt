@@ -1,3 +1,4 @@
+#ぷれ
 namespace = yourmod_GHO_event
 
 country_event = {

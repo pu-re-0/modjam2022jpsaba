@@ -1,3 +1,4 @@
+#ぷれ
 namespace = yourmod_vaccine_dev_event
 
 country_event = {
