@@ -87,7 +87,7 @@ yourmod_society_research_effect = {
 		}
 		mode = add
 	}
-	divide = 300
+	divide = 200
 	max = 10
 	min = 0.01
 }
