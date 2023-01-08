@@ -384,7 +384,7 @@ cgb_crisis_vaccine_production_situation = {	#ワクワク配布
  			produces = { }
  		}
 		on_select = {
-			custom_tooltip = cgb_crisisvaccine_production_approach_mid_desc
+			custom_tooltip = cgb_crisis_vaccine_production_approach_mid_desc
 		}
 	}
 
