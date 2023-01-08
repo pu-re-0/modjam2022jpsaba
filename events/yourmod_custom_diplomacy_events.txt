@@ -6,6 +6,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
+		owner_species = { has_trait = trait_psionic } #サイオニック以外が危機と交信をできるような状況が思いつかない by爆雷
 		has_yourmod_custom_diplomacy_event = no
 		from = {
 			is_country_type = yourmod_virus
