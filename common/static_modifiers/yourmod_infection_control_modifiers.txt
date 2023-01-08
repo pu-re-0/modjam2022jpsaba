@@ -176,3 +176,12 @@ yourmod_modifier_event_305 = {
 	planet_amenities_add = -5
 
 }
+
+yourmod_modifier_event_304 = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_slave_riots.dds"
+	icon_frame = 1
+}
+
+yourmod_modifier_event_305 = {
+
+}

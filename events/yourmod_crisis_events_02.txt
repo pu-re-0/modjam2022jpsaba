@@ -64,7 +64,7 @@ country_event = {
 	}
 
 	mean_time_to_happen = {
-		days = 90
+		days = 120
 	}
 
 	immediate = {
@@ -74,9 +74,9 @@ country_event = {
 		
 		#それ以外の国家
 		random_list = {
-			10 = { #ランダムバフデバフイベント
+			7 = { #ランダムバフデバフイベント
 				modifier = {
-					factor = 0.5
+					factor = 0.2
 					has_global_flag = yourmod_crisis_phase_2
 				}
 				random_list = {
@@ -295,7 +295,7 @@ country_event = {
 					factor = 0.5
 					has_global_flag = yourmod_crisis_phase_2
 				}
-				random_planet_within_border = {
+				random_controlled_planet = {
 					limit = {
 						NOT = { has_planet_flag  = yourmod_infected_planet }
 					}
@@ -1194,8 +1194,8 @@ planet_event = {
 	option = {
 		#捜査してみよう
 		name = yourmod_crisis_02.305.a
-		add_modifer = {
-			id = yourmod_modifier_event_305
+		add_modifier = {
+			modifier = yourmod_modifier_event_305
 		}
 		hidden_effect = {
 			planet_event = {
