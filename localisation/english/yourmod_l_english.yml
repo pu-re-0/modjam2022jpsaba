@@ -241,6 +241,7 @@
  
  site_yourmod_final_arc_site:"Ruins containing information on $yourmod_crisis$."
  site_yourmod_final_arc_site_desc:"According to Curators, the creators here have saved a way to neutralize $yourmod_crisis$."
+ site_yourmod_final_arc_site_intro:"According to Curators, the creators here have saved a way to neutralize $yourmod_crisis$."
 
  YOURMOD_CRISIS_RESEARCH_PROJECT_1:"Tomb world Survey"
  YOURMOD_CRISIS_RESEARCH_PROJECT_1_DESC:"There may be something here related to $yourmod_crisis$."
@@ -262,6 +263,7 @@
 
 
  yourmod_crisis_research_situation:"Explore the identity of $yourmod_crisis$."
+ yourmod_crisis_research_situation_type:"Explore the identity of $yourmod_crisis$."
  yourmod_crisis_research_situation_desc:"We should identify the pathogen of the still unidentified $yourmod_crisis$! If we identify the pathogen with all our resources and means, it will be much easier to deal with."
 
  yourmod_crisis_research_approach_low:"low budget"
@@ -270,18 +272,19 @@
  yourmod_crisis_research_approach_mid:"Moderate budget"
  yourmod_crisis_research_approach_mid_desc:"We would put all our efforts into it if we could, but we don't have that kind of budget."
 
- yourmod_crisis_research_approach_mid:"High budget"
- yourmod_crisis_research_approach_mid_desc:"Do everything in our power to reveal this disease for what it is!"
+ yourmod_crisis_research_approach_high:"High budget"
+ yourmod_crisis_research_approach_high_desc:"Do everything in our power to reveal this disease for what it is!"
 
  yourmod_decryption_situation:"Deciphering the Cipher"
+ yourmod_decryption_situation_type:"Deciphering the Cipher"
  yourmod_decryption_situation:"The creators of $yourmod_crisis$ have taught us how to deal with what they have created. However, in a very highly encrypted state. We don't know which will be faster, the empire being destroyed by $yourmod_crisis$ or this encryption being deciphered, but we have to put all our efforts into it."
 
- yourmod_decryption_approach_low:"low budget"
- yourmod_decryption_approach_low_desc:"We have no money, but time will tell."
+ yourmod_decryption_research_approach_low:"low budget"
+ yourmod_decryption_research_approach_low_desc:"We have no money, but time will tell."
 
- yourmod_decryption_approach_mid:"Moderate budget"
- yourmod_decryption_approach_mid_desc:"We would put all our efforts into it if we could, but we don't have that kind of budget."
+ yourmod_decryption_research_approach_mid:"Moderate budget"
+ yourmod_decryption_research_approach_mid_desc:"We would put all our efforts into it if we could, but we don't have that kind of budget."
 
- yourmod_decryption_approach_mid:"High budget"
- yourmod_decryption_approach_mid_desc:"Decipher this code at all costs!"
+ yourmod_decryption_research_approach_high:"High budget"
+ yourmod_decryption_research_approach_high_desc:"Decipher this code at all costs!"
 
