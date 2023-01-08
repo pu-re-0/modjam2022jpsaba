@@ -126,8 +126,10 @@ yourmod_virus = {
 
 	ai = {
 		enabled = yes
+		declare_war = no
 		colonizer = yes
 		construction = yes
+		modification = no
 		modules = {
 			berserk_military_minister_module #これがないと艦隊を動かさないので追加 by爆雷
 		}
