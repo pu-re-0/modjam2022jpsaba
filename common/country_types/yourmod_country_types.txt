@@ -129,7 +129,7 @@ yourmod_virus = {
 		colonizer = yes
 		construction = yes
 		modules = {
-			military_minister_module #これがないと艦隊を動かさないので追加 by爆雷
+			berserk_military_minister_module #これがないと艦隊を動かさないので追加 by爆雷
 		}
 	}
 	faction = {
