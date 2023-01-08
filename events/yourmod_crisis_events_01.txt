@@ -1350,20 +1350,31 @@ country_event = {#起源探しイベント:学術会
 
 	trigger = {
 		has_country_flag = yourmod_crisis_story_6
+		not = { has_country_flag = yourmod_crisis_story_7 }
 		exists = event_target:curator_enclave_country
-		event_target:curator_enclave_country = {
-			has_communications = ROOT
-		}
+		#event_target:curator_enclave_country = {
+		#	has_communications = ROOT
+		#}
 	}
 
 	#意外な手助け
 	#帝国は$yourmod_crisis$に関係した史料を集め、解析を重ねている。しかし、重要な物が欠けている。それは、$yourmod_crisis$の$R製造者$!に関する情報である。名前も分からない古代文明も、レングルスタップも、シャダイハーも、$yourmod_crisis$に直面したすべての文明がこれは生物兵器であるという結論を出している。だが、誰も製造者が何者かという疑問については答えが出せなかったのだ。考古学者たちが頭をフル回転して考えているという中で、突如として学術会から交信が届いた。なんでも、$yourmod_crisis$について話があるという。
 
 	mean_time_to_happen = {
-		years = 2
+		days = 60
 	}
 
 	immediate = {
+		if = {
+			limit = {
+				not = {
+					event_target:curator_enclave_country = {
+						has_communications = ROOT
+					}
+				]
+			}
+			event_target:curator_enclave_country
+		}
 		set_country_flag = yourmod_crisis_story_7
 	}
 
