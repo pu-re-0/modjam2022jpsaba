@@ -93,6 +93,6 @@ yourmod_society_research_effect = {
 }
 
 yourmod_size_effect = {
-	base = 100
+	base = 1
 	divide = trigger:empire_size
 }

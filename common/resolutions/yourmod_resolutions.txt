@@ -223,6 +223,9 @@ yourmod_resolution_GHO = {
 				modifier = resolution_passed_diplomatic_weight
 				days = 2200
 			}
+			country_event = {
+				id = yourmod_GHO_event.1
+			}
 		}
 
 		set_global_flag = yourmod_GHO_institution
@@ -235,9 +238,6 @@ yourmod_resolution_GHO = {
 			add_modifier = {
 				modifier = resolution_failed_diplomatic_weight
 				days = 2200
-			}
-			country_event = {
-				id = yourmod_GHO_event.1
 			}
 		}
 	}
