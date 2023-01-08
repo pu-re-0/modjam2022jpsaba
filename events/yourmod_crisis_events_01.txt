@@ -458,7 +458,7 @@ country_event = { # investigate trigger
 		}
 		modifier = {
 			factor = 2.5
-			has_ethic = ethic_fanaticspiritualist
+			has_ethic = ethic_fanatic_spiritualist
 		}
 		modifier = {
 			factor = 0.50
