@@ -1,0 +1,229 @@
+#ぷれ
+namespace = cgb_vaccine_dev_event
+
+country_event = {
+	id = cgb_vaccine_dev_event.0 #ワクチン研究開始
+	title = cgb_vaccine_dev_event.0.name	#
+	desc = cgb_vaccine_dev_event.0.desc 
+	picture = GFX_evt_society_research #a name of a picture to display
+	location = from #A scope to the object that is relevant to the event that player can move to. For example, the planet where event is happening
+	show_sound = event_ship_bridge
+	diplomatic = no
+	is_triggered_only = yes #The game will not consider this event for starting on its own. Event will need to be triggered by another event, or by some other effect. Most events will use this.
+	trigger = {
+		
+	}
+	immediate = {
+		
+	}
+	option = {
+		name = cgb_vaccine_dev_event.0.a
+
+		start_situation = {
+			type = cgb_crisis_vaccine_dev_situation
+			target = this
+		}
+	}
+}
+
+country_event = {
+	id = cgb_vaccine_dev_event.1 #ワクチンの共有（マルチ用）
+	title = cgb_vaccine_dev_event.1.name	#
+	desc = cgb_vaccine_dev_event.1.desc 
+	picture = GFX_evt_signing #a name of a picture to display
+	location = from #A scope to the object that is relevant to the event that player can move to. For example, the planet where event is happening
+	show_sound = event_ship_bridge
+	diplomatic = no
+	is_triggered_only = yes #The game will not consider this event for starting on its own. Event will need to be triggered by another event, or by some other effect. Most events will use this.
+	trigger = {
+		
+	}
+	immediate = {
+		
+	}
+	option = {
+		name = cgb_vaccine_dev_event.1.a
+	}
+}
+
+country_event = {
+	id = cgb_vaccine_dev_event.10 #ワクチン研究第一段階
+	title = cgb_vaccine_dev_event.10.name	#
+	desc = cgb_vaccine_dev_event.10.desc 
+	picture = GFX_evt_society_research #a name of a picture to display
+	location = from #A scope to the object that is relevant to the event that player can move to. For example, the planet where event is happening
+	show_sound = event_ship_bridge
+	diplomatic = no
+	is_triggered_only = yes #The game will not consider this event for starting on its own. Event will need to be triggered by another event, or by some other effect. Most events will use this.
+	trigger = {
+		
+	}
+	immediate = {
+		
+	}
+	option = {
+		name = cgb_vaccine_dev_event.10.a
+	}
+}
+
+country_event = {
+	id = cgb_vaccine_dev_event.11 #ワクチン研究第二段階
+	title = cgb_vaccine_dev_event.11.name	#
+	desc = cgb_vaccine_dev_event.11.desc 
+	picture = GFX_evt_genetic_modification #a name of a picture to display
+	location = from #A scope to the object that is relevant to the event that player can move to. For example, the planet where event is happening
+	show_sound = event_ship_bridge
+	diplomatic = no
+	is_triggered_only = yes #The game will not consider this event for starting on its own. Event will need to be triggered by another event, or by some other effect. Most events will use this.
+	trigger = {
+		
+	}
+	immediate = {
+		
+	}
+	option = {
+		name = cgb_vaccine_dev_event.11.a
+	}
+}
+
+country_event = {
+	id = cgb_vaccine_dev_event.12 #ワクチン研究第三段階
+	title = cgb_vaccine_dev_event.12.name	#
+	desc = cgb_vaccine_dev_event.12.desc 
+	picture = GFX_evt_bribery #a name of a picture to display
+	location = from #A scope to the object that is relevant to the event that player can move to. For example, the planet where event is happening
+	show_sound = event_ship_bridge
+	diplomatic = no
+	is_triggered_only = yes #The game will not consider this event for starting on its own. Event will need to be triggered by another event, or by some other effect. Most events will use this.
+	trigger = {
+		
+	}
+	immediate = {
+		
+	}
+	option = {
+		name = cgb_vaccine_dev_event.12.a
+	}
+}
+
+country_event = {
+	id = cgb_vaccine_dev_event.13 #ワクチン研究完了
+	title = cgb_vaccine_dev_event.13.name	#
+	desc = cgb_vaccine_dev_event.13.desc 
+	picture = GFX_evt_grand_speech #a name of a picture to display
+	location = from #A scope to the object that is relevant to the event that player can move to. For example, the planet where event is happening
+	show_sound = event_ship_bridge
+	diplomatic = no
+	is_triggered_only = yes #The game will not consider this event for starting on its own. Event will need to be triggered by another event, or by some other effect. Most events will use this.
+	trigger = {
+		
+	}
+	immediate = {
+		start_situation = {
+			type = cgb_crisis_vaccine_production_situation
+			target = this
+		}
+	}
+	option = {
+		name = cgb_vaccine_dev_event.13.a
+	}
+}
+
+country_event = {
+	id = cgb_vaccine_dev_event.20 #ワクチン製造完了
+	title = cgb_vaccine_dev_event.20.name	#
+	desc = cgb_vaccine_dev_event.20.desc 
+	picture = GFX_evt_board_meeting #a name of a picture to display
+	location = from #A scope to the object that is relevant to the event that player can move to. For example, the planet where event is happening
+	show_sound = event_ship_bridge
+	diplomatic = no
+	is_triggered_only = yes #The game will not consider this event for starting on its own. Event will need to be triggered by another event, or by some other effect. Most events will use this.
+	trigger = {
+		
+	}
+	immediate = {
+
+	}
+	option = {
+		name = cgb_vaccine_dev_event.20.a
+	}
+}
+
+situation_event = {
+	id = cgb_vaccine_dev_event.21 #ワクチン製造妨害
+	title = cgb_vaccine_dev_event.21.name	#
+	desc = cgb_vaccine_dev_event.21.desc 
+	picture = GFX_evt_archaeologists_escaping #a name of a picture to display
+	location = from #A scope to the object that is relevant to the event that player can move to. For example, the planet where event is happening
+	show_sound = event_ship_bridge
+	situation = this
+	diplomatic = no
+	is_triggered_only = yes #The game will not consider this event for starting on its own. Event will need to be triggered by another event, or by some other effect. Most events will use this.
+	trigger = {
+		owner = {
+			has_country_flag = cgb_crisis_vaccine_production_now
+		}
+	}
+	immediate = {
+		add_situation_progress = -25
+	}
+	option = {
+		name = cgb_vaccine_dev_event.21.a
+	}
+}
+
+situation_event = {
+	id = cgb_vaccine_dev_event.22 #ワクチン緊急配布
+	title = cgb_vaccine_dev_event.22.name	#
+	desc = cgb_vaccine_dev_event.22.desc 
+	picture = GFX_evt_emergency_workers #a name of a picture to display
+	location = from #A scope to the object that is relevant to the event that player can move to. For example, the planet where event is happening
+	show_sound = event_ship_bridge
+	situation = this
+	diplomatic = no
+	is_triggered_only = yes #The game will not consider this event for starting on its own. Event will need to be triggered by another event, or by some other effect. Most events will use this.
+	trigger = {
+		owner = {
+			has_country_flag = cgb_crisis_vaccine_production_now
+		}
+	}
+	immediate = {
+
+	}
+	option = {
+		name = cgb_vaccine_dev_event.22.a
+		target = {
+			set_planet_flag = cgb_crisis_vaccine_emergency
+		}
+		add_situation_progress = -15
+	}
+	option = {
+		name = cgb_vaccine_dev_event.22.b
+		target = {
+			owner = {
+				add_resource = {
+					unity = -200
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = cgb_vaccine_dev_event.30 #ワクチン配布完了
+	title = cgb_vaccine_dev_event.30.name	#
+	desc = cgb_vaccine_dev_event.30.desc 
+	picture = GFX_evt_civil_action #a name of a picture to display
+	location = from #A scope to the object that is relevant to the event that player can move to. For example, the planet where event is happening
+	show_sound = event_ship_bridge
+	diplomatic = no
+	is_triggered_only = yes #The game will not consider this event for starting on its own. Event will need to be triggered by another event, or by some other effect. Most events will use this.
+	trigger = {
+
+	}
+	immediate = {
+	}
+	option = {
+		name = cgb_vaccine_dev_event.30.a
+	}
+}

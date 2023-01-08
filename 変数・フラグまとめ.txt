@@ -1,67 +1,67 @@
 汎用
 	global_flag
-		yourmod_in_progress 			#クライシス発生中
-		yourmod_virus_first_infection 		#最初の感染が発生した
-		yourmod_crisis_ground_zero_entered 	#聖地がスポーンした(≒感染症フェイズの終了)
-		yourmod_crisis_phase_2			#艦隊戦フェイズの開始
+		cgb_in_progress 			#クライシス発生中
+		cgb_virus_first_infection 		#最初の感染が発生した
+		cgb_crisis_ground_zero_entered 	#聖地がスポーンした(≒感染症フェイズの終了)
+		cgb_crisis_phase_2			#艦隊戦フェイズの開始
 		
 	country_flag
-		yourmod_virus_infected 			#国家がウイルスに感染しているフラグ
+		cgb_virus_infected 			#国家がウイルスに感染しているフラグ
 		
 	global_event_target
-		yourmod_crisis_country			#危機の国家
-		yourmod_virus_first_victim 		#最初の感染が発生した国家
-		yourmod_virus_first_onset_planet	#最初の感染が発生した惑星
+		cgb_crisis_country			#危機の国家
+		cgb_virus_first_victim 		#最初の感染が発生した国家
+		cgb_virus_first_onset_planet	#最初の感染が発生した惑星
 		
 危機の起源関連
 	country_flag
-		yourmod_allow_origin_research		#遺物アクションによる調査とランダム調査イベントの発生を許可するフラグ
-		yourmod_has_more_impportant_point	#ランダム調査イベントが出てスペシャルプロジェクトが起きてるんだから遺物アクションなんか使ってる場合じゃないだろフラグ
-		yourmod_crisis_story_1			#ストーリーイベントが発生したかどうかを判定するフラグ
-		yourmod_crisis_story_2			#ストーリーイベントが発生したかどうかを判定するフラグ
-		yourmod_crisis_story_3			#ストーリーイベントが発生したかどうかを判定するフラグ
-		yourmod_crisis_story_4			#ストーリーイベントが発生したかどうかを判定するフラグ
-		yourmod_crisis_story_5			#ストーリーイベントが発生したかどうかを判定するフラグ
-		yourmod_crisis_story_6			#ストーリーイベントが発生したかどうかを判定するフラグ
+		cgb_allow_origin_research		#遺物アクションによる調査とランダム調査イベントの発生を許可するフラグ
+		cgb_has_more_impportant_point	#ランダム調査イベントが出てスペシャルプロジェクトが起きてるんだから遺物アクションなんか使ってる場合じゃないだろフラグ
+		cgb_crisis_story_1			#ストーリーイベントが発生したかどうかを判定するフラグ
+		cgb_crisis_story_2			#ストーリーイベントが発生したかどうかを判定するフラグ
+		cgb_crisis_story_3			#ストーリーイベントが発生したかどうかを判定するフラグ
+		cgb_crisis_story_4			#ストーリーイベントが発生したかどうかを判定するフラグ
+		cgb_crisis_story_5			#ストーリーイベントが発生したかどうかを判定するフラグ
+		cgb_crisis_story_6			#ストーリーイベントが発生したかどうかを判定するフラグ
 		
 	star_flag
-		yourmod_crisis_ground_zero 		#聖地の星系についているフラグ
+		cgb_crisis_ground_zero 		#聖地の星系についているフラグ
 		
 	planet_flag
-		yourmod_crisis_vanish_planet 		#演出で消える惑星
-		yourmod_crisis_ground_zero_planet	#聖地
+		cgb_crisis_vanish_planet 		#演出で消える惑星
+		cgb_crisis_ground_zero_planet	#聖地
 	
 	global_event_target
-		yourmod_crisis_ground_zero_system	#聖地の星系スコープ
+		cgb_crisis_ground_zero_system	#聖地の星系スコープ
 
 GHO関連
 	global_flag
 		galactic_focus_crisis_virus 		#銀河コミュニティでvirusに対する共同戦線の布告が通っている
 		galactic_community_crisis_fighting 	#バニラの汎用フラグ
-		yourmod_GHO_institution 		#GHOが設立されている
-		yourmod_GHO_fund_institution 		#GHOの銀河基金が設立されている
+		cgb_GHO_institution 		#GHOが設立されている
+		cgb_GHO_fund_institution 		#GHOの銀河基金が設立されている
 
 pre-FTL関係
 	country_flag
 		ancient_crisis_creater_pre_FTL_country #ウィルス作った奴らの生き残りの文明
 
 	global_flag
-		yourmod_can_contact_ancient_crisis_creater_pre_FTL_country #上記国家と通信可能か
+		cgb_can_contact_ancient_crisis_creater_pre_FTL_country #上記国家と通信可能か
 
 感染対処イベント関連
 	planet_flag
-		yourmod_infected_planet			#感染済み惑星　惑星の感染対処シチュエーションが発生している状態
+		cgb_infected_planet			#感染済み惑星　惑星の感染対処シチュエーションが発生している状態
 
 		planet_prevalence_level_0~5		#惑星の蔓延レベルのmodifier プレイ時に視覚的に把握できるようにするため　取りあえず効果は無し
 
-		yourmod_happen_event_301		#イベント301が発生している状態 同じランダムイベントが複数発生しないためのフラグ
+		cgb_happen_event_301		#イベント301が発生している状態 同じランダムイベントが複数発生しないためのフラグ
 		
 	country_flag
-		yourmod_infected_country		#帝国規模の対処シチュエーションが発生している状態
+		cgb_infected_country		#帝国規模の対処シチュエーションが発生している状態
 
-		yourmod_health_lost_country		#帝国規模の対処シチュエーションに失敗したフラグ
+		cgb_health_lost_country		#帝国規模の対処シチュエーションに失敗したフラグ
 
-		yourmod_crisis_vaccine_situation_complete #ワクチン開発完遂
+		cgb_crisis_vaccine_situation_complete #ワクチン開発完遂
 
 	planet_variable
 		planet_prevalence_level			#惑星の蔓延レベル　感染対処シチュエーションが発生していない惑星で使用

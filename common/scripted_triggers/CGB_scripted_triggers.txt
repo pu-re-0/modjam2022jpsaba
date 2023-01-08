@@ -1,0 +1,5 @@
+has_cgb_custom_diplomacy_event = {
+	has_active_event = {
+		cgb_custom_diplomacy_events.1
+	}
+}

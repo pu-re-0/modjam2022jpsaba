@@ -1,19 +1,19 @@
 ﻿l_english:
 
 #event
- yourmod_primitive.11.name:0 "Strange civilization"
- yourmod_primitive.11.desc:0 "The observation base reported a strange report. Apparently, a mysterious and quite advanced radio signal has been detected from a seemingly less technologically advanced civilization. The observation team would like to investigate further."
- yourmod_primitive.11.a:0 "More research"
- yourmod_primitive.11.b:0 "時間の無駄だ"
- yourmod_primitive.12.name:0 "something concealed"
- yourmod_primitive.12.desc:0 "An interesting fact has been uncovered. Apparently, the civilization on this planet had hidden advanced technology comparable to that of the FTL civilization! Now scientists are preparing a special project to make contact with them."
- yourmod_primitive.12.a:0 "Get in touch with them."
- yourmod_primitive.12.b:0 "Leave it gently. There must be some deeper meaning to this."
- yourmod_primitive.20.name:0 "emergency communication"
- yourmod_primitive.20.desc:0 "An emergency communication came in on an open line from an unknown civilization to the whole galaxy."
- yourmod_primitive.20.a:0 "Let's hear it."
+ cgb_primitive.11.name:0 "Strange civilization"
+ cgb_primitive.11.desc:0 "The observation base reported a strange report. Apparently, a mysterious and quite advanced radio signal has been detected from a seemingly less technologically advanced civilization. The observation team would like to investigate further."
+ cgb_primitive.11.a:0 "More research"
+ cgb_primitive.11.b:0 "時間の無駄だ"
+ cgb_primitive.12.name:0 "something concealed"
+ cgb_primitive.12.desc:0 "An interesting fact has been uncovered. Apparently, the civilization on this planet had hidden advanced technology comparable to that of the FTL civilization! Now scientists are preparing a special project to make contact with them."
+ cgb_primitive.12.a:0 "Get in touch with them."
+ cgb_primitive.12.b:0 "Leave it gently. There must be some deeper meaning to this."
+ cgb_primitive.20.name:0 "emergency communication"
+ cgb_primitive.20.desc:0 "An emergency communication came in on an open line from an unknown civilization to the whole galaxy."
+ cgb_primitive.20.a:0 "Let's hear it."
 
 #special_project
- YOURMOD_ANCIENT_CRISIS_CREATER_PRE_FTL_COUNTRY_PLANET_RESEARCH:0 "Establish communication with strange primitive civilization"
+ cgb_ANCIENT_CRISIS_CREATER_PRE_FTL_COUNTRY_PLANET_RESEARCH:0 "Establish communication with strange primitive civilization"
 
 #country

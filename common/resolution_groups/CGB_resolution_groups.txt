@@ -1,0 +1,6 @@
+# color_index starts at 1 and refers to which sprite frame to use. More frames can be added in galactic_community_view.gfx.
+
+cgb_GHO = {
+	color_index = 2
+	text_color_code = "G"
+}

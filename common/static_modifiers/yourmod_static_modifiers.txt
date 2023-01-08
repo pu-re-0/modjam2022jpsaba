@@ -1,4 +1,0 @@
-
-yourmod_GHO_fund = {
-	country_energy_produces_mult = -0.05
-}

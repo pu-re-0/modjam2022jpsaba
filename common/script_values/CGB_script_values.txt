@@ -1,0 +1,98 @@
+cgb_society_research_5 = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = resource_income_compare
+		trigger_scope = owner
+		parameters = {
+			resource = society_research
+		}
+		mode = add
+	}
+	mult = 0.05
+}
+
+cgb_society_research_10 = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = resource_income_compare
+		trigger_scope = owner
+		parameters = {
+			resource = society_research
+		}
+		mode = add
+	}
+	mult = 0.1
+}
+
+cgb_society_research_15 = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = resource_income_compare
+		trigger_scope = owner
+		parameters = {
+			resource = society_research
+		}
+		mode = add
+	}
+	mult = 0.15
+}
+
+
+cgb_society_research_20 = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = resource_income_compare
+		trigger_scope = owner
+		parameters = {
+			resource = society_research
+		}
+		mode = add
+	}
+	mult = 0.2
+}
+
+cgb_society_research_30 = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = resource_income_compare
+		trigger_scope = owner
+		parameters = {
+			resource = society_research
+		}
+		mode = add
+	}
+	mult = 0.3
+}
+
+cgb_society_research_45 = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = resource_income_compare
+		trigger_scope = owner
+		parameters = {
+			resource = society_research
+		}
+		mode = add
+	}
+	mult = 0.45
+}
+
+cgb_society_research_effect = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = resource_income_compare
+		trigger_scope = owner
+		parameters = {
+			resource = society_research
+		}
+		mode = add
+	}
+	divide = 200
+	max = 10
+	min = 0.01
+}
+
+cgb_size_effect = {
+	base = 1
+	divide = trigger:empire_size
+}

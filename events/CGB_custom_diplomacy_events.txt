@@ -1,0 +1,232 @@
+namespace = cgb_custom_diplomacy_events
+
+country_event = {
+	id = cgb_custom_diplomacy_events.0
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		owner_species = { has_trait = trait_psionic } #サイオニック以外が危機と交信をできるような状況が思いつかない by爆雷
+		has_cgb_custom_diplomacy_event = no
+		from = {
+			is_country_type = cgb_virus
+		}
+	}
+
+	immediate = {
+		country_event = { id = cgb_custom_diplomacy_events.1 }
+	}
+}
+
+country_event = {
+	id = cgb_custom_diplomacy_events.1
+	title = cgb_custom_diplomacy_events.1.name
+	desc = cgb_custom_diplomacy_events.1a.desc
+
+	is_triggered_only = yes
+	diplomatic = yes
+
+	trigger = {
+		is_homicidal = no
+	}
+
+	#custom_gui = "enclave_curator_window"
+	#custom_gui_option = "enclave_curator_option"
+
+	picture_event_data = {
+		portrait = pre_tox4
+		room = enclave_curator_room
+	}
+
+	#location = event_target:curator_enclave_system
+
+	option = {
+		name = cgb_custom_diplomacy_events.1.a
+	}
+}
+
+country_event = { #原始文明緊急通信
+	id = cgb_custom_diplomacy_events.90
+	title = cgb_custom_diplomacy_events.90.name
+	desc = cgb_custom_diplomacy_events.90.desc #全銀河の住民へ。我々は＿だ。今銀河で起こってることについて我々には説明責任がある。聞いてくれ。
+
+	is_triggered_only = yes
+	diplomatic = yes
+
+	trigger = {
+		has_global_flag = cgb_in_progress
+		is_homicidal = no
+	}
+
+	picture_event_data = {
+		portrait = event_target:cgb_cancient_crisis_creater_pre_FTL_country
+		room = enclave_curator_room
+	}
+
+	#location = event_target:curator_enclave_system
+
+	option = {
+		name = cgb_custom_diplomacy_events.90.a #これは驚いた
+		response_text = cgb_custom_diplomacy_events.90.a.reply #隠していてすまない。我々に何かできる力は最早ないが何か役に立つことは話せるだろう
+		country_event = {
+			id = cgb_custom_diplomacy_events.102
+		}
+	}
+}
+
+country_event = {
+	id = cgb_custom_diplomacy_events.100
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_cgb_custom_diplomacy_event = no
+		from = {
+			is_country_type = cgb_primitive
+			has_country_flag = ancient_crisis_creater_pre_FTL_country
+		}
+		has_global_flag = cgb_can_contact_ancient_crisis_creater_pre_FTL_country
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				has_global_flag = cgb_crisis_phase_2
+			}
+			country_event = { id = cgb_custom_diplomacy_events.102 }
+		}
+		else = {
+			country_event = { id = cgb_custom_diplomacy_events.101 }
+		}
+	}
+}
+
+country_event = { #原始文明ホーム
+	id = cgb_custom_diplomacy_events.101
+	title = cgb_custom_diplomacy_events.101.name
+	desc = cgb_custom_diplomacy_events.101a.desc #何用だね。
+	desc = cgb_custom_diplomacy_events.101b.desc #放っておいて貰えないか？
+	desc = cgb_custom_diplomacy_events.101c.desc #騒がしいな
+	desc = cgb_custom_diplomacy_events.101d.desc #忘れ去られたほうが良い物もあると思わないかね？
+
+	is_triggered_only = yes
+	diplomatic = yes
+
+	trigger = {
+		has_global_flag = cgb_in_progress
+		is_homicidal = no
+	}
+
+	picture_event_data = {
+		portrait = event_target:cgb_cancient_crisis_creater_pre_FTL_country
+		room = enclave_curator_room
+	}
+
+	#location = event_target:curator_enclave_system
+
+	option = {
+		name = cgb_custom_diplomacy_events.101.a #なぜ高度な技術を隠している？
+		response_text = cgb_custom_diplomacy_events.101.a.reply #君たちに教える義理はない
+		is_dialog_only = yes
+	}
+
+	option = {
+		name = cgb_custom_diplomacy_events.101.b #あなた方の起源は？
+		response_text = cgb_custom_diplomacy_events.101.b.reply #何も語るべきことはない
+		is_dialog_only = yes
+	}
+
+	option = {
+		name = cgb_custom_diplomacy_events.101.c #それではまた
+		response_text = cgb_custom_diplomacy_events.101.c.reply #はあ
+	}
+}
+
+country_event = { #原始文明ホーム2
+	id = cgb_custom_diplomacy_events.102
+	title = cgb_custom_diplomacy_events.102.name
+	desc = cgb_custom_diplomacy_events.102a.desc #どうも
+	desc = cgb_custom_diplomacy_events.102b.desc #聞きたい事があるのだろう？
+	desc = cgb_custom_diplomacy_events.102c.desc #よく気付いたな
+
+	is_triggered_only = yes
+	diplomatic = yes
+
+	trigger = {
+		has_global_flag = cgb_in_progress
+		is_homicidal = no
+	}
+
+	picture_event_data = {
+		portrait = event_target:cgb_cancient_crisis_creater_pre_FTL_country
+		room = enclave_curator_room
+	}
+
+	#location = event_target:curator_enclave_system
+
+	option = {
+		name = cgb_custom_diplomacy_events.102.a #なぜ高度な技術を隠している？
+		response_text = cgb_custom_diplomacy_events.102.a.reply #最早隠す必要はあるまい……略
+		is_dialog_only = yes
+	}
+
+	option = {
+		name = cgb_custom_diplomacy_events.102.b #あなた方の起源は？
+		response_text = cgb_custom_diplomacy_events.102.b.reply #今から3000万年前のこと……略
+		is_dialog_only = yes
+	}
+
+	option = {
+		name = cgb_custom_diplomacy_events.102.c	#あのウィルスについて知っているのか？！
+		trigger = {
+			has_global_flag = cgb_crisis_phase_2
+		}
+		country_event = {
+			id = cgb_custom_diplomacy_events.103
+		}
+	}
+
+	option = {
+		name = cgb_custom_diplomacy_events.103.d #それではまた
+		response_text = cgb_custom_diplomacy_events.103.d.reply #どうも
+	}
+}
+
+country_event = { #原始文明クライシスについて聞く
+	id = cgb_custom_diplomacy_events.103
+	title = cgb_custom_diplomacy_events.103.name
+	desc = cgb_custom_diplomacy_events.103.desc #ああ実はあれは我々の先祖の過ちそのものだ
+
+	is_triggered_only = yes
+	diplomatic = yes
+
+	trigger = {
+		has_global_flag = cgb_in_progress
+	}
+
+	picture_event_data = {
+		portrait = event_target:cgb_cancient_crisis_creater_pre_FTL_country
+		room = enclave_curator_room
+	}
+
+	#location = event_target:curator_enclave_system
+
+	option = {
+		name = cgb_custom_diplomacy_events.103.a #なぜそのようなことに？
+		response_text = cgb_custom_diplomacy_events.103.a.reply
+		is_dialog_only = yes
+	}
+
+	option = {
+		name = cgb_custom_diplomacy_events.103.b #対処法はあるのか？
+		response_text = cgb_custom_diplomacy_events.103.b.reply
+		is_dialog_only = yes
+	}
+
+	option = {
+		name = cgb_custom_diplomacy_events.103.c #情報、感謝する
+		country_event = {
+			id = cgb_custom_diplomacy_events.102
+		}
+	}
+}

@@ -1,0 +1,178 @@
+namespace = cgb_primitive
+
+event = {
+	id = cgb_primitive.0 #イベント用のprimitive countryを準備
+	hide_window = yes
+	trigger = {
+		always = yes
+	}
+	is_triggered_only = yes
+	immediate = {
+		if = {
+			limit = {
+				count_country = {
+					count > 0
+					limit = {
+						is_country_type = primitive
+					}
+				}
+			}
+
+			random_country = {
+				limit = {
+					is_country_type = primitive
+				}
+				set_country_flag = ancient_crisis_creater_pre_FTL_country
+				set_primitive_age_effect = {
+					primitive_age = renaissance_age 
+				}
+				save_global_event_target_as = cgb_cancient_crisis_creater_pre_FTL_country
+			}
+		}
+
+		else = {
+			random_system_planet = {
+				limit = {
+					OR = {
+						is_planet_class = pc_barren
+						is_planet_class = pc_barren_cold
+						is_planet_class = pc_toxic
+					}
+					planet_size >= 13
+					planet_size <= 25
+					NOR = {
+						has_anomaly = yes
+						has_modifier = terraforming_candidate
+						has_modifier = toxic_terraforming_candidate
+					}
+				}
+
+				random_list = {
+					1 = { change_pc = pc_tropical }
+					1 = { change_pc = pc_arid }
+					1 = { change_pc = pc_continental }
+					1 = { change_pc = pc_ocean }
+					1 = { change_pc = pc_tundra }
+					1 = { change_pc = pc_arctic }
+					1 = { change_pc = pc_alpine }
+					1 = { change_pc = pc_savannah }
+					1 = { change_pc = pc_desert }
+					1 = { change_pc = pc_nuked }
+					5 = { change_pc = pc_relic }
+				}
+				
+				generate_late_primitives_on_planet = yes
+
+				last_created_country = {
+					set_primitive_age_effect = {
+						primitive_age = renaissance_age 
+					}
+				}
+			}
+		}
+	}
+}
+
+planet_event = { #この文明がただの原始文明じゃないとわかるイベント
+	id = cgb_primitive.10
+	hide_window = yes
+
+	trigger = {
+		has_observation_outpost = yes
+		has_global_flag = cgb_in_progress
+		owner = {
+			has_country_flag = ancient_crisis_creater_pre_FTL_country
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 24
+	}
+
+	immediate = {
+		save_event_target_as = cgb_ancient_crisis_creater_pre_FTL_country_planet
+		observation_outpost_owner = {
+			country_event = { id = observation.2 }
+			set_country_flag = asteroid_sighted_prim_country
+		}
+	}
+}
+
+country_event = {
+	id = cgb_primitive.11
+	title = cgb_primitive.11.name
+	desc = cgb_primitive.11.desc
+	picture = GFX_evt_bankruptcy #a name of a picture to display
+	location = event_target:cgb_ancient_crisis_creater_pre_FTL_country_planet
+	show_sound = event_primitive_civilization 
+	is_triggered_only = yes
+	trigger = {
+		is_ai = no
+	}
+	immediate = {
+		
+	}
+	option = {
+		name = cgb_primitive.11.a	#詳しい調査を
+		enable_special_project = {
+			name = "cgb_ANCIENT_CRISIS_CREATER_PRE_FTL_COUNTRY_PLANET_RESEARCH"
+			location = event_target:cgb_ancient_crisis_creater_pre_FTL_country_planet
+		}
+	}
+	option = {
+		name = cgb_primitive.11.b 	#時間の無駄だ
+	}
+}
+
+country_event = {
+	id = cgb_primitive.12
+	title = cgb_primitive.12.name
+	desc = cgb_primitive.12.desc
+	picture = GFX_evt_medieval_alien_civilization #a name of a picture to display
+	location = event_target:cgb_ancient_crisis_creater_pre_FTL_country_planet
+	show_sound = event_primitive_civilization 
+	is_triggered_only = yes
+	trigger = {
+		is_ai = no
+	}
+	immediate = {
+		
+	}
+	option = {
+		name = cgb_primitive.12.a	#コンタクトをとれ
+		country_event = {
+			id = cgb_custom_diplomacy_events.100
+			days = 1
+		}
+	}
+	option = {
+		name = cgb_primitive.12.b 	#そっとしておこう。何か深い意味があるはずだ
+	}
+}
+
+country_event = {
+	id = cgb_primitive.20 #緊急通信
+	title = cgb_primitive.20.name
+	desc = cgb_primitive.20.desc
+	picture = GFX_evt_mysterious_signal 
+	location = event_target:cgb_ancient_crisis_creater_pre_FTL_country_planet
+	show_sound = event_primitive_civilization 
+	is_triggered_only = yes
+	trigger = {
+		is_ai = no
+	}
+	immediate = {
+		
+	}
+	option = {
+		name = cgb_primitive.20.a
+		set_global_flag = cgb_can_contact_ancient_crisis_creater_pre_FTL_country
+		event_target:cgb_cancient_crisis_creater_pre_FTL_country = {
+			set_country_type = cgb_primitive
+		}
+		this = { establish_communications_no_message = event_target:cgb_cancient_crisis_creater_pre_FTL_country }
+		country_event = {
+			id = cgb_custom_diplomacy_events.90 #聞いてみよう
+		}
+	}
+}

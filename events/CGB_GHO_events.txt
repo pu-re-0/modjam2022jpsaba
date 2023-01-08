@@ -1,0 +1,82 @@
+#ぷれ
+namespace = cgb_GHO_event
+
+country_event = {
+	id = cgb_GHO_event.0
+	title = cgb_GHO_event.0.name	#銀河的保健機関構想
+	desc = cgb_GHO_event.0.desc 
+	picture = GFX_evt_board_meeting #a name of a picture to display
+	location = from #A scope to the object that is relevant to the event that player can move to. For example, the planet where event is happening
+	show_sound = event_ship_bridge
+	diplomatic = no
+	is_triggered_only = yes #The game will not consider this event for starting on its own. Event will need to be triggered by another event, or by some other effect. Most events will use this.
+	trigger = {
+		NOT = {
+			has_country_flag = cgb_GHO_event_0_already
+		}
+	}
+	immediate = {
+		set_country_flag = cgb_GHO_event_0_already
+	}
+	option = {
+		name = cgb_GHO_event.0.a
+	}
+}
+
+country_event = {
+	id = cgb_GHO_event.1
+	title = cgb_GHO_event.1.name	#銀河的保健機関構想 - 設立
+	desc = cgb_GHO_event.1.desc 
+	picture = GFX_evt_galactic_senate #a name of a picture to display
+	location = from #A scope to the object that is relevant to the event that player can move to. For example, the planet where event is happening
+	show_sound = event_ship_bridge
+	diplomatic = no
+	is_triggered_only = yes #The game will not consider this event for starting on its own. Event will need to be triggered by another event, or by some other effect. Most events will use this.
+	trigger = {
+		
+	}
+	immediate = {
+		
+	}
+	option = {
+		name = cgb_GHO_event.1.a
+	}
+}
+
+country_event = {
+	id = cgb_GHO_event.2
+	title = cgb_GHO_event.2.name	#基金の設立
+	desc = cgb_GHO_event.2.desc 
+	picture = GFX_evt_hand_shake #a name of a picture to display
+	location = from #A scope to the object that is relevant to the event that player can move to. For example, the planet where event is happening
+	diplomatic = no
+	is_triggered_only = yes #The game will not consider this event for starting on its own. Event will need to be triggered by another event, or by some other effect. Most events will use this.
+	trigger = {
+		
+	}
+	immediate = {
+		
+	}
+	option = {
+		name = cgb_GHO_event.2.a
+	}
+}
+
+country_event = {
+	id = cgb_GHO_event.3
+	title = cgb_GHO_event.3.name	#ワクチンの共同開発可決
+	desc = cgb_GHO_event.3.desc 
+	picture = GFX_evt_hand_shake #a name of a picture to display
+	location = from #A scope to the object that is relevant to the event that player can move to. For example, the planet where event is happening
+	diplomatic = no
+	is_triggered_only = yes #The game will not consider this event for starting on its own. Event will need to be triggered by another event, or by some other effect. Most events will use this.
+	trigger = {
+		
+	}
+	immediate = {
+		
+	}
+	option = {
+		name = cgb_GHO_event.3.a
+	}
+}

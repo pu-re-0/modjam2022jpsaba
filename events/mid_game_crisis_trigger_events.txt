@@ -4,7 +4,7 @@
 #
 ######################################
 
-# DO NOT DELETE/RENAME ANYTHING IN THIS FILE EXCEPT WHERE IT SAYS "YOURMOD"
+# DO NOT DELETE/RENAME ANYTHING IN THIS FILE EXCEPT WHERE IT SAYS "cgb"
 # This allows your contribution to run as a standalone outside of the Mod Jam mod
 # do not add other events to this file, this file will be overwritten when all the crises
 # are run together
@@ -42,24 +42,24 @@ event = {							# Mid Game
 		random_country = {
 			limit = { is_country_type = global_event } 						# global_event country is always around
 			random_list = {
-				### yourmod Crisis
+				### cgb Crisis
 				10 = {
 					modifier = {
 						factor = 0
 						NOT = {
-							has_global_flag = yourmod_allowed
+							has_global_flag = cgb_allowed
 						}
 					}
 					modifier = {
 						factor = 0
-						has_global_flag = yourmod_in_progress
+						has_global_flag = cgb_in_progress
 					}
 					modifier = {
 						factor = 0
-						has_global_flag = yourmod_fired
+						has_global_flag = cgb_fired
 					}
-					log = "begin crisis yourmod" 							# feel free to comment this out for release
-					begin_crisis_yourmod = yes
+					log = "begin crisis cgb" 							# feel free to comment this out for release
+					begin_crisis_cgb = yes
 				}
 			}
 		}

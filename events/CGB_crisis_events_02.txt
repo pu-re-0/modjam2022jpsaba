@@ -1,0 +1,1382 @@
+namespace = cgb_crisis_02
+# ファイル製作:ヒアルロン大陸
+# 概要:感染対策イベント群
+#
+#
+#####################################
+# 簡易目次
+# 01 メインランダムイベント
+# 
+# 10~	感染シチュエーション関連のイベント
+# 10	惑星のシチュエーションが始まったとき
+# 11	惑星のシチュエーションがステージ2に入ったとき
+# 12	惑星のシチュエーションが消滅したとき
+# 13	帝国規模のシチュエーションが発生した時
+# 14	帝国規模のシチュエーションが完成(悪化しきった)時
+# 15	帝国規模のシチュエーションが失敗(進行度が0になったとき)
+# 
+# 100~	ランダムバフデバフイベント群
+# 
+# 200~	感染済み惑星イベント
+#
+# 250~	感染済み惑星イベント(機械知性用)
+# 
+# 300~	未感染惑星イベント(通常帝国用)
+# 
+# 350~	未感染惑星イベント(機械知性用)
+# 
+# 400~	帝国規模の感染対処イベント
+# 
+# 
+# 
+#####################################
+#
+# MTTH60日でランダムなイベントが発生
+# 未感染惑星ではランダムなイベントで蔓延度が増加　蔓延度は0~5で変動(0以下になった場合は強制的に0になる)
+# 蔓延度が5以上になってしまった惑星は感染済み惑星(cgb_infected_planet)となり、シチュエーションが発生する
+# 
+# 感染済み惑星ではランダムなイベントによりシチュエーションが進行したり後退したりする
+# ランダムなイベントは感染爆発したり、新たな集団感染が起こり、シチュエーションが急激に進行する
+# より強い対策アプローチにすると、高い維持費と高い減少度が得られるが、何もイベントがおきていない時に強い対策アプローチをすると、人々が暴動を起こす
+# 
+#
+#
+# #ここから何も作ってない
+# 
+# シチュエーションが進行しきってしまったり、二つ目のシチュエーションが発生しそうになると、国家規模のシチュエーションが発生する
+# このシチュエーションが発生すると、それまでのシチュエーションが消滅し、関連するイベントも発生しなくなるが、新しく国家規模の感染対処イベントが発生するようになる
+# このシチュエーションは進行すればするほど帝国にデバフを与える
+# もしこのシチュエーションに失敗(進行しきってしまう)と最大限のデバフを永続的に受けてしまう　その代わりに、新しくシチュエーションが発生することはなくなる
+# このシチュエーションに成功(進行度が0になる)すると、ある程度進行した惑星のシチュエーションが存在する状態に戻る
+# 
+# 
+#####################################
+
+
+
+
+country_event = {
+	id = cgb_crisis_02.1 #全体的にバランスを調整しました。（惑星の感染situationが全然出なかった）
+	hide_window = yes
+
+	trigger = {
+		has_country_flag = cgb_virus_infected
+	}
+
+	mean_time_to_happen = {
+		days = 120
+	}
+
+	immediate = {
+		#if = { #機械知性の場合
+		#	没
+		#}
+		
+		#それ以外の国家
+		random_list = {
+			7 = { #ランダムバフデバフイベント
+				modifier = {
+					factor = 0.2
+					has_global_flag = cgb_crisis_phase_2
+				}
+				random_list = {
+					6 = {
+						#科学者が狂気特性を獲得
+						modifier = {
+							factor = 0
+							any_owned_leader = {
+								has_trait = leader_trait_maniacal
+							}
+						}
+						random_owned_leader = {
+							limit = {
+								leader_class = scientist
+								NOT = { has_trait = leader_trait_maniacal }
+							}
+							leader_event = {
+								id = cgb_crisis_02.101
+							}
+						}
+					}
+					10 = {
+						#コンピュータに異常が発生
+						modifier = {
+							factor = 0
+							has_modifier = cgb_modifier_event_102
+						}
+						country_event = {
+							id = cgb_crisis_02.102
+						}
+					}
+					10 = {
+						#コンピュータに異常が発生
+						modifier = {
+							factor = 0
+							has_modifier = cgb_modifier_event_103
+						}
+						modifier = {
+							factor = 0
+							has_ethic = ethic_gestalt_consciousness
+						}
+						country_event = {
+							id = cgb_crisis_02.103
+						}
+					}
+					10 = {
+						#市民が暴動
+						modifier = {
+							factor = 0
+							any_owned_planet = {
+								has_modifier = cgb_modifier_event_104
+							}
+						}
+						random_owned_planet = {
+							planet_event = {
+								id = cgb_crisis_02.104
+							}
+						}
+					}
+					3 = {
+						#外出制限の結果ちょっと快適
+						modifier = {
+							factor = 0
+							any_owned_planet = {
+								has_modifier = cgb_modifier_event_105
+							}
+						}
+						modifier = {
+							factor = 5
+							owner.owner_species = {
+								has_trait = trait_solitary #孤立的特性持ち
+							}
+						}
+						random_owned_planet = {
+							planet_event = {
+								id = cgb_crisis_02.105
+							}
+						}
+						
+					}
+					10 = {
+						#彗星より
+						modifier = {
+							factor = 0
+							any_owned_planet = {
+								or = {
+									has_modifier = cgb_modifier_event_106
+									has_modifier = cgb_modifier_event_110
+								}
+							}
+						}
+						random_owned_planet = {
+							planet_event = {
+								id = cgb_crisis_02.106
+							}
+						}
+					}
+				}
+			}
+			10 = { #感染済み惑星のイベント
+				modifier = {
+					factor = 0
+					or = {
+						any_owned_planet = {
+							NOT = { has_planet_flag = cgb_infected_planet }
+						}
+						has_country_flag = cgb_infected_country
+						has_country_flag = cgb_health_lost_country
+					}
+				}
+				modifier = {
+					factor = 0.5
+					has_global_flag = cgb_crisis_phase_2
+				}
+				random_planet_within_border = {
+					random_list = {
+						10 = {
+							#日用品の不足
+							modifier = {
+								factor = 0
+								or = {
+									has_modifier = cgb_modifier_event_201
+									has_modifier = cgb_modifier_event_211
+									has_modifier = cgb_modifier_event_212
+								}
+							}
+							planet_event = {
+								id = cgb_crisis_02.201
+							}
+						}
+						10 = {
+							#中規模な集団感染
+							modifier = {
+								factor = 0.5
+								has_modifier = cgb_modifier_event_202
+							}
+							planet_event = {
+								id = cgb_crisis_02.202
+							}
+						}
+						10 = {
+							#大規模な集団感染
+							modifier = {
+								factor = 0.2
+								has_modifier = cgb_modifier_event_203
+							}
+							planet_event = {
+								id = cgb_crisis_02.203
+							}
+						}
+						5 = {
+							#感染者の減少
+							modifier = {
+								factor = 0
+								has_modifier = cgb_modifier_event_204
+							}
+							planet_event = {
+								id = cgb_crisis_02.204
+							}
+						}
+						10 = {
+							#ブラック企業摘発
+							modifier = {
+								factor = 0
+								or = {
+									owner = {
+										has_ethic = ethic_gestalt_consciousness
+									}
+								
+									has_modifier = cgb_modifier_event_205a
+									has_modifier = cgb_modifier_event_205a
+									has_modifier = cgb_modifier_event_213
+									has_modifier = cgb_modifier_event_214
+								}
+							}
+							planet_event = {
+								id = cgb_crisis_02.205
+							}
+						}
+						10 = {
+							#反感染対策派の暴動
+							modifier = {
+								factor = 0
+								or = {
+									owner = {
+										has_ethic = ethic_gestalt_consciousness
+									}
+
+									has_modifier = cgb_modifier_event_216
+									has_modifier = cgb_modifier_event_206
+									has_modifier = cgb_modifier_event_206_0
+								}
+							}
+							planet_event = {
+								id = cgb_crisis_02.206
+							}
+						}
+					}
+				}
+			}		
+			15 = { #未感染惑星のイベント
+				# ランダムなイベントにより感染具合のmodifierが付与される
+				# 感染具合がマックスを超えると、situationが発生し、感染済み惑星になる
+				modifier = {
+					factor = 1.5
+					any_owned_planet = {
+						NOT = { has_planet_flag  = cgb_infected_planet }
+					}
+				}
+				modifier = {
+					factor = 0
+					has_country_flag = cgb_infected_country
+					has_country_flag = cgb_health_lost_country
+				}
+				modifier = {
+					factor = 0.5
+					has_global_flag = cgb_crisis_phase_2
+				}
+				random_controlled_planet = {
+					limit = {
+						NOT = { has_planet_flag  = cgb_infected_planet }
+					}
+					save_event_target_as = cgb_happen_event_planet
+					random_list = {
+						10 = {
+							modifier = {
+								factor = 0
+								has_planet_flag = cgb_happen_event_301
+							}
+							planet_event = {
+								#感染者の脱走
+								id = cgb_crisis_02.301
+							}
+						}
+						10 = {
+							modifier = {
+								factor = 0.5
+								has_modifier = cgb_modifier_event_302
+							}
+							planet_event = {
+								#小規模な集団感染
+								id = cgb_crisis_02.302
+							}
+						}
+						10 = {
+							modifier = {
+								factor = 0.2
+								has_modifier = cgb_modifier_event_303
+							}
+							planet_event = {
+								#中規模な集団感染
+								id = cgb_crisis_02.303
+							}
+						}
+						5 = {
+							modifier = {
+								factor = 0
+								check_variable = {
+									which = planet_prevalence_level
+									value <= 0
+								}
+							}
+							planet_event = {
+								#感染者の減少
+								id = cgb_crisis_02.304
+							}
+						}
+						10 = {
+							modifier = {
+								factor = 0
+								or = {
+									has_planet_flag = cgb_happen_event_305
+									has_modifier = cgb_modifier_event_305
+								}
+							}
+							planet_event = {
+								#感染者の再捜査
+								id = cgb_crisis_02.305
+							}
+						}
+					}
+				}
+			}
+			20 = {#何も起きない
+				modifier = {
+					factor = 0.1
+					NOT = { has_country_flag = cgb_infected_country }
+				}
+				modifier = {
+					factor = 0.75
+					any_owned_planet = {
+						NOT = { has_planet_flag  = cgb_infected_planet }
+					}
+				}
+				modifier = {
+					factor = 1.5
+					has_global_flag = cgb_crisis_phase_2
+				}
+			}
+		}
+	}
+}
+
+##################################################################		通知用イベント
+
+country_event = {
+	#惑星の感染シチュエーションがはじまった通知
+	id = cgb_crisis_02.10
+	title = cgb_crisis_02.10.name
+	desc = cgb_crisis_02.10.desc
+
+	is_triggered_only = yes
+	picture = GFX_evt_mining_station #画像は後で探す
+
+	location = from.target
+
+	# 
+
+	immediate = {
+		
+	}
+
+	option = {
+		#
+		name = cgb_crisis_02.10.a
+	}
+}
+
+country_event = {
+	#惑星の感染シチュエーションがステージ2に入った通知
+	id = cgb_crisis_02.11
+	title = cgb_crisis_02.11.name
+	desc = cgb_crisis_02.11.desc
+
+	is_triggered_only = yes
+	picture = GFX_evt_mining_station #画像は後で探す
+
+	location = from.target
+
+	# 
+
+	immediate = {
+		
+	}
+
+	option = {
+		#
+		name = cgb_crisis_02.11.a
+	}
+}
+
+country_event = {
+	#惑星の感染シチュエーションが失敗(消滅した)通知
+	id = cgb_crisis_02.12
+	title = cgb_crisis_02.12.name
+	desc = cgb_crisis_02.12.desc
+
+	is_triggered_only = yes
+	picture = GFX_evt_mining_station #画像は後で探す
+
+	location = from.target
+
+	# 
+
+	immediate = {
+		
+	}
+
+	option = {
+		#
+		name = cgb_crisis_02.12.a
+	}
+}
+
+country_event = {
+	#帝国規模のシチュエーションが完成した通知
+	id = cgb_crisis_02.14
+	title = cgb_crisis_02.14.name
+	desc = cgb_crisis_02.14.desc
+
+	is_triggered_only = yes
+	picture = GFX_evt_mining_station #画像は後で探す
+
+	location = from.target
+
+	# 
+
+	immediate = {
+		
+	}
+
+	option = {
+		#
+		name = cgb_crisis_02.14.a
+	}
+}
+
+country_event = {
+	#帝国規模のシチュエーションが失敗した通知
+	id = cgb_crisis_02.15
+	title = cgb_crisis_02.15.name
+	desc = cgb_crisis_02.15.desc
+
+	is_triggered_only = yes
+	picture = GFX_evt_mining_station #画像は後で探す
+
+	location = from.target
+
+	# 
+
+	immediate = {
+		
+	}
+
+	option = {
+		#
+		name = cgb_crisis_02.15.a
+	}
+}
+
+country_event = {
+	#帝国規模のシチュエーションが発生した通知
+	id = cgb_crisis_02.13
+	title = cgb_crisis_02.13.name
+	desc = cgb_crisis_02.13.desc
+
+	is_triggered_only = yes
+	picture = GFX_evt_mining_station #画像は後で探す
+
+	location = from.target
+
+	# 
+
+	immediate = {
+		
+	}
+
+	option = {
+		#
+		name = cgb_crisis_02.13.a
+	}
+}
+
+##################################################################		100番台
+
+
+leader_event = {
+	id = cgb_crisis_02.101
+	title = cgb_crisis_02.101.name
+	desc = cgb_crisis_02.101.desc
+
+	is_triggered_only = yes
+	picture = GFX_evt_mining_station #画像は後で探す
+
+	immediate = {
+		add_trait = leader_trait_maniacal
+	}
+	option = {
+		name = cgb_crisis_02.101.a
+	}
+}
+
+country_event = {
+	id = cgb_crisis_02.102
+	title = cgb_crisis_02.102.name
+	desc = cgb_crisis_02.102.desc
+
+	is_triggered_only = yes
+	picture = GFX_evt_mining_station #画像は後で探す
+
+	immediate = {
+		add_modifier = {
+			modifier = cgb_modifier_event_102
+			months = 10
+		}
+	}
+	option = {
+		name = cgb_crisis_02.102.a
+	}
+}
+
+country_event = {
+	id = cgb_crisis_02.103
+	title = cgb_crisis_02.103.name
+	desc = cgb_crisis_02.103.desc
+
+	is_triggered_only = yes
+	picture = GFX_evt_mining_station #画像は後で探す
+
+	immediate = {
+		add_modifier = {
+			modifier = cgb_modifier_event_103
+			months = 10
+		}
+	}
+	option = {
+		name = cgb_crisis_02.103.a
+	}
+}
+
+planet_event = {
+	id = cgb_crisis_02.104
+	title = cgb_crisis_02.104.name
+	desc = cgb_crisis_02.104.desc
+
+	is_triggered_only = yes
+	picture = GFX_evt_mining_station #画像は後で探す
+
+	immediate = {
+		add_modifier = {
+			modifier = cgb_modifier_event_104
+			months = 5
+		}
+	}
+	option = {
+		name = cgb_crisis_02.104.a
+	}
+}
+
+planet_event = {
+	id = cgb_crisis_02.105
+	title = cgb_crisis_02.105.name
+	desc = cgb_crisis_02.105.desc
+
+	is_triggered_only = yes
+	picture = GFX_evt_mining_station #画像は後で探す
+
+	immediate = {
+		add_modifier = {
+			modifier = cgb_modifier_event_105
+			months = 14
+		}
+	}
+	option = {
+		name = cgb_crisis_02.105.a
+	}
+}
+
+planet_event = {
+	id = cgb_crisis_02.106
+	title = cgb_crisis_02.106.name
+	desc = cgb_crisis_02.106.desc
+
+	is_triggered_only = yes
+	picture = GFX_evt_mining_station #画像は後で探す
+
+	immediate = {
+		add_modifier = {
+			modifier = cgb_modifier_event_106
+		}
+	}
+	option = {
+		name = cgb_crisis_02.106.a
+		hidden_effect = {
+			planet_event = {
+				id = cgb_crisis_02.110
+				days = 60
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = cgb_crisis_02.110
+	title = cgb_crisis_02.110.name
+	desc = cgb_crisis_02.110.desc
+
+	is_triggered_only = yes
+	picture = GFX_evt_mining_station #画像は後で探す
+
+	immediate = {
+		remove_modifier = cgb_modifier_event_106
+		add_modifier = {
+			modifier = cgb_modifier_event_110
+			months = 14
+		}
+	}
+	option = {
+		name = cgb_crisis_02.110.a
+	}
+}
+
+##################################################################		200番台
+
+planet_event = {
+	id = cgb_crisis_02.201
+	title = cgb_crisis_02.201.name
+	desc = cgb_crisis_02.201.desc
+
+	is_triggered_only = yes
+	picture = GFX_evt_mining_station #画像は後で探す
+
+	immediate = {
+		add_modifier = {
+			modifier = cgb_modifier_event_201
+		}
+	}
+	option = {
+		#配給
+		name = cgb_crisis_02.201.a
+		allow = {
+			owner = {
+				has_country_resource = {
+					type = energy
+					amount > 2000
+				}
+			}
+		}
+		owner = {
+			add_resource = {
+				energy = -2000
+			}
+		}
+		hidden_effect = {
+			planet_event = {
+				id = cgb_crisis_02.211
+				days = 120
+			}
+		}
+	}
+
+	option = {
+		#放置
+		name = cgb_crisis_02.201.b
+		hidden_effect = {
+			planet_event = {
+				id = cgb_crisis_02.212
+				days = 30
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = cgb_crisis_02.211
+	title = cgb_crisis_02.211.name
+	desc = cgb_crisis_02.211.desc
+
+	is_triggered_only = yes
+	picture = GFX_evt_mining_station #画像は後で探す
+
+	immediate = {
+		remove_modifier = cgb_modifier_event_201
+	}
+	option = {
+		#住民が安堵感を覚える
+		name = cgb_crisis_02.211.a
+		add_modifier = {
+			modifier = cgb_modifier_event_211
+			days = 150
+		}
+	}
+}
+
+planet_event = {
+	id = cgb_crisis_02.212
+	title = cgb_crisis_02.212.name
+	desc = cgb_crisis_02.212.desc
+
+	is_triggered_only = yes
+	picture = GFX_evt_mining_station #画像は後で探す
+
+	immediate = {
+		remove_modifier = cgb_modifier_event_201
+	}
+	option = {
+		#
+		name = cgb_crisis_02.212.a
+		add_modifier = {
+			modifier = cgb_modifier_event_212
+			days = 210
+		}
+	}
+}
+
+planet_event = {
+	id = cgb_crisis_02.202
+	title = cgb_crisis_02.202.name
+	desc = cgb_crisis_02.202.desc
+
+	is_triggered_only = yes
+	picture = GFX_evt_mining_station #画像は後で探す
+
+	immediate = {
+		add_modifier = {
+			modifier = cgb_modifier_event_202
+			days = 180
+		}
+	}
+	option = {
+		name = cgb_crisis_02.202.a
+	}
+}
+
+planet_event = {
+	id = cgb_crisis_02.203
+	title = cgb_crisis_02.203.name
+	desc = cgb_crisis_02.203.desc
+
+	is_triggered_only = yes
+	picture = GFX_evt_mining_station #画像は後で探す
+
+	immediate = {
+		add_modifier = {
+			modifier = cgb_modifier_event_203
+			days = 360
+		}
+	}
+	option = {
+		name = cgb_crisis_02.203.a
+	}
+}
+
+planet_event = {
+	id = cgb_crisis_02.204
+	title = cgb_crisis_02.204.name
+	desc = cgb_crisis_02.204.desc
+
+	is_triggered_only = yes
+	picture = GFX_evt_mining_station #画像は後で探す
+
+	immediate = {
+		add_modifier = {
+			modifier = cgb_modifier_event_204
+			months = 6
+		}
+	}
+	option = {
+		name = cgb_crisis_02.204.a
+	}
+}
+
+planet_event = {
+	id = cgb_crisis_02.205
+	title = cgb_crisis_02.205.name
+	desc = cgb_crisis_02.205.desc
+
+	is_triggered_only = yes
+	picture = GFX_evt_mining_station #画像は後で探す
+
+	immediate = {
+		#怪しげな企業
+	}
+	option = {
+		#内部捜査してみよう
+		name = cgb_crisis_02.205.a
+		add_modifier = {
+			modifier = cgb_modifier_event_205a
+		}
+		hidden_effect = {
+			planet_event = {
+				id = cgb_crisis_02.213
+				days = 60
+			}
+		}
+	}
+
+	option = {
+		#ただの1企業だろう
+		name = cgb_crisis_02.205.b
+		add_modifier = {
+			modifier = cgb_modifier_event_205b
+		}
+		hidden_effect = {
+			planet_event = {
+				id = cgb_crisis_02.214
+				days = 120
+				random = 20
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = cgb_crisis_02.213
+	title = cgb_crisis_02.213.name
+	desc = cgb_crisis_02.213.desc
+
+	is_triggered_only = yes
+	picture = GFX_evt_mining_station #画像は後で探す
+
+	immediate = {
+		remove_modifier = cgb_modifier_event_205a
+		add_modifier = {
+			modifier = cgb_modifier_event_213
+			days = 90
+		}
+	}
+	option = {
+		#ブラック企業撲滅
+		name = cgb_crisis_02.213.a
+	}
+}
+
+planet_event = {
+	id = cgb_crisis_02.214
+	title = cgb_crisis_02.214.name
+	desc = cgb_crisis_02.214.desc
+
+	is_triggered_only = yes
+	picture = GFX_evt_mining_station #画像は後で探す
+
+	immediate = {
+		remove_modifier = cgb_modifier_event_205b
+		add_modifier = {
+			modifier = cgb_modifier_event_214
+			days = 150
+		}
+	}
+	option = {
+		#ブラック企業破産
+		name = cgb_crisis_02.214.a
+	}
+}
+
+planet_event = {
+	id = cgb_crisis_02.206
+	title = cgb_crisis_02.206.name
+	desc = cgb_crisis_02.206.desc
+
+	is_triggered_only = yes
+	picture = GFX_evt_mining_station #画像は後で探す
+
+	immediate = {
+		add_modifier = {
+			modifier = cgb_modifier_event_206_0
+		}
+	}
+	option = {
+		#鎮圧しろ
+		name = cgb_crisis_02.206.a
+		add_modifier = {
+			modifier = cgb_modifier_event_206
+		}
+		hidden_effect = {
+			planet_event = {
+				id = cgb_crisis_02.215
+				days = 210
+			}
+		}
+	}
+	option = {
+		#放置しよう
+		name = cgb_crisis_02.206.b
+		hidden_effect = {
+			planet_event = {
+				id = cgb_crisis_02.216
+				days = 60
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = cgb_crisis_02.215
+	title = cgb_crisis_02.215.name
+	desc = cgb_crisis_02.215.desc
+
+	is_triggered_only = yes
+	picture = GFX_evt_mining_station #画像は後で探す
+
+	immediate = {
+		remove_modifier = cgb_modifier_event_206_0
+		remove_modifier = cgb_modifier_event_206
+	}
+	option = {
+		#鎮圧しろ
+		name = cgb_crisis_02.215.a
+	}
+}
+
+planet_event = {
+	id = cgb_crisis_02.216
+	title = cgb_crisis_02.216.name
+	desc = cgb_crisis_02.216.desc
+
+	is_triggered_only = yes
+	picture = GFX_evt_mining_station #画像は後で探す
+
+	immediate = {
+		remove_modifier = cgb_modifier_event_206_0
+		add_modifier = {
+			modifier = cgb_modifier_event_216
+			days = 360
+		}
+	}
+	option = {
+		#
+		name = cgb_crisis_02.216.a
+	}
+}
+
+##################################################################		300番台
+
+planet_event = {
+	id = cgb_crisis_02.301
+	title = cgb_crisis_02.301.name
+	desc = cgb_crisis_02.301.desc
+
+	is_triggered_only = yes
+	picture = GFX_evt_mining_station #画像は後で探す
+
+	location = event_target:cgb_happen_event_planet
+
+	# [cgb_happen_event_planet.GetName]に感染者が逃げ込んだ。　彼は他帝国へ旅行に行っており、そこで感染したと考えられる。　追跡調査を行わない場合、集団感染が発生する可能性がある
+
+	immediate = {
+		change_planet_prevalence_level = yes
+		set_planet_flag = cgb_happen_event_301
+	}
+
+	option = {
+		#いくつかの人員を投入し、感染者の行く先と移動経路を探し出す。　小規模な感染が起こるかも知れないが、全員把握できるだろう。
+		name = cgb_crisis_02.301.a
+		allow = {
+			owner = {
+				has_country_resource = {
+					type = energy
+					amount > 1500
+				}
+			}
+		}
+		owner = {
+			add_resource = {
+				energy = -1500
+			}
+		}
+		hidden_effect = {
+			planet_event = {
+				id = cgb_crisis_02.311
+				days = 14
+			}
+		}
+	}
+
+	option = {
+		#放置する　たった一人ぐらい問題がないだろう。　少しのち、集団感染が発生する　なお、本人は路地裏で死体として発見される。
+		name = cgb_crisis_02.301.b
+		hidden_effect = {
+			planet_event = {
+				id = cgb_crisis_02.312
+				days = 60
+				random = 14
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = cgb_crisis_02.311
+	title = cgb_crisis_02.311.name
+	desc = cgb_crisis_02.311.desc
+
+	is_triggered_only = yes
+	picture = GFX_evt_mining_station #画像は後で探す
+
+	location = event_target:cgb_happen_event_planet
+
+	# 
+
+	immediate = {
+		remove_planet_flag = cgb_happen_event_301
+		change_variable = {
+			which = planet_prevalence_level
+			value = 1
+		}
+		change_planet_prevalence_level = yes
+	}
+
+	option = {
+		#感染者の確保に成功した。　感染が発覚した後、自暴自棄になりこの惑星で遊びまわっていたようだ。　その結果少数の新規感染者が発生したが、全て確保できた。
+		name = cgb_crisis_02.311.a
+	}
+}
+
+planet_event = {
+	id = cgb_crisis_02.312
+	title = cgb_crisis_02.312.name
+	desc = cgb_crisis_02.312.desc
+
+	is_triggered_only = yes
+	picture = GFX_evt_mining_station #画像は後で探す
+
+	location = event_target:cgb_happen_event_planet
+
+	# 
+
+	immediate = {
+		remove_planet_flag = cgb_happen_event_301
+		change_variable = {
+			which = planet_prevalence_level
+			value = 3
+		}
+		change_planet_prevalence_level = yes
+	}
+
+	option = {
+		#
+		name = cgb_crisis_02.312.a
+	}
+}
+
+planet_event = {
+	id = cgb_crisis_02.302
+	title = cgb_crisis_02.302.name
+	desc = cgb_crisis_02.302.desc
+
+	is_triggered_only = yes
+	picture = GFX_evt_mining_station #画像は後で探す
+
+	location = event_target:cgb_happen_event_planet
+
+	# [cgb_happen_event_planet.GetName]で小規模な集団感染が発生した。
+
+	immediate = {
+		change_variable = {
+			which = planet_prevalence_level
+			value = 1
+		}
+		add_modifier = {
+			modifier = cgb_modifier_event_302
+			months = 4
+		}
+		change_planet_prevalence_level = yes
+		
+	}
+
+	option = {
+		#
+		name = cgb_crisis_02.302.a
+		
+	}
+
+}
+
+planet_event = {
+	id = cgb_crisis_02.303
+	title = cgb_crisis_02.303.name
+	desc = cgb_crisis_02.303.desc
+
+	is_triggered_only = yes
+	picture = GFX_evt_mining_station #画像は後で探す
+
+	location = event_target:cgb_happen_event_planet
+
+	# [cgb_happen_event_planet.GetName]で中規模な集団感染が発生した。
+
+	immediate = {
+		change_variable = {
+			which = planet_prevalence_level
+			value = 2
+		}
+		add_modifier = {
+			modifier = cgb_modifier_event_303
+			months = 4
+		}
+		change_planet_prevalence_level = yes
+		
+	}
+
+	option = {
+		#
+		name = cgb_crisis_02.303.a
+		
+	}
+
+}
+
+planet_event = {
+	id = cgb_crisis_02.304
+	title = cgb_crisis_02.304.name
+	desc = cgb_crisis_02.304.desc
+
+	is_triggered_only = yes
+	picture = GFX_evt_mining_station #画像は後で探す
+
+	location = event_target:cgb_happen_event_planet
+
+	# [cgb_happen_event_planet.GetName]で感染者が減少している
+
+	immediate = {
+		change_variable = {
+			which = planet_prevalence_level
+			value = -1
+		}
+		add_modifier = {
+			modifier = cgb_modifier_event_304
+			months = 4
+		}
+		change_planet_prevalence_level = yes
+		
+	}
+	option = {
+		#
+		name = cgb_crisis_02.304.a
+		
+	}
+}
+
+planet_event = {
+	id = cgb_crisis_02.305
+	title = cgb_crisis_02.305.name
+	desc = cgb_crisis_02.305.desc
+
+	is_triggered_only = yes
+	picture = GFX_evt_mining_station #画像は後で探す
+
+	location = event_target:cgb_happen_event_planet
+
+	# [cgb_happen_event_planet.GetName]で感染者の集団を確保した。彼らはこれまで数多くの場所をめぐっており、移動経路を調査すればより多くの感染者が見つかるかもしれない
+
+	immediate = {
+	}
+
+	option = {
+		#捜査してみよう
+		name = cgb_crisis_02.305.a
+		add_modifier = {
+			modifier = cgb_modifier_event_305
+		}
+		hidden_effect = {
+			planet_event = {
+				id = cgb_crisis_02.313
+				days = 80
+				random = 23
+			}
+		}
+		
+	}
+	option = {
+		#放っておこう
+		name = cgb_crisis_02.305.b
+		hidden_effect = {
+			set_planet_flag = cgb_happen_event_305
+			planet_event = {
+				id = cgb_crisis_02.314
+				days = 30
+				random = 5
+			}
+		}
+		
+	}
+}
+
+planet_event = {
+	id = cgb_crisis_02.313
+	title = cgb_crisis_02.313.name
+	desc = cgb_crisis_02.313.desc
+
+	is_triggered_only = yes
+	picture = GFX_evt_mining_station #画像は後で探す
+
+	location = event_target:cgb_happen_event_planet
+
+	# [cgb_happen_event_planet.GetName]
+
+	immediate = {
+		remove_modifier = cgb_modifier_event_305
+		change_variable = {
+			which = planet_prevalence_level
+			value = -1
+		}
+		change_planet_prevalence_level = yes
+		
+	}
+	option = {
+		#
+		name = cgb_crisis_02.313.a
+		
+	}
+}
+
+planet_event = {
+	id = cgb_crisis_02.314
+	title = cgb_crisis_02.314.name
+	desc = cgb_crisis_02.314.desc
+
+	is_triggered_only = yes
+	picture = GFX_evt_mining_station #画像は後で探す
+
+	location = event_target:cgb_happen_event_planet
+
+	# [cgb_happen_event_planet.GetName]
+
+	immediate = {
+		remove_planet_flag = cgb_happen_event_305
+		change_variable = {
+			which = planet_prevalence_level
+			value = 2
+		}
+		change_planet_prevalence_level = yes
+		
+	}
+	option = {
+		#
+		name = cgb_crisis_02.314.a
+		
+	}
+}
+
+##################################################################		400番台
+
+
+situation_event= {
+	id = cgb_crisis_02.411
+
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	# [cgb_happen_event_planet.GetName]
+
+	immediate = {
+		owner = {
+			random_owned_leader = {
+				leader_event = {
+					id = cgb_crisis_02.401
+				}
+			}
+		}
+	}
+}
+
+leader_event = {
+	id = cgb_crisis_02.401
+	title = cgb_crisis_02.401.name
+	desc = cgb_crisis_02.401.desc
+
+	is_triggered_only = yes
+	picture = GFX_evt_mining_station #画像は後で探す
+
+	# [cgb_happen_event_planet.GetName]
+
+	immediate = {
+	}
+	option = {
+		#リーダーが不利な特性を獲得
+		name = cgb_crisis_02.401.a
+		add_trait = leader_trait_arrested_development
+		add_trait = leader_trait_stubborn
+		add_skill = -2
+	}
+}
+
+situation_event = {
+	id = cgb_crisis_02.402
+	title = cgb_crisis_02.402.name
+	desc = cgb_crisis_02.402.desc
+
+	is_triggered_only = yes
+	picture = GFX_evt_mining_station #画像は後で探す
+
+	# [cgb_happen_event_planet.GetName]
+
+	immediate = {
+		
+	}
+	option = {
+		#小規模な集団感染
+		name = cgb_crisis_02.402.a
+		add_situation_progress = 15
+	}
+}
+
+situation_event = {
+	id = cgb_crisis_02.403
+	title = cgb_crisis_02.403.name
+	desc = cgb_crisis_02.403.desc
+
+	is_triggered_only = yes
+	picture = GFX_evt_mining_station #画像は後で探す
+
+	# [cgb_happen_event_planet.GetName]
+
+	immediate = {
+		
+	}
+	option = {
+		#中規模な集団感染
+		name = cgb_crisis_02.403.a
+		add_situation_progress = 30
+	}
+}
+
+situation_event = {
+	id = cgb_crisis_02.404
+	title = cgb_crisis_02.404.name
+	desc = cgb_crisis_02.404.desc
+
+	is_triggered_only = yes
+	picture = GFX_evt_mining_station #画像は後で探す
+
+	# [cgb_happen_event_planet.GetName]
+
+	immediate = {
+		
+	}
+	option = {
+		#致命的な集団感染
+		name = cgb_crisis_02.404.a
+		add_situation_progress = 60
+	}
+}

@@ -1,0 +1,25 @@
+# Resolution Categories for Galactic Community
+
+### Galactic Priorities
+cgb_resolution_category_galactic_focus = {
+	group = galactic_focus
+	icon = "GFX_resolution_galactic_focus_category"
+
+	resolution_types = {
+		"cgb_resolution_galactic_focus_crisis_virus"
+		"cgb_resolution_GHO"
+	}
+}
+
+cgb_resolution_category_GHO = {
+	group = cgb_GHO
+	icon = "GFX_resolution_galactic_focus_category"
+
+	resolution_types = {
+		"cgb_resolution_GHO_fund"
+		"cgb_resolution_GHO_vaccine_global_dev"
+		"cgb_resolution_quarantine_1"
+		"cgb_resolution_quarantine_2"
+		"cgb_resolution_quarantine_3"
+	}
+}

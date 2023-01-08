@@ -1,0 +1,52 @@
+
+cgb_create_crisis = {
+	create_country = {
+		name = NAME_cgb_crisis
+		type = cgb_virus
+		name_list = cgb_crisis
+		species = random
+		ignore_initial_colony_error = yes
+		auto_delete = no
+		flag = {
+			icon= {
+				category = "CGB"
+				file = "flag_CGB_crisis.dds"
+			}
+			background= {
+				category = "backgrounds"
+				file = "flag_BG_20.dds"
+			}
+			colors={
+				"dark_grey"
+				"grey"
+				"null"
+				"null"
+			}
+		}
+		effect = {
+			save_global_event_target_as = cgb_crisis_country
+			#add_global_ship_design = "NAME_small_virus"
+			add_global_ship_design = "NAME_medium_virus"
+		}
+	}
+}
+
+create_cgb_crisis_medium_ships = { #uses in create_fleet effect
+	while = {
+		count = 10
+		create_ship = {
+			name = random
+			design = "NAME_medium_virus"
+		}
+	}
+}
+
+create_cgb_crisis_large_ships = { #uses in create_fleet effect
+	while = {
+		count = 5
+		create_ship = {
+			name = random
+			design = "NAME_large_virus"
+		}
+	}
+}
