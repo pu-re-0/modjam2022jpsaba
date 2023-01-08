@@ -92,7 +92,7 @@
  cgb_vaccine_dev_event.21.desc:0 "An urgent message was received from a vaccine manufacturing plant. A group of armed infected people had attacked the factory in the morning local time. Fortunately, the local security forces were able to take swift action and no fatalities were reported, but it appears that some of the equipment used for production was destroyed."
  cgb_vaccine_dev_event.21.a:0 "It's just lucky it didn't end badly."
  cgb_vaccine_dev_event.22.name:0 "emergency vaccine distribution"
- cgb_vaccine_dev_event.22.desc:0 "We have received a proposal from the local government to urgently distribute the vaccine that is currently being manufactured on [target:planet_name], where the infection is spreading rapidly. The distribution of the vaccine to the entire empire will be delayed somewhat, but it may be possible to contain the outbreak of infection on the planet."
+ cgb_vaccine_dev_event.22.desc:0 "We have received a proposal from the local government to urgently distribute the vaccine that is currently being manufactured on [this.GetName], where the infection is spreading rapidly. The distribution of the vaccine to the entire empire will be delayed somewhat, but it may be possible to contain the outbreak of infection on the planet."
  cgb_vaccine_dev_event.22.a:0 "Allow"
  cgb_vaccine_dev_event.22.b:0 "I shouldn't."
  cgb_vaccine_dev_event.30.name:0 "Vaccine distribution complete!"
