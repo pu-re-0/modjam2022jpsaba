@@ -10,5 +10,4 @@ begin_crisis_yourmod = {
 	set_global_flag = midgame_crisis_ongoing			# must be removed when crisis is resolved
 	# BOOM BOOM PEW PEW effects go here
 	# this is in country scope, on global event country
-	yourmod_create_crisis = yes
 }

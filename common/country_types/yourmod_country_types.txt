@@ -120,6 +120,7 @@ yourmod_virus = {
 	government = no
 	colonizing_title = ""
 	colonizing_desc = ""
+	orbital_bombardment = yes #軌道爆撃用の設定
 	#custom_starbase = starbase_swarm
 	observable = yes
 	uses_origins = no

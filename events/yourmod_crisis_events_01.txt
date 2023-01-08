@@ -641,6 +641,7 @@ country_event = { #Situation has done, Ground Zero Emerging, Create Notification
 			set_spawn_system_batch = end
 			add_extra_hyperlane_to_spawned_system_effect = yes
 		}
+		yourmod_create_crisis = yes # クライシス国家生成
 	}
 
 	option = { # gotcha!

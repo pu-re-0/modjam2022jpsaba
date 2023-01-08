@@ -171,19 +171,19 @@
  planet_prevalence_level_0_desc:0 "この惑星では$yourmod_crisis$はほとんど流行っていない。全てのpopが通常通り活動している。"
 
  planet_prevalence_level_1:0 "惑星の流行レベル:1"
- planet_prevalence_level_0_desc:0 "この惑星では$yourmod_crisis$が少し流行っている。"
+ planet_prevalence_level_1_desc:0 "この惑星では$yourmod_crisis$が少し流行っている。"
 
  planet_prevalence_level_2:0 "惑星の流行レベル:2"
- planet_prevalence_level_0_desc:0 "この惑星では$yourmod_crisis$が流行っている。"
+ planet_prevalence_level_2_desc:0 "この惑星では$yourmod_crisis$が流行っている。"
 
  planet_prevalence_level_3:0 "惑星の流行レベル:3"
- planet_prevalence_level_0_desc:0 "この惑星では$yourmod_crisis$がかなり流行している。"
+ planet_prevalence_level_3_desc:0 "この惑星では$yourmod_crisis$がかなり流行している。"
 
  planet_prevalence_level_4:0 "惑星の流行レベル:4"
- planet_prevalence_level_0_desc:0 "この惑星では$yourmod_crisis$が爆発的に流行している。これ以上蔓延するようであれば、惑星規模の対処が必要だ。"
+ planet_prevalence_level_4_desc:0 "この惑星では$yourmod_crisis$が爆発的に流行している。これ以上蔓延するようであれば、惑星規模の対処が必要だ。"
 
  planet_prevalence_level_5:0 "惑星の流行レベル:5"
- planet_prevalence_level_0_desc:0 "このモディファイアーは基本的に表示されないから、表示されてたらバグだよ"
+ planet_prevalence_level_5_desc:0 "このモディファイアーは基本的に表示されないから、表示されてたらバグだよ"
  
  country_lost_health_default:0 "失敗した感染対処"
  country_lost_health_default_desc:0 "この帝国は$yourmod_crisis$の対処を致命的に失敗してしまった。帝国の中で$yourmod_crisis$が存在しない箇所はほぼ無いだろう"
