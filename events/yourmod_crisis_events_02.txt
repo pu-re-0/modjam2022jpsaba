@@ -56,7 +56,7 @@ namespace = yourmod_crisis_02
 
 
 country_event = {
-	id = yourmod_crisis_02.1
+	id = yourmod_crisis_02.1 #全体的にバランスを調整しました。（惑星の感染situationが全然出なかった）
 	hide_window = yes
 
 	trigger = {
@@ -64,7 +64,7 @@ country_event = {
 	}
 
 	mean_time_to_happen = {
-		days = 180 #さすがに多すぎたから減らした
+		days = 90
 	}
 
 	immediate = {
@@ -238,8 +238,10 @@ country_event = {
 							modifier = {
 								factor = 0
 								or = {
-									has_ethic = ethic_gestalt_consciousness
-
+									owner = {
+										has_ethic = ethic_gestalt_consciousness
+									}
+								
 									has_modifier = yourmod_modifier_event_205a
 									has_modifier = yourmod_modifier_event_205a
 									has_modifier = yourmod_modifier_event_213
@@ -255,7 +257,9 @@ country_event = {
 							modifier = {
 								factor = 0
 								or = {
-									has_ethic = ethic_gestalt_consciousness
+									owner = {
+										has_ethic = ethic_gestalt_consciousness
+									}
 
 									has_modifier = yourmod_modifier_event_216
 									has_modifier = yourmod_modifier_event_206
@@ -269,7 +273,7 @@ country_event = {
 					}
 				}
 			}		
-			10 = { #未感染惑星のイベント
+			15 = { #未感染惑星のイベント
 				# ランダムなイベントにより感染具合のmodifierが付与される
 				# 感染具合がマックスを超えると、situationが発生し、感染済み惑星になる
 				modifier = {
@@ -356,6 +360,16 @@ country_event = {
 				modifier = {
 					factor = 0.1
 					NOT = { has_country_flag = yourmod_infected_country }
+				}
+				modifier = {
+					factor = 0.75
+					any_owned_planet = {
+						NOT = { has_planet_flag  = yourmod_infected_planet }
+					}
+				}
+				modifier = {
+					factor = 1.5
+					has_global_flag = yourmod_crisis_phase_2
 				}
 			}
 		}
