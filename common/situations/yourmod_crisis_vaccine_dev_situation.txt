@@ -28,14 +28,11 @@ yourmod_crisis_vaccine_dev_situation = {	#ワクワク
 			icon = GFX_situation_stage_1
 			icon_background = GFX_situation_stage_frame_blue
 			end = 100
-			on_first_enter = {
-
-			}
 		}
 		stage_2 = {
 			icon = GFX_situation_stage_2
 			icon_background = GFX_situation_stage_frame_blue
-			end = 100
+			end = 200
 			on_first_enter = {
 				owner = {
 					country_event = {
@@ -48,7 +45,7 @@ yourmod_crisis_vaccine_dev_situation = {	#ワクワク
 		stage_3 = {
 			icon = GFX_situation_stage_3
 			icon_background = GFX_situation_stage_frame_blue
-			end = 100
+			end = 300
 			on_first_enter = {
 				owner = {
 					country_event = {
@@ -61,7 +58,7 @@ yourmod_crisis_vaccine_dev_situation = {	#ワクワク
 		stage_4 = {
 			icon = GFX_situation_stage_3
 			icon_background = GFX_situation_stage_frame_blue
-			end = 100
+			end = 400
 			on_first_enter = {
 				owner = {
 					country_event = {
@@ -78,7 +75,7 @@ yourmod_crisis_vaccine_dev_situation = {	#ワクワク
 	}
 
 	monthly_progress = {
-		base = -0.5
+		base = 0
 		
 		modifier = {
 			mult = 1.20
@@ -108,28 +105,28 @@ yourmod_crisis_vaccine_dev_situation = {	#ワクワク
 		}
 
 		modifier = {
-			add = 0.20
+			add = 0.10
 			desc = yourmod_crisis_research_situation_stage_1_desc
 			has_global_flag = yourmod_crisis_research_situation_stage_1
 		}
 		modifier = {
-			add = 0.20
+			add = 0.10
 			desc = yourmod_crisis_research_situation_stage_2_desc
 			has_global_flag = yourmod_crisis_research_situation_stage_2
 		}
 		modifier = {
-			add = 0.20
+			add = 0.10
 			desc = yourmod_crisis_research_situation_stage_3_desc
 			has_global_flag = yourmod_crisis_research_situation_stage_3
 		}
 		modifier = {
-			add = 0.20
+			add = 0.10
 			desc = yourmod_crisis_research_situation_stage_4_desc
 			has_global_flag = yourmod_crisis_research_situation_stage_4
 		}
 		modifier = {
-			add = 0.20
-			desc = yourmod_crisis_research_situation_stage_4_desc
+			add = 0.10
+			desc = yourmod_crisis_research_situation_stage_5_desc
 			has_global_flag = yourmod_crisis_research_situation_stage_5
 		}
 
@@ -163,7 +160,7 @@ yourmod_crisis_vaccine_dev_situation = {	#ワクワク
 		}
 
 		modifier = {
-			mult = yourmod_society_research_effect
+			mult = value:yourmod_society_research_effect
 			desc = yourmod_society_research_power
 		}
 	}
@@ -191,8 +188,9 @@ yourmod_crisis_vaccine_dev_situation = {	#ワクワク
  			category = situations
  			upkeep = {
 				society_research = 1
-				mult = yourmod_society_research_10
-
+				mult = value:yourmod_society_research_10
+			}
+			upkeep = {
 				energy = 10
 			}
  			produces = { }
@@ -211,8 +209,9 @@ yourmod_crisis_vaccine_dev_situation = {	#ワクワク
  			category = situations
  			upkeep = {
 				society_research = 1
-				mult = yourmod_society_research_15
-
+				mult = value:yourmod_society_research_15
+			}
+			upkeep = {
 				energy = 20
 			}
  			produces = { }
@@ -231,8 +230,9 @@ yourmod_crisis_vaccine_dev_situation = {	#ワクワク
  			category = situations
  			upkeep = { 
 				society_research = 1
-				mult = yourmod_society_research_20
-
+				mult = value:yourmod_society_research_20
+			}
+			upkeep = {
 				energy = 40
 			}
  			produces = { }
@@ -251,8 +251,9 @@ yourmod_crisis_vaccine_dev_situation = {	#ワクワク
 		 	category = situations
 		 	upkeep = { 
 				society_research = 1
-				mult = yourmod_society_research_30
-
+				mult = value:yourmod_society_research_30
+			}
+			upkeep = {
 				energy = 80
 			}
 			produces = { unity = 10 }
@@ -291,7 +292,7 @@ yourmod_crisis_vaccine_production_situation = {	#ワクワク配布
 		stage_2 = { #配布
 			icon = GFX_situation_stage_2
 			icon_background = GFX_situation_stage_frame_blue
-			end = 50
+			end = 150
 			on_first_enter = {
 				owner = {
 					remove_country_flag = yourmod_crisis_vaccine_production_now

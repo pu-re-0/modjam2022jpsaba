@@ -85,6 +85,79 @@ yourmod_planet_infection_situation = {
 			current_situation_approach = yourmod_planet_infection_approach_3
 		}
 
+		#############################################################
+		#イベントから
+
+		modifier = {
+			add = 1
+			desc = yourmod_planet_situation_modifier_desc
+			target = {
+				has_modifier = yourmod_modifier_event_201
+			}
+		}
+		modifier = {
+			add = -0.5
+			desc = yourmod_planet_situation_modifier_desc
+			target = {
+				has_modifier = yourmod_modifier_event_211
+			}
+		}
+		modifier = {
+			add = 2
+			desc = yourmod_planet_situation_modifier_desc
+			target = {
+				has_modifier = yourmod_modifier_event_212
+			}
+		}
+		modifier = {
+			add = 3
+			desc = yourmod_planet_situation_modifier_desc
+			target = {
+				has_modifier = yourmod_modifier_event_202
+			}
+		}
+		modifier = {
+			add = 5
+			desc = yourmod_planet_situation_modifier_desc
+			target = {
+				has_modifier = yourmod_modifier_event_203
+			}
+		}
+		modifier = {
+			add = -2
+			desc = yourmod_planet_situation_modifier_desc
+			target = {
+				has_modifier = yourmod_modifier_event_204
+			}
+		}
+		modifier = {
+			add = -1
+			desc = yourmod_planet_situation_modifier_desc
+			target = {
+				has_modifier = yourmod_modifier_event_213
+			}
+		}
+		modifier = {
+			add = 2
+			desc = yourmod_planet_situation_modifier_desc
+			target = {
+				has_modifier = yourmod_modifier_event_214
+			}
+		}
+		modifier = {
+			add = 1
+			desc = yourmod_planet_situation_modifier_desc
+			target = {
+				has_modifier = yourmod_modifier_event_206_0
+			}
+		}
+		modifier = {
+			add = 4
+			desc = yourmod_planet_situation_modifier_desc
+			target = {
+				has_modifier = yourmod_modifier_event_216
+			}
+		}
 
 		#############################################################
 		
@@ -212,6 +285,10 @@ yourmod_planet_infection_situation = {
 		icon = GFX_situation_approach_unity
 		icon_background = GFX_situation_approach_bg_green
 
+		target_modifier = {
+			planet_amenities_mult = -0.2
+			planet_jobs_produces_mult = -0.1
+		}
 		potential = {
 			current_stage = stage_2
 		}
@@ -270,7 +347,6 @@ yourmod_country_infection_situation = {
 				modifier = {
 					planet_jobs_produces_mult = -0.02
 					pop_happiness = -0.05
-					pop_growth_speed = -0.06
 				}
 			}
 		}
@@ -283,16 +359,15 @@ yourmod_country_infection_situation = {
 			triggered_modifier = {
 				potential = { owner = { has_ethic = ethic_gestalt_consciousness } }
 				modifier = { 
-					planet_jobs_produces_mult = -0.10
+					planet_jobs_produces_mult = -0.08
 					planet_amenities_add = -4
 				}
 			}
 			triggered_modifier = {
 				potential = { owner = { NOT = { has_ethic = ethic_gestalt_consciousness } } }
 				modifier = { 
-					planet_jobs_produces_mult = -0.05
+					planet_jobs_produces_mult = -0.04
 					pop_happiness = -0.15
-					pop_growth_speed = -0.9
 				}
 			}
 		}
@@ -305,16 +380,15 @@ yourmod_country_infection_situation = {
 			triggered_modifier = {
 				potential = { owner = { has_ethic = ethic_gestalt_consciousness } }
 				modifier = { 
-					planet_jobs_produces_mult = -0.15
+					planet_jobs_produces_mult = -0.11
 					planet_amenities_add = -8
 				}
 			}
 			triggered_modifier = {
 				potential = { owner = { NOT = { has_ethic = ethic_gestalt_consciousness } } }
 				modifier = { 
-					planet_jobs_produces_mult = -0.08
+					planet_jobs_produces_mult = -0.06
 					pop_happiness = -0.25
-					pop_growth_speed = -0.12
 				}
 			}
 		}
@@ -327,51 +401,26 @@ yourmod_country_infection_situation = {
 			triggered_modifier = {
 				potential = { owner = { has_ethic = ethic_gestalt_consciousness } }
 				modifier = { 
-					planet_jobs_produces_mult = -0.20
+					planet_jobs_produces_mult = -0.15
 					planet_amenities_add = -10
 				}
 			}
 			triggered_modifier = {
 				potential = { owner = { NOT = { has_ethic = ethic_gestalt_consciousness } } }
 				modifier = { 
-					planet_jobs_produces_mult = -0.12
+					planet_jobs_produces_mult = -0.10
 					pop_happiness = -0.40
-					pop_growth_speed = -0.15
 				}
 			}
 		}
 	}
 	on_monthly = {
-		random_list = {
+		random_events = {
 			200 = 0
-			10 = { 
-				random_owned_leader = {
-					leader_event = {
-						id = yourmod_crisis_02.401
-					}
-				}
-			}
-			50 = {
-				target = {
-					country_event = {
-						id = yourmod_crisis_02.402
-					}
-				}
-			}
-			25 = {
-				target = {
-					country_event = {
-						id = yourmod_crisis_02.403
-					}
-				}
-			}
-			1 = {
-				target = {
-					country_event = {
-						id = yourmod_crisis_02.404
-					}
-				}
-			}
+			10 = yourmod_crisis_02.411
+			50 = yourmod_crisis_02.402
+			25 = yourmod_crisis_02.403
+			10 = yourmod_crisis_02.404
 		}
 	}
 
@@ -521,7 +570,7 @@ yourmod_country_infection_situation = {
 		target_modifier = {
 			planet_jobs_produces_mult = -0.1
 			pop_growth_speed = -0.15
-			pop_assembly_speed = -0.15
+			planet_pop_assembly_mult = -0.15
 			planet_amenities_mult = -0.1
 		}
 		on_select = {
@@ -542,7 +591,7 @@ yourmod_country_infection_situation = {
 			planet_jobs_produces_mult = -0.3
 			planet_jobs_upkeep_mult = -0.2
 			pop_growth_speed = -0.5
-			pop_assembly_speed = -0.5
+			planet_pop_assembly_mult = -0.5
 			planet_amenities_mult = -0.25
 			pop_amenities_usage_mult = -0.15
 		}
@@ -564,7 +613,7 @@ yourmod_country_infection_situation = {
 			planet_jobs_produces_mult = -0.5
 			planet_jobs_upkeep_mult = -0.5
 			pop_growth_speed = -0.75
-			pop_assembly_speed = -0.75
+			planet_pop_assembly_mult = -0.75
 			planet_amenities_mult = -0.5
 			pop_amenities_usage_mult = -0.4
 		}

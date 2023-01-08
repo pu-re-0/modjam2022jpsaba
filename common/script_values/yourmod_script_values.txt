@@ -81,16 +81,18 @@ yourmod_society_research_effect = {
 	base = 0
 	complex_trigger_modifier = {
 		trigger = resource_income_compare
-		trigger_scope = target.owner
+		trigger_scope = owner
 		parameters = {
 			resource = society_research
 		}
 		mode = add
 	}
-	divide = 300
+	divide = 200
+	max = 10
+	min = 0.01
 }
 
 yourmod_size_effect = {
-	base = 100
+	base = 1
 	divide = trigger:empire_size
 }

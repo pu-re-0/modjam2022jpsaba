@@ -458,7 +458,7 @@ country_event = { # investigate trigger
 		}
 		modifier = {
 			factor = 2.5
-			has_ethic = ethic_fanaticspiritualist
+			has_ethic = ethic_fanatic_spiritualist
 		}
 		modifier = {
 			factor = 0.50
@@ -641,6 +641,7 @@ country_event = { #Situation has done, Ground Zero Emerging, Create Notification
 			set_spawn_system_batch = end
 			add_extra_hyperlane_to_spawned_system_effect = yes
 		}
+		yourmod_create_crisis = yes # クライシス国家生成
 	}
 
 	option = { # gotcha!
@@ -930,6 +931,7 @@ country_event = {#起源探しイベント:1のスペシャルプロジェクト
 
 	trigger = {
 		not = { has_country_flag = yourmod_crisis_story_1 }
+		add_resource = { minor_artifacts = 5 }
 		has_country_flag = yourmod_allow_origin_research
 		any_owned_planet = {
 			is_planet_class = pc_nuked
@@ -989,6 +991,7 @@ country_event = {#起源探しイベント:2のスペシャルプロジェクト
 
 	option = {
 		name = yourmod_crisis_01.1100.a #考古学の時間だ。
+		add_resource = { minor_artifacts = 5 }
 		random_owned_planet = {
 			limit = {
 				is_planet_class = pc_gas_giant
@@ -1032,6 +1035,7 @@ country_event = {#起源探しイベント:3のスペシャルプロジェクト
 
 	option = {
 		name = yourmod_crisis_01.1100.a #考古学の時間だ。
+		add_resource = { minor_artifacts = 5 }
 		random_owned_planet = {
 			limit = {
 				or = {
@@ -1078,6 +1082,7 @@ country_event = {#起源探しイベント:4のスペシャルプロジェクト
 
 	option = {
 		name = yourmod_crisis_01.1100.a #考古学の時間だ。
+		add_resource = { minor_artifacts = 5 }
 		random_owned_planet = {
 			limit = {
 				or = {
@@ -1121,6 +1126,7 @@ country_event = {#起源探しイベント:5のスペシャルプロジェクト
 
 	option = {
 		name = yourmod_crisis_01.1100.a #考古学の時間だ。
+		add_resource = { minor_artifacts = 5 }
 		random_owned_planet = {
 			limit = {
 				has_resource = { type = sr_zro amount > 0 }
@@ -1234,6 +1240,7 @@ country_event = {#起源探しイベント:核戦争で滅んだ惑星
 	}
 	option = {
 		name = yourmod_crisis_01.1201.a #やはり我々が最初ではなかったというわけか。
+		add_resource = { minor_artifacts = 5 }
 	}
 }
 
@@ -1256,6 +1263,7 @@ country_event = {#起源探しイベント:先駆者のクリスタル
 	}
 	option = {
 		name = yourmod_crisis_01.1202.a #抜本的な解決にはならないな。
+		add_resource = { minor_artifacts = 5 }
 	}
 }
 
@@ -1278,6 +1286,7 @@ country_event = {#起源探しイベント:バッドアイデア
 	}
 	option = {
 		name = yourmod_crisis_01.1203.a #バッドアイデア。
+		add_resource = { minor_artifacts = 5 }
 	}
 }
 
@@ -1300,6 +1309,7 @@ country_event = {#起源探しイベント:大絶滅
 	}
 	option = {
 		name = yourmod_crisis_01.1204.a #もしかすると$yourmod_crisis$が原因なのか？
+		add_resource = { minor_artifacts = 5 }
 	}
 }
 
@@ -1351,39 +1361,66 @@ country_event = {#起源探しイベント:学術会
 	id = yourmod_crisis_01.1207
 	title = yourmod_crisis_01.1207.name
  	desc = yourmod_crisis_01.1207.desc
-
+	desc = { trigger = { not = { exists = event_target:curator_enclave_country } } text =  yourmod_crisis_01.1207.desc.b }
 	picture = GFX_evt_acquire_asset
 	show_sound = event_radio_chatter_04 # この辺はあとでいい感じの奴にしておく
 
 	trigger = {
 		has_country_flag = yourmod_crisis_story_6
-		exists = event_target:curator_enclave_country
-		event_target:curator_enclave_country = {
-			has_communications = ROOT
-		}
+		not = { has_country_flag = yourmod_crisis_story_7 }
+		#exists = event_target:curator_enclave_country
+		#event_target:curator_enclave_country = {
+		#	has_communications = ROOT
+		#}
 	}
 
 	#意外な手助け
 	#帝国は$yourmod_crisis$に関係した史料を集め、解析を重ねている。しかし、重要な物が欠けている。それは、$yourmod_crisis$の$R製造者$!に関する情報である。名前も分からない古代文明も、レングルスタップも、シャダイハーも、$yourmod_crisis$に直面したすべての文明がこれは生物兵器であるという結論を出している。だが、誰も製造者が何者かという疑問については答えが出せなかったのだ。考古学者たちが頭をフル回転して考えているという中で、突如として学術会から交信が届いた。なんでも、$yourmod_crisis$について話があるという。
 
 	mean_time_to_happen = {
-		years = 2
+		days = 60
 	}
 
 	immediate = {
+		if = {
+			limit = {
+				exists = event_target:curator_enclave_country
+				not = {
+					event_target:curator_enclave_country = {
+						has_communications = ROOT
+					}
+				]
+			}
+			establish_communications = event_target:curator_enclave_country
+		}
 		set_country_flag = yourmod_crisis_story_7
 	}
 
 	option = {
 		name = yourmod_crisis_01.1207.a #画面に映せ。
-		trigger = { is_homicidal = no }
+		trigger = {
+			is_homicidal = no
+			exists = event_target:curator_enclave_country
+		}
 		country_event = {
 			id = yourmod_crisis_01.1208
 		}
 	}
 	option = {
 		name = yourmod_crisis_01.1207.b #死ね……。
-		trigger = { is_homicidal = yes }
+		trigger = {
+			is_homicidal = yes
+			exists = event_target:curator_enclave_country
+		}
+	}
+	option = {
+		name = yourmod_crisis_01.1207.c #ok
+		trigger = {
+			not = { exists = event_target:curator_enclave_country }
+		}
+		random_planet_within_border = {
+			create_archaeological_site = site_yourmod_final_arc_site
+		}
 	}
 }
 
@@ -1586,7 +1623,8 @@ country_event = {#遺物アクションガバ
 	#
 
 	option = {
-		name = yourmod_crisis_01.1299.a #なんという時間の無駄だ！
+		name = yourmod_crisis_01.1299.a #なんという時間の無駄だ
+		add_resource = { minor_artifacts = 2 }
 	}
 }
 

@@ -120,16 +120,19 @@ yourmod_virus = {
 	government = no
 	colonizing_title = ""
 	colonizing_desc = ""
+	orbital_bombardment = yes #軌道爆撃用の設定
 	#custom_starbase = starbase_swarm
 	observable = yes
 	uses_origins = no
 
 	ai = {
 		enabled = yes
+		declare_war = no
 		colonizer = yes
 		construction = yes
+		modification = no
 		modules = {
-
+			berserk_military_minister_module #これがないと艦隊を動かさないので追加 by爆雷
 		}
 	}
 	faction = {
