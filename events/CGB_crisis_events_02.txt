@@ -389,7 +389,7 @@ country_event = {
 	desc = cgb_crisis_02.10.desc
 
 	is_triggered_only = yes
-	picture = GFX_evt_mining_station #画像は後で探す
+	picture = GFX_evt_partition #画像は後で探す
 
 	location = from.target
 
@@ -412,7 +412,7 @@ country_event = {
 	desc = cgb_crisis_02.11.desc
 
 	is_triggered_only = yes
-	picture = GFX_evt_mining_station #画像は後で探す
+	picture = GFX_evt_partition #画像は後で探す
 
 	location = from.target
 
@@ -435,7 +435,7 @@ country_event = {
 	desc = cgb_crisis_02.12.desc
 
 	is_triggered_only = yes
-	picture = GFX_evt_mining_station #画像は後で探す
+	picture = GFX_evt_partition #画像は後で探す
 
 	location = from.target
 
@@ -458,7 +458,7 @@ country_event = {
 	desc = cgb_crisis_02.14.desc
 
 	is_triggered_only = yes
-	picture = GFX_evt_mining_station #画像は後で探す
+	picture = GFX_evt_partition #画像は後で探す
 
 	location = from.target
 
@@ -481,7 +481,7 @@ country_event = {
 	desc = cgb_crisis_02.15.desc
 
 	is_triggered_only = yes
-	picture = GFX_evt_mining_station #画像は後で探す
+	picture = GFX_evt_partition #画像は後で探す
 
 	location = from.target
 
@@ -504,7 +504,7 @@ country_event = {
 	desc = cgb_crisis_02.13.desc
 
 	is_triggered_only = yes
-	picture = GFX_evt_mining_station #画像は後で探す
+	picture = GFX_evt_partition #画像は後で探す
 
 	location = from.target
 
@@ -529,7 +529,7 @@ leader_event = {
 	desc = cgb_crisis_02.101.desc
 
 	is_triggered_only = yes
-	picture = GFX_evt_mining_station #画像は後で探す
+	picture = GFX_evt_spymaster #画像は後で探す
 
 	immediate = {
 		add_trait = leader_trait_maniacal
@@ -545,7 +545,7 @@ country_event = {
 	desc = cgb_crisis_02.102.desc
 
 	is_triggered_only = yes
-	picture = GFX_evt_mining_station #画像は後で探す
+	picture = GFX_evt_mysterious_signal #画像は後で探す
 
 	immediate = {
 		add_modifier = {
@@ -564,7 +564,7 @@ country_event = {
 	desc = cgb_crisis_02.103.desc
 
 	is_triggered_only = yes
-	picture = GFX_evt_mining_station #画像は後で探す
+	picture = GFX_evt_mysterious_signal #画像は後で探す
 
 	immediate = {
 		add_modifier = {
@@ -583,7 +583,7 @@ planet_event = {
 	desc = cgb_crisis_02.104.desc
 
 	is_triggered_only = yes
-	picture = GFX_evt_mining_station #画像は後で探す
+	picture = GFX_evt_announcement #画像は後で探す
 
 	immediate = {
 		add_modifier = {
@@ -602,7 +602,7 @@ planet_event = {
 	desc = cgb_crisis_02.105.desc
 
 	is_triggered_only = yes
-	picture = GFX_evt_mining_station #画像は後で探す
+	picture = GFX_evt_psionics #画像は後で探す
 
 	immediate = {
 		add_modifier = {
@@ -621,7 +621,7 @@ planet_event = {
 	desc = cgb_crisis_02.106.desc
 
 	is_triggered_only = yes
-	picture = GFX_evt_mining_station #画像は後で探す
+	picture = GFX_evt_atmospheric_entry #画像は後で探す
 
 	immediate = {
 		add_modifier = {
@@ -645,7 +645,7 @@ planet_event = {
 	desc = cgb_crisis_02.110.desc
 
 	is_triggered_only = yes
-	picture = GFX_evt_mining_station #画像は後で探す
+	picture = GFX_evt_colony_settlement #画像は後で探す
 
 	immediate = {
 		remove_modifier = cgb_modifier_event_106
@@ -667,7 +667,7 @@ planet_event = {
 	desc = cgb_crisis_02.201.desc
 
 	is_triggered_only = yes
-	picture = GFX_evt_mining_station #画像は後で探す
+	picture = GFX_evt_black_market #画像は後で探す
 
 	immediate = {
 		add_modifier = {
@@ -716,7 +716,7 @@ planet_event = {
 	desc = cgb_crisis_02.211.desc
 
 	is_triggered_only = yes
-	picture = GFX_evt_mining_station #画像は後で探す
+	picture = GFX_evt_galactic_market #画像は後で探す
 
 	immediate = {
 		remove_modifier = cgb_modifier_event_201
@@ -737,7 +737,7 @@ planet_event = {
 	desc = cgb_crisis_02.212.desc
 
 	is_triggered_only = yes
-	picture = GFX_evt_mining_station #画像は後で探す
+	picture = GFX_evt_city_ruins #画像は後で探す
 
 	immediate = {
 		remove_modifier = cgb_modifier_event_201
@@ -758,7 +758,7 @@ planet_event = {
 	desc = cgb_crisis_02.202.desc
 
 	is_triggered_only = yes
-	picture = GFX_evt_mining_station #画像は後で探す
+	picture = GFX_evt_worrying_signal #画像は後で探す
 
 	immediate = {
 		add_modifier = {
@@ -777,7 +777,7 @@ planet_event = {
 	desc = cgb_crisis_02.203.desc
 
 	is_triggered_only = yes
-	picture = GFX_evt_mining_station #画像は後で探す
+	picture = GFX_evt_worrying_signal #画像は後で探す
 
 	immediate = {
 		add_modifier = {
@@ -796,7 +796,7 @@ planet_event = {
 	desc = cgb_crisis_02.204.desc
 
 	is_triggered_only = yes
-	picture = GFX_evt_mining_station #画像は後で探す
+	picture = GFX_evt_coronation #画像は後で探す
 
 	immediate = {
 		add_modifier = {
@@ -815,7 +815,7 @@ planet_event = {
 	desc = cgb_crisis_02.205.desc
 
 	is_triggered_only = yes
-	picture = GFX_evt_mining_station #画像は後で探す
+	picture = GFX_evt_busy_spaceport #画像は後で探す
 
 	immediate = {
 		#怪しげな企業
@@ -856,7 +856,7 @@ planet_event = {
 	desc = cgb_crisis_02.213.desc
 
 	is_triggered_only = yes
-	picture = GFX_evt_mining_station #画像は後で探す
+	picture = GFX_evt_deficit #画像は後で探す
 
 	immediate = {
 		remove_modifier = cgb_modifier_event_205a
@@ -877,7 +877,7 @@ planet_event = {
 	desc = cgb_crisis_02.214.desc
 
 	is_triggered_only = yes
-	picture = GFX_evt_mining_station #画像は後で探す
+	picture = GFX_evt_ancient_alien_temple #画像は後で探す
 
 	immediate = {
 		remove_modifier = cgb_modifier_event_205b
@@ -898,7 +898,7 @@ planet_event = {
 	desc = cgb_crisis_02.206.desc
 
 	is_triggered_only = yes
-	picture = GFX_evt_mining_station #画像は後で探す
+	picture = GFX_evt_announcement #画像は後で探す
 
 	immediate = {
 		add_modifier = {
@@ -936,7 +936,7 @@ planet_event = {
 	desc = cgb_crisis_02.215.desc
 
 	is_triggered_only = yes
-	picture = GFX_evt_mining_station #画像は後で探す
+	picture = GFX_evt_ground_combat #画像は後で探す
 
 	immediate = {
 		remove_modifier = cgb_modifier_event_206_0
@@ -954,7 +954,7 @@ planet_event = {
 	desc = cgb_crisis_02.216.desc
 
 	is_triggered_only = yes
-	picture = GFX_evt_mining_station #画像は後で探す
+	picture = GFX_evt_burning_settlement #画像は後で探す
 
 	immediate = {
 		remove_modifier = cgb_modifier_event_206_0
@@ -977,7 +977,7 @@ planet_event = {
 	desc = cgb_crisis_02.301.desc
 
 	is_triggered_only = yes
-	picture = GFX_evt_mining_station #画像は後で探す
+	picture = GFX_evt_ship_in_orbit #画像は後で探す
 
 	location = event_target:cgb_happen_event_planet
 
@@ -1031,7 +1031,7 @@ planet_event = {
 	desc = cgb_crisis_02.311.desc
 
 	is_triggered_only = yes
-	picture = GFX_evt_mining_station #画像は後で探す
+	picture = GFX_evt_cover_blown #画像は後で探す
 
 	location = event_target:cgb_happen_event_planet
 
@@ -1058,7 +1058,7 @@ planet_event = {
 	desc = cgb_crisis_02.312.desc
 
 	is_triggered_only = yes
-	picture = GFX_evt_mining_station #画像は後で探す
+	picture = GFX_evt_scanning_remains #画像は後で探す
 
 	location = event_target:cgb_happen_event_planet
 
@@ -1085,7 +1085,7 @@ planet_event = {
 	desc = cgb_crisis_02.302.desc
 
 	is_triggered_only = yes
-	picture = GFX_evt_mining_station #画像は後で探す
+	picture = GFX_evt_worrying_signal #画像は後で探す
 
 	location = event_target:cgb_happen_event_planet
 
@@ -1118,7 +1118,7 @@ planet_event = {
 	desc = cgb_crisis_02.303.desc
 
 	is_triggered_only = yes
-	picture = GFX_evt_mining_station #画像は後で探す
+	picture = GFX_evt_worrying_signal #画像は後で探す
 
 	location = event_target:cgb_happen_event_planet
 
@@ -1151,7 +1151,7 @@ planet_event = {
 	desc = cgb_crisis_02.304.desc
 
 	is_triggered_only = yes
-	picture = GFX_evt_mining_station #画像は後で探す
+	picture = GFX_evt_coronation #画像は後で探す
 
 	location = event_target:cgb_happen_event_planet
 
@@ -1182,7 +1182,7 @@ planet_event = {
 	desc = cgb_crisis_02.305.desc
 
 	is_triggered_only = yes
-	picture = GFX_evt_mining_station #画像は後で探す
+	picture = GFX_evt_spy_network #画像は後で探す
 
 	location = event_target:cgb_happen_event_planet
 
@@ -1227,7 +1227,7 @@ planet_event = {
 	desc = cgb_crisis_02.313.desc
 
 	is_triggered_only = yes
-	picture = GFX_evt_mining_station #画像は後で探す
+	picture = GFX_evt_cover_blown #画像は後で探す
 
 	location = event_target:cgb_happen_event_planet
 
@@ -1255,7 +1255,7 @@ planet_event = {
 	desc = cgb_crisis_02.314.desc
 
 	is_triggered_only = yes
-	picture = GFX_evt_mining_station #画像は後で探す
+	picture = GFX_evt_cargoship_caravan #画像は後で探す
 
 	location = event_target:cgb_happen_event_planet
 
@@ -1306,7 +1306,7 @@ leader_event = {
 	desc = cgb_crisis_02.401.desc
 
 	is_triggered_only = yes
-	picture = GFX_evt_mining_station #画像は後で探す
+	picture = GFX_evt_vivisection #画像は後で探す
 
 	# [cgb_happen_event_planet.GetName]
 
@@ -1327,7 +1327,7 @@ situation_event = {
 	desc = cgb_crisis_02.402.desc
 
 	is_triggered_only = yes
-	picture = GFX_evt_mining_station #画像は後で探す
+	picture = GFX_evt_worrying_signal #画像は後で探す
 
 	# [cgb_happen_event_planet.GetName]
 
@@ -1347,7 +1347,7 @@ situation_event = {
 	desc = cgb_crisis_02.403.desc
 
 	is_triggered_only = yes
-	picture = GFX_evt_mining_station #画像は後で探す
+	picture = GFX_evt_worrying_signal #画像は後で探す
 
 	# [cgb_happen_event_planet.GetName]
 
@@ -1367,7 +1367,7 @@ situation_event = {
 	desc = cgb_crisis_02.404.desc
 
 	is_triggered_only = yes
-	picture = GFX_evt_mining_station #画像は後で探す
+	picture = GFX_evt_tradestation_interior #画像は後で探す
 
 	# [cgb_happen_event_planet.GetName]
 
