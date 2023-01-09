@@ -79,101 +79,8 @@ country_event = {
 					factor = 0.2
 					has_global_flag = cgb_crisis_phase_2
 				}
-				random_list = {
-					6 = {
-						#科学者が狂気特性を獲得
-						modifier = {
-							factor = 0
-							any_owned_leader = {
-								has_trait = leader_trait_maniacal
-							}
-						}
-						random_owned_leader = {
-							limit = {
-								leader_class = scientist
-								NOT = { has_trait = leader_trait_maniacal }
-							}
-							leader_event = {
-								id = cgb_crisis_02.101
-							}
-						}
-					}
-					10 = {
-						#コンピュータに異常が発生
-						modifier = {
-							factor = 0
-							has_modifier = cgb_modifier_event_102
-						}
-						country_event = {
-							id = cgb_crisis_02.102
-						}
-					}
-					10 = {
-						#コンピュータに異常が発生
-						modifier = {
-							factor = 0
-							has_modifier = cgb_modifier_event_103
-						}
-						modifier = {
-							factor = 0
-							has_ethic = ethic_gestalt_consciousness
-						}
-						country_event = {
-							id = cgb_crisis_02.103
-						}
-					}
-					10 = {
-						#市民が暴動
-						modifier = {
-							factor = 0
-							any_owned_planet = {
-								has_modifier = cgb_modifier_event_104
-							}
-						}
-						random_owned_planet = {
-							planet_event = {
-								id = cgb_crisis_02.104
-							}
-						}
-					}
-					3 = {
-						#外出制限の結果ちょっと快適
-						modifier = {
-							factor = 0
-							any_owned_planet = {
-								has_modifier = cgb_modifier_event_105
-							}
-						}
-						modifier = {
-							factor = 5
-							owner.owner_species = {
-								has_trait = trait_solitary #孤立的特性持ち
-							}
-						}
-						random_owned_planet = {
-							planet_event = {
-								id = cgb_crisis_02.105
-							}
-						}
-						
-					}
-					10 = {
-						#彗星より
-						modifier = {
-							factor = 0
-							any_owned_planet = {
-								or = {
-									has_modifier = cgb_modifier_event_106
-									has_modifier = cgb_modifier_event_110
-								}
-							}
-						}
-						random_owned_planet = {
-							planet_event = {
-								id = cgb_crisis_02.106
-							}
-						}
-					}
+				country_event = {
+					id = cgb_crisis_02.2
 				}
 			}
 			10 = { #感染済み惑星のイベント
@@ -191,90 +98,8 @@ country_event = {
 					factor = 0.5
 					has_global_flag = cgb_crisis_phase_2
 				}
-				random_planet_within_border = {
-					random_list = {
-						10 = {
-							#日用品の不足
-							modifier = {
-								factor = 0
-								or = {
-									has_modifier = cgb_modifier_event_201
-									has_modifier = cgb_modifier_event_211
-									has_modifier = cgb_modifier_event_212
-								}
-							}
-							planet_event = {
-								id = cgb_crisis_02.201
-							}
-						}
-						10 = {
-							#中規模な集団感染
-							modifier = {
-								factor = 0.5
-								has_modifier = cgb_modifier_event_202
-							}
-							planet_event = {
-								id = cgb_crisis_02.202
-							}
-						}
-						10 = {
-							#大規模な集団感染
-							modifier = {
-								factor = 0.2
-								has_modifier = cgb_modifier_event_203
-							}
-							planet_event = {
-								id = cgb_crisis_02.203
-							}
-						}
-						5 = {
-							#感染者の減少
-							modifier = {
-								factor = 0
-								has_modifier = cgb_modifier_event_204
-							}
-							planet_event = {
-								id = cgb_crisis_02.204
-							}
-						}
-						10 = {
-							#ブラック企業摘発
-							modifier = {
-								factor = 0
-								or = {
-									owner = {
-										has_ethic = ethic_gestalt_consciousness
-									}
-								
-									has_modifier = cgb_modifier_event_205a
-									has_modifier = cgb_modifier_event_205a
-									has_modifier = cgb_modifier_event_213
-									has_modifier = cgb_modifier_event_214
-								}
-							}
-							planet_event = {
-								id = cgb_crisis_02.205
-							}
-						}
-						10 = {
-							#反感染対策派の暴動
-							modifier = {
-								factor = 0
-								or = {
-									owner = {
-										has_ethic = ethic_gestalt_consciousness
-									}
-
-									has_modifier = cgb_modifier_event_216
-									has_modifier = cgb_modifier_event_206
-									has_modifier = cgb_modifier_event_206_0
-								}
-							}
-							planet_event = {
-								id = cgb_crisis_02.206
-							}
-						}
-					}
+				country_event = {
+					id = cgb_crisis_02.3
 				}
 			}		
 			15 = { #未感染惑星のイベント
@@ -295,69 +120,9 @@ country_event = {
 					factor = 0.5
 					has_global_flag = cgb_crisis_phase_2
 				}
-				random_controlled_planet = {
-					limit = {
-						NOT = { has_planet_flag  = cgb_infected_planet }
-					}
-					save_event_target_as = cgb_happen_event_planet
-					random_list = {
-						10 = {
-							modifier = {
-								factor = 0
-								has_planet_flag = cgb_happen_event_301
-							}
-							planet_event = {
-								#感染者の脱走
-								id = cgb_crisis_02.301
-							}
-						}
-						10 = {
-							modifier = {
-								factor = 0.5
-								has_modifier = cgb_modifier_event_302
-							}
-							planet_event = {
-								#小規模な集団感染
-								id = cgb_crisis_02.302
-							}
-						}
-						10 = {
-							modifier = {
-								factor = 0.2
-								has_modifier = cgb_modifier_event_303
-							}
-							planet_event = {
-								#中規模な集団感染
-								id = cgb_crisis_02.303
-							}
-						}
-						5 = {
-							modifier = {
-								factor = 0
-								check_variable = {
-									which = planet_prevalence_level
-									value <= 0
-								}
-							}
-							planet_event = {
-								#感染者の減少
-								id = cgb_crisis_02.304
-							}
-						}
-						10 = {
-							modifier = {
-								factor = 0
-								or = {
-									has_planet_flag = cgb_happen_event_305
-									has_modifier = cgb_modifier_event_305
-								}
-							}
-							planet_event = {
-								#感染者の再捜査
-								id = cgb_crisis_02.305
-							}
-						}
-					}
+				
+				country_event = {
+					id = cgb_crisis_02.4
 				}
 			}
 			20 = {#何も起きない
@@ -374,6 +139,293 @@ country_event = {
 				modifier = {
 					factor = 1.5
 					has_global_flag = cgb_crisis_phase_2
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = cgb_crisis_02.2 #全体的にバランスを調整しました。（惑星の感染situationが全然出なかった）
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		
+		random_planet_within_border = {
+			random_list = {
+				10 = {
+					#日用品の不足
+					modifier = {
+						factor = 0
+						or = {
+							has_modifier = cgb_modifier_event_201
+							has_modifier = cgb_modifier_event_211
+							has_modifier = cgb_modifier_event_212
+						}
+					}
+					planet_event = {
+						id = cgb_crisis_02.201
+					}
+				}
+				10 = {
+					#中規模な集団感染
+					modifier = {
+						factor = 0.5
+						has_modifier = cgb_modifier_event_202
+					}
+					planet_event = {
+						id = cgb_crisis_02.202
+					}
+				}
+				10 = {
+					#大規模な集団感染
+					modifier = {
+						factor = 0.2
+						has_modifier = cgb_modifier_event_203
+					}
+					planet_event = {
+						id = cgb_crisis_02.203
+					}
+				}
+				5 = {
+					#感染者の減少
+					modifier = {
+						factor = 0
+						has_modifier = cgb_modifier_event_204
+					}
+					planet_event = {
+						id = cgb_crisis_02.204
+					}
+				}
+				10 = {
+					#ブラック企業摘発
+					modifier = {
+						factor = 0
+						or = {
+							owner = {
+								has_ethic = ethic_gestalt_consciousness
+							}
+						
+							has_modifier = cgb_modifier_event_205a
+							has_modifier = cgb_modifier_event_205a
+							has_modifier = cgb_modifier_event_213
+							has_modifier = cgb_modifier_event_214
+						}
+					}
+					planet_event = {
+						id = cgb_crisis_02.205
+					}
+				}
+				10 = {
+					#反感染対策派の暴動
+					modifier = {
+						factor = 0
+						or = {
+							owner = {
+								has_ethic = ethic_gestalt_consciousness
+							}
+
+							has_modifier = cgb_modifier_event_216
+							has_modifier = cgb_modifier_event_206
+							has_modifier = cgb_modifier_event_206_0
+						}
+					}
+					planet_event = {
+						id = cgb_crisis_02.206
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = cgb_crisis_02.3 #全体的にバランスを調整しました。（惑星の感染situationが全然出なかった）
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		
+		random_planet_within_border = {
+			random_list = {
+				10 = {
+					#日用品の不足
+					modifier = {
+						factor = 0
+						or = {
+							has_modifier = cgb_modifier_event_201
+							has_modifier = cgb_modifier_event_211
+							has_modifier = cgb_modifier_event_212
+						}
+					}
+					planet_event = {
+						id = cgb_crisis_02.201
+					}
+				}
+				10 = {
+					#中規模な集団感染
+					modifier = {
+						factor = 0.5
+						has_modifier = cgb_modifier_event_202
+					}
+					planet_event = {
+						id = cgb_crisis_02.202
+					}
+				}
+				10 = {
+					#大規模な集団感染
+					modifier = {
+						factor = 0.2
+						has_modifier = cgb_modifier_event_203
+					}
+					planet_event = {
+						id = cgb_crisis_02.203
+					}
+				}
+				5 = {
+					#感染者の減少
+					modifier = {
+						factor = 0
+						has_modifier = cgb_modifier_event_204
+					}
+					planet_event = {
+						id = cgb_crisis_02.204
+					}
+				}
+				10 = {
+					#ブラック企業摘発
+					modifier = {
+						factor = 0
+						or = {
+							owner = {
+								has_ethic = ethic_gestalt_consciousness
+							}
+						
+							has_modifier = cgb_modifier_event_205a
+							has_modifier = cgb_modifier_event_205a
+							has_modifier = cgb_modifier_event_213
+							has_modifier = cgb_modifier_event_214
+						}
+					}
+					planet_event = {
+						id = cgb_crisis_02.205
+					}
+				}
+				10 = {
+					#反感染対策派の暴動
+					modifier = {
+						factor = 0
+						or = {
+							owner = {
+								has_ethic = ethic_gestalt_consciousness
+							}
+
+							has_modifier = cgb_modifier_event_216
+							has_modifier = cgb_modifier_event_206
+							has_modifier = cgb_modifier_event_206_0
+						}
+					}
+					planet_event = {
+						id = cgb_crisis_02.206
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = cgb_crisis_02.4 #全体的にバランスを調整しました。（惑星の感染situationが全然出なかった）
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		random_planet_within_border = {
+			random_list = {
+				10 = {
+					#日用品の不足
+					modifier = {
+						factor = 0
+						or = {
+							has_modifier = cgb_modifier_event_201
+							has_modifier = cgb_modifier_event_211
+							has_modifier = cgb_modifier_event_212
+						}
+					}
+					planet_event = {
+						id = cgb_crisis_02.201
+					}
+				}
+				10 = {
+					#中規模な集団感染
+					modifier = {
+						factor = 0.5
+						has_modifier = cgb_modifier_event_202
+					}
+					planet_event = {
+						id = cgb_crisis_02.202
+					}
+				}
+				10 = {
+					#大規模な集団感染
+					modifier = {
+						factor = 0.2
+						has_modifier = cgb_modifier_event_203
+					}
+					planet_event = {
+						id = cgb_crisis_02.203
+					}
+				}
+				5 = {
+					#感染者の減少
+					modifier = {
+						factor = 0
+						has_modifier = cgb_modifier_event_204
+					}
+					planet_event = {
+						id = cgb_crisis_02.204
+					}
+				}
+				10 = {
+					#ブラック企業摘発
+					modifier = {
+						factor = 0
+						or = {
+							owner = {
+								has_ethic = ethic_gestalt_consciousness
+							}
+						
+							has_modifier = cgb_modifier_event_205a
+							has_modifier = cgb_modifier_event_205a
+							has_modifier = cgb_modifier_event_213
+							has_modifier = cgb_modifier_event_214
+						}
+					}
+					planet_event = {
+						id = cgb_crisis_02.205
+					}
+				}
+				10 = {
+					#反感染対策派の暴動
+					modifier = {
+						factor = 0
+						or = {
+							owner = {
+								has_ethic = ethic_gestalt_consciousness
+							}
+
+							has_modifier = cgb_modifier_event_216
+							has_modifier = cgb_modifier_event_206
+							has_modifier = cgb_modifier_event_206_0
+						}
+					}
+					planet_event = {
+						id = cgb_crisis_02.206
+					}
 				}
 			}
 		}
