@@ -4,7 +4,7 @@ cgb_crisis_vaccine_dev_situation = {	#ワクワク
 	complete_icon = GFX_situation_outcome_unknown
 	
 	on_start = {
-		
+		set_situation_flag = cgb_crisis_vaccine_dev_situation
 	}
 
 	abort_trigger = {
@@ -17,6 +17,7 @@ cgb_crisis_vaccine_dev_situation = {	#ワクワク
 				days = 1
 			}
 		}
+		remove_situation_flag = cgb_crisis_vaccine_dev_finish
 	}
 	
 	modifier = {
@@ -172,6 +173,7 @@ cgb_crisis_vaccine_dev_situation = {	#ワクワク
 				id = cgb_vaccine_dev_event.13
 			}	
 		}
+		remove_situation_flag = cgb_crisis_vaccine_dev_situation
 	}
 
 	on_fail = {#

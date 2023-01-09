@@ -185,6 +185,9 @@ situation_event = {
 	trigger = {
 		owner = {
 			has_country_flag = cgb_crisis_vaccine_production_now
+			any_situation = {
+				has_situation_flag = cgb_crisis_vaccine_dev_situation
+			}
 		}
 	}
 	immediate = {
@@ -192,10 +195,17 @@ situation_event = {
 	}
 	option = {
 		name = cgb_vaccine_dev_event.22.a
-		target = {
-			set_planet_flag = cgb_crisis_vaccine_emergency
+
+		add_situation_progress = -10
+
+		owner = {
+			every_situation = {
+				limit = {
+					has_situation_flag = cgb_crisis_vaccine_dev_situation
+				}
+				add_situation_progress = -10
+			}
 		}
-		add_situation_progress = -15
 	}
 	option = {
 		name = cgb_vaccine_dev_event.22.b
