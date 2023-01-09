@@ -1,0 +1,34 @@
+﻿l_english:
+ lode_runner_single: "危機の発生：シングル"
+ lode_runner_consecutive: "危機の発生：連続"
+ lode_runner_all: "危機の発生：全て"
+ choose_mid_game_crisis: "ミッドゲーム危機の構成"
+ choose_mid_game_crisis_desc: "以下でミッドゲーム危機を有効または無効にできる。\n\n§HSingle Crisis§! - 許可されたものからランダムに 1 つの危機を生成する。\n§HConsecutive Crisis§! - 許可されているものから、一度に 1 つの危機を生成する。\n§HAll Crisis§! - 15 年に 1 回、許可されたものから危機を発生させます。\n\nバニラの危機を許可しても、元のスポーン要件が引き続き尊重され、モッド化された危機のスポーンはブロックされない。\n\nThanks for playing #MODJAM2022, and please take the time to vote for your favorite Crisis!"
+ great_khan_allowed: "§GGreat Khan Allowed§!"
+ great_khan_disabled: "§RGreat Khan Disabled§!"
+ gray_goo_crisis_allowed: "§GGray Tempest Allowed§!"
+ gray_goo_crisis_disabled: "§RGray Tempest Disabled§!"
+ dragon_season_allowed: "§GDragon Season Allowed§!"
+ dragon_season_disabled: "§RDragon Season Disabled§!"
+ gray_goo_empire_set_allowed: "§GGray Empire Allowed§!"
+ gray_goo_empire_set_disabled: "§RGray Empire Disabled§!"
+ space_storms_allowed: "§GSpace Storms Allowed§!"
+ space_storms_disabled: "§RSpace Storms Disabled§!"
+
+# Color List
+# §B thisisblue §!
+# §E thisisteal §!
+# §G thisisgreen §!
+# §H thisisorange §!
+# §L thisisbrown §!
+# §M thisispurple §!
+# §P thisislightred §! 
+# §R thisisred §!
+# §S thisisdarkorange §!
+# §T thisislightgrey §!
+# §W thisiswhite §!
+# §Y thisisyellow §!
+# §! this returns to the default text color §!
+
+
+ 
