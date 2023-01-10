@@ -927,7 +927,6 @@ country_event = {#起源探しイベント:1のスペシャルプロジェクト
 
 	trigger = {
 		not = { has_country_flag = cgb_crisis_story_1 }
-		add_resource = { minor_artifacts = 5 }
 		has_country_flag = cgb_allow_origin_research
 		any_owned_planet = {
 			is_planet_class = pc_nuked
@@ -947,6 +946,7 @@ country_event = {#起源探しイベント:1のスペシャルプロジェクト
 
 	option = {
 		name = cgb_crisis_01.1100.a #考古学の時間だ。
+		add_resource = { minor_artifacts = 5 }
 		random_owned_planet = {
 			limit = {
 				is_planet_class = pc_nuked
@@ -1359,7 +1359,6 @@ country_event = {#起源探しイベント:学術会
  	desc = cgb_crisis_01.1207.desc
 	desc = { trigger = { not = { exists = event_target:curator_enclave_country } } text =  cgb_crisis_01.1207.desc.b }
 	picture = GFX_evt_acquire_asset
-	show_sound = event_radio_chatter_04 # この辺はあとでいい感じの奴にしておく
 
 	trigger = {
 		has_country_flag = cgb_crisis_story_6
