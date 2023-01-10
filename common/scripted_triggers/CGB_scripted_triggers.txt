@@ -4,6 +4,6 @@ has_cgb_custom_diplomacy_event = {
 	}
 }
 
-can_destroy_planet_with_PLANET_KILLER_NANOBOTS = {
+can_destroy_planet_with_CGB_PLANET_KILLER_VIRUS = {
 	is_colony = yes
 }
