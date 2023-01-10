@@ -154,6 +154,7 @@ country_event = {
 	immediate = {
 		
 		random_planet_within_border = {
+			limit = { is_colony = yes }
 			random_list = {
 				10 = {
 					#日用品の不足
@@ -250,6 +251,7 @@ country_event = {
 	immediate = {
 		
 		random_planet_within_border = {
+			limit = { is_colony = yes }
 			random_list = {
 				10 = {
 					#日用品の不足
@@ -345,6 +347,7 @@ country_event = {
 
 	immediate = {
 		random_planet_within_border = {
+			limit = { is_colony = yes }
 			random_list = {
 				10 = {
 					#日用品の不足
