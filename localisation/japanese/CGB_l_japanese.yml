@@ -1,5 +1,5 @@
 ﻿l_japanese:
- cgb_tooltip: "This is a tooltip that briefly describes what your crisis does/how it works/etc. Please check the loc file for a list of colors."
+ cgb_tooltip: "謎めいた病原体が感染症を引き起こす。症状:内政へのダメージ、安定度や幸福度の減少、イベントウィンドウに対するストレス、艦隊戦による艦隊の破壊など。"
  cgb_allowed: "§GCrisis - Galactic Bio Hazard Enabled§!"
  cgb_disabled: "§RCrisis - Galactic Bio Hazard Disabled§!"
 
