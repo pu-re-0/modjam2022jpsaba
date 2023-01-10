@@ -102,6 +102,11 @@ country_event = {
 			save_event_target_as = cgb_fleet_spawn_planet_1
 		}
 		event_target:cgb_crisis_country = {
+			country_event = {
+				id = cgb_crisis_fleet.10
+				days = 180
+				random = 180
+			}
 			while = {
 				limit = {
 					event_target:cgb_fleet_spawn_planet_1 = {
@@ -146,6 +151,69 @@ country_event = {
 #感染した惑星の上に艦隊を出現させたいけれどこれで動くかわからない
 
 
+country_event = { #定期的増援
+	id = cgb_crisis_01.10
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		country_event = {
+			id = cgb_crisis_fleet.10
+			days = 500
+			random = 360
+		}
+		event_target:cgb_crisis_country = {
+			create_fleet = {#
+				name = "NAME_Medium_Virus_fleet"
+				settings = {
+					spawn_debris = no
+				}
+				effect = {
+					set_owner = event_target:cgb_crisis_country
+					create_cgb_crisis_medium_ships = yes
+					create_cgb_crisis_medium_ships = yes
+					create_cgb_crisis_medium_ships = yes
+					set_location = {
+						target = event_target:cgb_crisis_ground_zero_system.star
+						distance = 1
+						angle = random
+					}
+				}
+			}
+			create_fleet = {#
+				name = "NAME_Medium_Virus_fleet"
+				settings = {
+					spawn_debris = no
+				}
+				effect = {
+					set_owner = event_target:cgb_crisis_country
+					create_cgb_crisis_medium_ships = yes
+					create_cgb_crisis_medium_ships = yes
+					set_location = {
+						target = event_target:cgb_crisis_ground_zero_system.star
+						distance = 1
+						angle = random
+					}
+				}
+			}
+			create_fleet = {#
+				name = "NAME_Medium_Virus_fleet"
+				settings = {
+					spawn_debris = no
+				}
+				effect = {
+					set_owner = event_target:cgb_crisis_country
+					create_cgb_crisis_large_ships = yes
+					set_location = {
+						target = event_target:cgb_crisis_ground_zero_system.star
+						distance = 1
+						angle = random
+					}
+				}
+			}
+		}
+	}
+}
 
 
 # Nanobot Assimilation
@@ -162,3 +230,44 @@ planet_event = {#停滞阻止
 		}
 	}
 }
+
+fleet_event = {
+	id = cgb_crisis_fleet.1001
+	hide_window = yes
+	trigger = {
+		owner = {
+			is_same_value = event_target:cgb_crisis_country
+		}
+		not = { has_fleet_flag = cgb_is_garrison }
+	}
+	mean_time_to_happen = {
+		days = 180
+	}
+	immediate = {
+		queue_actions = {
+			find_closest_system = {
+				trigger = {
+					id = "cgb_target_system"
+					any_system_planet = {
+						is_colony = yes
+					}
+				}
+				found_system = {
+					move_to = this
+					find_closest_planet = {
+						trigger = {
+							id = "cgb_target_planet"
+							is_colony = yes
+						}
+						found_planet = {
+							move_to = this
+							orbit_planet = this
+							destroy_planet = this
+						}
+					}
+				}
+			}
+		}
+	}
+}
+

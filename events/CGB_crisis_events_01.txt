@@ -800,6 +800,8 @@ country_event = { #聖地の増強・遠征艦隊
 				}
 				effect = {
 					set_owner = event_target:cgb_crisis_country
+					set_fleet_flag = cgb_is_garrison
+					create_cgb_crisis_medium_ships = yes
 					create_cgb_crisis_medium_ships = yes
 					create_cgb_crisis_large_ships = yes
 					set_location = {
@@ -815,6 +817,8 @@ country_event = { #聖地の増強・遠征艦隊
 				effect = {
 					set_owner = event_target:cgb_crisis_country
 					create_cgb_crisis_medium_ships = yes
+					create_cgb_crisis_medium_ships = yes
+					create_cgb_crisis_medium_ships = yes
 					set_location = {
 						target = event_target:cgb_crisis_ground_zero_system.star
 						distance = 1
@@ -828,6 +832,7 @@ country_event = { #聖地の増強・遠征艦隊
 				effect = {
 					set_owner = event_target:cgb_crisis_country
 					create_cgb_crisis_large_ships = yes
+					create_cgb_crisis_medium_ships = yes
 					set_location = {
 						target = event_target:cgb_crisis_ground_zero_system.star
 						distance = 1
@@ -840,6 +845,8 @@ country_event = { #聖地の増強・遠征艦隊
 				name = "NAME_Medium_Virus_fleet"
 				effect = {
 					set_owner = event_target:cgb_crisis_country
+					create_cgb_crisis_medium_ships = yes
+					create_cgb_crisis_medium_ships = yes
 					create_cgb_crisis_medium_ships = yes
 					set_location = {
 						target = event_target:cgb_crisis_ground_zero_system.star
@@ -854,6 +861,8 @@ country_event = { #聖地の増強・遠征艦隊
 				effect = {
 					set_owner = event_target:cgb_crisis_country
 					create_cgb_crisis_large_ships = yes
+					create_cgb_crisis_medium_ships = yes
+					create_cgb_crisis_medium_ships = yes
 					set_location = {
 						target = event_target:cgb_crisis_ground_zero_system.star
 						distance = 1
@@ -1914,9 +1923,20 @@ planet_event = {
 	}
 	immediate = {
 		remove_global_flag = cgb_in_progress
+		remove_global_flag = cgb_crisis_phase_2
 		remove_global_flag = cgb_can_end_the_crisis
 		remove_global_flag = midgame_crisis_ongoing
+		event_target:cgb_crisis_country = {
+			every_owned_fleet = { destroy_fleet = yes }
+			destroy_country = yes
+		}
 		every_playable_country = {
+			remove_country_flag = cgb_infected_country
+			remove_country_flag = cgb_health_lost_country
+			every_owned_planet = {
+				limit = { is_colony = yes }
+				remove_planet_flag = cgb_infected_planet
+			}
 			country_event = {
 				id = cgb_crisis_01.2000
 			}

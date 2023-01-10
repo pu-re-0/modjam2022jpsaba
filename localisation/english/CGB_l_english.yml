@@ -330,3 +330,5 @@
  FLEETORDER_DESTROY_PLANET_WITH_CGB_PLANET_KILLER_VIRUS:0 "$PLANET|Y$ is spraying $cgb_crisis$"
  MESSAGE_DESC_FOR_CGB_PLANET_KILLER_VIRUS:0 "$cgb_crisis$ has been spread over the entire planet"
  
+ site_cgb_reward_arc_site: "Excavattion"
+ site_cgb_reward_arc_site_intro: "This one floating planet in this system where the $cgb_crisis$ fleet first appeared is overtly suspicious. There must be something going on."
