@@ -1966,4 +1966,109 @@ country_event = {#発掘拠点
 		}
 	}
 }
+fleet_event = {#1
+	id = cgb_crisis_01.2010
+	title = cgb_crisis_01.2010.name
+	desc = cgb_crisis_01.2010.desc
+	picture = GFX_evt_alien_city
+	show_sound = event_default # この辺はあとでいい感じの奴にしておく
+	is_triggered_only = yes
+	auto_opens = yes
+	location = from
+	
+	#掘ってみる
+	#この惑星はおそらく$cgb_crisis$からは認識できないようになっている。その証拠に、あれだけ大量の$cgb_crisis$艦が付近に存在していたはずなのに、それを思わせるような証拠はこの惑星からは何も出てこない。$cgb_crisis$の製造目的がこの惑星を防衛することだとすれば辻褄が合うため、多くの科学者たちはこの仮説を支持している。しかし地表面はどの角度から見ても何の変哲もない惑星でしかないため、守るような価値があるのは地中に埋もれてしまっていると思われる。
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = {
+		from = { set_site_progress_locked = no }
+	}
+	#
+
+	option = {
+		name = SEARCH
+	}
+}
+
+fleet_event = {#2
+	id = cgb_crisis_01.2011
+	title = cgb_crisis_01.2011.name
+	desc = cgb_crisis_01.2012.desc
+	picture = GFX_evt_archaeological_dig
+	show_sound = event_default # この辺はあとでいい感じの奴にしておく
+	is_triggered_only = yes
+	auto_opens = yes
+	location = from
+	
+	#思わぬトラブル
+	#[cgb_crisis_ground_zero.GetName]の適当な地表を掘ろうと試みた発掘隊だったが、思わぬトラブルに悩まされたという。何でもない地表面を掘ろうと通常のドリルを用いたところ、不明な理由によりドリルが捻じ曲がるという事態になった。そのため鉱山で直下掘りをするための巨大なドリルを持ち込んで掘削をしようとしたところ、なんとそれまでも同様の結果に終わるという惨事になった。発掘隊はエネルギーによる掘削ならばこの奇妙なドリル破壊現象は発生しないという事に気づき、惑星の何百もの箇所で直下掘りを試みているという。
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = {
+		from = { set_site_progress_locked = no }
+	}
+	#
+
+	option = {
+		name = SEARCH
+	}
+}
+
+fleet_event = {#3
+	id = cgb_crisis_01.2012
+	title = cgb_crisis_01.2012.name
+	desc = cgb_crisis_01.2012.desc
+	picture = GFX_evt_ancient_databank
+	show_sound = event_default # この辺はあとでいい感じの奴にしておく
+	is_triggered_only = yes
+	auto_opens = yes
+	location = from
+	
+	#大当たり
+	#[cgb_crisis_ground_zero.GetName]の発掘隊から驚くべきニュースが届いた。ほとんどすべての掘削地点において、地下1Kmの深さで突然謎の空洞に出くわしたのだという！調査隊はまず兵士たちを送り込んで脅威がないことを確認してから地下空間へと進入した。そこで彼らが目にしたものは、非常に巨大なデータセンターだった。ほぼすべての掘削地点でこの空洞に到達したことを考えると、このデータセンターはまさに惑星規模で、惑星そのものがデータバンクになっているのかもしれない。この非常識に巨大なデータバンクの探索には長い時間がかかるだろう……。
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = {
+		from = { set_site_progress_locked = no }
+	}
+	#
+
+	option = {
+		name = SEARCH
+		small_artifact_reward = yes
+	}
+}
+
+fleet_event = {#4
+	id = cgb_crisis_01.2013
+	title = cgb_crisis_01.2013.name
+	desc = cgb_crisis_01.2013.desc
+	picture = GFX_evt_ancient_artifact
+	show_sound = event_default # この辺はあとでいい感じの奴にしておく
+	is_triggered_only = yes
+	auto_opens = yes
+	location = from
+	
+	#不安感
+	#調査隊は一通りの探索記録を送ってきた。[cgb_crisis_ground_zero.GetName]の地下には惑星規模のデータバンクが埋まっていたという事が確認された。通るための通路がアリの巣のように広がっており、さらに地下に広がる下位階層も存在するが、地下に進めば進むほど精神に説明できない負荷がかかるという性質も確認された。「自分が自分でなくなるような感じ」「自分のデータがここにも記録されているのではないかと思うと非常に怖い」という証言があるが、これはただ単に地下空間に居るというストレスによるものだろう。\nクリエイター文明によるメッセージも発見されたそうだ！しかし、そのメッセージは疑問を呼ぶものだった。どうやら、このデータバンクを作ったのは$cgb_crisis$の製造者である彼らではないのだという。つまり、クリエイター文明が残したメッセージは、我々の調査隊と同様な部隊が残したものということになる。メッセージの内容はこうだ。「銀河を襲った危機との戦争が起こったのは10年前。そして、この星系が突然発見されたのも10年前。偶然といえばそれまでだが、私にはそうとは思えない。明らかにあの病原体どもはこの星系を狙っていた。インディク=ナーシェリリルリの戦いでは、奴らの艦隊は全部この星系を目指して進撃していたところを我々の艦隊が横から急襲して勝利したのだ。奴らの動作原理も解明されて、今は兵器化するための実験が進行中だが、これも本当に大丈夫なのか心配だ。思うに、我が帝国は傲慢になりすぎている。ダークマターの秘密を解き明かし、生体金属を日常のあらゆる場所で運用し、サイボーグ化しつつ超能力を発現した我々は真に偉大な種族だ。しかし、我が種族が築いた偉大な帝国のあらゆる場所で退廃が進んでいる。超能力を持った実体を兵器にするのは傲慢の最たるもので、これはとても危険な賭けだ。シュラウドは我々でさえもまだすべてを解明できてはいない……。」\n調査隊はさらに重要なものを見つけたが、報告書の作成に時間がかかると説明している。あと2週間ほどで報告書が作成できるという。
+	
+	option = {
+		name = cgb_crisis_01.2013.a #これは不気味、しかも予想外だな。
+		owner = {
+			country_event = {
+				id = cgb_crisis_01.2014#reward
+				days = 14
+			}
+		}
+	}
+}
 
