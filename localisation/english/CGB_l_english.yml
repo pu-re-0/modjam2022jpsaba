@@ -295,7 +295,8 @@
  cgb_crisis_01.1207.desc.b: "Our investigation was reaching a dead end. We reread historical documents, destroyed artifacts, and did everything we could. But there was no progress. Then a report came in. The crew of a spaceship that had gone astray and crashed on a planet informed us that there were mysterious ruins that happened to be at the landing site. There may be hope here."
  cgb_crisis_01.1207.c: "hope there is hope."
  
- cgb_artifact_cooldown: "cooldown of the investigation with the relics"
- cgb_artifact_cooldown_desc: "The archivists who manage the relics and the scientists who investigate them do not always produce immediate results."
- artifact_cgb_crisis_origin_research_effect:0 "これまでに収集した遺物の中から、有用そうなものがないか探す。" 
+ cgb_artifact_cooldown:0 "cooldown of the investigation with the relics"
+ cgb_artifact_cooldown_desc:0 "The archivists who manage the relics and the scientists who investigate them do not always produce immediate results."
+ artifact_cgb_crisis_origin_research_effect:0 "Search the relics you've collected so far for anything that might be useful." 
  
+ CGB_ancient_data_bank_active:0 "Relic - Exploring Ancient Data Banks"

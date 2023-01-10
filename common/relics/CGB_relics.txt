@@ -32,7 +32,7 @@ CGB_r_ancient_data_bank = {
 
 	active_effect = {
 		add_modifier = {
-			modifier = "ether_drake_triumph"
+			modifier = "CGB_ancient_data_bank_active"
 			days = @triumph_duration
 		}
 		custom_tooltip = relic_triumph_cooldown

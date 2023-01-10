@@ -302,5 +302,7 @@
  cgb_artifact_cooldown:"遺物を使った調査のクールダウン"
  cgb_artifact_cooldown_desc:"遺物を管理するアーキビストや、調査する科学者たちもすぐに結果が出せるわけではない。"
  artifact_cgb_crisis_origin_research_effect:0 "これまでに収集した遺物の中から、有用そうなものがないか探す。" 
+
+ CGB_ancient_data_bank_active:0 "遺産：古代のデータバンクの探索"
  
  

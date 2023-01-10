@@ -5,3 +5,8 @@ cgb_GHO_fund = {
 cgb_artifact_cooldown = {
 	icon = "gfx/interface/icons/modifiers/mod_relic_cooldown.dds"
 }
+
+CGB_ancient_data_bank_active = {
+	planet_researchers_produces_mult = 0.3
+	icon = "gfx/interface/icons/modifiers/mod_job_researcher_add.dds"
+}
