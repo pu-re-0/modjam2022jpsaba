@@ -288,9 +288,14 @@
  cgb_decryption_research_approach_high:"High budget"
  cgb_decryption_research_approach_high_desc:"Decipher this code at all costs!"
 
+ cgb_decryption_approach_low_desc:0 ""
+ cgb_decryption_approach_mid_desc:0 ""
+ cgb_decryption_approach_high_desc:0 ""
+
  cgb_crisis_01.1207.desc.b: "Our investigation was reaching a dead end. We reread historical documents, destroyed artifacts, and did everything we could. But there was no progress. Then a report came in. The crew of a spaceship that had gone astray and crashed on a planet informed us that there were mysterious ruins that happened to be at the landing site. There may be hope here."
  cgb_crisis_01.1207.c: "hope there is hope."
  
-  cgb_artifact_cooldown: "cooldown of the investigation with the relics"
-  cgb_artifact_cooldown_desc: "The archivists who manage the relics and the scientists who investigate them do not always produce immediate results."
+ cgb_artifact_cooldown: "cooldown of the investigation with the relics"
+ cgb_artifact_cooldown_desc: "The archivists who manage the relics and the scientists who investigate them do not always produce immediate results."
+ artifact_cgb_crisis_origin_research_effect:0 "これまでに収集した遺物の中から、有用そうなものがないか探す。" 
  

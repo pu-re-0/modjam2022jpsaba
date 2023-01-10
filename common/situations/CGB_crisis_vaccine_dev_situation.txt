@@ -363,7 +363,7 @@ cgb_crisis_vaccine_production_situation = {	#ワクワク配布
  			category = situations
  			upkeep = {
 				energy = 10
-				mult = value:edict_size_effect
+				mult = owner.value:edict_size_effect
 			}
  			produces = { }
  		}
@@ -381,7 +381,7 @@ cgb_crisis_vaccine_production_situation = {	#ワクワク配布
  			category = situations
  			upkeep = {
 				energy = 20
-				mult = value:edict_size_effect
+				mult = owner.value:edict_size_effect
 			}
  			produces = { }
  		}
@@ -399,7 +399,7 @@ cgb_crisis_vaccine_production_situation = {	#ワクワク配布
  			category = situations
  			upkeep = {
 				energy = 40
-				mult = value:edict_size_effect
+				mult = owner.value:edict_size_effect
 			}
  			produces = { }
  		}

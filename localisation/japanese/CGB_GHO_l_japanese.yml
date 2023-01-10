@@ -20,6 +20,8 @@
 cgb_gal_com_neighboring_virus:0 "隣国が危機帝国である"
 cgb_gal_com_virus_infected:0 "ウィルスに感染している"
 
+galactic_focus_crisis_virus:0 "危機は倒された"
+
 #GHO
  cgb_GHO:0 "銀河保健機構"
  cgb_resolution_GHO_fund:0 "基金の設立"
