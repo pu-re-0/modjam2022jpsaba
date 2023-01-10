@@ -1914,9 +1914,16 @@ planet_event = {
 	}
 	immediate = {
 		remove_global_flag = cgb_in_progress
+		remove_global_flag = cgb_crisis_phase_2
 		remove_global_flag = cgb_can_end_the_crisis
 		remove_global_flag = midgame_crisis_ongoing
 		every_playable_country = {
+			remove_country_flag = cgb_infected_country
+			remove_country_flag = cgb_health_lost_country
+			every_owned_planet = {
+				limit = { is_colony = yes }
+				remove_planet_flag = cgb_infected_planet
+			}
 			country_event = {
 				id = cgb_crisis_01.2000
 			}
