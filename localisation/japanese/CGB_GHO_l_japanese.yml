@@ -9,6 +9,14 @@
  cgb_resolution_GHO_desc:0 "感染症は一国だけの対策では限界がある。銀河保健機構-GHOは超国家的感染症対策を可能にするだろう。"
  cgb_resolution_GHO_effect_success:0 ""
 
+ gal_com_neighboring_cgb_virus:0 ""
+ gal_com_cgb_virus_size_smallest:0 ""
+ gal_com_cgb_virus_size_small:0 ""
+ gal_com_cgb_virus_size_medium:0 ""
+ gal_com_cgb_virus_size_large:0 ""
+ gal_com_cgb_virus_size_very_large:0 ""
+ gal_com_cgb_virus_size_huge:0 ""
+
 #GHO
  cgb_GHO:0 "銀河保健機構"
  cgb_resolution_GHO_fund:0 "基金の設立"
