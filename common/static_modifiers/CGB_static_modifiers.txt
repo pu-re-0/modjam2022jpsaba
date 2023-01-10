@@ -2,3 +2,6 @@
 cgb_GHO_fund = {
 	country_energy_produces_mult = -0.05
 }
+cgb_artifact_cooldown = {
+	icon = "gfx/interface/icons/modifiers/mod_relic_cooldown.dds"
+}
