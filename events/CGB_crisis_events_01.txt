@@ -217,7 +217,6 @@ country_event = { # Hide, or don't
 	#未知の病気が我々を襲っている。これは我々全員に周知の事実だ。だが、他の帝国にとってはそうではない。彼らは皆、今まで通りの日々が続くと信じている。もしかしたら、この問題は[cgb_virus_first_onset_planet.GetName]に留めて対処することができるかもしれない。もし他の帝国に病気の存在を知らせれば、彼らは態度を硬化させ、交易や交流を禁じるようなことがあるかもしれない。だが、隠蔽して他国に感染が広がり、そして病気の起源が我々の惑星にあると知られたら、これはもっと重大な問題になるかもしれない。
 
 	picture = GFX_evt_mysterious_signal
-	show_sound = event_default_02 # この辺はあとでいい感じの奴にしておく
 
 	is_triggered_only = yes
 	location = event_target:cgb_virus_first_onset_planet
@@ -267,7 +266,6 @@ country_event = { #Informed consent#公開した場合のイベント
  	}
 
 	picture = GFX_evt_announcement
-	show_sound = event_default_02 # この辺はあとでいい感じの奴にしておく
 
 	is_triggered_only = yes
 
@@ -293,7 +291,6 @@ country_event = { #Uninformed consent#隠した場合のイベント
  	}
 
 	picture = GFX_evt_assembly_fight
-	show_sound = event_default_02 # この辺はあとでいい感じの奴にしておく
 
 	is_triggered_only = yes
 
@@ -555,7 +552,7 @@ country_event = { #調査シチュエーションからのイベント
 	#$cgb_crisis$の正体をつかむ実験を行っている最中、ある天文台が由来不明の怪電波を検出した。施設近隣からの照射や未知の宇宙線の可能性が指摘されたが、意外な事実が判明した。その電波は、$cgb_crisis$の犠牲になった遺体の集積場から放たれていたのだ。完全に壊れた機械でさえ電波を発信しないが、完全に死亡した有機生命体はなおさら電波を発信しない。この電波は確実に$cgb_crisis$に関係している。もしかしたら、この電波そのものが人を死に追いやっているのではないかと考えるようになった科学者もいる。調査は続けられる。
 	
 	picture = GFX_evt_mysterious_signal
-	show_sound = event_radio_chatter_04 # この辺はあとでいい感じの奴にしておく
+	show_sound = event_radio_chatter # この辺はあとでいい感じの奴にしておく
 	is_triggered_only = yes
 
 	option = { # ok
@@ -572,7 +569,6 @@ country_event = { #調査シチュエーションからのイベント
 	#受け入れがたい事実が発覚した。$cgb_crisis$は超能力を保有する存在だったのだ。この銀河には超能力者がいくらか存在するが、彼らはやはり遺体安置所から超能力波を感じたのだという。電波にしろ超能力の波動にしろ、どういうわけか遺体から放たれているようだ。この不気味な事実は受け入れがたいが、超能力者の言を信じる価値はあるだろう。
 	
 	picture = GFX_evt_shrouded_planet
-	show_sound = event_alien_signal_05 # この辺はあとでいい感じの奴にしておく
 	is_triggered_only = yes
 
 	option = { # ok
@@ -898,7 +894,7 @@ country_event = {#起源探しイベント
  	desc = cgb_crisis_01.1100.desc
 
 	picture = GFX_evt_intelligence_report
-	show_sound = event_laboratory_sound_02 # この辺はあとでいい感じの奴にしておく
+	show_sound = event_radio_chatter # この辺はあとでいい感じの奴にしておく
 
 	is_triggered_only = yes
 
@@ -927,7 +923,7 @@ country_event = {#起源探しイベント:1のスペシャルプロジェクト
 	title = cgb_crisis_01.1101.name
  	desc = cgb_crisis_01.1101.desc
 	picture = GFX_evt_tomb_world
-	show_sound = event_laboratory_sound_02 # この辺はあとでいい感じの奴にしておく
+	show_sound = event_radio_chatter # この辺はあとでいい感じの奴にしておく
 
 	trigger = {
 		not = { has_country_flag = cgb_crisis_story_1 }
@@ -966,7 +962,7 @@ country_event = {#起源探しイベント:2のスペシャルプロジェクト
 	title = cgb_crisis_01.1102.name
  	desc = cgb_crisis_01.1102.desc
 	picture = GFX_evt_baol_datacrystals
-	show_sound = event_laboratory_sound_02 # この辺はあとでいい感じの奴にしておく
+	show_sound = event_radio_chatter # この辺はあとでいい感じの奴にしておく
 
 	trigger = {
 		has_country_flag = cgb_crisis_story_1
@@ -1007,7 +1003,7 @@ country_event = {#起源探しイベント:3のスペシャルプロジェクト
 	title = cgb_crisis_01.1103.name
  	desc = cgb_crisis_01.1103.desc
 	picture = GFX_evt_ancient_records
-	show_sound = event_laboratory_sound_02 # この辺はあとでいい感じの奴にしておく
+	show_sound = event_radio_chatter # この辺はあとでいい感じの奴にしておく
 
 	trigger = {
 		has_country_flag = cgb_crisis_story_2
@@ -1054,7 +1050,7 @@ country_event = {#起源探しイベント:4のスペシャルプロジェクト
 	title = cgb_crisis_01.1104.name
  	desc = cgb_crisis_01.1104.desc
 	picture = GFX_evt_ancient_databank
-	show_sound = event_laboratory_sound_02 # この辺はあとでいい感じの奴にしておく
+	show_sound = event_radio_chatter # この辺はあとでいい感じの奴にしておく
 
 	trigger = {
 		has_country_flag = cgb_crisis_story_3
@@ -1101,7 +1097,7 @@ country_event = {#起源探しイベント:5のスペシャルプロジェクト
 	title = cgb_crisis_01.1105.name
  	desc = cgb_crisis_01.1105.desc
 	picture = GFX_evt_zro_5
-	show_sound = event_laboratory_sound_02 # この辺はあとでいい感じの奴にしておく
+	show_sound = event_radio_chatter # この辺はあとでいい感じの奴にしておく
 
 	trigger = {
 		has_country_flag = cgb_crisis_story_4
@@ -1142,7 +1138,7 @@ country_event = {#起源探しイベント:6のスペシャルプロジェクト
 	title = cgb_crisis_01.1106.name
  	desc = cgb_crisis_01.1106.desc
 	picture = GFX_evt_psionics
-	show_sound = event_laboratory_sound_02 # この辺はあとでいい感じの奴にしておく
+	show_sound = event_radio_chatter # この辺はあとでいい感じの奴にしておく
 
 	trigger = {
 		has_country_flag = cgb_crisis_story_5
@@ -1615,7 +1611,6 @@ country_event = {#遺物アクションガバ
  	desc = cgb_crisis_01.1299.desc
 
 	picture = GFX_evt_deficit
-	show_sound = event_structural_collapse_02 # この辺はあとでいい感じの奴にしておく
 
 	is_triggered_only = yes
 
@@ -1636,7 +1631,6 @@ country_event = {#クソ暗号
  	desc = cgb_crisis_01.1300.desc
 
 	picture = GFX_evt_deficit
-	show_sound = event_yellow_alert_01 # この辺はあとでいい感じの奴にしておく
 
 	is_triggered_only = yes
 
