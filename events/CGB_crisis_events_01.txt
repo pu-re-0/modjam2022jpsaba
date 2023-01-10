@@ -82,17 +82,19 @@ country_event = { # decide first victim country#最初に感染する国家を�
 			any_owned_planet = {# Has death world or many pops or nojobs
 				or = {
 					is_planet_class = pc_nuked
-					num_pops > 49
-					num_unemployed > 4
+					is_planet_class = pc_relic
+					is_planet_class = pc_gaia
+					num_pops > 35
+					num_unemployed > 3
+					num_districts = { type = district_mining value > 8 }
 				}
 			}
-			
-			is_ai = yes # victim
+			is_ai = yes # ai may become victim always
 		}
 	}
 
 	mean_time_to_happen = {
-		years = 5
+		years = 3
 		modifier = {
 			factor = 1.25
 			is_ai = yes
@@ -145,7 +147,6 @@ country_event = { # decide first victim country#最初に感染する国家を�
 		}
 	}
 }
-
 
 country_event = { # notification for first victim#お前が第一感染国という通知
 	id = cgb_crisis_01.2
