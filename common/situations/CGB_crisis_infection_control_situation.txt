@@ -530,9 +530,11 @@ cgb_country_infection_situation = {
 			}
 			random_owned_planet = {
 				set_planet_flag = cgb_infected_planet
-				start_situation = {
-					type = cgb_planet_infection_situation
-					target = this
+				prev = {
+					start_situation = {
+						type = cgb_planet_infection_situation
+						target = prev
+					}
 				}
 			}
 		}
