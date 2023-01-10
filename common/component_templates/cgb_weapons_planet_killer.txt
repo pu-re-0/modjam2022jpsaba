@@ -6,8 +6,8 @@ weapon_component_template = { # Nanobot Assimilation
 	use_ship_kill_target = no
 	hidden = yes
 
-	windup = { min = 30.0 max = 30.0 }
-	total_fire_time = 30.00
+	windup = { min = 60.0 max = 60.0 }
+	total_fire_time = 60.00
 	
 	icon = GFX_ship_part_nanobot_diffuser
 	icon_frame = 1
