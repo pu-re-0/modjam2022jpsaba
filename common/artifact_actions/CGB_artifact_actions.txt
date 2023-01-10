@@ -32,10 +32,10 @@ artifact_cgb_crisis_origin_research = {
 				days = 360
 			}
 			random_list = {
-				66 = {
+				90 = {
 					country_event = { id = cgb_crisis_01.1200 } #origin storybase event #諸々判定するイベントに飛ばす
 				}
-				33 = {
+				10 = {
 
 					country_event = { id = cgb_crisis_01.1299 } #FAIL #遺物だけは返してやる
 				}
