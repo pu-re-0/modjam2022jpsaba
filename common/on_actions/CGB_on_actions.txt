@@ -11,11 +11,11 @@ on_game_start_country = {
 	}
 }
 
-on_five_year_pulse = {
-	events = {
-		midgame_crisis_trigger.1
-	}
-}
+#on_five_year_pulse = {
+#	events = {
+#		midgame_crisis_trigger.1
+#	}
+#}
 
 # Triggers when trying to open the diplomacy view for countries with custom diplomacy.
 # Country scope
