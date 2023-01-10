@@ -17,8 +17,9 @@
  gal_com_cgb_virus_size_very_large:0 ""
  gal_com_cgb_virus_size_huge:0 ""
 
-cgb_gal_com_neighboring_virus:0 "隣国が危機帝国である"
-cgb_gal_com_virus_infected:0 "ウィルスに感染している"
+ cgb_gal_com_neighboring_virus:0 "隣国が危機帝国である"
+ cgb_gal_com_virus_infected:0 "ウィルスに感染している"
+ cgb_gal_com_virus_infected:0 "ウィルスに感染している国が多い"
 
 galactic_focus_crisis_virus:0 "危機は倒された"
 

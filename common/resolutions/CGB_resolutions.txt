@@ -498,6 +498,7 @@ cgb_resolution_GHO_vaccine_global_dev = { #ワクチンの国際共同開発
 		modifier = {
 			factor = 1.2
 			has_country_flag = cgb_virus_infected
+			desc = cgb_gal_com_virus_infected
 		}
 
 		modifier = {
@@ -508,6 +509,7 @@ cgb_resolution_GHO_vaccine_global_dev = { #ワクチンの国際共同開発
 					has_country_flag = cgb_virus_infected
 				}
 			}
+			desc = cgb_gal_com_virus_infected_lot
 		}
 	}
 }
