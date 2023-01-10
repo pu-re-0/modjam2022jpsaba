@@ -3,3 +3,7 @@ has_cgb_custom_diplomacy_event = {
 		cgb_custom_diplomacy_events.1
 	}
 }
+
+can_destroy_planet_with_PLANET_KILLER_NANOBOTS = {
+	is_colony = yes
+}
