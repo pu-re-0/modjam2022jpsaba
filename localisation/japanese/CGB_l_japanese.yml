@@ -334,4 +334,6 @@
  FLEETORDER_DESTROY_PLANET_WITH_CGB_PLANET_KILLER_VIRUS:0 "$PLANET|Y$に$cgb_crisis$を散布中"
  MESSAGE_DESC_FOR_CGB_PLANET_KILLER_VIRUS:0 "$cgb_crisis$が惑星全体にばらまかれた"
  
+ site_cgb_reward_arc_site:"クリエイター発掘"
+ site_cgb_reward_arc_site_intro:"$cgb_crisis$の艦隊が最初に出現したこの星系に一つだけ浮かぶこの惑星は、あからさまに怪しい。何かあるに違いない。"
  
