@@ -127,7 +127,6 @@ country_event = {
 								design = "NAME_medium_virus"
 								graphical_culture = event_target:cgb_crisis_country
 							}
-							set_fleet_bombardment_stance = armageddon
 						}
 						set_location = {
 							target = event_target:cgb_fleet_spawn_planet_1
