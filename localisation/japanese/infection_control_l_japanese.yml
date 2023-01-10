@@ -141,6 +141,9 @@
  #####    シチュエーション    #####
 
  cgb_planet_infection_situation:0 "[target.GetName]での感染対処"
+ cgb_planet_infection_situation_type:0 ""
+ cgb_planet_infection_situation_monthly_change_tooltip:0 ""
+ cgb_planet_infection_situation_desc:0 ""
  
  cgb_planet_infection_approach_0:0 "感染対処:なし"
  cgb_planet_infection_approach_0_desc:0 "この程度の流行であれば、対策の必要はないだろう。"
@@ -154,6 +157,9 @@
  cgb_planet_situation_modifier_desc:0 "惑星のモディファイアーより"
 
  cgb_country_infection_situation:0 "帝国規模の感染対処"
+ cgb_country_infection_situation_type:0 ""
+ cgb_country_infection_situation_monthly_change_tooltip:0 ""
+ cgb_country_infection_situation_desc:0 ""
 
  cgb_country_infection_approach_0:0 "活発な活動の呼びかけ"
  cgb_country_infection_approach_0_desc:0 "このような病気に負けてはいけない！より活発に活動し、国を立て直すのだ！"
@@ -163,6 +169,10 @@
  cgb_country_infection_approach_2_desc:0 "呼びかけるだけではだめだ。全ての国民の活動制限を行う。"
  cgb_country_infection_approach_3:0 "徹底的感染対策"
  cgb_country_infection_approach_3_desc:0 "例え国がどうなろうと、この流行は止めなければならない。ほぼすべての国民の活動停止を強制する。"
+
+ cgb_planet_infection_resolution_quarantine_desc:0 "銀河共同体の決議より"
+ cgb_planet_infection_vaccine_desc:0 "ワクチン緊急配布イベントより"
+ cgb_planet_infection_vaccine_desc:0 "ワクチン完成より"
  
 
  #####    モディファイアー    #####

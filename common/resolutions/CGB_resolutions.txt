@@ -380,11 +380,13 @@ cgb_resolution_GHO_fund = {
 		modifier = {
 			factor = 1.2
 			is_xenophile = yes
+			desc = ethic_xenophile
 		}
 
 		modifier = {
 			factor = 0.8
 			is_xenophobe = yes
+			desc = ethic_xenophobe
 		}
 
 		modifier = {
@@ -484,11 +486,13 @@ cgb_resolution_GHO_vaccine_global_dev = { #ワクチンの国際共同開発
 		modifier = {
 			factor = 1.2
 			is_xenophile = yes
+			desc = ethic_xenophile
 		}
 
 		modifier = {
 			factor = 0.8
 			is_xenophobe = yes
+			desc = ethic_xenophobe
 		}
 
 		modifier = {

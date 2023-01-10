@@ -6,6 +6,18 @@
  cgb_resolution_galactic_focus_crisis_virus_desc:0 ""
  cgb_resolution_GHO:0 "Establishment of Galactic health organization"
  cgb_resolution_GHO_desc:0 "Infectious diseases are limited to the measures that can be taken by one country alone. The Galactic Health Organization-GHO will enable supranational infectious disease control."
+ cgb_resolution_GHO_effect_success:0 ""
+
+ gal_com_neighboring_cgb_virus:0 ""
+ gal_com_cgb_virus_size_smallest:0 ""
+ gal_com_cgb_virus_size_small:0 ""
+ gal_com_cgb_virus_size_medium:0 ""
+ gal_com_cgb_virus_size_large:0 ""
+ gal_com_cgb_virus_size_very_large:0 ""
+ gal_com_cgb_virus_size_huge:0 ""
+
+cgb_gal_com_neighboring_virus:0 "隣国が危機帝国である"
+cgb_gal_com_virus_infected:0 "ウィルスに感染している"
 
 #GHO
  cgb_GHO:0 "Galactic Health Organization"

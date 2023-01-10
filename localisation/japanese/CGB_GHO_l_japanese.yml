@@ -17,8 +17,8 @@
  gal_com_cgb_virus_size_very_large:0 ""
  gal_com_cgb_virus_size_huge:0 ""
 
-cgb_gal_com_neighboring_virus:0 ""
-cgb_gal_com_virus_infected:0 ""
+cgb_gal_com_neighboring_virus:0 "隣国が危機帝国である"
+cgb_gal_com_virus_infected:0 "ウィルスに感染している"
 
 #GHO
  cgb_GHO:0 "銀河保健機構"
@@ -58,6 +58,8 @@ cgb_gal_com_virus_infected:0 ""
  cgb_crisis_vaccine_dev_situation:0 "ワクチン開発"
  cgb_crisis_vaccine_dev_situation_desc:0 "$cgb_crisis$の性質はいまだよく理解されていない。可能な限り理解を深め対抗手段を模索するべきだ。"
  cgb_crisis_vaccine_dev_situation_type:0 ""
+ cgb_crisis_vaccine_dev_situation_monthly_change_tooltip:0 ""
+
  cgb_GHO_vaccine_global_dev_desc:0 "銀河共同体決議：$cgb_resolution_GHO_vaccine_global_dev$より"
  cgb_crisis_vaccine_dev_approach_low:0 "低予算"
  cgb_crisis_vaccine_dev_approach_mid:0 "中予算"
@@ -75,8 +77,13 @@ cgb_gal_com_virus_infected:0 ""
  cgb_has_tech_society_2:0 "技術：$tech_society_2$より"
  cgb_has_tech_society_3:0 "技術：$tech_society_3$より"
  cgb_society_research_power:0 "社会学の産出より"
+
+
  cgb_crisis_vaccine_production_situation:0 "ワクチンの製造・配布"
  cgb_crisis_vaccine_production_situation_type:0 ""
+ cgb_crisis_vaccine_production_situation_monthly_change_tooltip:0 ""
+ cgb_crisis_vaccine_production_situation_desc:0 ""
+
  cgb_crisis_vaccine_production_approach_low_desc:0 ""
  cgb_crisis_vaccine_production_approach_mid_desc:0 ""
  cgb_crisis_vaccine_production_approach_high_desc:0 ""
