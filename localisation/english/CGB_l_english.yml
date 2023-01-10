@@ -319,3 +319,10 @@
  cgb_crisis_01.2014.desc: "The databank still preserves in places strongholds that appear to have been built by survey teams from the Creator civilization, but in the deepest strongholds we found articles written by members of the Creator race. We will ...... perish. Perhaps it would have been better not to look at this databank. Everything, literally everything, is recorded in this databank! An unintentional glimpse into the future. All the others couldn't stand the shock and committed suicide. The upper management is saying that in light of the value of this place, it will be defended by crisis weapons, and it's certainly worth it to do so. But, but ...... are we like this? Is all of me something that can be described in a few words? I like to think we can destroy this place and get out." \nThe investigator who discovered this was sent to the hospital with a serious mental illness for unknown reasons, but the important thing is that they found a way to look into this databank. This databank contains everything. This planetary-scale databank should provide us with all the knowledge we need."
  cgb_crisis_01.2014.a: "Fascinating."
  
+ CGB_PLANET_KILLER_VIRUS:"$cgb_crisis$ scatter"
+ CGB_PLANET_KILLER_VIRUS_DESC:"$cgb_crisis$ scatter"
+ CGB_PLANET_KILLER_VIRUS_ACTION:"$cgb_crisis$ scatter"
+ CGB_PLANET_KILLER_VIRUS_ACTION_DESC:"$cgb_crisis$ scatter"
+ FLEETORDER_DESTROY_PLANET_WITH_CGB_PLANET_KILLER_VIRUS:0 "$PLANET|Y$ is spraying $cgb_crisis$"
+ MESSAGE_DESC_FOR_CGB_PLANET_KILLER_VIRUS:0 "$cgb_crisis$ has been spread over the entire planet"
+ 
