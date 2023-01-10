@@ -17,6 +17,9 @@
  gal_com_cgb_virus_size_very_large:0 ""
  gal_com_cgb_virus_size_huge:0 ""
 
+cgb_gal_com_neighboring_virus:0 ""
+cgb_gal_com_virus_infected:0 ""
+
 #GHO
  cgb_GHO:0 "銀河保健機構"
  cgb_resolution_GHO_fund:0 "基金の設立"

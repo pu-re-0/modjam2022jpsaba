@@ -262,26 +262,31 @@ cgb_resolution_GHO = {
 		modifier = {
 			factor = 0.9
 			is_gestalt = yes
+			desc = ethic_gestalt_consciousness
 		}
 
 		modifier = {
 			factor = 0.9
 			is_spiritualist = yes
+			desc = ethic_spiritualist
 		}
 
 		modifier = {
 			factor = 1.5
 			is_egalitarian = yes
+			desc = ethic_egalitarian
 		}
 
 		modifier = {
 			factor = 1.2
 			is_materialist = yes
+			desc = ethic_materialist
 		}
 
 		modifier = {
 			factor = 0.7
 			is_authoritarian = yes
+			desc = ethic_authoritarian
 		}
 		
 		modifier = {
@@ -289,6 +294,7 @@ cgb_resolution_GHO = {
 			any_neighbor_country = {
 				is_country_type = cgb_virus
 			}
+			desc = cgb_gal_com_neighboring_virus
 		}
 	}
 }
@@ -356,16 +362,19 @@ cgb_resolution_GHO_fund = {
 		modifier = {
 			factor = 0.8
 			is_gestalt = yes
+			desc = ethic_gestalt_consciousness
 		}
 
 		modifier = {
 			factor = 1.2
 			is_egalitarian = yes
+			desc = ethic_egalitarian
 		}
 
 		modifier = {
 			factor = 1.2
 			is_materialist = yes
+			desc = ethic_materialist
 		}
 
 		modifier = {
@@ -381,6 +390,7 @@ cgb_resolution_GHO_fund = {
 		modifier = {
 			factor = 0.7
 			is_authoritarian = yes
+			desc = ethic_authoritarian
 		}
 		
 		modifier = {
@@ -388,11 +398,13 @@ cgb_resolution_GHO_fund = {
 			any_neighbor_country = {
 				is_country_type = cgb_virus
 			}
+			desc = cgb_gal_com_neighboring_virus
 		}
 
 		modifier = {
 			factor = 1.2
 			has_country_flag = cgb_virus_infected
+			desc = cgb_gal_com_virus_infected
 		}
 	}
 }
@@ -460,11 +472,13 @@ cgb_resolution_GHO_vaccine_global_dev = { #ワクチンの国際共同開発
 		modifier = {
 			factor = 0.8
 			is_gestalt = yes
+			desc = ethic_gestalt_consciousness
 		}
 
 		modifier = {
 			factor = 1.2
 			is_materialist = yes
+			desc = ethic_materialist
 		}
 
 		modifier = {
@@ -567,21 +581,25 @@ cgb_resolution_quarantine_1 = {	#国際防疫体制の拡充１
 		modifier = {
 			factor = 0.9
 			is_spiritualist = yes
+			desc = ethic_spiritualist
 		}
 
 		modifier = {
 			factor = 0.95
 			is_egalitarian = yes
+			desc = ethic_egalitarian
 		}
 
 		modifier = {
 			factor = 1.3
 			is_materialist = yes
+			desc = ethic_materialist
 		}
 
 		modifier = {
 			factor = 1.2
 			is_authoritarian = yes
+			desc = ethic_authoritarian
 		}
 		
 		modifier = {
@@ -589,6 +607,7 @@ cgb_resolution_quarantine_1 = {	#国際防疫体制の拡充１
 			any_neighbor_country = {
 				is_country_type = cgb_virus
 			}
+			desc = cgb_gal_com_neighboring_virus
 		}
 	}
 }
@@ -665,26 +684,31 @@ cgb_resolution_quarantine_2 = {
 		modifier = {
 			factor = 0.8
 			is_spiritualist = yes
+			desc = ethic_spiritualist
 		}
 
 		modifier = {
 			factor = 0.9
 			is_egalitarian = yes
+			desc = ethic_egalitarian
 		}
 
 		modifier = {
 			factor = 1.2
 			is_materialist = yes
+			desc = ethic_materialist
 		}
 
 		modifier = {
 			factor = 1.1
 			is_authoritarian = yes
+			desc = ethic_authoritarian
 		}
 
 		modifier = {
 			factor = 0.75
 			is_megacorp = yes
+			desc = gov_megacorporation
 		}
 
 		modifier = {
@@ -692,6 +716,7 @@ cgb_resolution_quarantine_2 = {
 			any_neighbor_country = {
 				is_country_type = cgb_virus
 			}
+			desc = cgb_gal_com_neighboring_virus
 		}
 	}
 }
@@ -778,26 +803,31 @@ cgb_resolution_quarantine_3 = {
 		modifier = {
 			factor = 0.7
 			is_spiritualist = yes
+			desc = ethic_spiritualist
 		}
 
 		modifier = {
 			factor = 0.6
 			is_egalitarian = yes
+			desc = ethic_egalitarian
 		}
 
 		modifier = {
 			factor = 1.1
 			is_materialist = yes
+			desc = ethic_materialist
 		}
 
 		modifier = {
 			factor = 1.2
 			is_authoritarian = yes
+			desc = ethic_authoritarian
 		}
 		
 		modifier = {
 			factor = 0.25
 			is_megacorp = yes
+			desc = gov_megacorporation
 		}
 
 		modifier = {
@@ -805,6 +835,7 @@ cgb_resolution_quarantine_3 = {
 			any_neighbor_country = {
 				is_country_type = cgb_virus
 			}
+			desc = cgb_gal_com_neighboring_virus
 		}
 	}
 }
