@@ -18,7 +18,7 @@
 
  cgb_gal_com_neighboring_virus:0 "neighbor is crisis"
  cgb_gal_com_virus_infected:0 "infected"
- cgb_gal_com_virus_infected:0 "lot of country is infected"
+ cgb_gal_com_virus_infected_lot:0 "lot of country is infected"
 
 #GHO
  cgb_GHO:0 "Galactic Health Organization"
