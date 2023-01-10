@@ -67,7 +67,8 @@ country_event = {
 ###仮
 country_event = {
 	id = cgb_crisis_fleet.02
-	title = cgb_crisis_fleet.02.t
+	#title = cgb_crisis_fleet.02.t
+	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
 
@@ -126,9 +127,9 @@ country_event = {
 			}
 		}
 	}
-	option = {
-		name = cgb_crisis_fleet.02.a
-	}
+	#option = {
+	#	name = cgb_crisis_fleet.02.a
+	#}
 }
 
 #感染した惑星の上に艦隊を出現させたいけれどこれで動くかわからない
