@@ -38,3 +38,10 @@ on_entering_system_first_time = {
 		cgb_crisis_01.1000
 	}
 }
+
+on_destroy_planet_with_CGB_PLANET_KILLER_VIRUS = {
+	events = {
+		cgb_crisis_fleet.1000
+	}
+}
+
