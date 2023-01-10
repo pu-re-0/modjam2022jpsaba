@@ -162,3 +162,44 @@ planet_event = {#停滞阻止
 		}
 	}
 }
+
+fleet_event = {
+	id = cgb_crisis_fleet.1001
+	hide_window = yes
+	trigger = {
+		owner = {
+			is_same_value = event_target:cgb_crisis_country
+		}
+		not = { has_fleet_flag = cgb_is_garrison }
+	}
+	mean_time_to_happen = {
+		days = 180
+	}
+	immediate = {
+		queue_actions = {
+			find_closest_system = {
+				trigger = {
+					id = "cgb_target_system"
+					any_system_planet = {
+						is_colony = yes
+					}
+				}
+				found_system = {
+					move_to = this
+					find_closest_planet = {
+						trigger = {
+							id = "cgb_target_planet"
+							is_colony = yes
+						}
+						found_planet = {
+							move_to = this
+							orbit_planet = this
+							destroy_planet = this
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
