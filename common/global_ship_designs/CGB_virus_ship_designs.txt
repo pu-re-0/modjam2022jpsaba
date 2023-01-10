@@ -60,6 +60,11 @@ ship_design = {
 		slot = "bow"
 
 		component = {
+			slot = "PLANET_KILLER_GUN_01"
+			template = "CGB_PLANET_KILLER_VIRUS"
+		}
+
+		component = {
 			slot = "POINT_DEFENCE_01"
 			template = "POINT_DEFENCE_3"
 		}
@@ -129,6 +134,11 @@ ship_design = {
 	section = {
 		template = "large_virus_hull_01"
 		slot = "hull"
+
+		component = {
+			slot = "PLANET_KILLER_GUN_01"
+			template = "CGB_PLANET_KILLER_VIRUS"
+		}
 
 		component = {
 			slot = "EXTRA_LARGE_01"

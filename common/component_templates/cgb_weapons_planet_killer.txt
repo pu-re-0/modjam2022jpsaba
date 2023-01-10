@@ -1,0 +1,22 @@
+###cgb crisis planet killer
+weapon_component_template = { # Nanobot Assimilation
+	key = "CGB_PLANET_KILLER_VIRUS"
+	size = planet_killer
+	type = planet_killer
+	use_ship_kill_target = no
+	hidden = yes
+
+	windup = { min = 30.0 max = 30.0 }
+	total_fire_time = 30.00
+	
+	icon = GFX_ship_part_nanobot_diffuser
+	icon_frame = 1
+
+	component_set = "CGB_PLANET_KILLER_VIRUS"
+
+	planet_destruction_gfx = "assimilation_nanobots_gfx"
+
+	ai_weight = {
+		factor = 0
+	}
+}

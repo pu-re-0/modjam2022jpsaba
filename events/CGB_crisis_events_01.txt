@@ -1939,6 +1939,31 @@ country_event = {#大勝利
 		end_event_chain = cgb_crisis_chain_1
 		end_event_chain = cgb_crisis_chain_2
 		add_resource = { unity = 50000 }
+		hidden_effect = {
+			country_event = {
+				id = cgb_crisis_01.2001
+				days = 30
+			}
+		}
+	}
+}
+
+
+country_event = {#発掘拠点
+	id = cgb_crisis_01.2001
+	title = cgb_crisis_01.2001.name
+ 	desc = cgb_crisis_01.2001.desc
+	picture = GFX_evt_crisis_defeated
+	is_triggered_only = yes
+
+	#暗号解読に成功！
+	#$cgb_crisis$を倒してから一か月。銀河は未だに祝勝の宴に酔っているが、祝勝以外の要因で興奮している者たちが居た。彼らは主に科学者であるが、$cgb_crisis$の大艦隊が最初に出現し、なおかつ電波や超能力波を送信していた宛先である星系に科学的興味を抱いていた。$cgb_crisis$はどう見ても生物兵器であるが、その製造目的はよく分かっていない。もしかすると、その星系に何かがあるのかもしれない。
+
+	option = {
+		name = cgb_crisis_01.2001.a #ok
+		event_target:cgb_crisis_ground_zero = {
+			create_archaeological_site = site_cgb_reward_arc_site
+		}
 	}
 }
 
