@@ -216,6 +216,7 @@ cgb_planet_infection_situation = {
 	}
 
 	on_progress_complete = {
+		destroy_situation = this #たぶん必よう
 		target = {
 			remove_planet_flag = cgb_infected_planet
 			remove_planet_flag = cgb_crisis_vaccine_emergency
