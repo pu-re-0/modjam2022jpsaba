@@ -18,3 +18,6 @@
   virus_ship_name:0 "Virus Ship"
   NAME_Medium_Virus_fleet:0 "Virus Fleet"
   virus_fleet_name:0 "Virus Fleet"
+
+ medium_virus_ship_plural:0 ""
+ large_virus_ship_plural:0 ""
