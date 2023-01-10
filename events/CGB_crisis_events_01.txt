@@ -1915,6 +1915,7 @@ planet_event = {
 	immediate = {
 		remove_global_flag = cgb_in_progress
 		remove_global_flag = cgb_can_end_the_crisis
+		remove_global_flag = midgame_crisis_ongoing
 		every_playable_country = {
 			country_event = {
 				id = cgb_crisis_01.2000
