@@ -12,8 +12,20 @@ country_event = {
 
 	immediate = {
 		set_global_flag = cgb_crisis_ground_zero_entered
-		set_global_flag = cgb_crisis_phase_2
 		set_country_flag = cgb_infected_country
+		capital_scope = {
+			set_spawn_system_batch = begin
+			spawn_system = {
+				min_jumps = 1
+				max_jumps = 1
+				initializer = cgb_crisis_ground_zero_initializer
+				hyperlane = yes
+				is_discovered = yes
+			}
+			set_spawn_system_batch = end
+			add_extra_hyperlane_to_spawned_system_effect = yes
+		}
+		cgb_create_crisis = yes # クライシス国家生成
 	}
 }
 country_event = {
