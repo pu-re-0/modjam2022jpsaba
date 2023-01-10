@@ -1385,7 +1385,7 @@ country_event = {#起源探しイベント:学術会
 					event_target:curator_enclave_country = {
 						has_communications = ROOT
 					}
-				]
+				}
 			}
 			establish_communications = event_target:curator_enclave_country
 		}
