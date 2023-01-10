@@ -320,6 +320,8 @@
  cgb_crisis_01.2014.a: "Fascinating."
  
  CGB_ancient_data_bank_active:0 "Relic - Exploring Ancient Data Banks"
+ CGB_r_ancient_data_bank:0 "Ancient Data Banks"
+ CGB_r_ancient_data_bank_desc:0 "This databank was created over 40 million years ago and is largely non-functional. It is said that even the "truth of this world" was recorded in the past, but it is now lost. However, even the few remaining data will greatly benefit our development."
 
  CGB_PLANET_KILLER_VIRUS:"$cgb_crisis$ scatter"
  CGB_PLANET_KILLER_VIRUS_DESC:"$cgb_crisis$ scatter"
