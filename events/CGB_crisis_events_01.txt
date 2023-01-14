@@ -1935,7 +1935,7 @@ planet_event = {
 		remove_global_flag = cgb_can_end_the_crisis
 		remove_global_flag = midgame_crisis_ongoing
 		event_target:cgb_crisis_country = {
-			every_owned_fleet = { destroy_fleet = yes }
+			every_owned_fleet = { destroy_fleet = this }
 			destroy_country = yes
 		}
 		every_playable_country = {
