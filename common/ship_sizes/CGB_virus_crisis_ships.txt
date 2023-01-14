@@ -70,6 +70,7 @@ medium_virus_ship = {
 		ship_shield_mult = -0.25
 		ship_armor_mult = -0.25
 		ship_evasion_mult = -0.8
+		ship_disengage_chance_mult = -0.75
 	}
 	#@speed_very_slow = 80
 	max_speed = 20
@@ -111,6 +112,7 @@ large_virus_ship = {#勝手に追加 by爆雷
 		ship_armor_mult = -0.45
 		ship_evasion_mult = -1.0
 		ship_hull_regen_add_static = 50
+		ship_disengage_chance_mult = -0.75
 	}
 
 	#@speed_very_slow = 80
