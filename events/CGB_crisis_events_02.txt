@@ -74,7 +74,7 @@ country_event = {
 		
 		#それ以外の国家
 		random_list = {
-			3 = { #ランダムバフデバフイベント
+			7 = { #ランダムバフデバフイベント
 				modifier = {
 					factor = 0.2
 					has_global_flag = cgb_crisis_phase_2
@@ -102,7 +102,7 @@ country_event = {
 					id = cgb_crisis_02.3
 				}
 			}		
-			20 = { #感染済み惑星のイベント
+			24 = { #感染済み惑星のイベント
 				# ランダムなイベントにより感染具合のmodifierが付与される
 				# 感染具合がマックスを超えると、situationが発生し、感染済み惑星になる
 				#01/14 驚くべきことにここがまったく機能していない　これで発生するのは実際には感染惑星でのイベントのみで何もかも間違っていた by爆雷
@@ -131,7 +131,7 @@ country_event = {
 				# 感染具合がマックスを超えると、situationが発生し、感染済み惑星になる
 				# 01/14に追加、これでようやく惑星の感染レベルが上がるようになる by爆雷
 				modifier = {
-					factor = 5.0
+					factor = 1.10
 					any_owned_planet = {
 						NOT = { has_planet_flag  = cgb_infected_planet }
 					}
