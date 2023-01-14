@@ -74,7 +74,7 @@ country_event = {
 		
 		#それ以外の国家
 		random_list = {
-			7 = { #ランダムバフデバフイベント
+			3 = { #ランダムバフデバフイベント
 				modifier = {
 					factor = 0.2
 					has_global_flag = cgb_crisis_phase_2
@@ -83,7 +83,7 @@ country_event = {
 					id = cgb_crisis_02.2
 				}
 			}
-			10 = { #感染済み惑星のイベント
+			12 = { #感染済み惑星のイベント
 				modifier = {
 					factor = 0
 					or = {
@@ -102,9 +102,10 @@ country_event = {
 					id = cgb_crisis_02.3
 				}
 			}		
-			15 = { #未感染惑星のイベント
+			20 = { #感染済み惑星のイベント
 				# ランダムなイベントにより感染具合のmodifierが付与される
 				# 感染具合がマックスを超えると、situationが発生し、感染済み惑星になる
+				#01/14 驚くべきことにここがまったく機能していない　これで発生するのは実際には感染惑星でのイベントのみで何もかも間違っていた by爆雷
 				modifier = {
 					factor = 1.5
 					any_owned_planet = {
@@ -113,7 +114,7 @@ country_event = {
 				}
 				modifier = {
 					factor = 0
-					has_country_flag = cgb_infected_country
+					#has_country_flag = cgb_infected_country
 					has_country_flag = cgb_health_lost_country
 				}
 				modifier = {
@@ -124,7 +125,32 @@ country_event = {
 				country_event = {
 					id = cgb_crisis_02.4
 				}
+			}		
+			20 = { #未感染惑星のイベント
+				# ランダムなイベントにより感染具合のmodifierが付与される
+				# 感染具合がマックスを超えると、situationが発生し、感染済み惑星になる
+				# 01/14に追加、これでようやく惑星の感染レベルが上がるようになる by爆雷
+				modifier = {
+					factor = 5.0
+					any_owned_planet = {
+						NOT = { has_planet_flag  = cgb_infected_planet }
+					}
+				}
+				#modifier = {
+				#	factor = 0
+				#	has_country_flag = cgb_infected_country
+				#	has_country_flag = cgb_health_lost_country
+				#}
+				modifier = {
+					factor = 0.5
+					has_global_flag = cgb_crisis_phase_2
+				}
+				
+				country_event = {
+					id = cgb_crisis_02.5
+				}
 			}
+			
 			20 = {#何も起きない
 				modifier = {
 					factor = 0.1
@@ -434,6 +460,75 @@ country_event = {
 		}
 	}
 }
+
+
+country_event = {
+	id = cgb_crisis_02.5 #01/14 追加 by爆雷
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		random_planet_within_border = {
+			limit = { is_colony = yes }
+			random_list = {
+				3 = {
+					#感染者逃亡
+					modifier = {
+						factor = 0
+						has_planet_flag = cgb_happen_event_301
+					}
+					planet_event = {
+						id = cgb_crisis_02.301
+					}
+				}
+				13 = {
+					#小規模クラスター
+					modifier = {
+						factor = 0
+						has_planet_flag = cgb_happen_event_302
+					}
+					planet_event = {
+						id = cgb_crisis_02.302
+					}
+				}
+				12 = {
+					#中規模クラスター
+					modifier = {
+						factor = 0
+						has_planet_flag = cgb_happen_event_303
+					}
+					planet_event = {
+						id = cgb_crisis_02.303
+					}
+				}
+				
+				5 = {
+					#感染者減少
+					modifier = {
+						factor = 0
+						has_planet_flag = cgb_happen_event_304
+					}
+					planet_event = {
+						id = cgb_crisis_02.304
+					}
+				}
+				
+				3 = {
+					#感染者クラスター
+					modifier = {
+						factor = 0
+						has_planet_flag = cgb_happen_event_305
+					}
+					planet_event = {
+						id = cgb_crisis_02.305
+					}
+				}
+			}
+		}
+	}
+}
+
 
 ##################################################################		通知用イベント
 
