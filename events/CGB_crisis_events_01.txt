@@ -1939,6 +1939,7 @@ planet_event = {
 			destroy_country = yes
 		}
 		every_playable_country = {
+			remove_country_flag = cgb_virus_infected
 			remove_country_flag = cgb_infected_country
 			remove_country_flag = cgb_health_lost_country
 			every_owned_planet = {
