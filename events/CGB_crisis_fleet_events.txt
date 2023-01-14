@@ -98,6 +98,14 @@ country_event = {
 						has_country_flag = cgb_health_lost_country
 					}
 				}
+				or = {
+					has_planet_flag = cgb_infected_planet
+					has_modifier = planet_prevalence_level_1
+					has_modifier = planet_prevalence_level_2
+					has_modifier = planet_prevalence_level_3
+					has_modifier = planet_prevalence_level_4
+					has_modifier = planet_prevalence_level_5
+				}
 			}
 			save_event_target_as = cgb_fleet_spawn_planet_1
 		}
