@@ -434,7 +434,15 @@ country_event = { # investigate trigger
 		has_global_flag = cgb_in_progress # see mid_game_crisis_trigger_events.txt
 		has_global_flag = cgb_virus_first_infection
 		any_owned_planet = {
-			has_planet_flag  = cgb_infected_planet
+			or = {
+				has_planet_flag  = cgb_infected_planet
+				has_modifier = planet_prevalence_level_0
+				has_modifier = planet_prevalence_level_1
+				has_modifier = planet_prevalence_level_2
+				has_modifier = planet_prevalence_level_3
+				has_modifier = planet_prevalence_level_4
+				has_modifier = planet_prevalence_level_5
+			}
 		}
 		#各国の状況が深刻化していることを判定するトリガーを後で入れておく
 	}
