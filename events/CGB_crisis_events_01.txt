@@ -1757,7 +1757,7 @@ country_event = {#暗号解読状況S4
 		hidden_effect = {
 			every_playable_country = {
 				limit = {
-					has_communications = ROOT
+					has_communications = FROM
 				}
 				country_event = { id = cgb_crisis_01.1306 }
 			}
@@ -1782,7 +1782,7 @@ country_event = {#暗号解読状況S5
 		hidden_effect = {
 			every_playable_country = {
 				limit = {
-					has_communications = ROOT
+					has_communications = FROM
 				}
 				country_event = { id = cgb_crisis_01.1307 }
 			}
@@ -1802,7 +1802,7 @@ country_event = {#暗号解読への手助け
 	#[from.GetName]から、$cgb_crisis$に関係する暗号を解読するために計算能力を提供するように要請があった。我々はともに危機に立ち向かっているが、彼らに計算能力を提供するのはリスクでもある。
 	option = {
 		name = cgb_crisis_01.1306.a #仕方がないな。
-		root = {
+		FROM = {
 			country_event = { id = cgb_crisis_01.1308 }
 		}
 	}
@@ -1824,7 +1824,7 @@ country_event = {#暗号解読への手助け
 	#[from.GetName]から、$cgb_crisis$に関係する暗号を解読するために計算能力を提供するように再度要請があった。我々はともに危機に立ち向かっているが、彼らに計算能力を提供するのはリスクでもある。
 	option = {
 		name = cgb_crisis_01.1306.a #仕方がないな。
-		root = {
+		FROM = {
 			country_event = { id = cgb_crisis_01.1308 }
 		}
 	}
