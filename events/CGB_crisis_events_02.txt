@@ -64,7 +64,7 @@ country_event = {
 	}
 
 	mean_time_to_happen = {
-		days = 360 #前は120
+		days = 240 #前は120
 	}
 
 	immediate = {
