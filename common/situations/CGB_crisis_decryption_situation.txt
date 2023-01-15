@@ -31,7 +31,7 @@ cgb_decryption_situation = {#対処法の暗号解読
 			end = 30
 			on_first_enter = {
 				owner = {
-					country_event = {
+					situation_event = {
 						id = cgb_crisis_01.1302 #面識があればここで製造者の手助けを借りることができる
 						days = 1
 					}	
