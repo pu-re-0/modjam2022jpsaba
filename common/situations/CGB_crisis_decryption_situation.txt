@@ -101,6 +101,10 @@ cgb_decryption_situation = {#対処法の暗号解読
 			desc = cgb_decryption_research_approach_high_desc
 			current_situation_approach = cgb_decryption_research_approach_high
 		}
+		modifier = {
+			mult = value:cgb_society_research_effect
+			desc = cgb_society_research_power
+		}
 
 
 	}
