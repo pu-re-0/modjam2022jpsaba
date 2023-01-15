@@ -1487,7 +1487,7 @@ situation_event = {
 	option = {
 		#小規模な集団感染
 		name = cgb_crisis_02.402.a
-		add_situation_progress = 15
+		add_situation_progress = 5 #10は多すぎ
 	}
 }
 
@@ -1507,7 +1507,7 @@ situation_event = {
 	option = {
 		#中規模な集団感染
 		name = cgb_crisis_02.403.a
-		add_situation_progress = 30
+		add_situation_progress = 10 #30は多すぎ
 	}
 }
 
@@ -1527,6 +1527,6 @@ situation_event = {
 	option = {
 		#致命的な集団感染
 		name = cgb_crisis_02.404.a
-		add_situation_progress = 60
+		add_situation_progress = 20 #60はやりすぎ
 	}
 }
