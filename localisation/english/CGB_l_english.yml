@@ -18,7 +18,8 @@
 # §Y thisisyellow §!
 # §! this returns to the default text color §!
 
- cgb_crisis:"Infection" #仮称
+ cgb_crisis:"Infection"
+ Name_cgb_crisis:"Infection"
 #The Infection
 
  cgb_crisis_01.2.name:"Discover unknown diseases"
