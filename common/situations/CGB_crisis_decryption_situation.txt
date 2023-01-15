@@ -92,12 +92,12 @@ cgb_decryption_situation = {#対処法の暗号解読
 		}
 
 		modifier = {
-			add = 0.10
+			add = 0.15
 			desc = cgb_decryption_research_approach_mid_desc
 			current_situation_approach = cgb_decryption_research_approach_mid
 		}
 		modifier = {
-			add = 0.15
+			add = 0.30
 			desc = cgb_decryption_research_approach_high_desc
 			current_situation_approach = cgb_decryption_research_approach_high
 		}
