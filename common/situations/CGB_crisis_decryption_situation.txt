@@ -86,18 +86,18 @@ cgb_decryption_situation = {#対処法の暗号解読
 	monthly_progress = {
 		base = 0.05
 		modifier = {
-			add = 0.05
+			add = 0.15
 			desc = cgb_decryption_research_approach_low_desc
 			current_situation_approach = cgb_decryption_research_approach_low
 		}
 
 		modifier = {
-			add = 0.15
+			add = 0.45
 			desc = cgb_decryption_research_approach_mid_desc
 			current_situation_approach = cgb_decryption_research_approach_mid
 		}
 		modifier = {
-			add = 0.30
+			add = 1.20
 			desc = cgb_decryption_research_approach_high_desc
 			current_situation_approach = cgb_decryption_research_approach_high
 		}
