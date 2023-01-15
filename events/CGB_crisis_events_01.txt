@@ -1664,7 +1664,7 @@ country_event = {#暗号解読状況S1
 	}
 }
 
-situation_event = {#暗号解読状況S2
+country_event = {#暗号解読状況S2
 	id = cgb_crisis_01.1302
 	title = cgb_crisis_01.1302.name
  	desc = cgb_crisis_01.1302.desc
@@ -1677,6 +1677,7 @@ situation_event = {#暗号解読状況S2
 
 	option = {
 		name = cgb_crisis_01.1302.a #それは言語と呼んでいいのか？
+		from = { add_situation_progress = 15 }
 	}
 	option = {
 		trigger = {
@@ -1684,7 +1685,7 @@ situation_event = {#暗号解読状況S2
 			has_global_flag = cgb_can_contact_ancient_crisis_creater_pre_FTL_country
 		}
 		name = cgb_crisis_01.1302.b #我々はネイティブスピーカーを知っている。添削してもらおう。
-		add_situation_progress = 15
+		from = { add_situation_progress = 15 }
 	}
 
 }
