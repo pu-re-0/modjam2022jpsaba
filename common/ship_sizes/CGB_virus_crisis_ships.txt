@@ -70,9 +70,10 @@ medium_virus_ship = {
 		ship_shield_mult = -0.25
 		ship_armor_mult = -0.25
 		ship_evasion_mult = -0.8
+		ship_fire_rate_mult = 0.20
 	}
 	#@speed_very_slow = 80
-	max_speed = 35
+	max_speed = 40
 	acceleration = 0.35
 	rotation_speed = 0.1
 	collision_radius = @destroyer_collision_radius
@@ -113,6 +114,7 @@ large_virus_ship = {#勝手に追加 by爆雷
 		ship_armor_mult = -0.45
 		ship_evasion_mult = -1.0
 		ship_hull_regen_add_static = 50
+		ship_fire_rate_mult = -0.40
 	}
 
 	#@speed_very_slow = 80
