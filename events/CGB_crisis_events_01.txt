@@ -1655,15 +1655,16 @@ country_event = {#暗号解読状況S1
 	#この暗号は……著しく困難だ。学術会にも問い合わせたが、解法については彼らも知らず、また解読も困難だという。成果が出れば共有するとのことだが、あまり期待できそうにない。当面は自力で頑張るしかなさそうだ。
 
 	immediate = {
-		root = { save_event_target_as = cgb_decryption_situation }
+		from.situation = {
+			save_event_target_as = cgb_decryption_situation
+		}
 	}
-
 	option = {
 		name = cgb_crisis_01.1301.a #頑張るしかないか……。
 	}
 }
 
-country_event = {#暗号解読状況S2
+situation_event = {#暗号解読状況S2
 	id = cgb_crisis_01.1302
 	title = cgb_crisis_01.1302.name
  	desc = cgb_crisis_01.1302.desc
@@ -1683,7 +1684,7 @@ country_event = {#暗号解読状況S2
 			has_global_flag = cgb_can_contact_ancient_crisis_creater_pre_FTL_country
 		}
 		name = cgb_crisis_01.1302.b #我々はネイティブスピーカーを知っている。添削してもらおう。
-		event_target:cgb_decryption_situation = { add_situation_progress = 15 }
+		add_situation_progress = 15
 	}
 
 }
@@ -1703,7 +1704,7 @@ country_event = {#暗号解読状況S3
 		allow = { has_resource = { type = energy amount > 1999 } }
 		name = cgb_crisis_01.1303.a #臨時給与だ。
 		add_resource = { energy = -2000 }
-		event_target:cgb_decryption_situation = { add_situation_progress = 5 }
+		from = { add_situation_progress = 5 }
 	}
 
 	option = {
@@ -1712,22 +1713,22 @@ country_event = {#暗号解読状況S3
 		add_resource = { energy = -5000 }
 		random_list = {
 			25 = {
-				event_target:cgb_decryption_situation = { add_situation_progress = 1 }
+				from = { add_situation_progress = 1 }
 			}
 			25 = {
-				event_target:cgb_decryption_situation = { add_situation_progress = 5 }
+				from = { add_situation_progress = 5 }
 			}
 			25 = {
-				event_target:cgb_decryption_situation = { add_situation_progress = 7 }
+				from = { add_situation_progress = 7 }
 			}
 			25 = {
-				event_target:cgb_decryption_situation = { add_situation_progress = 10 }
+				from = { add_situation_progress = 10 }
 			}
 			5 = {
-				event_target:cgb_decryption_situation = { add_situation_progress = 15 }
+				from = { add_situation_progress = 15 }
 			}
 			1 = {
-				event_target:cgb_decryption_situation = { add_situation_progress = 20 }
+				from = { add_situation_progress = 20 }
 			}
 		}
 	}
