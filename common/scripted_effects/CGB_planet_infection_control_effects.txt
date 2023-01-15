@@ -115,6 +115,7 @@ change_planet_prevalence_level = {
 				}
 			}
 			owner = {
+				set_country_flag = cgb_has_country_situation
 				start_situation = {
 					type = cgb_country_infection_situation
 					target = this
