@@ -64,7 +64,7 @@ country_event = {
 	}
 
 	mean_time_to_happen = {
-		days = 120
+		days = 280 #前は120
 	}
 
 	immediate = {
@@ -74,7 +74,7 @@ country_event = {
 		
 		#それ以外の国家
 		random_list = {
-			7 = { #ランダムバフデバフイベント
+			9 = { #ランダムバフデバフイベント
 				modifier = {
 					factor = 0.2
 					has_global_flag = cgb_crisis_phase_2
@@ -126,7 +126,7 @@ country_event = {
 					id = cgb_crisis_02.4
 				}
 			}		
-			20 = { #未感染惑星のイベント
+			18 = { #未感染惑星のイベント
 				# ランダムなイベントにより感染具合のmodifierが付与される
 				# 感染具合がマックスを超えると、situationが発生し、感染済み惑星になる
 				# 01/14に追加、これでようやく惑星の感染レベルが上がるようになる by爆雷
