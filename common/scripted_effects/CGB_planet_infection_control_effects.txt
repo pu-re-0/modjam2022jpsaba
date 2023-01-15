@@ -108,6 +108,7 @@ change_planet_prevalence_level = {
 		if = {
 			limit = {
 				owner = {
+					not = { has_country_flag = cgb_has_country_situation }
 					any_owned_planet = {
 						has_planet_flag = cgb_infected_planet
 					}
