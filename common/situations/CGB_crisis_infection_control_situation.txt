@@ -326,7 +326,7 @@ cgb_country_infection_situation = {
 	modifier = {
 	}
 
-	start_value = 20
+	start_value = 5 #20だったが、あまりにも速く進みすぎる
 
 	stages = {
 		stage_1 = {
@@ -502,6 +502,7 @@ cgb_country_infection_situation = {
 
 	on_progress_complete = {
 		owner = {
+			remove_country_flag = cgb_has_country_situation
 			remove_country_flag = cgb_infected_country
 			set_country_flag = cgb_health_lost_country
 			country_event = {
@@ -518,8 +519,8 @@ cgb_country_infection_situation = {
 					modifier = country_lost_health_default
 				}
 			}
-			
 		}
+		destroy_situation = this
 	}
 
 	on_fail = {
