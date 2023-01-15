@@ -167,7 +167,7 @@ country_event = { #定期的増援
 	immediate = {
 		country_event = {
 			id = cgb_crisis_fleet.10
-			days = 500
+			days = 360
 			random = 360
 		}
 		event_target:cgb_crisis_country = {
@@ -181,10 +181,19 @@ country_event = { #定期的増援
 					create_cgb_crisis_medium_ships = yes
 					create_cgb_crisis_medium_ships = yes
 					create_cgb_crisis_medium_ships = yes
+					create_cgb_crisis_medium_ships = yes
 					set_location = {
 						target = event_target:cgb_crisis_ground_zero_system.star
 						distance = 1
 						angle = random
+					}
+					random_list = {
+						50 = {
+							set_fleet_flag = cgb_is_arashi
+						}
+						50 = {
+						
+						}
 					}
 				}
 			}
@@ -201,6 +210,14 @@ country_event = { #定期的増援
 						target = event_target:cgb_crisis_ground_zero_system.star
 						distance = 1
 						angle = random
+					}
+					random_list = {
+						50 = {
+							set_fleet_flag = cgb_is_arashi
+						}
+						50 = {
+						
+						}
 					}
 				}
 			}
@@ -217,6 +234,46 @@ country_event = { #定期的増援
 						distance = 1
 						angle = random
 					}
+					random_list = {
+						50 = {
+							set_fleet_flag = cgb_is_arashi
+						}
+						50 = {
+						
+						}
+					}
+				}
+			}
+			random_list = {
+				75 = {
+				
+				}
+				25 = {
+				
+					create_fleet = {#
+						name = "NAME_Medium_Virus_fleet"
+						settings = {
+							spawn_debris = no
+						}
+						effect = {
+							set_owner = event_target:cgb_crisis_country
+							create_cgb_crisis_large_ships = yes
+							create_cgb_crisis_large_ships = yes
+							set_location = {
+								target = event_target:cgb_crisis_ground_zero_system.star
+								distance = 1
+								angle = random
+							}
+							random_list = {
+								50 = {
+									set_fleet_flag = cgb_is_arashi
+								}
+								50 = {
+								
+								}
+							}
+						}
+					}
 				}
 			}
 		}
@@ -230,6 +287,7 @@ planet_event = {#停滞阻止
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
+		add_colony_progress = 1.0
 		while = {
 			count = 5
 			random_owned_pop = {
@@ -246,7 +304,10 @@ fleet_event = {
 		owner = {
 			is_same_value = event_target:cgb_crisis_country
 		}
-		not = { has_fleet_flag = cgb_is_garrison }
+		nor = {
+			has_fleet_flag = cgb_is_garrison
+			has_fleet_flag = cgb_is_arashi
+		}
 	}
 	mean_time_to_happen = {
 		days = 180
