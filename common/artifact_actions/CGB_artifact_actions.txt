@@ -29,7 +29,7 @@ artifact_cgb_crisis_origin_research = {
 		hidden_effect = {
 			add_modifier = {
 				modifier = "cgb_artifact_cooldown"
-				days = 360
+				days = 180
 			}
 			random_list = {
 				90 = {
