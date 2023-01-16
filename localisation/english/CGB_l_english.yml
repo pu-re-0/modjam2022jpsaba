@@ -337,3 +337,5 @@
  CGB_anti_crisis_buff:"$cgb_crisis$'s weak point"
  CGB_anti_crisis_buff_desc: "Now that we know $cgb_crisis$'s weaknesses, we can effectively damage it."
  
+ cgb_crisis_chain_2.poi.2.name: "Planet that may have a stop device"
+ cgb_crisis_chain_2.poi.2.desc: "Perhaps there is a device here to stop $cgb_crisis$ from working. Send a ship into orbit and the crew will find it and make it work."
