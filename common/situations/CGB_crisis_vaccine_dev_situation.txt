@@ -309,7 +309,7 @@ cgb_crisis_vaccine_production_situation = {	#ワクワク配布
 
 	on_monthly = {
 		random_events = {
-			40 = 0
+			190 = 0
 			10 = cgb_vaccine_dev_event.21
 		}
 	}
