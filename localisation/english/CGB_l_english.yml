@@ -333,3 +333,7 @@
  
  site_cgb_reward_arc_site: "Excavattion"
  site_cgb_reward_arc_site_intro: "This one floating planet in this system where the $cgb_crisis$ fleet first appeared is overtly suspicious. There must be something going on."
+
+ CGB_anti_crisis_buff:"$cgb_crisis$'s weak point"
+ CGB_anti_crisis_buff_desc: "Now that we know $cgb_crisis$'s weaknesses, we can effectively damage it."
+ 
