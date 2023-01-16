@@ -333,3 +333,6 @@
  
  site_cgb_reward_arc_site: "Excavattion"
  site_cgb_reward_arc_site_intro: "This one floating planet in this system where the $cgb_crisis$ fleet first appeared is overtly suspicious. There must be something going on."
+
+ cgb_crisis_chain_2.poi.2.name: "Planet that may have a stop device"
+ cgb_crisis_chain_2.poi.2.desc: "Perhaps there is a device here to stop $cgb_crisis$ from working. Send a ship into orbit and the crew will find it and make it work."
