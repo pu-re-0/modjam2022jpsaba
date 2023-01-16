@@ -309,6 +309,7 @@ fleet_event = {
 	id = cgb_crisis_fleet.1001
 	hide_window = yes
 	trigger = {
+		has_global_flag = cgb_crisis_phase_2
 		owner = {
 			is_same_value = event_target:cgb_crisis_country
 		}
@@ -353,6 +354,7 @@ fleet_event = {
 	id = cgb_crisis_fleet.1002
 	hide_window = yes
 	trigger = {
+		has_global_flag = cgb_crisis_phase_2
 		owner = {
 			is_same_value = event_target:cgb_crisis_country
 		}
