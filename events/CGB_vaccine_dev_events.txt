@@ -163,6 +163,7 @@ situation_event = {
 		owner = {
 			has_country_flag = cgb_crisis_vaccine_production_now
 		}
+		situation_progress > 30
 	}
 	immediate = {
 		add_situation_progress = -25
