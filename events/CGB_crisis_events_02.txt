@@ -102,30 +102,30 @@ country_event = {
 					id = cgb_crisis_02.3
 				}
 			}		
-			24 = { #感染済み惑星のイベント
-				# ランダムなイベントにより感染具合のmodifierが付与される
-				# 感染具合がマックスを超えると、situationが発生し、感染済み惑星になる
-				#01/14 驚くべきことにここがまったく機能していない　これで発生するのは実際には感染惑星でのイベントのみで何もかも間違っていた by爆雷
-				modifier = {
-					factor = 1.5
-					any_owned_planet = {
-						NOT = { has_planet_flag  = cgb_infected_planet }
-					}
-				}
-				modifier = {
-					factor = 0
-					#has_country_flag = cgb_infected_country
-					has_country_flag = cgb_health_lost_country
-				}
-				modifier = {
-					factor = 0.5
-					has_global_flag = cgb_crisis_phase_2
-				}
-				
-				country_event = {
-					id = cgb_crisis_02.4
-				}
-			}		
+#			24 = { #感染済み惑星のイベント
+#				# ランダムなイベントにより感染具合のmodifierが付与される
+#				# 感染具合がマックスを超えると、situationが発生し、感染済み惑星になる
+#				#01/14 驚くべきことにここがまったく機能していない　これで発生するのは実際には感染惑星でのイベントのみで何もかも間違っていた by爆雷
+#				modifier = {
+#					factor = 1.5
+#					any_owned_planet = {
+#						NOT = { has_planet_flag  = cgb_infected_planet }
+#					}
+#				}
+#				modifier = {
+#					factor = 0
+#					#has_country_flag = cgb_infected_country
+#					has_country_flag = cgb_health_lost_country
+#				}
+#				modifier = {
+#					factor = 0.5
+#					has_global_flag = cgb_crisis_phase_2
+#				}
+#				
+#				country_event = {
+#					id = cgb_crisis_02.4
+#				}
+#			}		
 			18 = { #未感染惑星のイベント
 				# ランダムなイベントにより感染具合のmodifierが付与される
 				# 感染具合がマックスを超えると、situationが発生し、感染済み惑星になる
@@ -226,13 +226,18 @@ country_event = {
 						id = cgb_crisis_02.204
 					}
 				}
-				10 = {
+				3 = {
 					#ブラック企業摘発
+					#うっとおしいので発生頻度を減らした 発生も一度だけに
 					modifier = {
 						factor = 0
 						or = {
 							owner = {
-								has_ethic = ethic_gestalt_consciousness
+								or = {
+									has_ethic = ethic_gestalt_consciousness
+									has_country_flag = cgb_crisis_02_205_yet
+								}
+								
 							}
 						
 							has_modifier = cgb_modifier_event_205a
@@ -243,6 +248,9 @@ country_event = {
 					}
 					planet_event = {
 						id = cgb_crisis_02.205
+					}
+					owner = {
+						set_country_flag = cgb_crisis_02_205_yet
 					}
 				}
 				10 = {
@@ -365,101 +373,101 @@ country_event = {
 	}
 }
 
-country_event = {
-	id = cgb_crisis_02.4 #全体的にバランスを調整しました。（惑星の感染situationが全然出なかった）
-	hide_window = yes
-
-	is_triggered_only = yes
-
-	immediate = {
-		random_planet_within_border = {
-			limit = { is_colony = yes }
-			random_list = {
-				10 = {
-					#日用品の不足
-					modifier = {
-						factor = 0
-						or = {
-							has_modifier = cgb_modifier_event_201
-							has_modifier = cgb_modifier_event_211
-							has_modifier = cgb_modifier_event_212
-						}
-					}
-					planet_event = {
-						id = cgb_crisis_02.201
-					}
-				}
-				10 = {
-					#中規模な集団感染
-					modifier = {
-						factor = 0.5
-						has_modifier = cgb_modifier_event_202
-					}
-					planet_event = {
-						id = cgb_crisis_02.202
-					}
-				}
-				10 = {
-					#大規模な集団感染
-					modifier = {
-						factor = 0.2
-						has_modifier = cgb_modifier_event_203
-					}
-					planet_event = {
-						id = cgb_crisis_02.203
-					}
-				}
-				5 = {
-					#感染者の減少
-					modifier = {
-						factor = 0
-						has_modifier = cgb_modifier_event_204
-					}
-					planet_event = {
-						id = cgb_crisis_02.204
-					}
-				}
-				10 = {
-					#ブラック企業摘発
-					modifier = {
-						factor = 0
-						or = {
-							owner = {
-								has_ethic = ethic_gestalt_consciousness
-							}
-						
-							has_modifier = cgb_modifier_event_205a
-							has_modifier = cgb_modifier_event_205a
-							has_modifier = cgb_modifier_event_213
-							has_modifier = cgb_modifier_event_214
-						}
-					}
-					planet_event = {
-						id = cgb_crisis_02.205
-					}
-				}
-				10 = {
-					#反感染対策派の暴動
-					modifier = {
-						factor = 0
-						or = {
-							owner = {
-								has_ethic = ethic_gestalt_consciousness
-							}
-
-							has_modifier = cgb_modifier_event_216
-							has_modifier = cgb_modifier_event_206
-							has_modifier = cgb_modifier_event_206_0
-						}
-					}
-					planet_event = {
-						id = cgb_crisis_02.206
-					}
-				}
-			}
-		}
-	}
-}
+#country_event = { #動かないので無効化
+#	id = cgb_crisis_02.4 #全体的にバランスを調整しました。（惑星の感染situationが全然出なかった）
+#	hide_window = yes
+#
+#	is_triggered_only = yes
+#
+#	immediate = {
+#		random_planet_within_border = {
+#			limit = { is_colony = yes }
+#			random_list = {
+#				10 = {
+#					#日用品の不足
+#					modifier = {
+#						factor = 0
+#						or = {
+#							has_modifier = cgb_modifier_event_201
+#							has_modifier = cgb_modifier_event_211
+#							has_modifier = cgb_modifier_event_212
+#						}
+#					}
+#					planet_event = {
+#						id = cgb_crisis_02.201
+#					}
+#				}
+#				10 = {
+#					#中規模な集団感染
+#					modifier = {
+#						factor = 0.5
+#						has_modifier = cgb_modifier_event_202
+#					}
+#					planet_event = {
+#						id = cgb_crisis_02.202
+#					}
+#				}
+#				10 = {
+#					#大規模な集団感染
+#					modifier = {
+#						factor = 0.2
+#						has_modifier = cgb_modifier_event_203
+#					}
+#					planet_event = {
+#						id = cgb_crisis_02.203
+#					}
+#				}
+#				5 = {
+#					#感染者の減少
+#					modifier = {
+#						factor = 0
+#						has_modifier = cgb_modifier_event_204
+#					}
+#					planet_event = {
+#						id = cgb_crisis_02.204
+#					}
+#				}
+#				10 = {
+#					#ブラック企業摘発
+#					modifier = {
+#						factor = 0
+#						or = {
+#							owner = {
+#								has_ethic = ethic_gestalt_consciousness
+#							}
+#						
+#							has_modifier = cgb_modifier_event_205a
+#							has_modifier = cgb_modifier_event_205a
+#							has_modifier = cgb_modifier_event_213
+#							has_modifier = cgb_modifier_event_214
+#						}
+#					}
+#					planet_event = {
+#						id = cgb_crisis_02.205
+#					}
+#				}
+#				10 = {
+#					#反感染対策派の暴動
+#					modifier = {
+#						factor = 0
+#						or = {
+#							owner = {
+#								has_ethic = ethic_gestalt_consciousness
+#							}
+#
+#							has_modifier = cgb_modifier_event_216
+#							has_modifier = cgb_modifier_event_206
+#							has_modifier = cgb_modifier_event_206_0
+#						}
+#					}
+#					planet_event = {
+#						id = cgb_crisis_02.206
+#					}
+#				}
+#			}
+#		}
+#	}
+#}
 
 
 country_event = {
@@ -1012,7 +1020,7 @@ planet_event = {
 		remove_modifier = cgb_modifier_event_205a
 		add_modifier = {
 			modifier = cgb_modifier_event_213
-			days = 90
+			days = 180
 		}
 	}
 	option = {
