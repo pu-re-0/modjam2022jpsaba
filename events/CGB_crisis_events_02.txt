@@ -490,7 +490,7 @@ country_event = {
 						id = cgb_crisis_02.301
 					}
 				}
-				13 = {
+				14 = {
 					#小規模クラスター
 					modifier = {
 						factor = 0
@@ -508,6 +508,17 @@ country_event = {
 					}
 					planet_event = {
 						id = cgb_crisis_02.303
+					}
+				}
+
+				10 = {
+					#大規模クラスター
+					modifier = {
+						factor = 0
+						has_planet_flag = cgb_happen_event_306
+					}
+					planet_event = {
+						id = cgb_crisis_02.306
 					}
 				}
 				
@@ -1377,6 +1388,39 @@ planet_event = {
 		}
 		
 	}
+}
+
+planet_event = {
+	id = cgb_crisis_02.306
+	title = cgb_crisis_02.306.name
+	desc = cgb_crisis_02.306.desc
+
+	is_triggered_only = yes
+	picture = GFX_evt_worrying_signal #画像は後で探す
+
+	location = event_target:cgb_happen_event_planet
+
+	# [cgb_happen_event_planet.GetName]で大規模な集団感染が発生した。
+
+	immediate = {
+		change_variable = {
+			which = planet_prevalence_level
+			value = 3
+		}
+		add_modifier = {
+			modifier = cgb_modifier_event_306
+			months = 4
+		}
+		change_planet_prevalence_level = yes
+		
+	}
+
+	option = {
+		#
+		name = cgb_crisis_02.306.a
+		
+	}
+
 }
 
 planet_event = {
