@@ -19,7 +19,7 @@
 # §! this returns to the default text color §!
 
  cgb_crisis:"インフェクション" #仮称
- Name_cgb_crisis:"インフェクション"
+ NAME_cgb_crisis:"インフェクション"
 #The Infection
 
  cgb_crisis_01.2.name:"未知の病気を確認"
