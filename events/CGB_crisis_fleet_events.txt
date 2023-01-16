@@ -100,6 +100,7 @@ country_event = {
 				}
 				or = {
 					has_planet_flag = cgb_infected_planet
+					has_modifier = planet_prevalence_level_0
 					has_modifier = planet_prevalence_level_1
 					has_modifier = planet_prevalence_level_2
 					has_modifier = planet_prevalence_level_3
@@ -114,6 +115,33 @@ country_event = {
 				id = cgb_crisis_fleet.10
 				days = 180
 				random = 180
+			}
+			while = {
+				count = 20
+				random_galaxy_planet = {
+					create_fleet = {
+             				       name = "NAME_Medium_Virus_fleet"
+						settings = {
+							spawn_debris = no
+						}
+						effect = {
+							set_owner = event_target:cgb_crisis_country
+							while = {
+								count = 10
+								create_ship = {
+									name = random
+									design = "NAME_medium_virus"
+									graphical_culture = event_target:cgb_crisis_country
+								}
+							}
+							set_location = {
+								target = from.planet
+								distance = 1
+								angle = random
+							}
+						}
+					}
+				}
 			}
 			while = {
 				limit = {
@@ -192,6 +220,9 @@ country_event = { #定期的増援
 							set_fleet_flag = cgb_is_arashi
 						}
 						50 = {
+							set_fleet_flag = cgb_is_random
+						}
+						50 = {
 						
 						}
 					}
@@ -212,8 +243,11 @@ country_event = { #定期的増援
 						angle = random
 					}
 					random_list = {
-						50 = {
+					50 = {
 							set_fleet_flag = cgb_is_arashi
+						}
+						50 = {
+							set_fleet_flag = cgb_is_random
 						}
 						50 = {
 						
@@ -237,6 +271,9 @@ country_event = { #定期的増援
 					random_list = {
 						50 = {
 							set_fleet_flag = cgb_is_arashi
+						}
+						50 = {
+							set_fleet_flag = cgb_is_random
 						}
 						50 = {
 						
@@ -307,6 +344,7 @@ fleet_event = {
 		nor = {
 			has_fleet_flag = cgb_is_garrison
 			has_fleet_flag = cgb_is_arashi
+			has_fleet_flag = cgb_is_random
 		}
 	}
 	mean_time_to_happen = {
@@ -339,4 +377,45 @@ fleet_event = {
 		}
 	}
 }
+
+fleet_event = {
+	id = cgb_crisis_fleet.1002
+	hide_window = yes
+	trigger = {
+		owner = {
+			is_same_value = event_target:cgb_crisis_country
+		}
+		has_fleet_flag = cgb_is_random
+	}
+	mean_time_to_happen = {
+		days = 180
+	}
+	immediate = {
+		queue_actions = {
+			find_random_system = {
+				trigger = {
+					id = "cgb_target_system_random"
+					any_system_planet = {
+						is_colony = yes
+					}
+				}
+				found_system = {
+					move_to = this
+					find_closest_planet = {
+						trigger = {
+							id = "cgb_target_planet_random"
+							is_colony = yes
+						}
+						found_planet = {
+							move_to = this
+							orbit_planet = this
+							destroy_planet = this
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
 
