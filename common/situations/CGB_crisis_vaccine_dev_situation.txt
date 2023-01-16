@@ -334,7 +334,7 @@ cgb_crisis_vaccine_production_situation = {	#ワクワク配布
 		}
 
 		modifier = {
-			mult = owner.value:cgb_size_effect #100 ÷ 帝国規模
+			mult = owner.value:cgb_size_effect #200 ÷ 帝国規模
 			desc = cgb_size_effect_desc
 		}
 	}

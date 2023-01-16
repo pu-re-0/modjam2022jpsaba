@@ -93,8 +93,8 @@ cgb_society_research_effect = {
 }
 
 cgb_size_effect = {
-	base = 100
+	base = 200
 	divide = trigger:empire_size
-	max = 4
+	max = 3
 	min = -0.9
 }
