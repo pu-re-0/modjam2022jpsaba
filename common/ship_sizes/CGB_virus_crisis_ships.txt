@@ -70,9 +70,10 @@ medium_virus_ship = {
 		ship_shield_mult = -0.40
 		ship_armor_mult = -0.40
 		ship_evasion_mult = -0.9
-		ship_fire_rate_mult = 0.10
+		ship_fire_rate_mult = -0.50
 		ship_interstellar_speed_mult = -0.5
 		ship_weapon_range_mult = -0.33
+		ship_weapon_damage = -0.5
 	}
 	#@speed_very_slow = 80
 	max_speed = 25
@@ -118,7 +119,8 @@ large_virus_ship = {#勝手に追加 by爆雷
 		ship_hull_regen_add_static = 10
 		ship_fire_rate_mult = -0.80
 		ship_interstellar_speed_mult = -0.5
-		ship_weapon_range_mult = -0.33
+		ship_weapon_range_mult = -0.50
+		ship_weapon_damage = -0.5
 	}
 
 	#@speed_very_slow = 80
