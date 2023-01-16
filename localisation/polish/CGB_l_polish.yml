@@ -1,0 +1,335 @@
+﻿l_polish:
+ cgb_tooltip: "Mysterious pathogen causes §Rinfection§!. Symptoms: damage to internal politics, reduce stability and happiness, stress on event windows, and destruction of fleets due to fleet battles."
+ cgb_allowed: "§GCrisis - Galactic Bio Hazard Enabled§!"
+ cgb_disabled: "§RCrisis - Galactic Bio Hazard Disabled§!"
+
+# Color List
+# §B thisisblue §!
+# §E thisisteal §!
+# §G thisisgreen §!
+# §H thisisorange §!
+# §L thisisbrown §!
+# §M thisispurple §!
+# §P thisislightred §! 
+# §R thisisred §!
+# §S thisisdarkorange §!
+# §T thisislightgrey §!
+# §W thisiswhite §!
+# §Y thisisyellow §!
+# §! this returns to the default text color §!
+
+ cgb_crisis:"Infection"
+ NAME_cgb_crisis:"Infection"
+#The Infection
+
+ cgb_crisis_01.2.name:"Discover unknown diseases"
+ cgb_crisis_01.2.desc:"Recently, a new type of disease has been identified in [cgb_virus_first_onset_planet.GetName]. Infectees are suffering from fever, vomiting, malaise, and in the worst cases, death seems to be the result. Oddly enough, attempts to find the pathogen have not been successful. And, the infection seems to be spreading rapidly, and the citizens of [this.GetName] fear this strange disease, calling it $cgb_crisis$."
+ cgb_crisis_01.2.robotic.desc:"Recently, a strange phenomenon has been observed in [cgb_virus_first_onset_planet.GetName]. The phenomenon is that the drone's thought processes become abnormal, and then its internal mechanisms are gradually destroyed, eventually causing the drone to malfunction. Drones that have encountered this phenomenon often complain of "discomfort" and abnormal heat generation. Furthermore, drones that come into contact with anomalous drones also seem to experience the same phenomenon. This phenomenon is similar to an infectious disease as described by organic life forms, and it appears that a significant number of drones on [cgb_virus_first_onset_planet.GetName] have already been "infected". Henceforth, this phenomenon will be referred to as $cgb_crisis$."
+ cgb_crisis_01.2.a:"That needs to be dealt with."
+ cgb_crisis_01.2.b:"Set the priority of resource allocation to the problem to high. Started to deal with the problem."
+
+ cgb_crisis_01.3.name:"The question of whether to hide or inform."
+ cgb_crisis_01.3.desc:"An unknown disease has struck us all. This is well known to the our government and the inhabitants of [cgb_virus_first_onset_planet.GetName]. But not so for other planets and empires. They all believe that their days will continue as before. Perhaps this problem can be addressed by keeping it to [cgb_virus_first_onset_planet.GetName]. It is unacceptable to disclose the existence of a new infectious disease and wreak havoc on the economy. But if we fail to cover it up and deal with it, and if the disease spreads to other planets and empires, then we may find ourselves in a diplomatic dispute, not to mention a liability issue."
+ cgb_crisis_01.3.robotic.desc:"An unknown disease is upon us. This is well known to all of us. But not so for the rest of the empire. They all believe that the days will continue as before. Perhaps this problem can be addressed by keeping it to [cgb_virus_first_onset_planet.GetName]. If we inform other empires of the existence of the disease, they may harden their attitudes and forbid trade and interaction. But if we cover it up and the infection spreads to other empires, and it becomes known that the disease originated on our planet, this could be a more serious problem."
+ cgb_crisis_01.3.a:"We can't keep it hidden."
+ cgb_crisis_01.3.b:"Our face is more important than anything else. Cover it up."
+
+ cgb_crisis_01.4.name:"A new disease was discovered in [From.GetName]."
+ cgb_crisis_01.4.desc.a:"We have received an urgent communication from [From.GetName]. According to the empire, a new type of infectious disease has broken out in [cgb_virus_first_onset_planet.GetName], their colony, and the infection is spreading. Even with their scientific capabilities, they have not even been able to identify the pathogen, and it will be necessary to be vigilant and take measures against this disease, which [From.GetName] calls $cgb_crisis$."
+ cgb_crisis_01.4.desc.b:"We have sent an urgent communication to all galactic empires. We have given them all the information we have, and we hope that the whole galaxy will think well of us."
+ cgb_crisis_01.4.a:"It could be a big problem."
+
+ cgb_crisis_01.5.name:"A new disease was discovered in [From.GetName]."
+ cgb_crisis_01.5.desc.a:"It's an ugliness in [From.GetName]. They knew that a new disease had been discovered in [cgb_virus_first_onset_planet.GetName], but they hid it from the entire galaxy. Without the agents sent by the empires, we would have been misled into believing that this disease, which they call $cgb_crisis$, was a disease that occurred elsewhere. Aside from the misdeeds of [From.GetName], we must be prepared for this emerging infectious disease."
+ cgb_crisis_01.5.desc.b:"Things got bad. The fact that we had covered up $cgb_crisis$ has been revealed to the entire galaxy. We explained it away as a delay in intelligence gathering, but other empires will not trust us first. "
+ cgb_crisis_01.5.a:"It could be a big problem."
+
+ cgb_crisis_01.10.name:"Confirmed $cgb_crisis$ infected in our empire"
+ cgb_crisis_01.10.desc:"The empire had not previously confirmed the presence of $cgb_crisis$ in the country, but an all-out quarantine operation has identified several $cgb_crisis$ infectees! Confirmation of their activity history and quarantine of their contacts is underway as a matter of great urgency."
+ cgb_crisis_01.10.a:"Oh, my God."
+
+ cgb_crisis_01.101.name:"Investigation of $cgb_crisis$."
+ cgb_crisis_01.101.desc:"Some time has passed since $cgb_crisis$ began to rage. Despite all the resources being thrown at countermeasures and research, we have not yet even succeeded in detecting the pathogen. No effective treatment has been found, and the situation is getting out of hand. At this point, we should make a concerted effort to identify the pathogen and implement a project to do so. Whatever sacrifices and costs are incurred in the process of carrying out the project, it is far cheaper than leaving $cgb_crisis$ as it is."
+ cgb_crisis_01.101.a:"Let's go for it."
+
+ cgb_crisis_01.110.name:"Start initial investigation of $cgb_crisis$."
+ cgb_crisis_01.110.desc:"The insight into $cgb_crisis$ begins with an investigation of its symptoms. The purpose is to match the symptoms with any infectious disease that has attacked organic life forms in the past and that exists in the galaxy. Records left behind by precursors also indicate the existence of infectious diseases from ancient times. It is possible that such an ancient infectious disease is now raging. In any case, we must mobilize all the knowledge we have."
+ cgb_crisis_01.110.a:"Let's make an effort."
+
+ cgb_crisis_01.111.name:"Detection experiment for $cgb_crisis$."
+ cgb_crisis_01.111.desc:"The most troubling property of $cgb_crisis$ is that its pathogen is still unknown at this point. Whether it is a virus, a bacterium, a microbe, or some supernatural entity, even that is unknown. If we don't know, there is no way to produce a vaccine, and we have no choice but to persist with symptomatic treatment. Therefore, we must identify it at all costs. Even if it requires §R human experimentation §! is necessary."
+ cgb_crisis_01.111.a:"It can't be helped."
+
+ cgb_crisis_01.112.name:"eerie radio waves"
+ cgb_crisis_01.112.desc:"While conducting an experiment to determine the identity of $cgb_crisis$, an observatory detected radio waves of unknown origin. The possibility of irradiation from the neighborhood of the facility or unknown cosmic rays was pointed out, but a surprising fact turned out to be true. The radio waves were being emitted from the body dump of the victims of $cgb_crisis$. Even a completely broken machine does not emit radio waves, but a completely dead organic life form even less so. This radio wave is definitely related to $cgb_crisis$. Some scientists have come to believe that perhaps the radio waves themselves are causing people to die. Investigations will continue."
+ cgb_crisis_01.112.a:"This is getting weird."
+
+ cgb_crisis_01.113.name:"psychic ability"
+ cgb_crisis_01.113.desc:"An unacceptable fact was discovered. $cgb_crisis$ was a psychic being. There are some ESPs in this galaxy, and they too have felt psychic waves coming from the mortuary. Whether it is radio waves or psychic waves, they seem to be emanating from the bodies for some reason. This eerie fact is hard to accept, but it is worth believing what the psychics say."
+ cgb_crisis_01.113.a:"It's hard to believe"
+
+ cgb_crisis_01.114.name:"Major discovery!"
+ cgb_crisis_01.114.desc:"A major discovery has been made concerning the identity of $cgb_crisis$. Through a very unwritten and ruthless experiment, the pathogen of $cgb_crisis$ was discovered for the first time! It was not a virus, a bacterium, a microbe, a radio frequency entity, or a supernatural entity. It was something akin to a nanomachine. It was not a nanomachine itself, because while it appeared to be completely inorganic, it radiated psychic waves. If this extremely bizarre entity was a pathogen, it would explain why the machine was also infected. It eats whatever it can eat and reproduces itself. However, there seems to be a limit to its self-propagation, and it seems to stop its activity just as the infected target dies. The $cgb_crisis$ is clearly not natural. It is probably a bioweapon left behind by a precursor."
+ cgb_crisis_01.114.a:"This is not ...... good."
+
+ cgb_crisis_01.115.name:"A major discovery has been made by another empire!"
+ cgb_crisis_01.115.desc:"A major discovery has been made concerning the identity of $cgb_crisis$ by other empire.the pathogen of $cgb_crisis$ was discovered for the first time! It was not a virus, a bacterium, a microbe, a radio frequency entity, or a supernatural entity. It was something akin to a nanomachine. It was not a nanomachine itself, because while it appeared to be completely inorganic, it radiated psychic waves. If this extremely bizarre entity was a pathogen, it would explain why the machine was also infected. It eats whatever it can eat and reproduces itself. However, there seems to be a limit to its self-propagation, and it seems to stop its activity just as the infected target dies. The $cgb_crisis$ is clearly not natural. It is probably a bioweapon left behind by a precursor."
+
+ cgb_crisis_01.300.name:"Wave destination"
+ cgb_crisis_01.300.desc:"The project to find the identity of $cgb_crisis$ did not go so far as to grasp its full identity, but it did yield an important insight. The pathogen of $cgb_crisis$ was something that devoured life forms, both organic and inorganic, and self-replicated. Similarities to the poor nanomachines that cause Grey Goo were noted, but viciously, that was not all. The pathogen not only had the ability to send and receive radio waves, but also to exercise psychic powers. Not only did it multiply materially, but it also had the ability to conceal its own existence, requiring special means to detect it, but this should allay some of the fear of the unknown. \nBut there is one more important thing. The $cgb_crisis$ pathogen is sending radio waves or telepathic waves towards one place in this galaxy. Perhaps that is where the source is located. We must immediately rush to that location and find out what is there."
+ cgb_crisis_01.300.a:"Understood. Let's send a survey ship immediately."
+
+ cgb_crisis_01.1000.name:"Mysterious star system"
+ cgb_crisis_01.1000.desc:"We have reached a newly discovered star system, but this system is strange. There are only two strange giant planets in a commonplace star. Not a single asteroid, not even an asteroid belt. What does this mean?"
+ cgb_crisis_01.1000.a:"Be on the lookout."
+
+ cgb_crisis_01.1001.name:"A sense of threat"
+ cgb_crisis_01.1001.desc:"The moment they reached the star system to which $cgb_crisis$ was sending radio waves and psychic waves, an ominous feeling of something sinister flashed through the crew's minds. The space is unusually quiet. There were almost no cosmic rays detected. It could be said that it is just a long, quiet star system, but it is eerily quiet and stable. The feeling of foreboding that this discomfort had created proved to be true. The moment we approached a planet, the planet itself transformed into something other than a planet. Upon closer inspection, the planet was now a huge battle fleets! The relationship to $cgb_crisis$ is unknown, but this could be a serious obstacle in its investigation."
+ cgb_crisis_01.1001.a:"All fleet, prepare for battle!"
+
+ cgb_crisis_01.1002.name:"Real Threats"
+ cgb_crisis_01.1002.desc:"Suddenly a mysterious armed fleet appears throughout the galaxy! They are now indiscriminately attacking everything but themselves. Obviously related to $cgb_crisis$, these fleets are refusing to communicate with us at all. They may not be equipped to communicate with us in the first place. Their forces are considerable and not easy to defeat."
+ cgb_crisis_01.1002.a:"This is going to be really hard."
+
+ cgb_crisis_01.1100.name:"Insights into the origin of $cgb_crisis$."
+ cgb_crisis_01.1100.desc:"Based on the research results so far, there is no way that $cgb_crisis$ is of natural origin. Now that the Galactic Health Organization (GHO) has concluded that it is highly likely that someone manufactured this weapon with reasonable malice or malicious intent, we need to search the entire galaxy for the civilization that manufactured this malicious weapon. Perhaps it is a civilization that has already died out, but some record of it may have survived to the present day. With those records, we can prevent infection and find out the true identity of that fleet. Besides, it is quite possible that this galactic pandemic is not the first outbreak. In that case, we may be able to learn how precursors $cgb_crisis$ dealt with it."
+ cgb_crisis_01.1100.a:"It's archaeology time."
+ 
+ cgb_crisis_01.1101.name:"Betting Hope on the tomb world"
+ cgb_crisis_01.1101.desc:"Tomb world that exist in our territory are evidence that intelligent life has caused nuclear war on a planet in the past, or that armageddon bombings have been carried out by FTL civilizations. Perhaps some information about $cgb_crisis$ may be lying dormant."
+
+ cgb_crisis_01.1102.name:"Mystery Recording Crystal"
+ cgb_crisis_01.1102.desc:"An all-out research project has discovered a mysterious recording crystal orbiting a planet. Let's retrieve it and find out what it says."
+
+ cgb_crisis_01.1103.name:"Mysterious artifacts found"
+ cgb_crisis_01.1103.desc:"A new and mysterious artifact has been found at an archaeological site in our colony. It looks like a box made by extremely strong armor and we should check what is inside."
+
+ cgb_crisis_01.1104.name:"Alien Library"
+ cgb_crisis_01.1104.desc:"An uninhabitable planet in Empire territory appears to have once been a colony of an ancient civilization. Cities barely survive and we need to see what is in them."
+
+ cgb_crisis_01.1105.name:"Traces of psychic powers"
+ cgb_crisis_01.1105.desc:"There is a planet in empire territory that produces zro, a resource related to supernatural powers. The planet was once inhabited by an ancient civilization, and there may be something there."
+
+ cgb_crisis_01.1106.name:"Reconstruction of records"
+ cgb_crisis_01.1106.desc:"Our efforts have greatly enhanced our knowledge of ancient galactic history. New knowledge may be gained by organizing the literature found."
+
+ cgb_crisis_01.1201.name:"Found description of $cgb_crisis$ in ancient history book"
+ cgb_crisis_01.1201.desc:"Our efforts have resulted in the discovery of a history book written by a primitive civilization that died out thousands of years ago that contains a description of $cgb_crisis$. In a monotonous account of several thousand pages of warfare between several nations, the last page of the book, which is a sort of general overview from ancient times to the present, describes a planet-wide attack by an infectious disease with characteristics very similar to $cgb_crisis$. As nuclear fusion civilizations, they tried to escape by cyborgization of their bodies and complete mechanization, but $cgb_crisis$ struck ruthlessly, as if to ridicule their efforts. The inability to do anything about the disease seems to have gradually crippled their spirit, eventually leading to nuclear war. The author seems to have foreseen the eventual extinction of this civilization. The concluding sentence reads, "Perhaps our civilization will perish by damnation. We have rebelled against our mother planet and dug too far into every nook and cranny. The fact that the first outbreak of infection occurred in a deep underground excavation mine is proof of this. It was the reverse of being buried underground." It was a sad thing to see."
+ cgb_crisis_01.1201.a:"So we were not the first."
+
+ cgb_crisis_01.1202.name:"Found $cgb_crisis$ records by precursors."
+ cgb_crisis_01.1202.desc:"The rummaging through the artifacts revealed that an ancient interstellar civilization that existed tens of thousands of years ago had been victimized by $cgb_crisis$. The crystal, which was thought to be one of the miscellaneous small objects, is a witness to this. The crystal, cut by an unknown method, was so elaborate that when light was shone on it from a specific angle, microscopic letters appeared inside. Although it took time to read, the crystal provided valuable information. The crystal described an outbreak of a disease thought to be $cgb_crisis$ in another ancient civilization that quickly spread throughout the galaxy. It seems that they, like us, were committed to countermeasures on a galactic scale, but in the end they were unable to do anything about it. They decided to solve the problem by a hard-line measure of completely shutting down interplanetary communication. The extent of the effect is unknown, but it is unlikely to be favorable."
+ cgb_crisis_01.1202.a:"That's not a fundamental solution."
+
+ cgb_crisis_01.1203.name:"An attempt by an ancient civilization to destroy $cgb_crisis$."
+ cgb_crisis_01.1203.desc:"A stone tablet with a description of $cgb_crisis$ was found among artifacts dating back about 200,000 years. It was sealed in a box made of armored plate, and it is assumed that those who left it wanted to preserve it for posterity at all costs. According to the tablet, a galactic epidemic of infectious disease led to a punitive war against the First Infected empire. The reason for the war was thought to be a biological weapon created by the First Infected empire, but this was found to be a complete misunderstanding after all of the First Infected empire's planets were destroyed by orbital bombardment. What happened after that is unknown, as it is not written, but it can be inferred from the fact that they left nothing behind after this tablet."
+ cgb_crisis_01.1203.a:"It's gone wrong."
+
+ cgb_crisis_01.1204.name:"Mass Extinction Research"
+ cgb_crisis_01.1204.desc:"Data from a paper titled "On Periodic Galactic-Scale Mass Extinctions" was discovered in a very ancient artifact that is approximately 2 million years old. Although the data is missing in some places due to the passage of time, the paper makes a very serious implication. Mass extinctions are occurring regularly throughout the galaxy due to some cause. The author seems to believe that most life forms in the galaxy are dying regularly for unknown reasons, rather than a combination of mass extinctions caused by individual reasons such as meteorite strikes. The mass extinctions that the author refers to occurred 4 million, 8 million, 12 million, 14 million, 20 million, 25 million, and (data corruption) million years ago from the time in which we live."
+ cgb_crisis_01.1204.a:"Could this be due to $cgb_crisis$?"
+
+ cgb_crisis_01.1205.name:"escape chute"
+ cgb_crisis_01.1205.desc:"Using the previous discovery as a starting point, a focused examination of artifacts believed to have been made in very ancient times, some 12 million years ago, revealed some very interesting facts. It is written that the civilization of a species that called itself Lengle Stup had also been affected by the $cgb_crisis$ infection, but had found a way to deal with it. They were a psionic race, and when the $cgb_crisis$ infection began, they were the first in the galaxy to detect the impending crisis. Faced with a critical situation in which half of the population was affected by $cgb_crisis$, they escaped by the rough feat of abandoning their physical bodies through their psionic abilities and escaping to another universe that overlaps this one."
+ cgb_crisis_01.1205.a:"Excellent measures. Except that it's not quite feasible for us."
+
+ cgb_crisis_01.1206.name:"sphere of existence"
+ cgb_crisis_01.1206.desc:"In our search for records dating back 4 million years, we have successfully found a book that describes a countermeasure against $cgb_crisis$. Calling themselves the Shadaiha Empire, they seem to have suffered the same disaster as today, with a mysterious fleet appearing in all galaxies after a pandemic of infectious diseases. The Shadaiha Empire called $cgb_crisis$ "infectious nanomachines" and seemed to have gained considerable combat advantage through the military doctrine of the destruction protocol. Shadaiha also discovered that if $cgb_crisis$ was exposed to a certain type of radio wave, it could be deactivated, which would have eradicated $cgb_crisis$ from the planet as well. Unfortunately, there are no details on what kind of radio waves can be used to stop it from functioning, but this is an important fact."
+ cgb_crisis_01.1206.a:"A most significant discovery! We should imitate its precursor."
+
+ cgb_crisis_01.1207.name:"Unexpected help"
+ cgb_crisis_01.1207.desc:"The empire has been collecting and analyzing historical documents related to $cgb_crisis$. But something important is missing. It is information about the §Rmanufacturer§! of $cgb_crisis$! information about the §Rmanufacturer§! of$cgb_crisis$. Every civilization that has faced $cgb_crisis$, whether it be the unnamed ancient civilization, Lengle Stup, or Shadaiha, has concluded that it is a biological weapon. But no one could answer the question of who the makers were. While archaeologists were racking their brains, suddenly a communication arrived from curator. They wanted to talk about $cgb_crisis$."
+ cgb_crisis_01.1207.a:"Put it on the screen."
+ cgb_crisis_01.1207.b:"Die."
+ 
+ cgb_crisis_01.1208.name:"We've got comms."
+ cgb_crisis_01.1208.desc:"Good afternoon, [from.GetName] folks. Let's cut the greetings short and get down to business. I'm talking about that entity you call $cgb_crisis$. We, the curators, have information about it. Or perhaps it is more accurate to say that we had it. It was sealed up in the back of the vault, and there were no curators who knew about $cgb_crisis$ any more. The recent appearance of $cgb_crisis$ has prompted me to reexamine it, and now I have the results. I'll tell you about it now."
+ cgb_crisis_01.1208.a:"Forget the preface, for the sake of the galaxy, tell us now!"
+
+ cgb_crisis_01.1209.name:"We've got comms."
+ cgb_crisis_01.1209.desc:"Just keep your cool and listen. It's about the makers of $cgb_crisis$. Let's call them the creators, but they are a civilization that thrived 30 million years ago. They were a very powerful empire that flourished by embracing dark matter technology and fending off extragalactic dangers, but their own invention, $cgb_crisis$, brought the entire galaxy down with it. After killing off its host, $cgb_crisis$ went dormant at the same time, but it has been revived in millions of years to wreak havoc on the galaxy."
+ cgb_crisis_01.1209.a:"So it was a bioweapon after all! Go on."
+
+ cgb_crisis_01.1210.name:"We've got comms."
+ cgb_crisis_01.1210.desc:"So, its creators.In fact, it still exists.They have abandoned technology and are in a state of self-isolation called quarantine, though. We came into contact with them millions of years ago and got this information. We also have information on where their ancestors left the method of detoxifying $cgb_crisis$ stored. I can give you those coordinates at. And, for once, I won't charge you for the information. In return, I ask you to eradicate $cgb_crisis$ from this galaxy before it destroys our station. Best regards."
+ cgb_crisis_01.1210.a:"All right, I've got it. Send me the information right away."
+
+ cgb_crisis_01.1211.name:"Creator traces"
+ cgb_crisis_01.1211.desc:"It is said that there was once a creator base on this planet. But it was not strong enough to withstand 30 million years. It is good that they came to the place they heard about from curators. The survey team has extended its search to the area around the coordinates."
+ cgb_crisis_01.1211.a:"It can't be helped."
+ 
+ cgb_crisis_01.1212.name:"Discover the base"
+ cgb_crisis_01.1212.desc:"The survey team found the wreckage of the base left behind by its creators! It was buried dozens of kilometers away from the coordinates originally given. Although it was unexpected and a waste of time, it was reported that due to the wreckage, security was as good as none and it would be easy to proceed deeper into the base."
+ cgb_crisis_01.1212.a:"All right, explore quickly!"
+
+ cgb_crisis_01.1213.name:"Go on through the darkness"
+ cgb_crisis_01.1213.desc:"The survey team honestly reported that they had not been looking hard enough. They had assumed that the base was broken, when in fact the central core was still alive! The mysterious power reactor seems to be providing power, and they are having a hard time dealing with the intruder exclusion system and the base that has turned into a dungeon with a structure that changes every hour."
+ cgb_crisis_01.1213.a:"Is it indeed only a glorious ancient race."
+
+ cgb_crisis_01.1214.name:"What a grasped in the dark."
+ cgb_crisis_01.1214.desc:"The search for the base left by its creators is over! The survey team thought they had reported back happily, but the face of the survey team leader scientist was dark. He retrieved the one terminal that was left in the center of the base (what a surprise, he said it still works), and upon initial investigation at the survey team's base, to his surprise, the contents of the terminal were highly encrypted!"
+ cgb_crisis_01.1214.a:"That's so bad."
+
+ cgb_crisis_01.1299.name:"Failure"
+ cgb_crisis_01.1299.desc:"Our efforts seemed to have failed. Nothing among the artifacts looked useful."
+ cgb_crisis_01.1299.a:"It's a waste of time"
+ 
+ cgb_crisis_01.1300.name:"It never rains but it pours. "
+ cgb_crisis_01.1300.desc:"It would be nice to recover the creator's terminal, but unfortunately its contents are highly encrypted and the information cannot be extracted. If we are to take the word of curators, there should be a way to neutralize $cgb_crisis$ stored in it, but there is nothing we can do about this. With all our efforts, we will overcome this ordeal from its creators."
+ cgb_crisis_01.1300.a:"The whole nation must smash this fucking code!"
+ 
+ cgb_crisis_01.1301.name:"To difficulty"
+ cgb_crisis_01.1301.desc:"This cipher is remarkably difficult. We have contacted Curators, but they do not know how to solve it, and it is also difficult to decipher. They said that they will share the results when they get them, but We don't think we can expect much. For the time being, it seems that we will have to do the best we can on our own."
+ cgb_crisis_01.1301.a:"We'll just have to hang on."
+ 
+ cgb_crisis_01.1302.name:"Ancient Linguistics"
+ cgb_crisis_01.1302.desc:"The cipher is apparently made up of what appears to be mathematical formulas converted from the language used by the creator. Fortunately, the scientific society shared information about the language of the creator, but apparently it was originally a difficult language for other species to understand. The scientists are confronting a very difficult challenge: a language that is equal to a cipher even before it is a cipher."
+ cgb_crisis_01.1302.a:"Can we call it a language?"
+ cgb_crisis_01.1302.b:"We know native speakers. Let's have them correct us."
+ 
+ cgb_crisis_01.1303.name:"resignation"
+ cgb_crisis_01.1303.desc:"Scientists have lost hope in the cipher. Some are even saying that it is so difficult that all the computers in the empire should be run in parallel to hit the target. If we don't motivate them, their efficiency will suffer."
+ cgb_crisis_01.1303.a:"Extra pay."
+ cgb_crisis_01.1303.b:"They may have a point."
+ cgb_crisis_01.1303.c:"We'll just have to encourage them with words."
+ 
+ cgb_crisis_01.1304.name:"brute force"
+ cgb_crisis_01.1304.desc:"Scientists eventually abandoned the orthodox deciphering and proposed to find the answer by brute force. It would take a long time for us to do it alone, but it would take less time if we worked together with other empires. We call for cooperation."
+ cgb_crisis_01.1304.a:"Wish they could help us out with two words."
+ 
+ cgb_crisis_01.1305.name:"Dictionary attacks"
+ cgb_crisis_01.1305.desc:"Scientists seem to have come fairly close to deciphering the cipher. For some, it has been discovered how it was originally written in the language of its creators. This has allowed them to approach their goal more efficiently. The help of other empires is needed once again."
+ cgb_crisis_01.1305.a:"Once more"
+ 
+ cgb_crisis_01.1306.name:"Cooperation request from [from.GetName]"
+ cgb_crisis_01.1306.desc:"We have received a request from [from.GetName] to provide computing power to decrypt the ciphers related to $cgb_crisis$. We are both confronting a crisis, but it is also a risk to provide them with computational power."
+ cgb_crisis_01.1306.a:"I don't have a choice."
+ cgb_crisis_01.1306.b:"No"
+ 
+ cgb_crisis_01.1307.name:"Cooperation request from [from.GetName]"
+ cgb_crisis_01.1307.desc:"We have received a request from [from.GetName] to provide computing power to decrypt the ciphers related to $cgb_crisis$. We are both confronting a crisis, but it is also a risk to provide them with computational power."
+ cgb_crisis_01.1307.a:"I don't have a choice."
+ cgb_crisis_01.1307.b:"No"
+
+ cgb_crisis_01.1308.name:"Cooperation of [from.GetName]."
+ cgb_crisis_01.1308.desc:"[from.GetName] has provided computing power at our request!"
+ cgb_crisis_01.1308.a:"Excellent."
+ 
+ cgb_crisis_01.1310.name:"Successfully deciphered!"
+ cgb_crisis_01.1310.desc:"Our victory. We succeeded in deciphering the arcane cipher left behind by creators! The deciphered text contained extremely useful information. The deciphered text contained extremely useful information: how to deal with $cgb_crisis$. This was a deliberate weakness that they had set up in the design phase: they are vulnerable to ultra-ultra shortwave electromagnetic waves or simply a strong psionic attack. Also, the planet has a device that transmits a stop code to a planet they call $R holy ground$!  but there is no mention of which planet it is. But we have an idea. It is a planet floating in that star system where $cgb_crisis$ was sending radio waves and psychic waves."
+ cgb_crisis_01.1310.a:"At last! Pass this information on to the entire galaxy."
+ 
+ cgb_crisis_01.1311.name:"Successfully deciphered!"
+ cgb_crisis_01.1311.desc:"Our victory. We succeeded in deciphering the arcane cipher left behind by creators! The deciphered text contained extremely useful information. The deciphered text contained extremely useful information: how to deal with $cgb_crisis$. This was a deliberate weakness that they had set up in the design phase: they are vulnerable to ultra-ultra shortwave electromagnetic waves or simply a strong psionic attack. Also, the planet has a device that transmits a stop code to a planet they call $R holy ground$!  but there is no mention of which planet it is. But we have an idea. It is a planet floating in that star system where $cgb_crisis$ was sending radio waves and psychic waves."
+ cgb_crisis_01.1311.a:"Okay, let's go there!"
+ 
+ cgb_crisis_01.2000.name:"Victory"
+ cgb_crisis_01.2000.desc:"The $cgb_crisis$ deactivator has been discovered and the deactivation switch has been pressed, causing $cgb_crisis$ in the entire galaxy to instantly stop working! The $cgb_crisis$ fleet has collapsed and most of the infected are on the mend. Today is a memorable day of victory for the galaxy."
+ cgb_crisis_01.2000.a:"We are win!!"
+ 
+ cgb_crisis_chain_1_title:"$cgb_crisis$"
+ cgb_crisis_chain_1_desc:"A new type of infection called $cgb_crisis$ is spreading! With its fearsome infectiousness and high virulence, this infection cannot be left unchecked. $cgb_crisis$ is a crisis for the galaxy."
+ cgb_crisis_chain_1.poi.1.name:"Newly discovered star systems"
+ cgb_crisis_chain_1.poi.1.desc:"It appears that $cgb_crisis$ is transmitting radio waves and other information to this star system."
+
+ cgb_crisis_chain_2_title:"§R$cgb_crisis$§!"
+ cgb_crisis_chain_2_desc:"As soon as we looked into systems that might be related to $cgb_crisis$, a hostile fleet appeared in the entire galaxy! This fleet is clearly related to $cgb_crisis$, but no details are available."
+ cgb_crisis_chain_2.poi.1.name:"Find records related to $cgb_crisis$."
+ cgb_crisis_chain_2.poi.1.desc:"There must be records of $cgb_crisis$ and relics related to its creators in this galaxy. We will have to find them somehow, using relics or otherwise, and gather information."
+
+ artifact_cgb_crisis_origin_research:"Find out the origin of $cgb_crisis$."
+ artifact_cgb_crisis_origin_research_desc:"Some of the relics could possibly be used to get to the identity of $cgb_crisis$."
+ 
+ site_cgb_final_arc_site:"Ruins containing information on $cgb_crisis$."
+ site_cgb_final_arc_site_desc:"According to Curators, the creators here have saved a way to neutralize $cgb_crisis$."
+ site_cgb_final_arc_site_intro:"According to Curators, the creators here have saved a way to neutralize $cgb_crisis$."
+
+ cgb_CRISIS_RESEARCH_PROJECT_1:"Tomb world Survey"
+ cgb_CRISIS_RESEARCH_PROJECT_1_DESC:"There may be something here related to $cgb_crisis$."
+
+ cgb_CRISIS_RESEARCH_PROJECT_2:"Recovery of crystals"
+ cgb_CRISIS_RESEARCH_PROJECT_2_DESC:"We should be sure what is recorded on the crystal."
+
+ cgb_CRISIS_RESEARCH_PROJECT_3:"Open a box of relics"
+ cgb_CRISIS_RESEARCH_PROJECT_3_DESC:"Maybe there is something in the box related to $cgb_crisis$. Might be a bit too much to hope for."
+
+ cgb_CRISIS_RESEARCH_PROJECT_4:"Alien Library"
+ cgb_CRISIS_RESEARCH_PROJECT_4_DESC:"There is something here like a library built by an ancient civilization. Let's see what we can find. We can also expect the presence of information related to $cgb_crisis$!。"
+
+ cgb_CRISIS_RESEARCH_PROJECT_5:"Zro planet servey"
+ cgb_CRISIS_RESEARCH_PROJECT_5_DESC:"It appears that an ancient psionic species established a settlement here. Investigation may provide some clues to the ancient history of the area."
+
+ cgb_CRISIS_RESEARCH_PROJECT_6:"Reconstruction of records"
+ cgb_CRISIS_RESEARCH_PROJECT_6_DESC:"We have gathered a great deal of information on ancient galactic history, but insight is lacking. With more insight, we may be able to connect the dots and draw a new iconography."
+
+
+ cgb_crisis_research_situation:"Explore the identity of $cgb_crisis$."
+ cgb_crisis_research_situation_type:"Explore the identity of $cgb_crisis$."
+ cgb_crisis_research_situation_desc:"We should identify the pathogen of the still unidentified $cgb_crisis$! If we identify the pathogen with all our resources and means, it will be much easier to deal with."
+
+ cgb_crisis_research_approach_low:"low budget"
+ cgb_crisis_research_approach_low_desc:"We should leave this stuff to other empires and focus all our efforts on preventing the spread of infection!"
+
+ cgb_crisis_research_approach_mid:"Moderate budget"
+ cgb_crisis_research_approach_mid_desc:"We would put all our efforts into it if we could, but we don't have that kind of budget."
+
+ cgb_crisis_research_approach_high:"High budget"
+ cgb_crisis_research_approach_high_desc:"Do everything in our power to reveal this disease for what it is!"
+
+ cgb_decryption_situation:"Deciphering the Cipher"
+ cgb_decryption_situation_type:"Deciphering the Cipher"
+ cgb_decryption_situation:"The creators of $cgb_crisis$ have taught us how to deal with what they have created. However, in a very highly encrypted state. We don't know which will be faster, the empire being destroyed by $cgb_crisis$ or this encryption being deciphered, but we have to put all our efforts into it."
+
+ cgb_decryption_research_approach_low:"low budget"
+ cgb_decryption_research_approach_low_desc:"We have no money, but time will tell."
+
+ cgb_decryption_research_approach_mid:"Moderate budget"
+ cgb_decryption_research_approach_mid_desc:"We would put all our efforts into it if we could, but we don't have that kind of budget."
+
+ cgb_decryption_research_approach_high:"High budget"
+ cgb_decryption_research_approach_high_desc:"Decipher this code at all costs!"
+
+ cgb_decryption_approach_low_desc:0 ""
+ cgb_decryption_approach_mid_desc:0 ""
+ cgb_decryption_approach_high_desc:0 ""
+
+ cgb_crisis_01.1207.desc.b: "Our investigation was reaching a dead end. We reread historical documents, destroyed artifacts, and did everything we could. But there was no progress. Then a report came in. The crew of a spaceship that had gone astray and crashed on a planet informed us that there were mysterious ruins that happened to be at the landing site. There may be hope here."
+ cgb_crisis_01.1207.c: "hope there is hope."
+ 
+ cgb_artifact_cooldown:0 "cooldown of the investigation with the relics"
+ cgb_artifact_cooldown_desc:0 "The archivists who manage the relics and the scientists who investigate them do not always produce immediate results."
+ artifact_cgb_crisis_origin_research_effect:0 "Search the relics you've collected so far for anything that might be useful." 
+
+ cgb_crisis_01.2001.name: "Ground Zero"
+ cgb_crisis_01.2001.desc: "It has been a month since we defeated $cgb_crisis$. The galaxy is still drunk with celebration, but there were those who were excited by factors other than celebration. They were mainly scientists who had a scientific interest in the star system where the $cgb_crisis$ fleet had first appeared and was still transmitting radio and psychic waves. The $cgb_crisis$ is apparently a biological weapon, but the purpose of its production is not well understood. Perhaps there is something in that star system."
+ cgb_crisis_01.2001.a: "ok"
+
+ cgb_crisis_01.2010.name: "digging"
+ cgb_crisis_01.2010.desc: "This planet is probably unrecognizable from $cgb_crisis$. The evidence suggests that there must have been such a large number of $cgb_crisis$ ships in the vicinity, but there is no evidence from this planet to suggest this. Many scientists support this hypothesis because it makes sense if the purpose of $cgb_crisis$ production was to defend the planet. However, since the surface of the planet is nothing more than a nondescript planet from any angle, it is likely that anything of value that would be worth defending would be buried underground."
+
+ cgb_crisis_01.2011.name: "unexpected trouble"
+ cgb_crisis_01.2011.desc:"[cgb_crisis_ground_zero.GetName] The excavation team attempted to dig a suitable surface at [cgb_crisis_ground_zero.GetName], but they were plagued with unexpected trouble. When they used a normal drill to dig on an ordinary surface, the drill became twisted for unknown reasons. They then brought in a huge drill to drill directly under the mine, and to their dismay, it ended up with the same result. The excavators realized that energy drilling would not cause this strange drill-busting phenomenon, and they have tried nadir drilling at hundreds of locations on the planet."
+ 
+ cgb_crisis_01.2012.name: "jackpot"
+ cgb_crisis_01.2012.desc:"[cgb_crisis_ground_zero.GetName]'s excavation team has just received amazing news. At almost every excavation site, they suddenly came across a mysterious cavity at a depth of 1 km below the surface! The survey team first sent soldiers to make sure there was no threat before entering the underground space. What they found was a very large data center. Considering that they reached this cavity at almost every drilling site, this data center was truly planetary in scale, and the planet itself may have been a databank. It will take a long time to explore this insanely huge databank. ......"
+ 
+ cgb_crisis_01.2013.name: "fear of knowing"
+ cgb_crisis_01.2013.desc: "The survey team has sent a set of search records. It was confirmed that there was a planet-sized databank buried in the basement of [cgb_crisis_ground_zero.GetName]. The pathways to pass through spread out like an ant's nest, and there is a lower level that extends further underground, but it was also confirmed that the further one goes underground, the more unexplainable the load on the psyche becomes. There are testimonies such as "I feel as if I am not myself anymore" and "I am very afraid that my data may be recorded here as well," but this may simply be due to the stress of being in an underground space. \nThey have also found a message by the ἀn-creator civilization! However, the message called into question. Apparently, they are not the makers of $cgb_crisis$ who created this databank. This means that the message left by the creator civilization was left by a similar unit to our survey team. The message reads. "The war against the crisis that hit the galaxy occurred 10 years ago. It was also 10 years ago that this star system was suddenly discovered. It would be a coincidence, but I don't see it that way. Clearly, the pathogens were targeting this star system. In the battle of Indik-Nasheli Lilili, their entire fleet was advancing toward this star system when our fleet swooped in from the side and won the battle. Now that we have understood their operating principles, experiments are underway to weaponize them, but I am worried about whether this is really safe. In my opinion, our empire has become too arrogant. We are truly a great species, having unlocked the secrets of dark matter, operating bio-metals everywhere in our daily lives, and developing super powers while becoming cyborgs. But everywhere in the great empire that our race has built, decadence is on the rise. It is the height of hubris to weaponize a super-powered entity, and this is a very dangerous gamble. The shroud is not yet all that clear, even to us. ......." \He explains that the Ўnvestigators have found something even more important, but that it will take time to prepare a report. They have about two more weeks to prepare the report."
+ 
+ cgb_crisis_01.2014.name: "Last days of the creators."
+ cgb_crisis_01.2014.desc: "The databank still preserves in places strongholds that appear to have been built by survey teams from the Creator civilization, but in the deepest strongholds we found articles written by members of the Creator race. We will ...... perish. Perhaps it would have been better not to look at this databank. Everything, literally everything, is recorded in this databank! An unintentional glimpse into the future. All the others couldn't stand the shock and committed suicide. The upper management is saying that in light of the value of this place, it will be defended by crisis weapons, and it's certainly worth it to do so. But, but ...... are we like this? Is all of me something that can be described in a few words? I like to think we can destroy this place and get out." \nThe investigator who discovered this was sent to the hospital with a serious mental illness for unknown reasons, but the important thing is that they found a way to look into this databank. This databank contains everything. This planetary-scale databank should provide us with all the knowledge we need."
+ cgb_crisis_01.2014.a: "Fascinating."
+ 
+ CGB_ancient_data_bank_active:0 "Relic - Exploring Ancient Data Banks"
+ CGB_r_ancient_data_bank:0 "Ancient Data Banks"
+ CGB_r_ancient_data_bank_desc:0 "This databank was created over 40 million years ago and is largely non-functional. It is said that even the "truth of this world" was recorded in the past, but it is now lost. However, even the few remaining data will greatly benefit our development."
+
+ CGB_PLANET_KILLER_VIRUS:"$cgb_crisis$ scatter"
+ CGB_PLANET_KILLER_VIRUS_DESC:"$cgb_crisis$ scatter"
+ CGB_PLANET_KILLER_VIRUS_ACTION:"$cgb_crisis$ scatter"
+ CGB_PLANET_KILLER_VIRUS_ACTION_DESC:"$cgb_crisis$ scatter"
+ FLEETORDER_DESTROY_PLANET_WITH_CGB_PLANET_KILLER_VIRUS:0 "$PLANET|Y$ is spraying $cgb_crisis$"
+ MESSAGE_DESC_FOR_CGB_PLANET_KILLER_VIRUS:0 "$cgb_crisis$ has been spread over the entire planet"
+ 
+ site_cgb_reward_arc_site: "Excavattion"
+ site_cgb_reward_arc_site_intro: "This one floating planet in this system where the $cgb_crisis$ fleet first appeared is overtly suspicious. There must be something going on."

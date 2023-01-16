@@ -1,0 +1,269 @@
+﻿l_simp_chinese:
+ 
+ #作成ヒアルロン大陸
+ #翻訳が間に合わなかったので機械翻訳
+ 
+ #####    イベント    #####
+
+ cgb_crisis_02.10.name:0 "Planetary infection control"
+ cgb_crisis_02.10.desc:0 "The spread of $cgb_crisis$ in [root.target.GetName] can no longer be overlooked. We must immediately proceed with measures such as travel restrictions and monitoring of residents."
+ cgb_crisis_02.10.a:0 "I hope it settles in quickly..."
+
+ cgb_crisis_02.11.name:0 "spread of infection"
+ cgb_crisis_02.11.desc:0 "The $cgb_crisis$ at [root.target.GetName] is expanding further. If it spreads further, the planet alone will not be able to handle it. We must take stronger infection control measures and contain the outbreak immediately."
+ cgb_crisis_02.11.a:0 "that's bad"
+
+ cgb_crisis_02.12.name:0 "Reduction of infection"
+ cgb_crisis_02.12.desc:0 "The $cgb_crisis$ in [root.target.GetName] is subsiding. Still a tricky situation, but a relief for the moment."
+ cgb_crisis_02.12.a:0 "$EXCELLENT$"
+
+ cgb_crisis_02.13.name:0 "Empire-wide infection control"
+ cgb_crisis_02.13.desc:0 "Our $cgb_crisis$ has become so prevalent that it can no longer be dealt with on one planet. This is an imperial crisis. If the epidemic is not contained immediately, the empire will be paralyzed."
+ cgb_crisis_02.13.a:0 "Take immediate action now."
+
+ cgb_crisis_02.14.name:0 "Failure to fight infection"
+ cgb_crisis_02.14.desc:0 "Our country has failed to deal with the $cgb_crisis$. There is no longer any way to rid the $cgb_crisis$ from the empire and we will have to consider coexistence. We will, however, continue to be killed."
+ cgb_crisis_02.14.a:0 "I can not believe that"
+
+ cgb_crisis_02.15.name:0 "success in combating infection"
+ cgb_crisis_02.15.desc:0 "Our country has successfully dealt with the $cgb_crisis$. The threat that was prevalent throughout the empire has been roughly eliminated. However, caution must be exercised as it has not yet been contained on a single planet."
+ cgb_crisis_02.15.a:0 "You did a good job anyway"
+
+ #100番台イベント
+ cgb_crisis_02.101.name:0 "infected scientist"
+ cgb_crisis_02.101.desc:0 "It seems that [this.GetName], a prominent scientist in our country, has been infected with $cgb_crisis$. Several such cases had already occurred in the Imperial Academy, and we had tried to have him recuperated according to the established procedures. Inexplicably, however, [Root.GetName] decided to conduct an experiment on the virus using himself as a test subject in the midst of a high fever. He was immediately seized and taken back to bed, but apparently his maniacal enthusiasm has not yet awakened."
+ cgb_crisis_02.101.a:0 "interesting"
+ cgb_crisis_02.102.name:0 "Computer Anomalies - Trading Systems"
+ cgb_crisis_02.102.desc:0 "Computer engineers at [Root.Capital.GetName] have apparently discovered a strange phenomenon. Interestingly, the virus-infected market control computer was not destroyed, but only made slightly less efficient, but still working properly! However, the fact remains that the computer is infected with a virus, so it will be disconnected from the network and completely sealed before further research is conducted to be sure."
+ cgb_crisis_02.102.a:0 "it's a little creepy"
+ cgb_crisis_02.103.name:0 "Computer Anomalies - runaway!"
+ cgb_crisis_02.103.desc:0 "In several of our colonies, computers were discovered to be infected with a virus. Fortunately, the systems were shut down by the security forces before they went haywire, but there is widespread anxiety among the population."
+ cgb_crisis_02.103.a:0 "scary..."
+ cgb_crisis_02.104.name:0 "civil unrest"
+ cgb_crisis_02.104.desc:0 "Citizens rioting in [this.GetName] after being misled by a hoax about an infectious disease! Security forces have been dispatched to quell the riot, but the source of the hoax is still unknown."
+ cgb_crisis_02.104.a:0 "That's a lot of trouble."
+ cgb_crisis_02.105.name:0 "Confinement - For Lonely People"
+ cgb_crisis_02.105.desc:0 "Apparently, many [this.GetName] feel more comfortable in their lives as a result of the curfew. According to them, the reduction in tedious socializing and communication has reduced their daily stress. This is bringing the advantage of not having to worry too much about the distribution of comfort levels in a society under curfew, where there is less entertainment."
+ cgb_crisis_02.105.a:0 "Interesting."
+ cgb_crisis_02.106.name:0 "Comets"
+ cgb_crisis_02.106.desc:0 "In [this.GetName], a comet was observed that does not exist in the celestial catalog of star systems. It appears to be an interstellar object, and the citizens of the city are rejoicing at this sudden surprise from the heavens."
+ cgb_crisis_02.106.a:0 "That's good to know."
+ cgb_crisis_02.110.name:0 "Comets?"
+ cgb_crisis_02.110.desc:0 "An uncatalogued comet was observed in [this.GetName]. Although uncatalogued objects are rarely observed as interstellar objects, the strange thing is that this comet orbits its star in an almost circular orbit, which is not possible for a natural comet. Strangely, however, the number of infected people on the planet has been increasing rapidly since this phenomenon was discovered, and there have been rumors of a link, albeit a very subtle one."
+ cgb_crisis_02.110.a:0 "Oh no way......?"
+
+ #200番台イベント
+ cgb_crisis_02.201.name:0 "Shortage of daily necessities"
+ cgb_crisis_02.201.desc:0 "Economic activity due to infection control has also affected the logistics network. This has resulted in shortages of some consumer goods. Although no immediate serious effects are expected, the long-term accumulation of discontent should not be ignored."
+ cgb_crisis_02.201.a:0 "Ration any shortfalls."
+ cgb_crisis_02.201.b:0 "Keep this in mind."
+ cgb_crisis_02.211.name:0 "Shortage of daily necessities - relief"
+ cgb_crisis_02.211.desc:0 "As a result of the rationing, the shortage of supplies has been resolved, and the people seem relieved at the moment."
+ cgb_crisis_02.211.a:0 "よし"
+ cgb_crisis_02.212.name:0 "Shortage of daily necessities - Economic cooling"
+ cgb_crisis_02.212.desc:0 "Apparently, the shortage of consumer goods has caused a further economic slowdown in the planetary economy. As a result, people are becoming less active and the birth rate has remained low."
+ cgb_crisis_02.212.a:0 "It's within the realm of possibility."
+ cgb_crisis_02.202.name:0 "Mass Infection!!"
+ cgb_crisis_02.202.desc:0 "A cluster of several thousand people has been confirmed in [this.GetName]. We are working rapidly to identify the infected individuals, but the full extent of the outbreak is not yet known, and further spread of the outbreak is expected."
+ cgb_crisis_02.202.a:0 "Oh my goodness!"
+ cgb_crisis_02.203.name:0 "Supeer Mass Infection!!"
+ cgb_crisis_02.203.desc:0 "A cluster of tens of thousands of people has been confirmed in [this.GetName]. We are currently working at a rapid pace to ascertain who is infected, but we are completely unable to do so, and further spread of the infection is assured."
+ cgb_crisis_02.203.a:0 "Pretty bad."
+ cgb_crisis_02.204.name:0 "Decrease in infected people"
+ cgb_crisis_02.204.desc:0 "In [this.GetName], the cooperation of citizens and the hard work of medical institutions have confirmed that the number of infected people is on the decrease."
+ cgb_crisis_02.204.a:0 "It's been a long time since I've had good news."
+ cgb_crisis_02.205.name:0 "Rogue company"
+ cgb_crisis_02.205.desc:0 "The deterioration of corporate performance in [this.GetName] due to the spread of infectious diseases has not stopped over the past few years, but there is no end to the number of companies that are making up for it in rather nefarious ways. We are divided as to whether we should aggressively expose these companies or let them go unchecked due to the economic impact."
+ cgb_crisis_02.205.a:0 "should be exposed"
+ cgb_crisis_02.205.b:0 "it's a necessary evil"
+ cgb_crisis_02.213.name:0 "Rogue company - exposed"
+ cgb_crisis_02.213.desc:0 "As a result of the crackdown, some companies went bankrupt because they could not pay their outstanding salaries. Order and employee rights were preserved, but the loss to the local economy was immeasurable."
+ cgb_crisis_02.213.a:0 "A victory for justice!"
+ cgb_crisis_02.214.name:0 "Rogue company - continuation"
+ cgb_crisis_02.214.desc:0 "As a result of the compromise by the authorities, unpaid and illegal overtime work occurred frequently, but the number of company bankruptcies decreased significantly more than originally expected."
+ cgb_crisis_02.214.a:0 "The increase in overwork deaths is within expectations."
+ cgb_crisis_02.206.name:0 "Anti-infection measures riot"
+ cgb_crisis_02.206.desc:0 "In [this.GetName], where the infection has been spreading rapidly in recent years, some of the people have started a movement to reject infection control measures. Most of the activities are relatively peaceful, but some of them have turned into a mob and occupied buildings of the security authorities."
+ cgb_crisis_02.206.a:0 "Allow security forces to use firearms"
+ cgb_crisis_02.206.b:0 "Can't we somehow make this quiet?"
+ cgb_crisis_02.215.name:0 "Anti-infection measures riot - subjugation"
+ cgb_crisis_02.215.desc:0 "The security authorities succeeded in suppressing the rioters with their troops, but there were not a few deaths on both sides. Unfortunately, our actions were not well received by the planet's inhabitants."
+ cgb_crisis_02.215.a:0 "We've got blood......"
+ cgb_crisis_02.216.name:0 "Anti-infection measures riot - Further radicalization"
+ cgb_crisis_02.216.desc:0 "Unfortunately, the anti-infection faction on [this.GetName] seems to be unstoppable. The security authorities have failed to act, and planetary security is rapidly deteriorating."
+ cgb_crisis_02.216.a:0 "Why are you giving me more trouble like that?"
+
+ #300番台イベント
+ cgb_crisis_02.301.name:0 "Escape of infected persons"
+ cgb_crisis_02.301.desc:0 "One of the infected people escaped to [this.GetName]. He was in the authorities' quarantine facility because he was found to be infected during border inspections, but it appears that he escaped and fled to this planet."
+ cgb_crisis_02.301.a:0 "Send in personnel and secure him as soon as possible."
+ cgb_crisis_02.301.b:0 "Never mind just one infected person."
+ cgb_crisis_02.311.name:0 "Securing Infected Persons"
+ cgb_crisis_02.311.desc:0 "We succeeded in securing the infected person. It seems that after the infection was discovered, they became desperate and played around on this planet. As a result, a small number of new cases of infection occurred, but we were able to secure all of them."
+ cgb_crisis_02.311.a:0 "good."
+ cgb_crisis_02.312.name:0 "Detection of Infected Persons"
+ cgb_crisis_02.312.desc:0 "We were successful in finding the infected, but while we were taking our time, [this.GetName] seemed to be spreading the infection, causing an untraceable mass infection."
+ cgb_crisis_02.312.a:0 "Oh shit......"
+ cgb_crisis_02.302.name:0 "Mass Infection!!"
+ cgb_crisis_02.302.desc:0 "A small outbreak was confirmed in [this.GetName]. Unfortunately, the authorities are not aware of some of the people infected in this cluster, and the possibility of a community-wide outbreak cannot be ruled out."
+ cgb_crisis_02.302.a:0 "Worried."
+ cgb_crisis_02.303.name:0 "Super Mass Infection"
+ cgb_crisis_02.303.desc:0 "A cluster infection was confirmed in [this.GetName]. Unfortunately, the number of people infected in this cluster was so large that the authorities do not have a complete picture of the outbreak, and further spread of the outbreak is expected."
+ cgb_crisis_02.303.a:0 "Worried."
+ cgb_crisis_02.304.name:0 "Decrease in the number of infected people"
+ cgb_crisis_02.304.desc:0 "[GetName] reports a decrease in the number of infected people due to aggressive infection control actions by the public and the efforts of medical institutions."
+ cgb_crisis_02.304.a:0 "Is sound good"
+ cgb_crisis_02.305.name:0 "Securing the infected population"
+ cgb_crisis_02.305.desc:0 "We have secured a group of infected people in [this.GetName]. They have been to a number of locations and if we investigate their travel routes we may find more infected individuals"
+ cgb_crisis_02.305.a:0 "Try to investigate more deeply."
+ cgb_crisis_02.305.b:0 "No, this is enough."
+ cgb_crisis_02.313.name:0 "Securing further infected"
+ cgb_crisis_02.313.desc:0 "Further investigation on the planet in the surrounding space [this.GetName] succeeded in securing several hundred new infected people."
+ cgb_crisis_02.313.a:0 "Understood."
+ cgb_crisis_02.314.name:0 "Increase in infected"
+ cgb_crisis_02.314.desc:0 "In [this.GetName], a sharp increase in the number of infected people has been reported due to inadequate infection control measures by citizens and saturation of the medical system."
+ cgb_crisis_02.314.a:0 "It was a bad."
+
+#400番台
+
+ cgb_crisis_02.401.name:0 "Infected Leader"
+ cgb_crisis_02.401.desc:0 "It seems that [this.GetName], a key personnel in the empire, has been infected with $cgb_crisis$. Unluckily, he was severely ill, and although he managed to return to work, his ability to do so seems to have been compromised."
+ cgb_crisis_02.401.a:0 "What a surprise......"
+ cgb_crisis_02.402.name:0 "Outbreaks"
+ cgb_crisis_02.402.desc:0 "There have been outbreaks in some areas of the empire. While these have not yet had a major impact, it should be noted that the epidemic is steadily advancing."
+ cgb_crisis_02.402.a:0 "We should deal with this as soon as possible."
+ cgb_crisis_02.403.name:0 "Medium-scale outbreak"
+ cgb_crisis_02.403.desc:0 "There are outbreaks of outbreaks in several areas of the empire. These are an obstacle to the Empire's ability to deal with the infections and need to be addressed quickly."
+ cgb_crisis_02.403.a:0 "Oh......"
+ cgb_crisis_02.404.name:0 "Deal with this as soon as possible."
+ cgb_crisis_02.404.desc:0 "Outbreaks are occurring throughout the empire. These will be very difficult to contain and will be a fatal obstacle to dealing with the infections in the empire."
+ cgb_crisis_02.404.a:0 "I can not believe that!"
+
+ #####    シチュエーション    #####
+
+ cgb_planet_infection_situation:0 "Dealing with infection at [target.GetName]"
+ cgb_planet_infection_situation_type:0 ""
+ cgb_planet_infection_situation_monthly_change_tooltip:0 ""
+ cgb_planet_infection_situation_desc:0 ""
+ 
+ cgb_planet_infection_approach_0:0 "Infection control - none"
+ cgb_planet_infection_approach_0_desc:0 "With an epidemic of this magnitude, no countermeasures are necessary."
+ cgb_planet_infection_approach_1:0 "Infection control - some"
+ cgb_planet_infection_approach_1_desc:0 "Request to refrain from going out, call for infection control, and take measures that do not cost much."
+ cgb_planet_infection_approach_2:0 "Infection control - lot"
+ cgb_planet_infection_approach_2_desc:0 "Stay home, monitor infected people, and take drastic measures to stop the epidemic."
+ cgb_planet_infection_approach_3:0 "Infection control - every"
+ cgb_planet_infection_approach_3_desc:0 "Thorough outing restrictions, surveillance of all citizens, recording of every action, even if the empire tilts, prevent epidemics!"
+
+ cgb_planet_situation_modifier_desc:0 "From Planet Modifier"
+
+ cgb_country_infection_situation:0 "Empire-wide infection control"
+ cgb_country_infection_situation_type:0 ""
+ cgb_country_infection_situation_monthly_change_tooltip:0 ""
+ cgb_country_infection_situation_desc:0 ""
+
+ cgb_country_infection_approach_0:0 "Alert level 1"
+ cgb_country_infection_approach_0_desc:0 "We must not let these diseases get the better of us! We must be more active and rebuild our country!"
+ cgb_country_infection_approach_1:0 "Alert level 2"
+ cgb_country_infection_approach_1_desc:0 "To control the epidemic, we need to curb activity. Let's call on the public to refrain from activities."
+ cgb_country_infection_approach_2:0 "Alert level 3"
+ cgb_country_infection_approach_2_desc:0 "It is not enough to call for Restrict the activities of all citizens."
+ cgb_country_infection_approach_3:0 "Alert level 4"
+ cgb_country_infection_approach_3_desc:0 "Even if the country does not, this epidemic must be stopped. It will force the suspension of almost all citizens."
+
+ cgb_planet_infection_resolution_quarantine_desc:0 "From the resolution of the Galactic Community"
+ cgb_planet_infection_vaccine_desc:0 "From the Vaccine Emergency Distribution Event"
+ cgb_planet_infection_vaccine_desc:0 "From Vaccine Completion"
+ 
+
+ #####    モディファイアー    #####
+
+ planet_prevalence_level_0:0 "Planetary epidemic level:0"
+ planet_prevalence_level_0_desc:0 "$cgb_crisis$ is hardly prevalent on this planet. All pops are active as normal."
+
+ planet_prevalence_level_1:0 "Planetary epidemic level:1"
+ planet_prevalence_level_1_desc:0 "$cgb_crisis$ is a bit prevalent on this planet."
+
+ planet_prevalence_level_2:0 "Planetary epidemic level:2"
+ planet_prevalence_level_2_desc:0 "$cgb_crisis$ is prevalent on this planet."
+
+ planet_prevalence_level_3:0 "Planetary epidemic level:3"
+ planet_prevalence_level_3_desc:0 "$cgb_crisis$ is quite prevalent on this planet."
+
+ planet_prevalence_level_4:0 "Planetary epidemic level:4"
+ planet_prevalence_level_4_desc:0 "$cgb_crisis$ is exploding on this planet. If it continues to spread further, we will need to take action on a planetary scale."
+
+ planet_prevalence_level_5:0 "Planetary epidemic level:5"
+ planet_prevalence_level_5_desc:0 "This modifier is basically not displayed, so if it is, it's a bug."
+ 
+ country_lost_health_default:0 "Failed infection control"
+ country_lost_health_default_desc:0 "This empire has fatally failed to deal with $cgb_crisis$. There will be almost no part of the empire where $cgb_crisis$ does not exist."
+
+ country_lost_health_gestalt:0 "Failed infection control"
+ country_lost_health_gestalt_desc:0 "This empire has fatally failed to deal with $cgb_crisis$. There will be almost no part of the Reich where $cgb_crisis$ does not exist."
+
+ cgb_modifier_event_102:0 "Computer Anomalies"
+  cgb_modifier_event_102_desc:0 "Some computers in the empire are experiencing anomalies."
+
+ cgb_modifier_event_103:0 "Computer Anomalies"
+  cgb_modifier_event_103_desc:0 "Some computers in the empire are experiencing anomalies."
+
+ cgb_modifier_event_104:0 "Civil Riots"
+ cgb_modifier_event_104_desc:0 "A combination of fear of $cgb_crisis$ and other factors are causing citizens to riot."
+
+ cgb_modifier_event_105:0 "Comfortable home life"
+  cgb_modifier_event_105_desc:0 "[this.GetName] residents were concerned about infection control measures such as curfew restrictions, but they were actually more comfortable than expected."
+
+ cgb_modifier_event_106:0 "Comet Transit"
+  cgb_modifier_event_106_desc:0 "A comet was observed at [this.GetName]. Citizens are happy as it is a good sign."
+
+ cgb_modifier_event_110:0 "A trick from sky"
+  cgb_modifier_event_110_desc:0 "The virus on the comet is causing anxiety among the residents of [this.GetName]."
+
+ cgb_modifier_event_201:0 "Lack of daily necessities"
+  cgb_modifier_event_201_desc:0 "There is a shortage of commodities."
+
+ cgb_modifier_event_211:0 "plentiful daily necessities"
+  cgb_modifier_event_211_desc:0 "The commodities arranged are reaching the citizens."
+
+ cgb_modifier_event_212:0 "shortage of goods"
+ cgb_modifier_event_212_desc:0 "People are needy."
+
+ cgb_modifier_event_202:0 "Medium-scale mass infection"
+ cgb_modifier_event_202_desc:0 "A mass infection has occurred."
+
+ cgb_modifier_event_203:0 "Massive outbreaks"
+ cgb_modifier_event_203_desc:0 "A mass infection has occurred."
+
+ cgb_modifier_event_204:0 "Decrease in the number of infected"
+ cgb_modifier_event_204_desc:0 "People are relieved that the number of infections is down."
+
+ cgb_modifier_event_205a:0 "Under investigation by the company"
+  cgb_modifier_event_205a_desc:0 "The investigation from the government is making people uneasy."
+
+ cgb_modifier_event_205b:0 "Doubtful Companies"
+  cgb_modifier_event_205b_desc:0 "This company does not seem to be having a negative impact on people at this time."
+  
+ cgb_modifier_event_213:0 "Dishonest　companies that have been exposed."
+ cgb_modifier_event_213_desc:0 "People are relieved to see Dishonest rogue companies exposed."
+ 
+ cgb_modifier_event_214:0 "Lost and Found Infected"
+ cgb_modifier_event_214_desc:0 "Former employees infected with $cgb_crisis$ is hastening the $cgb_crisis$ epidemic on this planet."
+
+ cgb_modifier_event_206:0 "Riot suppression"
+ cgb_modifier_event_206_desc:0 "The citizens are terrified by the suppression by the riot police."
+ 
+ cgb_modifier_event_206_0:0 "Civil riots"
+ cgb_modifier_event_206_0_desc:0 "Fear of endless infections and dissatisfaction with infection control measures have led to riots."
+
+ cgb_modifier_event_216:0 "Massive civil riot"
+ cgb_modifier_event_216_desc:0 "People are calling for people and there is a massive riot."
+
+ cgb_modifier_event_302:0 ""
+
+ cgb_modifier_event_303:0 ""
+
+ cgb_modifier_event_304:0 ""
+
+ cgb_modifier_event_305:0 ""
+ 

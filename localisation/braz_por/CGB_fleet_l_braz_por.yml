@@ -1,0 +1,23 @@
+﻿l_braz_por:
+
+  ###shipsize
+  medium_virus_ship:0 "Destroyer"
+  large_virus_ship:0 "Dreadnought"
+
+  ###design
+  NAME_medium_virus:0 "Tearai"
+  NAME_large_virus:0 "Ugai"
+  
+  ###section
+  medium_virus_bow_01:0 "Spike"
+  medium_virus_stern_01:0 "Envelope"
+
+  large_virus_hull_01:0 "Genome"
+
+  ###shipname
+  virus_ship_name:0 "Virus Ship"
+  NAME_Medium_Virus_fleet:0 "Virus Fleet"
+  virus_fleet_name:0 "Virus Fleet"
+
+ medium_virus_ship_plural:0 ""
+ large_virus_ship_plural:0 ""
