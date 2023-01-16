@@ -157,6 +157,29 @@ country_event = {
 					NOT = { has_country_flag = cgb_infected_country }
 				}
 				modifier = {
+					factor = 0.5
+					count_controlled_planet = {
+						count > 45
+					}
+				}
+				modifier = {
+					factor = 0.75
+					and ={
+						count_controlled_planet = {
+							count > 15
+						}
+						count_controlled_planet = {
+							count <= 45
+						}
+					}
+				}
+				modifier = { #惑星数が少ないと爆速で感染が進むのを防ぐ用
+					factor = 1.25
+					count_controlled_planet = {
+						count <= 5
+					}
+				}
+				modifier = {
 					factor = 0.75
 					any_owned_planet = {
 						NOT = { has_planet_flag  = cgb_infected_planet }

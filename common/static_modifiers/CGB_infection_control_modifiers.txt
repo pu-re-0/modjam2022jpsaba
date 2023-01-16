@@ -163,12 +163,13 @@ cgb_modifier_event_216 = {
 
 cgb_modifier_event_302 = {
 	planet_amenities_mult = -0.05
+	planet_stability_add = -1
 
 }
 
 cgb_modifier_event_303 = {
 	planet_amenities_mult = -0.10
-
+	planet_stability_add = -3
 }
 
 cgb_modifier_event_305 = {
@@ -184,4 +185,9 @@ cgb_modifier_event_304 = {
 
 cgb_modifier_event_305 = {
 
+}
+
+cgb_modifier_event_306 = {
+	planet_amenities_mult = -0.10
+	planet_stability_add = -5
 }
