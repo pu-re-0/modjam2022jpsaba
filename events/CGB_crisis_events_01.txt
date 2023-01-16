@@ -699,6 +699,7 @@ ship_event = { # NEXT STAGE
 				name = "NAME_Medium_Virus_fleet"
 				settings = {
 					garrison = yes
+					spawn_debris = no
 				}
 				effect = {
 					set_owner = event_target:cgb_crisis_country
@@ -805,6 +806,7 @@ country_event = { #聖地の増強・遠征艦隊
 				name = "NAME_Medium_Virus_fleet"
 				settings = {
 					garrison = yes
+					spawn_debris = no
 				}
 				effect = {
 					set_owner = event_target:cgb_crisis_country
@@ -822,6 +824,9 @@ country_event = { #聖地の増強・遠征艦隊
 			
 			create_fleet = {#遠征艦隊1
 				name = "NAME_Medium_Virus_fleet"
+				settings = {
+					spawn_debris = no
+				}
 				effect = {
 					set_owner = event_target:cgb_crisis_country
 					create_cgb_crisis_medium_ships = yes
@@ -837,6 +842,9 @@ country_event = { #聖地の増強・遠征艦隊
 			
 			create_fleet = {#遠征艦隊2
 				name = "NAME_Medium_Virus_fleet"
+				settings = {
+					spawn_debris = no
+				}
 				effect = {
 					set_owner = event_target:cgb_crisis_country
 					create_cgb_crisis_large_ships = yes
@@ -851,6 +859,9 @@ country_event = { #聖地の増強・遠征艦隊
 			
 			create_fleet = {#遠征艦隊3
 				name = "NAME_Medium_Virus_fleet"
+				settings = {
+					spawn_debris = no
+				}
 				effect = {
 					set_owner = event_target:cgb_crisis_country
 					create_cgb_crisis_medium_ships = yes
@@ -866,6 +877,9 @@ country_event = { #聖地の増強・遠征艦隊
 			
 			create_fleet = {#主力艦隊
 				name = "NAME_Medium_Virus_fleet"
+				settings = {
+					spawn_debris = no
+				}
 				effect = {
 					set_owner = event_target:cgb_crisis_country
 					create_cgb_crisis_large_ships = yes
