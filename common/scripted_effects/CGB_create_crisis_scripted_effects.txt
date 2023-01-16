@@ -33,7 +33,7 @@ cgb_create_crisis = {
 
 create_cgb_crisis_medium_ships = { #uses in create_fleet effect
 	while = {
-		count = 10
+		count = 8
 		create_ship = {
 			name = random
 			design = "NAME_medium_virus"
@@ -43,7 +43,7 @@ create_cgb_crisis_medium_ships = { #uses in create_fleet effect
 
 create_cgb_crisis_large_ships = { #uses in create_fleet effect
 	while = {
-		count = 5
+		count = 3
 		create_ship = {
 			name = random
 			design = "NAME_large_virus"
