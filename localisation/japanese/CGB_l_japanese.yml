@@ -338,3 +338,6 @@
  site_cgb_reward_arc_site:"クリエイター発掘"
  site_cgb_reward_arc_site_intro:"$cgb_crisis$の艦隊が最初に出現したこの星系に一つだけ浮かぶこの惑星は、あからさまに怪しい。何かあるに違いない。"
  
+ CGB_anti_crisis_buff:"$cgb_crisis$の弱点"
+ CGB_anti_crisis_buff_desc:"$cgb_crisis$の弱点を知ったことにより、効果的にダメージを与えることができるようになった。"
+ 
