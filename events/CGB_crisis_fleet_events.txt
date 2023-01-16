@@ -117,33 +117,6 @@ country_event = {
 				random = 180
 			}
 			while = {
-				count = 20
-				random_galaxy_planet = {
-					create_fleet = {
-             				       name = "NAME_Medium_Virus_fleet"
-						settings = {
-							spawn_debris = no
-						}
-						effect = {
-							set_owner = event_target:cgb_crisis_country
-							while = {
-								count = 10
-								create_ship = {
-									name = random
-									design = "NAME_medium_virus"
-									graphical_culture = event_target:cgb_crisis_country
-								}
-							}
-							set_location = {
-								target = from.planet
-								distance = 1
-								angle = random
-							}
-						}
-					}
-				}
-			}
-			while = {
 				limit = {
 					event_target:cgb_fleet_spawn_planet_1 = {
 						not = { has_planet_flag = cgb_crisis_fleet_spawned_1 }
@@ -195,7 +168,7 @@ country_event = { #定期的増援
 	immediate = {
 		country_event = {
 			id = cgb_crisis_fleet.10
-			days = 360
+			days = 400
 			random = 360
 		}
 		event_target:cgb_crisis_country = {
@@ -206,7 +179,6 @@ country_event = { #定期的増援
 				}
 				effect = {
 					set_owner = event_target:cgb_crisis_country
-					create_cgb_crisis_medium_ships = yes
 					create_cgb_crisis_medium_ships = yes
 					create_cgb_crisis_medium_ships = yes
 					create_cgb_crisis_medium_ships = yes
@@ -294,7 +266,6 @@ country_event = { #定期的増援
 						}
 						effect = {
 							set_owner = event_target:cgb_crisis_country
-							create_cgb_crisis_large_ships = yes
 							create_cgb_crisis_large_ships = yes
 							set_location = {
 								target = event_target:cgb_crisis_ground_zero_system.star
