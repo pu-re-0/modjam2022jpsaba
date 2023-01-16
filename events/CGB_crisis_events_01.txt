@@ -1934,16 +1934,16 @@ country_event = {#暗号解読への手助け
 		name = cgb_crisis_01.1308.a #素晴らしい。
 		random_list = {
 			50 = {
-				event_target:cgb_decryption_situation = { add_situation_progress = 1 }
+				from.from.from = { add_situation_progress = 1 }
 			}
 			25 = {
-				event_target:cgb_decryption_situation = { add_situation_progress = 2 }
+				from.from.from = { add_situation_progress = 2 }
 			}
 			10 = {
-				event_target:cgb_decryption_situation = { add_situation_progress = 3 }
+				from.from.from = { add_situation_progress = 3 }
 			}
 			5 = {
-				event_target:cgb_decryption_situation = { add_situation_progress = 4 }
+				from.from.from = { add_situation_progress = 4 }
 			}
 		}
 	}
