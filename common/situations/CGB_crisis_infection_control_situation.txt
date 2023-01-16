@@ -525,6 +525,9 @@ cgb_country_infection_situation = {
 
 	on_fail = {
 		destroy_situation = this
+		remove_country_flag = cgb_infected_country
+		remove_country_flag = cgb_health_lost_country
+		remove_country_flag = cgb_has_country_situation
 		
 		owner = {
 			country_event = {
