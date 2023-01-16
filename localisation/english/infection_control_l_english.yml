@@ -6,7 +6,7 @@
  #####    イベント    #####
 
  cgb_crisis_02.10.name:0 "Planetary infection control"
- cgb_crisis_02.10.desc:0 "[root.target.GetName]での$cgb_crisis$の蔓延はもはや見過ごすことはできない。直ちに渡航制限や住民の監視など、対処を進めていかなければ。"
+ cgb_crisis_02.10.desc:0 "The spread of $cgb_crisis$ in [root.target.GetName] can no longer be overlooked. We must immediately proceed with measures such as travel restrictions and monitoring of residents."
  cgb_crisis_02.10.a:0 "I hope it settles in quickly..."
 
  cgb_crisis_02.11.name:0 "spread of infection"
@@ -179,85 +179,85 @@
  #####    モディファイアー    #####
 
  planet_prevalence_level_0:0 "Planetary epidemic level:0"
- planet_prevalence_level_0_desc:0 "この惑星では$cgb_crisis$はほとんど流行っていない。全てのpopが通常通り活動している。"
+ planet_prevalence_level_0_desc:0 "$cgb_crisis$ is hardly prevalent on this planet. All pops are active as normal."
 
  planet_prevalence_level_1:0 "Planetary epidemic level:1"
- planet_prevalence_level_1_desc:0 "この惑星では$cgb_crisis$が少し流行っている。"
+ planet_prevalence_level_1_desc:0 "$cgb_crisis$ is a bit prevalent on this planet."
 
  planet_prevalence_level_2:0 "Planetary epidemic level:2"
- planet_prevalence_level_2_desc:0 "この惑星では$cgb_crisis$が流行っている。"
+ planet_prevalence_level_2_desc:0 "$cgb_crisis$ is prevalent on this planet."
 
  planet_prevalence_level_3:0 "Planetary epidemic level:3"
- planet_prevalence_level_3_desc:0 "この惑星では$cgb_crisis$がかなり流行している。"
+ planet_prevalence_level_3_desc:0 "$cgb_crisis$ is quite prevalent on this planet."
 
  planet_prevalence_level_4:0 "Planetary epidemic level:4"
- planet_prevalence_level_4_desc:0 "この惑星では$cgb_crisis$が爆発的に流行している。これ以上蔓延するようであれば、惑星規模の対処が必要だ。"
+ planet_prevalence_level_4_desc:0 "$cgb_crisis$ is exploding on this planet. If it continues to spread further, we will need to take action on a planetary scale."
 
  planet_prevalence_level_5:0 "Planetary epidemic level:5"
- planet_prevalence_level_5_desc:0 "このモディファイアーは基本的に表示されないから、表示されてたらバグだよ"
+ planet_prevalence_level_5_desc:0 "This modifier is basically not displayed, so if it is, it's a bug."
  
  country_lost_health_default:0 "Failed infection control"
- country_lost_health_default_desc:0 "この帝国は$cgb_crisis$の対処を致命的に失敗してしまった。帝国の中で$cgb_crisis$が存在しない箇所はほぼ無いだろう"
+ country_lost_health_default_desc:0 "This empire has fatally failed to deal with $cgb_crisis$. There will be almost no part of the empire where $cgb_crisis$ does not exist."
 
  country_lost_health_gestalt:0 "Failed infection control"
- country_lost_health_gestalt_desc:0 "この帝国は$cgb_crisis$の対処を致命的に失敗してしまった。帝国の中で$cgb_crisis$が存在しない箇所はほぼ無いだろう"
+ country_lost_health_gestalt_desc:0 "This empire has fatally failed to deal with $cgb_crisis$. There will be almost no part of the Reich where $cgb_crisis$ does not exist."
 
  cgb_modifier_event_102:0 "Computer Anomalies"
- cgb_modifier_event_102_desc:0 "帝国の一部のコンピューターで異常が発生している。"
+  cgb_modifier_event_102_desc:0 "Some computers in the empire are experiencing anomalies."
 
  cgb_modifier_event_103:0 "Computer Anomalies"
- cgb_modifier_event_103_desc:0 "帝国の一部のコンピューターで異常が発生している。"
+  cgb_modifier_event_103_desc:0 "Some computers in the empire are experiencing anomalies."
 
  cgb_modifier_event_104:0 "Civil Riots"
- cgb_modifier_event_104_desc:0 "$cgb_crisis$への恐怖などが重なり、市民が暴動を起こしている。"
+ cgb_modifier_event_104_desc:0 "A combination of fear of $cgb_crisis$ and other factors are causing citizens to riot."
 
  cgb_modifier_event_105:0 "Comfortable home life"
- cgb_modifier_event_105_desc:0 "[this.GetName]の住民は外出制限などの感染対策に不安を感じていたが、実際は案外快適だったようだ。"
+  cgb_modifier_event_105_desc:0 "[this.GetName] residents were concerned about infection control measures such as curfew restrictions, but they were actually more comfortable than expected."
 
  cgb_modifier_event_106:0 "Comet Transit"
- cgb_modifier_event_106_desc:0 "[this.GetName]にて彗星を観測した。いい兆候だとして市民たちは喜んでいる。"
+  cgb_modifier_event_106_desc:0 "A comet was observed at [this.GetName]. Citizens are happy as it is a good sign."
 
  cgb_modifier_event_110:0 "A trick from sky"
- cgb_modifier_event_110_desc:0 "彗星に付着していたウイルスは、[this.GetName]の住民に不安を与えている。"
+  cgb_modifier_event_110_desc:0 "The virus on the comet is causing anxiety among the residents of [this.GetName]."
 
  cgb_modifier_event_201:0 "Lack of daily necessities"
- cgb_modifier_event_201_desc:0 "日用品が不足している。"
+  cgb_modifier_event_201_desc:0 "There is a shortage of commodities."
 
  cgb_modifier_event_211:0 "plentiful daily necessities"
- cgb_modifier_event_211_desc:0 "手配された日用品は市民に行き届いている。"
+  cgb_modifier_event_211_desc:0 "The commodities arranged are reaching the citizens."
 
  cgb_modifier_event_212:0 "shortage of goods"
- cgb_modifier_event_212_desc:0 "人々は困窮している。"
+ cgb_modifier_event_212_desc:0 "People are needy."
 
  cgb_modifier_event_202:0 "Medium-scale mass infection"
- cgb_modifier_event_202_desc:0 "集団感染が発生した。"
+ cgb_modifier_event_202_desc:0 "A mass infection has occurred."
 
  cgb_modifier_event_203:0 "Massive outbreaks"
- cgb_modifier_event_203_desc:0 "集団感染が発生した。"
+ cgb_modifier_event_203_desc:0 "A mass infection has occurred."
 
  cgb_modifier_event_204:0 "Decrease in the number of infected"
- cgb_modifier_event_204_desc:0 "感染数が減り、人々は安堵している。"
+ cgb_modifier_event_204_desc:0 "People are relieved that the number of infections is down."
 
  cgb_modifier_event_205a:0 "Under investigation by the company"
- cgb_modifier_event_205a_desc:0 "国からの捜査は人々に不安を与えている。"
+  cgb_modifier_event_205a_desc:0 "The investigation from the government is making people uneasy."
 
  cgb_modifier_event_205b:0 "Doubtful Companies"
- cgb_modifier_event_205b_desc:0 "この企業は今のところ人々に悪影響を及ぼしているわけではないようだ。"
+  cgb_modifier_event_205b_desc:0 "This company does not seem to be having a negative impact on people at this time."
+  
+ cgb_modifier_event_213:0 "Dishonest　companies that have been exposed."
+ cgb_modifier_event_213_desc:0 "People are relieved to see Dishonest rogue companies exposed."
+ 
+ cgb_modifier_event_214:0 "Lost and Found Infected"
+ cgb_modifier_event_214_desc:0 "Former employees infected with $cgb_crisis$ is hastening the $cgb_crisis$ epidemic on this planet."
 
- cgb_modifier_event_213:0 "摘発されたブラック企業"
- cgb_modifier_event_213_desc:0 "ブラック企業の摘発に人々は安心している。"
+ cgb_modifier_event_206:0 "Riot suppression"
+ cgb_modifier_event_206_desc:0 "The citizens are terrified by the suppression by the riot police."
+ 
+ cgb_modifier_event_206_0:0 "Civil riots"
+ cgb_modifier_event_206_0_desc:0 "Fear of endless infections and dissatisfaction with infection control measures have led to riots."
 
- cgb_modifier_event_214:0 "見失った感染者"
- cgb_modifier_event_214_desc:0 "ちりぢりとなった元社員の感染者はこの惑星での$cgb_crisis$の流行を早めている。"
-
- cgb_modifier_event_206:0 "暴動の鎮圧"
- cgb_modifier_event_206_desc:0 "機動部隊による鎮圧に、市民は恐怖している。"
-
- cgb_modifier_event_206_0:0 "市民の暴動"
- cgb_modifier_event_206_0_desc:0 "終わらない感染症への恐怖や、感染対策への不満により暴動が発生している。"
-
- cgb_modifier_event_216:0 "大規模な市民の暴動"
- cgb_modifier_event_216_desc:0 "人が人を呼び、大規模な暴動が発生している。"
+ cgb_modifier_event_216:0 "Massive civil riot"
+ cgb_modifier_event_216_desc:0 "People are calling for people and there is a massive riot."
 
  cgb_modifier_event_302:0 ""
 
