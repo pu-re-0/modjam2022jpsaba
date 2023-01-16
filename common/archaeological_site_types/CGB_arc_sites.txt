@@ -15,25 +15,25 @@ site_cgb_final_arc_site = {
 	#}
 
 	stage = {
-		difficulty = 4
+		difficulty = 3
 		icon = GFX_archaeology_runes_E1
 		event = cgb_crisis_01.1211
 	}
 
 	stage = {
-		difficulty = 5
+		difficulty = 3
 		icon = GFX_archaeology_runes_E2
 		event = cgb_crisis_01.1212
 	}
 
 	stage = {
-		difficulty = 6
+		difficulty = 4
 		icon = GFX_archaeology_runes_E3
 		event = cgb_crisis_01.1213
 	}
 
 	stage = {
-		difficulty = 7
+		difficulty = 5
 		icon = GFX_archaeology_runes_E4
 		event = cgb_crisis_01.1214
 	}
@@ -62,25 +62,25 @@ site_cgb_reward_arc_site = {
 	#}
 
 	stage = {
-		difficulty = 5
+		difficulty = 4
 		icon = GFX_archaeology_runes_E1
 		event = cgb_crisis_01.2010
 	}
 
 	stage = {
-		difficulty = 6
+		difficulty = 4
 		icon = GFX_archaeology_runes_E2
 		event = cgb_crisis_01.2011
 	}
 
 	stage = {
-		difficulty = 7
+		difficulty = 5
 		icon = GFX_archaeology_runes_E3
 		event = cgb_crisis_01.2012
 	}
 
 	stage = {
-		difficulty = 7
+		difficulty = 6
 		icon = GFX_archaeology_runes_E4
 		event = cgb_crisis_01.2013
 	}
