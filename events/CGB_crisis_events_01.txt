@@ -892,6 +892,87 @@ country_event = { #聖地の増強・遠征艦隊
 					}
 				}
 			}
+			
+			create_fleet = {#主力艦隊:荒らし
+				name = "NAME_Medium_Virus_fleet"
+				effect = {
+					set_owner = event_target:cgb_crisis_country
+					create_cgb_crisis_large_ships = yes
+					create_cgb_crisis_medium_ships = yes
+					create_cgb_crisis_medium_ships = yes
+					set_location = {
+						target = event_target:cgb_crisis_ground_zero_system.star
+						distance = 1
+						angle = random
+					}
+					set_fleet_flag = cgb_is_arashi
+				}
+			}
+
+			create_fleet = {#主力艦隊:荒らし
+				name = "NAME_Medium_Virus_fleet"
+				effect = {
+					set_owner = event_target:cgb_crisis_country
+					create_cgb_crisis_large_ships = yes
+					create_cgb_crisis_medium_ships = yes
+					create_cgb_crisis_medium_ships = yes
+					set_location = {
+						target = event_target:cgb_crisis_ground_zero_system.star
+						distance = 1
+						angle = random
+					}
+					set_fleet_flag = cgb_is_arashi
+				}
+			}
+			create_fleet = {#主力艦隊:random
+				name = "NAME_Medium_Virus_fleet"
+				effect = {
+					set_owner = event_target:cgb_crisis_country
+					create_cgb_crisis_medium_ships = yes
+					create_cgb_crisis_medium_ships = yes
+					create_cgb_crisis_medium_ships = yes
+					create_cgb_crisis_medium_ships = yes
+					set_location = {
+						target = event_target:cgb_crisis_ground_zero_system.star
+						distance = 1
+						angle = random
+					}
+					set_fleet_flag = cgb_is_random
+				}
+			}
+			create_fleet = {#主力艦隊:random
+				name = "NAME_Medium_Virus_fleet"
+				effect = {
+					set_owner = event_target:cgb_crisis_country
+					create_cgb_crisis_medium_ships = yes
+					create_cgb_crisis_medium_ships = yes
+					create_cgb_crisis_medium_ships = yes
+					create_cgb_crisis_medium_ships = yes
+					set_location = {
+						target = event_target:cgb_crisis_ground_zero_system.star
+						distance = 1
+						angle = random
+					}
+					set_fleet_flag = cgb_is_random
+				}
+			}
+
+			create_fleet = {#主力艦隊:荒らし
+				name = "NAME_Medium_Virus_fleet"
+				effect = {
+					set_owner = event_target:cgb_crisis_country
+					create_cgb_crisis_medium_ships = yes
+					create_cgb_crisis_medium_ships = yes
+					create_cgb_crisis_medium_ships = yes
+					create_cgb_crisis_medium_ships = yes
+					set_location = {
+						target = event_target:cgb_crisis_ground_zero_system.star
+						distance = 1
+						angle = random
+					}
+					set_fleet_flag = cgb_is_random
+				}
+			}
 		}
 	}
 }
