@@ -182,16 +182,16 @@
  #####    モディファイアー    #####
 
  planet_prevalence_level_0:0 "Planetary epidemic level:0"
- planet_prevalence_level_0_desc:0 "$cgb_crisis$ is hardly prevalent on this planet. All pops are active as normal."
+ planet_prevalence_level_0_desc:0 "$cgb_crisis$ is hardly prevalent on this planet. All pops are active as normal. §YOnce level 5 is reached, the infection would be enough to negatively impact the planet's economy.§!"
 
  planet_prevalence_level_1:0 "Planetary epidemic level:1"
- planet_prevalence_level_1_desc:0 "$cgb_crisis$ is a bit prevalent on this planet."
+ planet_prevalence_level_1_desc:0 "$cgb_crisis$ is a bit prevalent on this planet. §YOnce level 5 is reached, the infection would be enough to negatively impact the planet's economy.§!"
 
  planet_prevalence_level_2:0 "Planetary epidemic level:2"
- planet_prevalence_level_2_desc:0 "$cgb_crisis$ is prevalent on this planet."
+ planet_prevalence_level_2_desc:0 "$cgb_crisis$ is prevalent on this planet. §YOnce level 5 is reached, the infection would be enough to negatively impact the planet's economy.§!"
 
  planet_prevalence_level_3:0 "Planetary epidemic level:3"
- planet_prevalence_level_3_desc:0 "$cgb_crisis$ is quite prevalent on this planet."
+ planet_prevalence_level_3_desc:0 "$cgb_crisis$ is quite prevalent on this planet. §YOnce level 5 is reached, the infection would be enough to negatively impact the planet's economy.§!"
 
  planet_prevalence_level_4:0 "Planetary epidemic level:4"
  planet_prevalence_level_4_desc:0 "$cgb_crisis$ is exploding on this planet. If it continues to spread further, we will need to take action on a planetary scale."

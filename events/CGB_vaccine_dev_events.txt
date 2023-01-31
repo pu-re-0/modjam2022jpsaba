@@ -166,7 +166,7 @@ situation_event = {
 		situation_progress > 30
 	}
 	immediate = {
-		add_situation_progress = -25
+		add_situation_progress = -15
 	}
 	option = {
 		name = cgb_vaccine_dev_event.21.a

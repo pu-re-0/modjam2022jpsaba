@@ -289,12 +289,12 @@ cgb_crisis_vaccine_production_situation = {	#ワクワク配布
 		stage_1 = { #製造
 			icon = GFX_situation_stage_1
 			icon_background = GFX_situation_stage_frame_blue
-			end = 100
+			end = 75
 		}
 		stage_2 = { #配布
 			icon = GFX_situation_stage_2
 			icon_background = GFX_situation_stage_frame_blue
-			end = 150
+			end = 100
 			on_first_enter = {
 				owner = {
 					remove_country_flag = cgb_crisis_vaccine_production_now
@@ -309,7 +309,7 @@ cgb_crisis_vaccine_production_situation = {	#ワクワク配布
 
 	on_monthly = {
 		random_events = {
-			190 = 0
+			290 = 0
 			10 = cgb_vaccine_dev_event.21
 		}
 	}
@@ -333,10 +333,10 @@ cgb_crisis_vaccine_production_situation = {	#ワクワク配布
 			current_situation_approach = cgb_crisis_vaccine_production_approach_high
 		}
 
-		modifier = {
-			mult = owner.value:cgb_size_effect #200 ÷ 帝国規模
-			desc = cgb_size_effect_desc
-		}
+		#modifier = {
+		#	mult = owner.value:cgb_size_effect #400 ÷ 帝国規模
+		#	desc = cgb_size_effect_desc
+		#}
 	}
 
 	on_progress_complete = {
@@ -362,7 +362,7 @@ cgb_crisis_vaccine_production_situation = {	#ワクワク配布
  		resources = { 	#Resource table as standard
  			category = situations
  			upkeep = {
-				energy = 10
+				energy = 15
 				mult = owner.value:edict_size_effect
 			}
  			produces = { }
@@ -380,7 +380,7 @@ cgb_crisis_vaccine_production_situation = {	#ワクワク配布
  		resources = { 	#Resource table as standard
  			category = situations
  			upkeep = {
-				energy = 20
+				energy = 30
 				mult = owner.value:edict_size_effect
 			}
  			produces = { }
@@ -398,7 +398,7 @@ cgb_crisis_vaccine_production_situation = {	#ワクワク配布
  		resources = { 	#Resource table as standard
  			category = situations
  			upkeep = {
-				energy = 40
+				energy = 60
 				mult = owner.value:edict_size_effect
 			}
  			produces = { }
